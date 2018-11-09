@@ -18,19 +18,35 @@ useradd(选项)(参数)
 ### 选项  
 
 ```
--c<备注>：加上备注文字。备注文字会保存在passwd的备注栏位中；
--d<登入目录>：指定用户登入时的启始目录；
--D：变更预设值；
--e<有效期限>：指定帐号的有效期限；
--f<缓冲天数>：指定在密码过期后多少天即关闭该帐号；
--g<群组>：指定用户所属的群组；
--G<群组>：指定用户所属的附加群组；
--m：自动建立用户的登入目录；
--M：不要自动建立用户的登入目录；
--n：取消建立以用户名称为名的群组；
--r：建立系统帐号；
--s<shell>：指定用户登入后所使用的shell；
--u<uid>：指定用户id。
+
+eradd [选项] 登录
+      useradd -D
+      useradd -D [选项]
+
+选项：
+-b, --base-dir BASE_DIR   新账户的主目录的基目录
+-c, --comment COMMENT         新账户的 GECOS 字段
+-d, --home-dir HOME_DIR       新账户的主目录
+-D, --defaults        显示或更改默认的 useradd 配置
+-e, --expiredate EXPIRE_DATE  新账户的过期日期
+-f, --inactive INACTIVE       新账户的密码不活动期
+-g, --gid GROUP       新账户主组的名称或 ID
+-G, --groups GROUPS   新账户的附加组列表
+-h, --help                    显示此帮助信息并推出
+-k, --skel SKEL_DIR   使用此目录作为骨架目录
+-K, --key KEY=VALUE           不使用 /etc/login.defs 中的默认值
+-l, --no-log-init 不要将此用户添加到最近登录和登录失败数据库
+-m, --create-home 创建用户的主目录
+-M, --no-create-home      不创建用户的主目录
+-N, --no-user-group   不创建同名的组
+-o, --non-unique      允许使用重复的 UID 创建用户
+-p, --password PASSWORD       加密后的新账户密码
+-r, --system                  创建一个系统账户
+-R, --root CHROOT_DIR         chroot 到的目录
+-s, --shell SHELL     新账户的登录 shell
+-u, --uid UID         新账户的用户 ID
+-U, --user-group      创建与用户同名的组
+-Z, --selinux-user SEUSER     为 SELinux 用户映射使用指定 SEUSER
 ```
 
 ### 参数  
@@ -54,4 +70,3 @@ useradd caojh -u 544
 需要说明的是，设定ID值时尽量要大于500，以免冲突。因为Linux安装后会建立一些特殊用户，一般0到499之间的值留给bin、mail这样的系统账号。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

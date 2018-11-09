@@ -62,18 +62,12 @@ root@localhost [test]# du
 300 log2012.log
 ```
 
-查看指定目录的所占空间：
+查看指定目录(etc)的所占空间：
 
-```
-[root@localhost test]# du scf
-4 scf/lib
-4 scf/service/deploy/product
-4 scf/service/deploy/info
-12 scf/service/deploy
-16 scf/service
-4 scf/doc
-4 scf/bin
-32 scf
+```sh
+
+du -sh /etc
+
 ```
 
 显示多个文件所占空间：

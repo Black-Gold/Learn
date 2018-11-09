@@ -66,7 +66,14 @@ mount [-fnrsvw] [-t vfstype] [-o options] device dir
 #mount -o loop /tmp/image.iso /mnt/cdrom
 ```
 
-
-
+```sh
+挂载光驱：
+mount /dev/cdrom /mnt/cdrom    格式：Mount  设备名字  挂载点
+df -h
+cd /mnt/cdrom
+ls /mnt/cdrom
+卸载光驱：
+umount /mnt/cdrom (注意卸载时不要在当前/mnt/cdrom目录中，不然会提示设备忙的错误信息)
+```
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

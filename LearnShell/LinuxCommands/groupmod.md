@@ -16,9 +16,12 @@ groupmod(选项)(参数)
 ### 选项  
 
 ```
--g<群组识别码>：设置欲使用的群组识别码；
--o：重复使用群组识别码；
--n<新群组名称>：设置欲使用的群组名称。
+-g, --gid GID                 将组 ID 改为 GID
+-h, --help                    显示此帮助信息并推出
+-n, --new-name NEW_GROUP      改名为 NEW_GROUP
+-o, --non-unique              允许使用重复的 GID
+-p, --password PASSWORD   将密码更改为(加密过的) PASSWORD
+-R, --root CHROOT_DIR         chroot 到的目录
 ```
 
 ### 参数  

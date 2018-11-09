@@ -16,17 +16,31 @@ usermod(选项)(参数)
 ### 选项  
 
 ```
--c<备注>：修改用户帐号的备注文字；
--d<登入目录>：修改用户登入时的目录；
--e<有效期限>：修改帐号的有效期限；
--f<缓冲天数>：修改在密码过期后多少天即关闭该帐号；
--g<群组>：修改用户所属的群组；
--G<群组>；修改用户所属的附加群组；
--l<帐号名称>：修改用户帐号名称；
--L：锁定用户密码，使密码无效；
--s<shell>：修改用户登入后所使用的shell；
--u<uid>：修改用户ID；
--U:解除密码锁定。
+选项：
+-c, --comment 注释            GECOS 字段的新值
+-d, --home HOME_DIR           用户的新主目录
+-e, --expiredate EXPIRE_DATE  设定帐户过期的日期为 EXPIRE_DATE
+-f, --inactive INACTIVE       过期 INACTIVE 天数后，设定密码为失效状态
+-g, --gid GROUP               强制使用 GROUP 为新主组
+-G, --groups GROUPS           新的附加组列表 GROUPS
+-a, --append GROUP            将用户追加至上边 -G 中提到的附加组中，
+并不从其它组中删除此用户
+-h, --help                    显示此帮助信息并推出
+-l, --login LOGIN             新的登录名称
+-L, --lock                    锁定用户帐号
+-m, --move-home               将家目录内容移至新位置 (仅于 -d 一起使用)
+-o, --non-unique              允许使用重复的(非唯一的) UID
+-p, --password PASSWORD       将加密过的密码 (PASSWORD) 设为新密码
+-R, --root CHROOT_DIR         chroot 到的目录
+-s, --shell SHELL             该用户帐号的新登录 shell
+-u, --uid UID                 用户帐号的新 UID
+-U, --unlock                  解锁用户帐号
+-v, --add-subuids FIRST-LAST  add range of subordinate uids
+-V, --del-subuids FIRST-LAST  remove range of subordinate uids
+-w, --add-subgids FIRST-LAST  add range of subordinate gids
+-W, --del-subgids FIRST-LAST  remove range of subordinate gids
+-Z, --selinux-user  SEUSER       用户账户的新 SELinux 用户映射
+
 ```
 
 ### 参数  

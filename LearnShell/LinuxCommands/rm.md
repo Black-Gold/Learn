@@ -12,18 +12,40 @@ rm
 ### 语法  
 
 ```
-rm (选项)(参数)
+rm (选项)(文件)
 ```
 
 ### 选项  
 
 ```
--d：直接把欲删除的目录的硬连接数据删除成0，删除该目录；
--f：强制删除文件或目录；
--i：删除已有文件或目录之前先询问用户；
--r或-R：递归处理，将指定目录下的所有文件与子目录一并处理；
---preserve-root：不对根目录进行递归操作；
--v：显示指令的详细执行过程。
+  -f, --force           忽略不存在的文件和参数，不提示直接强制删除
+  -i                    删除已有文件或目录之前先询问用户
+  -I                    prompt once before removing more than three files, or
+                          when removing recursively; less intrusive than -i,
+                          while still giving protection against most mistakes
+      --interactive[=WHEN]  prompt according to WHEN: never, once (-I), or
+                          always (-i); without WHEN, prompt always
+      --one-file-system         递归删除一个层级时，跳过所有不符合命令行参
+                                数的文件系统上的文件
+      --no-preserve-root  do not treat '/' specially
+      --preserve-root   do not remove '/' (default)
+  -r, -R, --recursive   remove directories and their contents recursively
+  -d, --dir             移除空目录
+  -v, --verbose         显示指令的详细执行过程
+      --help            显示此帮助信息并退出
+      --version         显示版本信息并退出
+
+默认时，rm 不会删除目录。使用--recursive(-r 或-R)选项可删除每个给定
+的目录，以及其下所有的内容。
+
+To remove a file whose name starts with a '-', for example '-foo',
+use one of these commands:
+  rm -- -foo
+
+  rm ./-foo
+
+请注意，如果使用rm 来删除文件，通常仍可以将该文件恢复原状。如果想保证
+该文件的内容无法还原，请考虑使用shred。
 ```
 
 ### 参数  

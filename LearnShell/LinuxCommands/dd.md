@@ -9,6 +9,9 @@ dd
 
 建议在有需要的时候使用dd 对物理磁盘操作，如果是文件系统的话还是使用tar backup cpio等其他命令更加方便。另外，使用dd对磁盘操作时，最好使用块设备文件。
 
+其次，dd命令可以创建一个固定大小的文件如下：
+dd if=/dev/zero of=/var/swap/file.swap bs=1024K count=64（ linux支持K单位，unix不支持；）
+
 ### 语法  
 
 ```
@@ -39,8 +42,6 @@ skip=<区块数>：一开始读取时，跳过指定的区块数；
 1+0 records out
 1048576 bytes (1.0 MB) copied, 0.006107 seconds, 172 MB/s
 
-[root@localhost text]# du -sh sun.txt 
-1.1M    sun.txt
 ```
 
 该命令创建了一个1M大小的文件sun.txt，其中参数解释：
@@ -119,9 +120,6 @@ skip=<区块数>：一开始读取时，跳过指定的区块数；
 
 以上命令可以看出dd命令来测试内存操作速度：
 
-```
-1048576 bytes (1.0 MB) copied, 0.006107 seconds, 172 MB/s
-```
 
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

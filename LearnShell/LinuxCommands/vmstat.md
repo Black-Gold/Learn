@@ -22,14 +22,20 @@ vmstat(选项)(参数)
 -n：头信息仅显示一次；
 -s：以表格方式显示事件计数器和内存状态；
 -d：报告磁盘状态；
+-D: --disk-sum         summarize disk statistics
 -p：显示指定的硬盘分区状态；
 -S：输出信息的单位。
+-w: --wide             wide output
+-t: --timestamp        show timestamp
 ```
 
 ### 参数  
 
 *   事件间隔：状态信息刷新的时间间隔；
 *   次数：显示报告的次数。
+
+vmstat 1 5
+时间间隔1秒，输出5次
 
 ### 实例  
 

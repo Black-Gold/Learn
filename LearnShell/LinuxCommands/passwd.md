@@ -16,14 +16,23 @@ passwd(选项)(参数)
 ### 选项  
 
 ```
--d：删除密码，仅有系统管理者才能使用；
--f：强制执行；
--k：设置只有在密码过期失效后，方能更新；
--l：锁住密码；
--s：列出密码的相关信息，仅有系统管理者才能使用；
--u：解开已上锁的帐号。
-```
-
+选项：
+-a, --all                     报告所有帐户的密码状态
+-d, --delete                  删除指定帐户的密码
+-e, --expire                  强制使指定帐户的密码过期
+-h, --help                    显示此帮助信息并推出
+-k, --keep-tokens             仅在过期后修改密码
+-i, --inactive INACTIVE       密码过期后设置密码不活动为 INACTIVE
+-l, --lock                    锁定指定的帐户
+-n, --mindays MIN_DAYS        设置到下次修改密码所须等待的最短天数
+为 MIN_DAYS
+-q, --quiet                   安静模式
+-r, --repository REPOSITORY   在 REPOSITORY 库中改变密码
+-R, --root CHROOT_DIR         chroot 到的目录
+-S, --status                  报告指定帐户密码的状态
+-u, --unlock                  解锁被指定帐户
+-w, --warndays WARN_DAYS      设置过期警告天数为 WARN_DAYS
+-x, --maxdays MAX_DAYS        设置到下次修改密码所须等待的最多的天数为 MAX_DAYS
 ### 参数  
 
 用户名：需要设置密码的用户名。

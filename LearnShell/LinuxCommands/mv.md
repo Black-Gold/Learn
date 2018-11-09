@@ -17,20 +17,40 @@ mv命令可以用来将源文件移至一个目标文件中，或将一组文件
 ### 语法  
 
 ```
-mv(选项)(参数)
+用法：mv [选项]... [-T] 源文件 目标文件
+　或：mv [选项]... 源文件... 目录
+　或：mv [选项]... -t 目录 源文件...
 ```
 
 ### 选项  
 
 ```
---backup=<备份模式>：若需覆盖文件，则覆盖前先行备份；
--b：当文件存在时，覆盖前，为其创建一个备份；
--f：若目标文件或目录与现有的文件或目录重复，则直接覆盖现有的文件或目录；
--i：交互式操作，覆盖前先行询问用户，如果源文件与目标文件或目标目录中的文件同名，则询问用户是否覆盖目标文件。用户输入”y”，表示将覆盖目标文件；输入”n”，表示取消对源文件的移动。这样可以避免误将文件覆盖。
---strip-trailing-slashes：删除源文件中的斜杠“/”；
--S<后缀>：为备份文件指定后缀，而不使用默认的后缀；
---target-directory=<目录>：指定源文件要移动到目标目录；
--u：当源文件比目标文件新或者目标文件不存在时，才执行移动操作。
+必选参数对长短选项同时适用。
+      --backup[=CONTROL]       为每个已存在的目标文件创建备份
+  -b                           类似--backup 但不接受参数,当文件存在时，覆盖前，为其创建一个备份
+  -f, --force                  覆盖前不询问
+  -i, --interactive            覆盖前询问
+  -n, --no-clobber             不覆盖已存在文件
+如果您指定了-i、-f、-n 中的多个，仅最后一个生效。
+      --strip-trailing-slashes  去掉每个源文件参数尾部的斜线
+  -S, --suffix=SUFFIX           替换常用的备份文件后缀
+  -t, --target-directory=DIRECTORY  移动所有源文件参数到目录
+  -T, --no-target-directory    treat DEST as a normal file
+  -u, --update                 当源文件比目标文件新或者目标文件不存在时，才执行移动操作
+  -v, --verbose                explain what is being done
+  -Z, --context                set SELinux security context of destination
+                                 file to default type
+      --help            显示此帮助信息并退出
+      --version         显示版本信息并退出
+
+The backup suffix is '~', unless set with --suffix or SIMPLE_BACKUP_SUFFIX.
+The version control method may be selected via the --backup option or through
+the VERSION_CONTROL environment variable.  Here are the values:
+
+  none, off       不进行备份(即使使用了--backup 选项)
+  numbered, t     备份文件加上数字进行排序
+  existing, nil   若有数字的备份文件已经存在则使用数字，否则使用普通方式备份
+  simple, never   永远使用普通方式备份
 ```
 
 ### 参数  
@@ -40,77 +60,17 @@ mv(选项)(参数)
 
 ### 实例  
 
+将文件ex3改名为new1
+
+```
+mv ex3 new1
+```
+
 将目录`/usr/men`中的所有文件移到当前目录（用`.`表示）中：
 
 ```
 mv /usr/men/* .
 ```
 
-移动文件
-
-```
-mv file_1.txt /home/office/
-```
-
-移动多个文件
-
-```
-mv file_2.txt file_3.txt file_4.txt /home/office/
-mv *.txt /home/office/
-```
-
-移动目录
-
-```
-mv directory_1/ /home/office/
-```
-
-重命名文件或目录
-
-```bash
-mv file_1.txt file_2.txt # 将文件file_1.txt改名为file_2.txt
-```
-
-重命名目录
-
-```
-mv directory_1/ directory_2/
-```
-
-打印移动信息
-
-```bash
-mv -v *.txt /home/office
-```
-
-提示是否覆盖文件
-
-```
-mv -i file_1.txt /home/office
-```
-
-源文件比目标文件新时才执行更新
-
-```
-mv -uv *.txt /home/office
-```
-
-不要覆盖任何已存在的文件
-
-```
-mv -vn *.txt /home/office
-```
-
-复制时创建备份
-
-```
-mv -bv *.txt /home/office
-```
-
-无条件覆盖已经存在的文件
-
-```
-mv -f *.txt /home/office
-```
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

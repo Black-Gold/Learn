@@ -86,14 +86,23 @@ X：采用旧式的Linux i386登陆格式显示程序状况。
 
 按内存资源的使用量对进程进行排序
 
-```
+```sh
 ps aux | sort -rnk 4
 ```
 
 按 CPU 资源的使用量对进程进行排序
 
-```
+```sh
 ps aux | sort -nk 3
+```
+
+最常用的查询指令;
+
+```sh
+ps -le or ps -aux 查看所有用户执行的进程的详细信息；
+ps -aux --sort pid 可按照进程执行的时间，PID，UID等对进程进行排序；
+ps -uU tangsir / ps -aux | grep tangsir查看系统中指定用户执行的进程；
+pstree | more 进程树，非常直观的观察父子进程；
 ```
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

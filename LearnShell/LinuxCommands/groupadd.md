@@ -16,10 +16,15 @@ groupadd(选项)(参数)
 ### 选项  
 
 ```
--g：指定新建工作组的id；
--r：创建系统工作组，系统工作组的组ID小于500；
--K：覆盖配置文件“/ect/login.defs”；
--o：允许添加组ID号不唯一的工作组。
+-f, --force       如果组已经存在则成功退出
+并且如果 GID 已经存在则取消 -g
+-g, --gid GID                 为新组使用 GID
+-h, --help                    显示此帮助信息并推出
+-K, --key KEY=VALUE           不使用 /etc/login.defs 中的默认值
+-o, --non-unique              允许创建有重复 GID 的组
+-p, --password PASSWORD       为新组使用此加密过的密码
+-r, --system                  创建一个系统账户
+-R, --root CHROOT_DIR         chroot 到的目录
 ```
 
 ### 参数  

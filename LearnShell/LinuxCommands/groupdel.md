@@ -24,5 +24,3 @@ groupadd damon  //创建damon工作组
 groupdel damon  //删除这个工作组
 ```
 
-
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

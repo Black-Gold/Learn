@@ -17,10 +17,15 @@ wall(参数)
 
 消息：指定广播消息。
 
-### 实例  
+### 实例
 
+```sh
+输入重定向，将wishes文件中内容广播到所有登陆的用户终端屏幕上
+wall < /etc/wishes
 ```
-[root@localhost ~]# wall this is a test line
+
+```sh
+wall this is a test line
 
 Broadcast message from root (pts/1) (Fri Dec 20 11:36:51 2013):
 
