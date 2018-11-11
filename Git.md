@@ -5,3 +5,6 @@ git config credential.helper 'cache –-timeout=3600'
 
 长期存储密码：
 git config –-global credential.helper store
+
+git config --global --unset-all credential.helper
+git config --unset-all credential.helper
