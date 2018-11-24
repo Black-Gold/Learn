@@ -34,12 +34,14 @@ git commit -a --allow-empty-message -m ''
 git config -–global credential.helper cache
 如果想自己设置时间，以秒为单位：
 git config credential.helper 'cache --timeout=3600'
-
+守护程序提前退出，请在超时之前忘记所有缓存的凭据
+git credential-cache exit
 长期存储密码：
 git config –-global credential.helper store
 取消存储密码
-git config --global --unset-all credential.helper
 git config --unset-all credential.helper
+git config --global --unset-all credential.helper
+git config --system --unset-all credential.helper
 
 3.写提交信息
 提交commit时，必须给出完整的提交信息。
