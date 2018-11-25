@@ -31,13 +31,13 @@ git commit --vervose
 git commit -a --allow-empty-message -m ''
 
 设置记住密码（默认15分钟）：
-git config -–global credential.helper cache
+git config --global credential.helper cache
 如果想自己设置时间，以秒为单位：
-git config credential.helper 'cache --timeout=3600'
+git config --global credential.helper 'cache --timeout=3600'
 守护程序提前退出，请在超时之前忘记所有缓存的凭据
 git credential-cache exit
 长期存储密码：
-git config –-global credential.helper store
+git config --global credential.helper store
 取消存储密码
 git config --unset-all credential.helper
 git config --global --unset-all credential.helper
