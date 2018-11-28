@@ -21,10 +21,10 @@ rsync [OPTION]... rsync://[USER@]HOST[:PORT]/SRC [DEST]
 
 1. 同步本地目录。当SRC和DES路径信息都不包含有单个冒号":"分隔符时就启动这种工作模式。如：`rsync -a /data /backup`
 2. 使用一个远程shell程序(如rsh、ssh)来实现将本地机器的内容拷贝到远程机器。当DST路径地址包含单个冒号":"分隔符时启动该模式。如：`rsync -avz *.c foo:src`
-3.  使用一个远程shell程序(如rsh、ssh)来实现将远程机器的内容拷贝到本地机器。当SRC地址路径包含单个冒号":"分隔符时启动该模式。如：`rsync -avz foo:src/bar /data`
-4.  从远程rsync服务器中拷贝文件到本地机。当SRC路径信息包含"::"分隔符时启动该模式。如：`rsync -av root@192.168.78.192::www /databack`
-5.  从本地机器拷贝文件到远程rsync服务器中。当DST路径信息包含"::"分隔符时启动该模式。如：`rsync -av /databack root@192.168.78.192::www`
-6.  列远程机的文件列表。这类似于rsync传输，不过只要在命令中省略掉本地机信息即可。如：`rsync -v rsync://192.168.78.192/www`
+3. 使用一个远程shell程序(如rsh、ssh)来实现将远程机器的内容拷贝到本地机器。当SRC地址路径包含单个冒号":"分隔符时启动该模式。如：`rsync -avz foo:src/bar /data`
+4. 从远程rsync服务器中拷贝文件到本地机。当SRC路径信息包含"::"分隔符时启动该模式。如：`rsync -av root@192.168.78.192::www /databack`
+5. 从本地机器拷贝文件到远程rsync服务器中。当DST路径信息包含"::"分隔符时启动该模式。如：`rsync -av /databack root@192.168.78.192::www`
+6. 列远程机的文件列表。这类似于rsync传输，不过只要在命令中省略掉本地机信息即可。如：`rsync -v rsync://192.168.78.192/www`
 
 ### 选项  
 
@@ -96,16 +96,13 @@ rsync [OPTION]... rsync://[USER@]HOST[:PORT]/SRC [DEST]
 
 SSH方式,首先在服务端启动ssh服务：
 
-```
 service sshd start
-启动 sshd： [确定]
-```
 
- **使用rsync进行同步** 
+### 使用rsync进行同步
 
 接下来就可以在客户端使用rsync命令来备份服务端上的数据了，SSH方式是通过系统用户来进行备份的，如下：
 
-```
+```sh
 rsync -vzrtopg --progress -e ssh --delete work@172.16.78.192:/www/* /databack/experiment/rsync
 work@172.16.78.192's password:
 receiving file list ...
@@ -125,12 +122,12 @@ total size is 100663363 speedup is 1024.19
 
 上面的信息描述了整个的备份过程，以及总共备份数据的大小。
 
- **后台服务方式** 
+## 后台服务方式
 
 启动rsync服务，编辑`/etc/xinetd.d/rsync`文件，将其中的`disable=yes`改为`disable=no`，并重启xinetd服务，如下：
 
-```
-vi /etc/xinetd.d/rsync
+```sh
+vim /etc/xinetd.d/rsync
 
 #default: off
 # description: The rsync server is a good addition to an ftp server, as it \
@@ -146,7 +143,7 @@ log_on_failure += USERID
 }
 ```
 
-```
+```sh
 /etc/init.d/xinetd restart
 停止 xinetd： [确定]
 启动 xinetd： [确定]
@@ -154,7 +151,7 @@ log_on_failure += USERID
 
 创建配置文件，默认安装好rsync程序后，并不会自动创建rsync的主配置文件，需要手工来创建，其主配置文件为“/etc/rsyncd.conf”，创建该文件并插入如下内容：
 
-```
+```sh
 vi /etc/rsyncd.conf
 
 uid=root
@@ -204,7 +201,7 @@ total size is 150995011 speedup is 1533.75
 
 恢复，当服务器的数据出现问题时，那么这时就需要通过客户端的数据对服务端进行恢复，但前提是服务端允许客户端有写入权限，否则也不能在客户端直接对服务端进行恢复，使用rsync对数据进行恢复的方法如下：
 
-```
+```sh
 rsync -avz --progress /databack/experiment/rsync/ work@172.16.78.192::www
 
 Password:
@@ -218,6 +215,3 @@ c
 sent 258 bytes received 76 bytes 95.43 bytes/sec
 total size is 150995011 speedup is 452080.87
 ```
-
-
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
