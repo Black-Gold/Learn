@@ -35,5 +35,6 @@
     "terminal.integrated.rendererType": "dom",
     "git.allowForcePush": true,
     "git.alwaysShowStagedChangesResourceGroup": true,
-    "gitlens.settings.mode": "advanced"
+    "gitlens.settings.mode": "advanced",
+    "python.jediEnabled": false
 }

@@ -70,7 +70,7 @@ git push --force origin myfeature
 1.新建代码库
 git init初始化
 git clone [url]
-
+git clone --depth 1 
 2.配置
 # 显示当前的Git配置
 git config --list
