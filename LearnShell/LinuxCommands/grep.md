@@ -99,12 +99,12 @@ egrep是grep的扩展，支持更多的re元字符， fgrep就是fixed grep或fa
 ```bash
 ^    # 锚定行的开始 如：'^grep'匹配所有以grep开头的行。    
 $    # 锚定行的结束 如：'grep$'匹配所有以grep结尾的行。
-\    # 转义符    
+\    # 转义符
 .    # 匹配一个非换行符的字符 如：'gr.p'匹配gr后接一个任意字符，然后是p。    
 *    # 匹配零个或多个先前字符 如：'*grep'匹配所有一个或多个空格后紧跟grep的行。    
 .*   # 一起用代表任意字符。   
 []   # 匹配一个指定范围内的字符，如'[Gg]rep'匹配Grep和grep。    
-[^]  # 匹配一个不在指定范围内的字符，如：'[^A-FH-Z]rep'匹配不包含A-R和T-Z的一个字母开头，紧跟rep的行。    
+[^]  # 匹配一个不在指定范围内的字符，如：'[^A-FH-Z]rep'匹配不包含A-R和T-Z的一个字母开头，紧跟rep的行。
 \(..\)  # 标记匹配字符，如'\(love\)'，love被标记为1。    
 \<      # 锚定单词的开始，如:'\<grep'匹配包含以grep开头的单词的行。    
 \>      # 锚定单词的结束，如'grep\>'匹配包含以grep结尾的单词的行。    
@@ -159,6 +159,12 @@ fgrep：快速grep命令，不支持正则表达式，与grep -F等价
 ```
 
 ## grep命令常见用法
+
+显示系统上使用Bash shell登录的所有用户
+grep bash /etc/passwd | cut -d: -f1
+
+搜索目录下十小时前更改的文件，不包括文件夹，只使用grep实现。(更好的方式用find实现)
+ls -algG --time-style=+%s | grep ^[^d] | awk -vlimit=$(date +%s -d '10 hours ago') '$4 > limit { print substr($0, index($0, $4) + length($4) + 1) }'
 
 递归搜索含有某个关键字的文件目录
 grep -iHR "关键字" ./*

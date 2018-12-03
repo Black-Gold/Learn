@@ -1,51 +1,46 @@
 # sed
 
-===
-
 功能强大的流式文本编辑器
 
-## 补充说明
+## 说明
 
 **sed** 是一种流编辑器，它是文本处理中非常中的工具，能够完美的配合正则表达式使用，功能不同凡响。处理时，把当前处理的行存储在临时缓冲区中，称为“模式空间”（pattern space），接着用sed命令处理缓冲区中的内容，处理完成后，把缓冲区的内容送往屏幕。接着处理下一行，这样不断重复，直到文件末尾。文件内容并没有 改变，除非你使用重定向存储输出。Sed主要用来自动编辑一个或多个文件；简化对文件的反复操作；编写转换程序等。
 
-## sed的选项、命令、替换标记  
-
-### 命令格式
+## 命令格式
 
 ```sh
 用法: sed [选项]... {脚本(如果没有其他脚本)} [输入文件]...
-
-  -n, --quiet, --silent
-                 取消自动打印模式空间
-  -e 脚本, --expression=脚本
-                 添加“脚本”到程序的运行列表
-  -f 脚本文件, --file=脚本文件
-                 添加“脚本文件”到程序的运行列表
-  --follow-symlinks
-                 直接修改文件时跟随软链接
-  -i[SUFFIX], --in-place[=SUFFIX]
-                 edit files in place (makes backup if SUFFIX supplied)
-  -c, --copy
-                 use copy instead of rename when shuffling files in -i mode
-  -b, --binary
-                 does nothing; for compatibility with WIN32/CYGWIN/MSDOS/EMX (
-                 open files in binary mode (CR+LFs are not treated specially))
-  -l N, --line-length=N
-                 指定“l”命令的换行期望长度
-  --posix
-                 关闭所有 GNU 扩展
-  -r, --regexp-extended
-                 在脚本中使用扩展正则表达式
-  -s, --separate
-                 将输入文件视为各个独立的文件而不是一个长的连续输入
-  -u, --unbuffered
-                 从输入文件读取最少的数据，更频繁的刷新输出
-  -z, --null-data
-                 separate lines by NUL characters
-  --help
-                 display this help and exit
-  --version
-                 output version information and exit
+-n, --quiet, --silent
+               取消自动打印模式空间
+-e 脚本, --expression=脚本
+               添加“脚本”到程序的运行列表
+-f 脚本文件, --file=脚本文件
+               添加“脚本文件”到程序的运行列表
+--follow-symlinks
+               直接修改文件时跟随软链接
+-i[SUFFIX], --in-place[=SUFFIX]
+               edit files in place (makes backup if SUFFIX supplied)
+-c, --copy
+               use copy instead of rename when shuffling files in -i mode
+-b, --binary
+               does nothing; for compatibility with WIN32/CYGWIN/MSDOS/EMX (
+               open files in binary mode (CR+LFs are not treated specially))
+-l N, --line-length=N
+               指定“l”命令的换行期望长度
+--posix
+               关闭所有 GNU 扩展
+-r, --regexp-extended
+               在脚本中使用扩展正则表达式
+-s, --separate
+               将输入文件视为各个独立的文件而不是一个长的连续输入
+-u, --unbuffered
+               从输入文件读取最少的数据，更频繁的刷新输出
+-z, --null-data
+               separate lines by NUL characters
+--help
+               display this help and exit
+--version
+               output version information and exit
 
 如果没有 -e, --expression, -f 或 --file 选项，那么第一个非选项参数被视为
 sed脚本。其他非选项参数被视为输入文件，如果没有输入文件，那么程序将从标准

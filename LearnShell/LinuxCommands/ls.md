@@ -1,21 +1,14 @@
-ls
-===
+# ls
 
 显示目录内容列表
 
-## 补充说明
+## 说明
 
 **ls命令** 用来显示目标列表，在Linux中是使用率较高的命令。ls命令的输出信息可以进行彩色加亮显示，以分区不同类型的文件。
 
-### 语法  
+## 选项  
 
-```
-ls（选项）（参数）
-```
-
-### 选项  
-
-```
+```sh
 -a：显示所有档案及目录（连同隐藏档，开头为.文件一起罗列出来）；
 -A：显示全部文件和目录，连同隐藏文件，但不包括.和..这两个目录；
 -C：多列显示输出结果。这是默认选项；
@@ -48,30 +41,11 @@ ls（选项）（参数）
 
 ### 实例  
 
-```bash
-$ ls       # 仅列出当前目录可见文件
-$ ls -l    # 列出当前目录可见文件详细信息
-$ ls -hl   # 列出详细信息并以可读大小显示文件大小
-$ ls -al   # 列出所有文件（包括隐藏）的详细信息
-```
-
-显示当前目录下包括影藏文件在内的所有文件列表
-
-```
-[root@localhost ~]# ls -a
-.   anaconda-ks.cfg  .bash_logout   .bashrc  install.log         .mysql_history  satools  .tcshrc   .vimrc
-..  .bash_history    .bash_profile  .cshrc   install.log.syslog  .rnd            .ssh     .viminfo
-```
-
-输出长格式列表
-
-```
-[root@localhost ~]# ls -1
-
-anaconda-ks.cfg
-install.log
-install.log.syslog
-satools
+```sh
+ls       # 仅列出当前目录可见文件
+ls -l    # 列出当前目录可见文件详细信息
+ls -hl   # 列出详细信息并以可读大小显示文件大小
+ls -al   # 列出所有文件（包括隐藏）的详细信息
 ```
 
 显示文件的inode信息
