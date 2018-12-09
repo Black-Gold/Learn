@@ -1,7 +1,7 @@
 {
     "workbench.startupEditor": "none",
     "workbench.iconTheme": "vscode-icons",
-    "workbench.colorTheme": "Solarized Light",
+    "workbench.colorTheme": "Monokai",
     "files.autoSave": "afterDelay",
     "editor.wordWrap": "on",
     "workbench.statusBar.feedback.visible": false,
