@@ -1,46 +1,86 @@
-pvdisplay
-===
+# **pvdisplay**
 
-显示物理卷的属性
-
-## 补充说明
+## 说明
 
 **pvdisplay命令** 用于显示物理卷的属性。pvdisplay命令显示的物理卷信息包括：物理卷名称、所属的卷组、物理卷大小、PE大小、总PE数、可用PE数、已分配的PE数和UUID。
 
-### 语法  
+## 选项
 
-```
-pvdisplay(选项)(参数)
-```
-
-### 选项  
-
-```
--s：以短格式输出；
--m：显示PE到LE的映射。
+```info
+-s  以短格式输出；
+-m  显示PE到LE的映射。
 ```
 
-### 参数  
+## LVM(逻辑卷管理)
 
-物理卷：要显示的物理卷对应的设备文件名。
+```sh
+概念介绍：
+LVM （logical volume Manager）逻辑卷管理通过将底层物理硬盘抽象封装起来，以逻辑卷的形式表现给上层系统，逻辑卷的大小可以动态调整的而且不会丢失数据。新加入的硬盘也不会改变现有上层的逻辑卷；
 
-### 实例  
+LVM特点：
+1.作为一个动态磁盘管理机制，逻辑卷技术大大提高了磁盘管理的灵活性；
+2.LVM屏蔽了底层磁盘布局，便于动态的调整磁盘空间大小；
 
-使用pvdisplay命令显示指定的物理卷的基本信息。在命令行中输入下面的命令：
+相关概念：
+PE（物理拓展单元)   #逻辑卷空间管理的基本单位，默认是4M的大小；
+PV 物理卷
+VG 卷组
+LV 逻辑卷
 
+LVM原理解析：
+1.物理磁盘被格式化为PV，空间被分为一个个的PE
+2.不同的PV加入同一个VG，不同的PV的PE全部进入VG的PE池；
+3.LV基于PE创建，大小为PE的整数倍，组成LV的PE可能来自不同物理磁盘；
+4.LV格式化完成后挂载就可以使用了
+5.LV的扩充缩减实际上就是增加了或者减少了组成该LV的PE的数量。其过程不会丢失数据信息；
 ```
-[root@localhost ~]# pvdisplay /dev/sdb1    #显示物理卷基本信息
+
+FAQ:(Frequently Asked Question)
+1.LV的大小应该由PE大小和PE数量决定;默认PE为4M大小的情况下一个逻辑卷最大可以支持256G
+2.逻辑卷可以动态扩充的大小取决于卷组的大小
+3.PE的大小最终影响 逻辑卷的最大大小，逻辑卷的大小一定是PE的整数倍
+5.一个逻辑卷只能属于一个卷组
+
+## LVM拉伸逻辑卷
+
+```sh
+(可在线扩容，无需卸载逻辑卷)
+vgdisplay或vgs  # 确保VG中有足够的空闲空间，通过以下指令查询即可
+lvextend -L +5G /dev/vg01/lv01     # 扩充逻辑卷,增大5G的大小
+resize2fs /dev/vg01/lv01      # 更新文件系统(检测磁盘的大小)
+df -hT     # 查看更新后文件系统
+
+备注：在没有使用命令resize2fs命令之前，使用df -hT 命令看到逻辑卷的大小并没有变化，为什么？
+逻辑卷是底层的东西，操作系统要使用底层的空间需要创建文件系统，创建文件系统（格式化操作）的时候大小就固定下来，因此逻辑卷的大小也是固定的。在拉伸逻辑卷空间时，并没有更新文件系统，所以要要执行更新文件系统的操作，要操作系统识别固定的大小；
 ```
 
-输出信息如下：
+## LVM缩小逻辑卷
 
+```sh
+(在实际运作当中很少使用且这种操作及其危险,容易导致数据丢失)备注:逻辑卷的缩小必须是离线操作，要卸载逻辑卷；
+umount /dev/vg01/lv01   # 卸载已经挂载的逻辑卷
+e2fsck -f /dev/vg01/lv01    # 强制检测文件系统信息
+resize2fs /dev/vg01/lv01 10G # 缩小文件系统(一般都有提示信息)指定逻辑卷大小为10G大小；
+lvreduce -L 10G /dev/vg01/lv01      # 缩小LV
+lvdisplay； lvs ; lvscan    # 查看缩小后的LV
+mount /dev/vg01/lv01 /mnt   # 挂载
+
+切记：严格按照顺序执行命令。先缩小文件系统，后缩小底层空间
 ```
-"/dev/sdb1" is a new physical volume of "101.94 MB"  
---- NEW Physical volume ---  
-PV Name               /dev/sdb1  
-....省略部分输出内容......  
-PV UUID         FOXiS2-Ghaj-Z0Mf- cdVZ-pfpk- dP9p-ifIZXN
+
+## LVM拉伸卷组
+
+```sh
+pvcreate /dev/sdd    # 创建新的物理卷
+vgextend vg01 /dev/sdd  # 向vg01卷组中添加物理卷/dev/sdd
+vgs, vgdisplay     # 查看卷组信息
 ```
 
+## LVM缩小卷组
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+```sh
+vgreduce vg01 /dev/sdd    # 将一个PV从指定卷组中移除
+vgdisplay或vgs  # 查看缩小后的卷组大小
+```
+
+## 实例
