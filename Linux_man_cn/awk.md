@@ -1,26 +1,46 @@
-# awk
+# **awk**
 
 ## 说明
 
-**awk** awk的基本功能是在文件中搜索包含一个或多个模式的行或其他文本单元。当一行与其中一个模式匹配时，将对该行执行特殊操作。 awk中的程序与大多数其他语言中的程序不同，因为awk程序是“数据驱动的”：您描述要使用的数据，然后在找到时执行的操作。大多数其他语言都是“程序性的”。您必须详细描述该计划要采取的每个步骤。使用过程语言时，通常很难清楚地描述程序将处理的数据。出于这个原因，awk程序通常易于读写。
+**awk** awk的基本功能是在文件中搜索包含一个或多个模式的行或其他文本单元。当一行与其中一个模式匹配时，将对该行执行特殊操作。 awk中的程序与大多数其他语言中的程序不同，因为awk程序是“数据驱动的”：您描述要使用的数据，然后在找到时执行的操作。大多数其他语言都是“程序性的”。您必须详细描述该计划要采取的每个步骤。使用过程语言时，通常很难清楚地描述程序将处理的数据。出于这个原因，awk程序通常易于读写
 
-## 语法形式
+## 选项
 
-```sh
-awk [options] 'script' var=value file(s)
-awk [options] -f scriptfile var=value file(s)
+```info
+Usage: awk [POSIX or GNU style options] -f progfile [--] file ...
+Usage: awk [POSIX or GNU style options] [--] 'program' file ...
+POSIX options:GNU long options: (standard)
+ -f progfile     --file=progfile       # 从脚本文件中读取awk命令
+ -F fs           --field-separator=fs  # fs指定输入分隔符，fs可以是字符串或正则表达式
+ -v var=val      --assign=var=val      # 赋值一个用户定义变量，将外部变量传递给awk
+Short options:GNU long options: (extensions)
+ -b          --characters-as-bytes
+ -c          --traditional
+ -C          --copyright
+ -d[file]    --dump-variables[=file]
+ -e 'program-text'   --source='program-text'
+ -E file     --exec=file
+ -g          --gen-pot
+ -L [fatal]  --lint[=fatal]
+ -n          --non-decimal-data
+ -N          --use-lc-numeric
+ -O          --optimize
+ -p[file]    --profile[=file]
+ -P          --posix
+ -r          --re-interval
+ -S          --sandbox
+ -t          --lint-old
+
+To report bugs, see node `Bugs' in `gawk.info', which is
+section `Reporting Problems and Bugs' in the printed version.
+
+gawk is a pattern scanning and processing language.
+By default it reads standard input and writes standard output
 ```
 
-## 常用命令选项
+## pattern
 
-***-F fs   *** fs指定输入分隔符，fs可以是字符串或正则表达式，如-F:
-***-v var=value   *** 赋值一个用户定义变量，将外部变量传递给awk
-***-f scripfile  *** 从脚本文件中读取awk命令
-***-m[fr] val   *** 对val值设置内在限制，-mf选项限制分配给val的最大块数目；-mr选项限制记录的最大数目。这两个功能是Bell实验室版awk的扩展功能，在标准awk中不适用。
-
-## 模式
-
-模式可以是以下任意一个：
+pattern可以是以下任意一个：
 
 * /正则表达式/：使用通配符的扩展集。
 * 关系表达式：使用运算符进行操作，可以是字符串或数字的比较测试。
@@ -39,19 +59,6 @@ awk [options] -f scriptfile var=value file(s)
 ## awk脚本基本结构
 
 ```sh
-awk 'BEGIN{ print "start" } pattern{ commands } END{ print "end" }' file
-```
-
-一个awk脚本通常由：BEGIN语句块、能够使用模式匹配的通用语句块、END语句块3部分组成，这三个部分是可选的。任意一个部分都可以不出现在脚本中，脚本通常是被** 单引号** 或** 双引号** 中，例如：
-
-```sh
-awk 'BEGIN{ i=0 } { i++ } END{ print i }' filename
-awk "BEGIN{ i=0 } { i++ } END{ print i }" filename
-```
-
-## awk的工作原理
-
-```sh
 awk 'BEGIN{ commands } pattern{ commands } END{ commands }'
 ```
 
@@ -65,10 +72,18 @@ awk 'BEGIN{ commands } pattern{ commands } END{ commands }'
 
 **pattern语句块** 中的通用命令是最重要的部分，它也是可选的。如果没有提供pattern语句块，则默认执行`{ print }`，即打印每一个读取到的行，awk读取的每一行都会执行该语句块。
 
-## 示例
+一个awk脚本通常由：BEGIN语句块、能够使用模式匹配的通用语句块、END语句块3部分组成，这三个部分是可选的。任意一个部分都可以不出现在脚本中，脚本通常是被**单引号**或**双引号**中，例如：
+
+```sh
+awk 'BEGIN{ i=0 } { i++ } END{ print i }' filename
+awk "BEGIN{ i=0 } { i++ } END{ print i }" filename
+```
+
+## 实例
 
 ```sh
 echo -e "A line 1nA line 2" | awk 'BEGIN{ print "Start" } { print } END{ print "End" }'
+输出：
 Start
 A line 1
 A line 2
@@ -79,14 +94,14 @@ End
 
 ```sh
 echo | awk '{ var1="v1"; var2="v2"; var3="v3"; print var1,var2,var3; }'
-v1 v2 v3
+输出：v1 v2 v3
 ```
 
 双引号拼接使用：
 
 ```sh
 echo | awk '{ var1="v1"; var2="v2"; var3="v3"; print var1"="var2"="var3; }'
-v1=v2=v3
+输出：v1=v2=v3
 ```
 
 { }类似一个循环体，会对文件中的每一行进行迭代，通常变量初始化语句（如：i=0）以及打印文件头部的语句放入BEGIN语句块中，将打印的结果等语句放在END语句块中。
@@ -97,35 +112,32 @@ v1=v2=v3
 可自定义变量，变量可以是字符串或数值。输入字段的内容也可以分配给变量。为了更精确地控制输出格式而不是打印通常提供的输出格式，请使用printf。 printf命令可用于指定每个项目使用的字段宽度，以及数字的各种格式选择（例如要使用的输出基数，是否打印指数，是否打印标记以及数字位数在小数点后打印）。这是通过提供一个名为格式字符串的字符串来完成的，该字符串控制打印其他参数的方式和位置。
 
 ```sh
-** $n**当前记录的第n个字段，比如n为1表示第一个字段，n为2表示第二个字段。
-** $0**这个变量包含执行过程中当前行的文本内容。
-[N]**ARGC**命令行参数的数目。
-[G]**ARGIND**命令行中当前文件的位置（从0开始算）。
-[N]**ARGV**包含命令行参数的数组。
-[G]**CONVFMT**数字转换格式（默认值为%.6g）。
-[P]**ENVIRON**环境变量关联数组。
-[N]**ERRNO**最后一个系统错误的描述。
-[G]**FIELDWIDTHS**字段宽度列表（用空格键分隔）。
-[A]**FILENAME**当前输入文件的名。
-[P]**FNR**同NR，但相对于当前文件。
-[A]**FS(fields separator)**字段分隔符（此变量预定义为一个或多个空格或制表符）。
-[G]**IGNORECASE**如果为真，则进行忽略大小写的匹配。
-[A]**NF**表示字段数，在执行过程中对应于当前的字段数。
-[A]**NR(number of records)**表示记录数，在执行过程中对应于当前的行号。
-[A]**OFMT**数字的输出格式（默认值是%.6g）。
-[A]**OFS(output fields separator)**输出字段分隔符（默认值是一个空格）。
-[A]**ORS(output record separator)**输出记录分隔符（默认值是一个换行符）。
-[A]**RS**记录分隔符（默认是一个换行符）。
-[N]**RSTART**由match函数所匹配的字符串的第一个位置。
-[N]**RLENGTH**由match函数所匹配的字符串的长度。
-[N]**SUBSEP**数组下标分隔符（默认值是34）。
+$n  当前记录的第n个字段，比如n为1表示第一个字段，n为2表示第二个字段
+$0  这个变量包含执行过程中当前行的文本内容
+[N] ARGC                            命令行参数的数目
+[G] ARGIND                          命令行中当前文件的位置（从0开始算）
+[N] ARGV                            包含命令行参数的数组
+[G] CONVFMT                         数字转换格式（默认值为%.6g）
+[P] ENVIRON                         环境变量关联数组
+[N] ERRNO                           最后一个系统错误的描述
+[G] FIELDWIDTHS                     字段宽度列表（用空格键分隔）
+[A] FILENAME                        当前输入文件的名
+[P] FNR                             同NR，但相对于当前文件
+[A] FS(fields separator)            字段分隔符（此变量预定义为一个或多个空格或制表符）
+[G] IGNORECASE                      如果为真，则进行忽略大小写的匹配
+[A] NF                              表示字段数，在执行过程中对应于当前的字段数
+[A] NR(number of records)           表示记录数，在执行过程中对应于当前的行号
+[A] OFMT                            数字的输出格式（默认值是%.6g）
+[A] OFS(output fields separator)    输出字段分隔符（默认值是一个空格）
+[A] ORS(output record separator)    输出记录分隔符（默认值是一个换行符）
+[A] RS                              记录分隔符（默认是一个换行符）
+[N] RSTART                          由match函数所匹配的字符串的第一个位置
+[N] RLENGTH                         由match函数所匹配的字符串的长度
+[N] SUBSEP                          数组下标分隔符（默认值是34）
 ```
 
-示例
-
-FS示例
-
 ```sh
+# FS示例
 awk FS变量用于设置每个记录的字段分割符，其可以设置为任何单个字符或者正则表达式
 FS可以更改任意次数，会保留其值直到明确更改，如果想更改字段分割符，在阅读行之前更改，固此改变会影响阅读的内容
 
@@ -155,9 +167,8 @@ awk -F ':' '{print $3,$4;}' /etc/passwd
 awk -F ':' 'BEGIN{OFS ="=";}{print $3,$4;}' /etc/passwd
 ```
 
-awk RS示例：记录分割符变量
-
 ```sh
+# RS示例：记录分割符变量
 awk RS定义了一条线，awk默认逐行读取。将信息存储在一个文件中，每个记录由两个新行隔开，每个字段用一个新行分割
 
 打印姓名和第二行数字
@@ -173,9 +184,6 @@ BEGIN {
 }
 
 awk -f student.awk student.txt
-
-
-
 ```
 
 ```sh
@@ -185,78 +193,43 @@ Line No:2, No of fields:3 $0=line2 f4 f5 $1=line2 $2=f4 $3=f5
 Line No:3, No of fields:3 $0=line3 f6 f7 $1=line3 $2=f6 $3=f7
 ```
 
-使用`print $NF`可以打印出一行中的最后一个字段，使用`$(NF-1)`则是打印倒数第二个字段，其他以此类推：
-
 ```sh
+# 使用`print $NF`可以打印出一行中的最后一个字段，使用`$(NF-1)`则是打印倒数第二个字段，其他以此类推：
 echo -e "line1 f2 f3n line2 f4 f5" | awk '{print $NF}'
+输出：
 f3
 f5
-```
-
-```sh
+-------------------------------------------------------------
 echo -e "line1 f2 f3n line2 f4 f5" | awk '{print $(NF-1)}'
+输出：
 f2
 f4
-
 ```
 
-打印每一行的第二和第三个字段：
-
 ```sh
-awk '{ print $2,$3 }' filename
-```
+awk '{ print $2,$3 }' filename  # 打印每一行的第二和第三个字段
+awk 'END{ print NR }' filename  # 统计文件中的行数
+# 以上命令只使用了END语句块，在读入每一行的时，awk会将NR更新为对应的行号，当到达最后一行NR的值就是最后一行的行号，所以END语句块中的NR就是文件的行数。
 
-统计文件中的行数：
-
-```sh
-awk 'END{ print NR }' filename
-```
-
-以上命令只使用了END语句块，在读入每一行的时，awk会将NR更新为对应的行号，当到达最后一行NR的值就是最后一行的行号，所以END语句块中的NR就是文件的行数。
-
-一个每一行中第一个字段值累加的例子：
-
-```sh
-seq 5 | awk 'BEGIN{ sum=0; print "总和：" } { print $1"+"; sum+=$1 } END{ print "等于"; print sum }'
-总和：
-1+
-2+
-3+
-4+
-5+
-等于
-15
+seq 5 | awk 'BEGIN{ sum=0; print "总和：" } { print $1"+"; sum+=$1 } END{ print "等于"; print sum }'    # 一个每一行中第一个字段值累加的例子
 ```
 
 ## 将外部变量值传递给awk
 
-借助** `-v`选项** ，可以将外部值（并非来自stdin）传递给awk：
-
 ```sh
+# 借助-v选项，可以将外部值（并非来自stdin）传递给awk
 VAR=10000
 echo | awk -v VARIABLE=$VAR '{ print VARIABLE }'
-```
 
-另一种传递外部变量方法：
-
-```sh
+# 另一种传递外部变量方法
 var1="aaa"
 var2="bbb"
 echo | awk '{ print v1,v2 }' v1=$var1 v2=$var2
-```
 
-当输入来自于文件时使用：
+awk '{ print v1,v2 }' v1=$var1 v2=$var2 filename    # 当输入来自于文件时使用
+# 以上方法中，变量之间用空格分隔作为awk的命令行参数跟随在BEGIN、{}和END语句块之后。
 
-```sh
-awk '{ print v1,v2 }' v1=$var1 v2=$var2 filename
-```
-
-以上方法中，变量之间用空格分隔作为awk的命令行参数跟随在BEGIN、{}和END语句块之后。
-
-## 查找进程pid
-
-```sh
-netstat -antup | grep 7770 | awk '{ print $NF NR}' | awk '{ print $1}'
+netstat -antup | grep 7770 | awk '{ print $NF NR}' | awk '{ print $1}'  # 查找进程pid
 ```
 
 ## awk运算与判断
@@ -273,22 +246,17 @@ netstat -antup | grep 7770 | awk '{ print $NF NR}' | awk '{ print $1}'
 | ^** * | 求幂 |
 | ++ -- | 增加或减少，作为前缀或后缀 |
 
-例：
-
 ```sh
 awk 'BEGIN{a="b";print a++,++a;}'
 0 2
+# 注意：所有用作算术运算符进行操作，操作数自动转为数值，所有非数值都变为0
 ```
-
-注意：所有用作算术运算符进行操作，操作数自动转为数值，所有非数值都变为0
 
 ## 赋值运算符
 
 | 运算符 | 描述 |
 | ----- | ---- |
 | = += -= *= /= %= ^=** = | 赋值语句 |
-
-例：
 
 ```sh
 a+=5; 等价于：a=a+5; 其它同类
@@ -301,8 +269,6 @@ a+=5; 等价于：a=a+5; 其它同类
 | `\|\|` | 逻辑或 |
 | && | 逻辑与 |
 
-例：
-
 ```sh
 awk 'BEGIN{a=1;b=2;print (a>5 && b<=2),(a>5 || b<=2);}'
 0 1
@@ -313,8 +279,6 @@ awk 'BEGIN{a=1;b=2;print (a>5 && b<=2),(a>5 || b<=2);}'
 | 运算符 | 描述 |
 | ----- | ---- |
 | ~ ~! | 匹配正则表达式和不匹配正则表达式 |
-
-例：
 
 ```sh
 awk 'BEGIN{a="100testa";if(a ~ /^100*/){print "ok";}}'
@@ -327,14 +291,11 @@ ok
 | ----- | ---- |
 | < <= > >= != == | 关系运算符 |
 
-例：
-
 ```sh
 awk 'BEGIN{a=11;if(a >= 9){print "ok";}}'
 ok
+# 注意：> < 可以作为字符串比较，也可以用作数值比较，关键看操作数如果是字符串就会转换为字符串比较。两个都为数字才转为数值比较。字符串比较：按照ASCII码顺序比较。
 ```
-
-注意：> < 可以作为字符串比较，也可以用作数值比较，关键看操作数如果是字符串就会转换为字符串比较。两个都为数字才转为数值比较。字符串比较：按照ASCII码顺序比较。
 
 ## 其它运算符
 
@@ -345,27 +306,18 @@ ok
 | ?: | C条件表达式 |
 | in | 数组中是否存在某键值 |
 
-例：
-
 ```sh
-awk 'BEGIN{a="b";print a=="b"?"ok":"err";}'
-ok
-```
+awk 'BEGIN{a="b";print a=="b"?"ok":"err";}' # 输出：ok
 
-```sh
-awk 'BEGIN{a="b";arr[0]="b";arr[1]="c";print (a in arr);}'
-0
-```
+awk 'BEGIN{a="b";arr[0]="b";arr[1]="c";print (a in arr);}'  # 输出：0
 
-```sh
-awk 'BEGIN{a="b";arr[0]="b";arr["b"]="c";print (a in arr);}'
-1
+awk 'BEGIN{a="b";arr[0]="b";arr["b"]="c";print (a in arr);}'    # 输出：1
 ```
 
 ## 运算级优先级表
 
-!级别越高越优先
-级别越高越优先
+* !级别越高越优先
+* 级别越高越优先
 
 ## awk高级输入输出
 

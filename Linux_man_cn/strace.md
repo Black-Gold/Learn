@@ -1,7 +1,4 @@
-strace
-===
-
-跟踪系统调用和信号
+# *strace*
 
 ## 补充说明
 
@@ -9,21 +6,9 @@ strace
 
 strace的最简单的用法就是执行一个指定的命令，在指定的命令结束之后它也就退出了。在命令执行的过程中，strace会记录和解析命令进程的所有系统调用以及这个进程所接收到的所有的信号值。
 
-### 语法  
+## 选项
 
-```
-strace  [  -dffhiqrtttTvxx  ] [ -acolumn ] [ -eexpr ] ...
-    [ -ofile ] [-ppid ] ...  [ -sstrsize ] [ -uusername ]
-    [ -Evar=val ] ...  [ -Evar  ]...
-     [command [ arg ...  ] ]
-
-strace  -c  [ -eexpr ] ...  [ -Ooverhead ] [ -Ssortby ]
-    [ command [ arg...  ] ]
-```
-
-### 选项  
-
-```
+```info
 -c 统计每一系统调用的所执行的时间,次数和出错的次数等.
 -d 输出strace关于标准错误的调试信息.
 -f 跟踪由fork调用所产生的子进程.
@@ -61,9 +46,11 @@ qualifier只能是 trace,abbrev,verbose,raw,signal,read,write其中之一.value�
 -u username 以username的UID和GID执行被跟踪的命令
 ```
 
-### 实例  
+## 实例
 
- **追踪系统调用** 
+**追踪系统调用**
+
+strace -ff -t -s 1000 -p {process id}
 
 现在我们做一个很简单的程序来演示strace的基本用法。这个程序的C语言代码如下：
 

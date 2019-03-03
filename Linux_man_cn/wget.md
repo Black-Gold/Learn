@@ -74,9 +74,9 @@ IP)
    --ignore-case               匹配文件/目录时忽略大小写
 -4,--inet4-only                仅连接至 IPv4 地址
 -6,--inet6-only                仅连接至 IPv6 地址
-   --prefer-family=地址族      首先连接至指定家族（IPv6，IPv4 
+   --prefer-family=地址族      首先连接至指定家族（IPv6，IPv4
 的地址
-   --user=用户                 将 ftp 和 http 的用户名均设置为 
+   --user=用户                 将 ftp 和 http 的用户名均设置为
    --password=密码             将 ftp 和 http 的密码均设置为 <
    --ask-password              提示输入密码
    --use-askpass=命令          指定用于请求用户名和密码的凭据管
@@ -293,11 +293,21 @@ wget -r -A.pdf url
 wget ftp-url
 wget--ftp-user=USERNAME--ftp-password=PASSWORD url
 
-# 可以使用wget来完成ftp链接的下载。
+# 可以使用wget来完成ftp链接的下载
 
-# 使用wget匿名ftp下载：
+# 使用wget匿名ftp下载
 wget ftp-url
 
-# 使用wget用户名和密码认证的ftp下载：
+# 使用wget用户名和密码认证的ftp下载
 wget--ftp-user=USERNAME--ftp-password=PASSWORD url
+
+cd cmdline && wget -nd -pHEKk <http://www.pixelbeat.org/cmdline.html>  # 在当前目录中下载指定网页及其相关的文件使其可完全浏览
+wget -c <http://www.example.com/large.file               # 继续上次未完的下载
+wget -r -nd -np -l1 -A '*.jpg' http://www.example.com/   # 批量下载文件到当前目录中
+wget ftp://remote/file[1-9].iso/                         # 下载FTP站上的整个目录
+wget -q -O- http://www.pixelbeat.org/timeline.html | grep 'a href' | head  # 匹配后直接处理输出
+echo 'wget url' | at 01:00  # 在下午一点钟下载指定文件到当前目录
+wget --limit-rate=20k url   # 限制下载速度这里限制到20KB/s
+wget -nv --spider --force-html -i bookmarks.html  # 检查文件中的链接是否存在
+wget --mirror http://www.example.com/     # 更新网站的本地拷贝可以方便地用于cron
 ```
