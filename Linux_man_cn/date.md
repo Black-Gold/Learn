@@ -14,7 +14,7 @@
 
 ## 选项  
 
-```sh
+```info
 必选参数对长短选项同时适用
 
 -d,--date=STRING 用STRING描述时间，而不是'NOW'
