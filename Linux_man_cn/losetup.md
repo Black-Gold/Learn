@@ -14,7 +14,7 @@ losetup [ -e encryption ] [ -o offset ] loop_device file
 losetup [ -d ] loop_device
 ```
 
-### 选项  
+  
 
 ```
 -a 显示所有循环设备的状态。
@@ -67,4 +67,3 @@ losetup -d /dev/loop1
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

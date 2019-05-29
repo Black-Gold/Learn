@@ -13,7 +13,7 @@ readonly
 readonly(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -f：定义只读函数；
@@ -54,4 +54,3 @@ declare -ir UID="0"
 当用户试图修改只读变量的值时，会被提示该变量为只读变量。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

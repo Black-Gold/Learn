@@ -13,7 +13,7 @@ grub
 grub(选项)
 ```
 
-### 选项  
+  
 
 ```
 --batch：打开批处理模式；
@@ -69,4 +69,3 @@ boot
 这里的关键问题是如何确定系统的几个分区：`/boot` `/` `/sbin`
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

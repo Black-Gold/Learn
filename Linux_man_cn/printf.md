@@ -70,4 +70,3 @@ printf "%-5s %-10s %-4.2f\n" 03 Jeff 98.4323
 *   %-4.2f 格式为左对齐宽度为4，保留两位小数。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

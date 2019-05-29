@@ -13,7 +13,7 @@ Linux下工作组文件的管理工具
 gpasswd(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -a：添加用户到组；
@@ -60,4 +60,3 @@ gpasswd -a user_name group_name
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

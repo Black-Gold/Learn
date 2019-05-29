@@ -13,7 +13,7 @@ declare
 declare(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 +/-："-"可用来指定变量的属性，"+"则是取消变量所设的属性；
@@ -48,4 +48,3 @@ man.linuxde.net
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

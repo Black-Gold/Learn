@@ -13,7 +13,7 @@ Debian Linux下的软件包触发器
 dpkg-trigger(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 --check-supported：检查运行的dpkg是否支持触发器，返回值为0，则支持触发器。
@@ -28,4 +28,3 @@ dpkg-trigger(选项)(参数)
 触发器名：指定触发器名称。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

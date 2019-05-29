@@ -1,99 +1,105 @@
 # *LVM*
 
+[lvm逻辑卷管理图](http://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Lvm.svg/620px-Lvm.svg.png)
+
+| 用途 | PV | VG | LV |
+| :--: | :--: | :--: |
+| 搜寻 (scan) | pvscan | vgscan | lvscan |
+| 创建 (create) | pvcreate | vgcreate | lvcreate |
+| 列出 (display) | pvdisplay | vgdisplay | lvdisplay |
+| 扩展 (extend) |  | vgextend | lvextend (lvresize) |
+| 减少 (reduce) |  | vgreduce | lvreduce (lvresize) |
+| 删除 (remove) | pvremove | vgremove | lvremove |
+| 改变容量 (resize) |  |  | lvresize |
+| 改变属性 (attribute) | pvchange | vgchange | lvchange |
+
 ## **pvcreate**
 
-## 选项
-
 ```info
--f  强制创建物理卷，不需要用户确认
--u  指定设备的UUID
--y  所有的问题都回答“yes”
--Z  是否利用前4个扇区
+pvcreate PV ...
+  [ -f|--force ]  强制创建物理卷，不需要用户确认
+  [ -M|--metadatatype lvm2|lvm1 ]
+  [ -u|--uuid String ]  指定设备的UUID
+  [ -Z|--zero y|n ]   是否利用前4个扇区
+  [    --dataalignment Size[k|UNIT] ]
+  [    --dataalignmentoffset Size[k|UNIT] ]
+  [    --bootloaderareasize Size[m|UNIT] ]
+  [    --labelsector Number ]
+  [    --pvmetadatacopies 0|1|2 ]
+  [    --metadatasize Size[m|UNIT] ]
+  [    --metadataignore y|n ]
+  [    --norestorefile ]
+  [    --setphysicalvolumesize Size[m|UNIT] ]
+  [    --reportformat basic|json ]
+  [    --restorefile String ]
+  [ COMMON_OPTIONS ]
+Common options for lvm:
+  [ -d|--debug ]
+  [ -h|--help ]
+  [ -q|--quiet ]
+  [ -v|--verbose ]
+  [ -y|--yes ]  所有的问题都回答“yes”
+  [ -t|--test ]
+  [    --commandprofile String ]
+  [    --config String ]
+  [    --driverloaded y|n ]
+  [    --lockopt String ]
+  [    --longhelp ]
+  [    --profile String ]
+  [    --version ]
+
+使用--longhelp参数显示所有选项和高级命令
 ```
-
-### 参数  
-
-物理卷：指定要创建的物理卷对应的设备文件名。
 
 ## 实例
 
-，然后将`/dev/hda6`到`/dev/hda9`建立成为PV格式
-
 ```sh
-pvscan  # 检查有无 PV在系统上，找不到任何的 PV 存在！
+pvcreate /dev/hda{6,7,8,9}  # 在/dev/hda6-9分区创建pv
 ```
 
-将6-9分区转成pv，注意大括号的用途：
+## **pvscan命令**
 
-```
-[root@localhost ~]# pvcreate /dev/hda{6,7,8,9}
-  Physical volume "/dev/hda6" successfully created
-  Physical volume "/dev/hda7" successfully created
-  Physical volume "/dev/hda8" successfully created
-  Physical volume "/dev/hda9" successfully created
-```
+```info
+列出所有的物理卷
 
-这就分別表示每个 PV 的信息与系统所有 PV 的信息：
+Display PV information.
+  pvscan
+	[ -e|--exported ]   仅显示属于输出卷组的物理卷
+	[ -n|--novolumegroup ]  仅显示不属于任何卷组的物理卷，这些物理卷是未被使用的
+	[ -s|--short ]  短格式输出
+	[ -u|--uuid ]   显示UUID
+	[ COMMON_OPTIONS ]
 
-```
-[root@localhost ~]# pvscan
-  PV /dev/hda6         lvm2 [1.40 GB]
-  PV /dev/hda7         lvm2 [1.40 GB]
-  PV /dev/hda8         lvm2 [1.40 GB]
-  PV /dev/hda9         lvm2 [1.40 GB]
-  Total: 4 [5.61 GB] / in use: 0 [0   ] / in no VG: 4 [5.61 GB]
-```
+  Populate the lvmetad cache by scanning PVs.
+  pvscan --cache
+	[ -b|--background ]
+	[ -a|--activate ay ]
+	[ -j|--major Number ]
+	[    --minor Number ]
+	[ COMMON_OPTIONS ]
+	[ String|PV ... ]
 
-更详细的列示出系统上面每个 PV 信息：
+  Common options for command:
+	[    --ignorelockingfailure ]
+	[    --reportformat basic|json ]
 
-```
-[root@localhost ~]# pvdisplay
-  "/dev/hda6" is a new physical volume of "1.40 GB"
-  --- NEW Physical volume ---
-  PV Name               /dev/hda6  #实际的 partition 分区名称
-  VG Name                          #因为尚未分配出去，所以空白！
-  PV Size               1.40 GB    #就是容量说明
-  Allocatable           NO         #是否已被分配，结果是 NO
-  PE Size (KByte)       0          #在此 PV 內的 PE 大小
-  Total PE              0          #共分割出几个 PE
-  free PE               0          #沒被 LV 用掉的 PE
-  Allocated PE          0          #尚可分配出去的 PE 数量
-  PV UUID               Z13Jk5-RCls-UJ8B-HzDa-Gesn-atku-rf2biN
-....(底下省略)....
-```
+  Common options for lvm:
+	[ -d|--debug ]  调试模式
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
 
-删除物理卷：
+  Use --longhelp to show all options and advanced commands.
 
-```
-[root@localhost ~]# pvremove /dev/sdb2
-Labels on physical volume "/dev/sdb2" successfully wiped
-
-```
-
-修改物理卷属性：
-
-```
-[root@localhost ~]# pvchange -x n /dev/sdb1    #禁止分配指定物理卷上的PE
-Physical volume "/dev/sdb1" changed  
-1 physical volume changed / 0 physical volumes not changed 
-```
-
-**pvscan命令** 会扫描系统中连接的所有硬盘，列出找到的物理卷列表。使用pvscan命令的`-n`选项可以显示硬盘中的不属于任何卷组的物理卷，这些物理卷是未被使用的。
-
-### 语法  
-
-```
-pvscan(选项)
-```
-
-### 选项  
-
-```
--d：调试模式；
--e：仅显示属于输出卷组的物理卷；
--n：仅显示不属于任何卷组的物理卷；
--s：短格式输出；
--u：显示UUID。
 ```
 
 ### 实例  
@@ -117,7 +123,7 @@ MB]
 
 **pvdisplay命令** 用于显示物理卷的属性。pvdisplay命令显示的物理卷信息包括：物理卷名称、所属的卷组、物理卷大小、PE大小、总PE数、可用PE数、已分配的PE数和UUID。
 
-## 选项
+
 
 ```info
 -s  以短格式输出；
@@ -206,7 +212,7 @@ vgdisplay或vgs  # 查看缩小后的卷组大小
 pvchange(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -u：生成新的UUID；
@@ -240,7 +246,7 @@ Physical volume "/dev/sdb1" changed
 pvremove(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -d：调试模式；
@@ -264,7 +270,7 @@ Labels on physical volume "/dev/sdb2" successfully wiped
 
 **pvdisplay命令** 用于显示物理卷的属性。pvdisplay命令显示的物理卷信息包括：物理卷名称、所属的卷组、物理卷大小、PE大小、总PE数、可用PE数、已分配的PE数和UUID。
 
-## 选项
+
 
 ```info
 -s  以短格式输出；
@@ -351,7 +357,7 @@ vgdisplay或vgs  # 查看缩小后的卷组大小
 vgcreate(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -l：卷组上允许创建的最大逻辑卷数；
@@ -386,7 +392,7 @@ Volume group "vg1000" successfully created
 vgdisplay(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -A：仅显示活动卷组的属性；
@@ -424,7 +430,7 @@ vgdisplay(选项)(参数)
 vgscan(选项)
 ```
 
-### 选项  
+  
 
 ```
 -d：调试模式；
@@ -456,7 +462,7 @@ Found volume group "vg1000" using metadata type lvm2
 vgrename [选项] [旧卷组路径|旧卷组名称|旧卷组UUID] [新卷组路径|新卷组名称]
 ```
 
-### 选项  
+  
 
 ```
 -d 启用调试模式
@@ -486,7 +492,7 @@ vgrename [选项] [旧卷组路径|旧卷组名称|旧卷组UUID] [新卷组路�
 vgchange(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -a：设置卷组的活动状态。
@@ -518,7 +524,7 @@ vgchange(选项)(参数)
 vgremove(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -f：强制删除。
@@ -545,7 +551,7 @@ Volume group "vg1000" successfully removed
 vgconvert(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -M：要转换的卷组格式。
@@ -587,7 +593,7 @@ Volume group vg1000 successfully converted
 vgextend(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -d：调试模式；
@@ -621,7 +627,7 @@ Volume group "vg2000" successfully extended
 vgreduce(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -a：如果命令行中没有指定要删除的物理卷，则删除所有的空物理卷；
@@ -654,7 +660,7 @@ Removed "/dev/sdb2" from volume group "vg2000"
 lvcreate(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -L：指定逻辑卷的大小，单位为“kKmMgGtT”字节；
@@ -689,7 +695,7 @@ Logical volume "lvol0" created
 lvscan(选项)
 ```
 
-### 选项  
+  
 
 ```
 -b：显示逻辑卷的主设备和次设备号。
@@ -745,7 +751,7 @@ lvdisplay(参数)
 lvextend(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -L：指定逻辑卷的大小，单位为“kKmMgGtT”字节；
@@ -778,7 +784,7 @@ Logical volume lvol0 successfully resized
 lvresize(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -L：指定逻辑卷的大小，单位为“kKmMgGtT”字节；
@@ -811,7 +817,7 @@ Logical volume lvol0 successfully resized
 lvreduce(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -L：指定逻辑卷的大小，单位为“kKmMgGtT”字节；
@@ -846,7 +852,7 @@ Do you really want to reduce lvol0? [y/n]: y  #确认操作
 lvremove(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -f：强制删除。

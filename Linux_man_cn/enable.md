@@ -15,7 +15,7 @@ linux shell命令执行时，shell总是先在自己的shell builtin中查找该
 enable(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -n：关闭指定的内部命令；
@@ -93,4 +93,3 @@ enable wait
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

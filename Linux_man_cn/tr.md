@@ -10,7 +10,7 @@
 tr(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -c或——complerment：取代所有不属于第一字符集的字符；
@@ -104,4 +104,3 @@ tr '[:lower:]' '[:upper:]'
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

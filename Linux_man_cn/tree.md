@@ -13,7 +13,7 @@ tree
 tree(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```bash
 ------- 列表选项 -------
@@ -106,4 +106,4 @@ tree -L 2 > /home/www/tree.txt # 当前目录结果存到 tree.txt 文件中
 tree -I 'node_modules|icon|font' -L 2
 ```
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

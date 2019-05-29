@@ -13,7 +13,7 @@ partprobe
 partprobe(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -d：不更新内核；
@@ -155,4 +155,3 @@ tmpfs                  2023936         0   2023936   0% /dev/shm
 使用partprobe可以不用重启系统即可配合fdisk工具创建新的分区。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -13,7 +13,7 @@ dnsdomainname
 dnsdomainname(选项)
 ```
 
-### 选项  
+  
 
 -v：详细信息模式，输出指令执行的详细信息。
 
@@ -28,4 +28,3 @@ Result: h_addr_list=`10.160.7.81'
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

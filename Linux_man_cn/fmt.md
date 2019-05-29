@@ -13,7 +13,7 @@ fmt
 fmt(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -c或--crown-margin：每段前两列缩排；
@@ -29,4 +29,3 @@ fmt(选项)(参数)
 指定要优化格式的文件。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

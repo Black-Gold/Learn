@@ -13,7 +13,7 @@ pwd
 pwd（选项）
 ```
 
-### 选项  
+  
 
 ```
 --help：显示帮助信息；
@@ -29,4 +29,3 @@ pwd（选项）
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

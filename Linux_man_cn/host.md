@@ -13,7 +13,7 @@ host
 host(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -a：显示详细的DNS信息；
@@ -54,4 +54,3 @@ Received 54 bytes from 202.96.104.15#53 in 0 ms
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

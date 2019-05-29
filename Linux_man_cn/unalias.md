@@ -13,7 +13,7 @@ unalias
 unalias(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -a：取消所有命令别名。
@@ -40,4 +40,3 @@ cc：no input files
 因此，当使用该指令将命令别名取消后，将不能够再进行使用。否则，将出现错误提示。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

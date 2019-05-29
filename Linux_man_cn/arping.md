@@ -13,7 +13,7 @@ arping
 arping(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -b：用于发送以太网广播帧（FFFFFFFFFFFF）。arping一开始使用广播地址，在收到响应后就使用unicast地址。
@@ -47,4 +47,3 @@ Received 8 response(s)
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

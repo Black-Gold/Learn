@@ -13,7 +13,7 @@ groupadd
 groupadd(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -f, --force       如果组已经存在则成功退出
@@ -42,4 +42,4 @@ groupadd -g 344 jsdigname
 此时在`/etc/passwd`文件中产生一个组ID（GID）是344的项目。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

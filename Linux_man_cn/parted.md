@@ -13,7 +13,7 @@ parted
 parted(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -h：显示帮助信息；
@@ -136,4 +136,3 @@ none                  252M     0  252M   0% /dev/shm
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -15,7 +15,7 @@ Linux下info格式的帮助指令
 info(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -d：添加包含info格式帮助文档的目录；
@@ -79,4 +79,3 @@ info info
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

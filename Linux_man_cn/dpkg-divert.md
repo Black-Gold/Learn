@@ -13,7 +13,7 @@ Debian Linux中创建并管理一个转向列表
 dpkg-divert(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 --add：添加一个转移文件；
@@ -54,4 +54,3 @@ dpkg-divert --divert /usr/bin/example.foo --rename /usr/bin/example
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

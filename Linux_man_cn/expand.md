@@ -13,7 +13,7 @@ expand
 expand(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -t<数字>：指定制表符所代表的空白字符的个数，而不使用默认的8。
@@ -24,4 +24,3 @@ expand(选项)(参数)
 文件：指定要转换制表符为空白的文件。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

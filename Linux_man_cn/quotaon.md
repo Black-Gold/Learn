@@ -13,7 +13,7 @@ quotaon
 quotaon(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -a：开启在/ect/fstab文件里，有加入quota设置的分区的空间限制；
@@ -27,4 +27,3 @@ quotaon(选项)(参数)
 文件系统：指定要激活磁盘配额功能的文件系统。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

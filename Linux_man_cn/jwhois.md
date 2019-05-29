@@ -13,7 +13,7 @@ whois 客户端服务
 jwhois [选项]
 ```
 
-### 选项  
+  
 
 ```
 --version                  display version number and patch level
@@ -59,4 +59,3 @@ Registrar WHOIS Server: whois.west263.com
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

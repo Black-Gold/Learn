@@ -13,7 +13,7 @@ rpmverify
 rpmverify(选项)
 ```
 
-### 选项  
+  
 
 ```
 -Va：验证所有软件包；
@@ -22,4 +22,3 @@ rpmverify(选项)
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

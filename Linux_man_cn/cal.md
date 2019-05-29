@@ -13,7 +13,7 @@ cal
 cal(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -l：显示单月输出；
@@ -69,4 +69,3 @@ cal(选项)(参数)
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

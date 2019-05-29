@@ -13,7 +13,7 @@ tac
 tac(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -a或——append：将内容追加到文件的末尾；
@@ -25,4 +25,3 @@ tac(选项)(参数)
 文件列表：指定要保存内容的文件列表。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -13,7 +13,7 @@ slocate
 slocate [-u][--help][--version][-d <目录>][查找的文件]
 ```
 
-### 选项  
+  
 
 ```
 -d<目录>或--database=<目录> 　指定数据库所在的目录。
@@ -43,4 +43,4 @@ $ slocate fdisk #显示文件名中含有fdisk 关键字的文件的路径信息
 /usr/share/doc/util-Linux/examples/sfdisk.examples.gz  
 ```
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

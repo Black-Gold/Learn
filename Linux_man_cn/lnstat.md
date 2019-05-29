@@ -13,7 +13,7 @@ lnstat
 lnstat(选项)
 ```
 
-### 选项  
+  
 
 ```
 -h：显示帮助信息；
@@ -27,4 +27,3 @@ lnstat(选项)
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

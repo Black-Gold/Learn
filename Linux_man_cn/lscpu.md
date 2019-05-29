@@ -13,7 +13,7 @@ lscpu
 lscpu [选项]
 ```
 
-### 选项  
+  
 
 ```
  -a, --all               打印在线和离线CPU（默认为-e）
@@ -72,4 +72,4 @@ L3 cache:              8192K
 NUMA node0 CPU(s):     0-3
 ```
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

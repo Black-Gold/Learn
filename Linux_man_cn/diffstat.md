@@ -13,7 +13,7 @@ diffstat
 diffstat(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -n<文件名长度>：指定文件名长度，指定的长度必须大于或等于所有文件中最长的文件名；
@@ -65,4 +65,3 @@ testfile | 2 +-             #统计信息输出显示
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

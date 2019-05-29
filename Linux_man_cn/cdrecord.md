@@ -13,7 +13,7 @@ Linux系统下光盘刻录功能命令
 cdrecord(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -v：显示刻录光盘的详细过程；
@@ -59,4 +59,3 @@ cdrecord --dev=0,3,0 --blank=fast
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

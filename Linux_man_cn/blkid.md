@@ -13,7 +13,7 @@ blkid -p [-s ] [-O ] [-S ][-o] ...
 blkid -i [-s ] [-o] ...
 ```
 
-### 选项  
+  
 
 ```
 -c <file>   指定cache文件(default: /etc/blkid.tab, /dev/null = none)
@@ -90,4 +90,3 @@ sudo blkid -o list
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -13,7 +13,7 @@ touch
 touch(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -a：或--time=atime或--time=access或--time=use  只更改存取时间；
@@ -40,4 +40,3 @@ touch ex2
 在当前目录下建立一个空文件ex2，然后，利用`ls -l`命令可以发现文件ex2的大小为0，表示它是空文件。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

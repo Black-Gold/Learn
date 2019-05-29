@@ -13,7 +13,7 @@ umount
 umount(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -a：卸除/etc/mtab中记录的所有文件系统；
@@ -77,4 +77,3 @@ eject /dev/cdrom      卸载并弹出CD
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

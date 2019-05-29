@@ -13,7 +13,7 @@ uptime
 uptime(选项)
 ```
 
-### 选项  
+  
 
 ```
 -V：显示指令的版本信息。
@@ -47,4 +47,3 @@ load average: 0.00, 0.00, 0.00         // 系统平均负载，统计最近1，5
 如果你的linux主机是1个双核CPU的话，当Load Average 为6的时候说明机器已经被充分使用了。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

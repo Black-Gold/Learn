@@ -13,7 +13,7 @@ paste
 paste(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -d<间隔字符>或--delimiters=<间隔字符>：用指定的间隔字符取代跳格字符；
@@ -25,4 +25,3 @@ paste(选项)(参数)
 文件列表：指定需要合并的文件列表。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

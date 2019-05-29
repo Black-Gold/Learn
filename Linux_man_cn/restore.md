@@ -13,7 +13,7 @@ restore
 restore(选项)
 ```
 
-### 选项  
+  
 
 ```
 -b<区块大小>：设置区块大小，单位为Byte；
@@ -52,4 +52,3 @@ restore ft /dev/hda3
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

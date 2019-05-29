@@ -19,7 +19,7 @@ trap "exit 1" HUP INT PIPE QUIT TERM
 trap -[lp] [[arg] sigspec ...]
 ```
 
-### 选项参数说明  
+参数说明  
 
 如果arg参数缺省或者为“-”，每个接收到的sigspec信号都将会被重置为它们进入shell时的值；
 
@@ -221,4 +221,3 @@ $ trap 1 2
 复位应采取的动作收到信号1或2返回默认。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

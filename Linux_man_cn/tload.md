@@ -13,7 +13,7 @@ tload
 tload(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -s：指定闲时的刻度；
@@ -38,4 +38,3 @@ tload -d 1
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

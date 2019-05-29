@@ -13,7 +13,7 @@ joe
 joe(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -force：强制在最后一行的结尾处加上换行符号；
@@ -45,4 +45,3 @@ joe(选项)(参数)
 文件：指定要编辑的文件。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

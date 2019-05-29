@@ -13,7 +13,7 @@ w
 w(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -h：不打印头信息；
@@ -37,4 +37,3 @@ root     pts/0    222.94.97.122    20:39    1.00s  0.00s  0.00s w
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

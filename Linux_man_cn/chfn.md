@@ -13,7 +13,7 @@ chfn
 chfn(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -f<真实姓名>或--full-name<真实姓名>：设置真实姓名；
@@ -64,4 +64,3 @@ Home Phone[]: [del]
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

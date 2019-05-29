@@ -263,7 +263,7 @@ wget--tries=40 URL
 wget -i filelist.txt
 
 ## 镜像网站
-wget--mirror -p--convert-links -P ./LOCAL URL
+wget --mirror -p --convert-links -P ./LOCAL URL
 
 # 下载整个网站到本地。
 `--miror`开户镜像下载。

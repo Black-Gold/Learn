@@ -17,7 +17,7 @@ mkdir
 mkdir (选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -Z：设置安全上下文，当使用SELinux时有效；
@@ -45,4 +45,3 @@ mkdir -p-m 750 bin/os_1
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -13,7 +13,7 @@ init进程是所有Linux进程的父进程
 init(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -b：不执行相关脚本而直接进入单用户模式；
@@ -47,4 +47,3 @@ init(选项)(参数)
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

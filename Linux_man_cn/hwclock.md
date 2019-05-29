@@ -15,7 +15,7 @@ hwclock
 hwclock(选项)
 ```
 
-### 选项  
+  
 
 ```
 --adjust：hwclock每次更改硬件时钟时，都会记录在/etc/adjtime文件中。使用--adjust参数，可使hwclock根据先前的记录来估算硬件时钟的偏差，并用来校正目前的硬件时钟；
@@ -62,4 +62,3 @@ ARC=false
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

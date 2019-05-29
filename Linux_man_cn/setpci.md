@@ -13,7 +13,7 @@ setpci
 setpci(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -v：显示指令执行的细节信息；
@@ -67,4 +67,3 @@ sudo setpci -s 00:02.0 F4.B=CC
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

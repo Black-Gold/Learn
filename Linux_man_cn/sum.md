@@ -13,7 +13,7 @@ sum
 sum(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -r：使用BSD的校验和算法，块大小为1k；
@@ -34,4 +34,3 @@ sum(选项)(参数)
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

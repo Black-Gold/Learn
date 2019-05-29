@@ -13,7 +13,7 @@ openssh套件中的客户端连接工具
 ssh(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -1：强制使用ssh协议版本1；
@@ -156,4 +156,4 @@ iptables -A OUTPUT -p tcp --sport 22 -m conntrack --ctstate ESTABLISHED -j ACCEP
 service iptables save
 ```
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

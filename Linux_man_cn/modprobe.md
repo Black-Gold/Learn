@@ -15,7 +15,7 @@ modprobe可载入指定的个别模块，或是载入一组相依的模块。mod
 modprobe(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -a或--all：载入全部的模块；
@@ -76,4 +76,4 @@ modprobe -r 模块名
 这里，移除已加载的模块，和rmmod功能相同。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

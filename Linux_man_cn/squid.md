@@ -13,7 +13,7 @@ squid服务器守护进程
 squid(选项)
 ```
 
-### 选项  
+  
 
 ```
 -d：将指定调试等级的信息发送到标准错误设备；
@@ -28,4 +28,3 @@ squid(选项)
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

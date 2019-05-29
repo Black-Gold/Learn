@@ -13,7 +13,7 @@ arpd
 arpd(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -l：将arp数据库输出到标准输出设备显示并退出；
@@ -43,4 +43,3 @@ arpd -l -b /var/tmp/arpd.db
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

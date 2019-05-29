@@ -13,7 +13,7 @@ dhcrelay
 dhcrelay [选项] [DHCP服务器]
 ```
 
-### 选项  
+  
 
 ```
 -c <跳数> 当转发数据包时，dhcrelay丢弃已经达到一个最大跳数的数据包。默认值是10，最大值是255
@@ -42,4 +42,4 @@ Sending on  LPF/eth0/00:0c:27:fc:25:ec
 Sending on  Socket/fallback
 ```
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

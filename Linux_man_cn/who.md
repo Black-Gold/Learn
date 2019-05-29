@@ -13,7 +13,7 @@ who
 who(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -H或--heading：显示各栏位的标题信息列；
@@ -52,4 +52,3 @@ root     + pts/1        2013-12-20 10:37 (180.111.155.40)
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

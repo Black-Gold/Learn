@@ -13,7 +13,7 @@ pathchk
 pathchk(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -p：检查大多数的POSIX系统；
@@ -29,4 +29,3 @@ pathchk(选项)(参数)
 *   后缀：可选参数，指定要去除的文件后缀字符串。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

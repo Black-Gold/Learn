@@ -13,7 +13,7 @@ less
 less(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -e：文件内容显示完毕后，自动退出；
@@ -31,4 +31,3 @@ less(选项)(参数)
 文件：指定要分屏显示内容的文件。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

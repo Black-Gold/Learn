@@ -23,7 +23,7 @@ q：退出ed编辑器。
 ed(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -G或——traditional：提供兼容的功能；
@@ -38,4 +38,3 @@ ed(选项)(参数)
 文件：待编辑的文件。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -13,7 +13,7 @@ ipcs
 ipcs(选项)
 ```
 
-### 选项  
+  
 
 ```
 -a：显示全部可显示的信息；
@@ -35,4 +35,3 @@ key        shmid      owner      perms      bytes      nattch     status
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

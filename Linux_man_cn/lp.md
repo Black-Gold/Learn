@@ -13,7 +13,7 @@ lp
 lp(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -E：与打印服务器连接时强制使用加密；
@@ -71,4 +71,3 @@ lp -s myfile
 *   >0：没有输出设备可用，或者出现一个错误。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

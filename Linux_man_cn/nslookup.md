@@ -17,7 +17,7 @@ nslookup4有两种工作模式，即“交互模式”和“非交互模式”�
 nslookup(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -sil：不显示任何警告信息。
@@ -41,4 +41,3 @@ Address: 100.42.212.8
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

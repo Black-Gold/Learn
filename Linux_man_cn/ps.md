@@ -8,7 +8,7 @@
 
 Usage: ps [options]
 
-## 选项  
+  
 
 ```sh
 基本选项

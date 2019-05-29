@@ -13,7 +13,7 @@ unarj
 unarj(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 e：解压缩.arj文件；
@@ -27,4 +27,3 @@ x：解压缩时保留原有的路径。
 .arj压缩包：指定要解压缩的.arj压缩包。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

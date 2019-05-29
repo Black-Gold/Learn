@@ -13,7 +13,7 @@ proftpd服务器的连接状态
 ftptop(选项)
 ```
 
-### 选项  
+  
 
 ```
 -D：过滤正在下载的会话；
@@ -22,4 +22,3 @@ ftptop(选项)
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

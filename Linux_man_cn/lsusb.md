@@ -15,7 +15,7 @@ lsusb命令是一个学习USB驱动开发，认识USB设备的助手，推荐大
 lsusb(选项)
 ```
 
-### 选项  
+  
 
 ```
 -v：显示USB设备的详细信息；
@@ -72,4 +72,3 @@ Bus 002 Device 001: ID 0000:0000**
 *   一个是usb鼠标  -- 006
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

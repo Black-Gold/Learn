@@ -13,7 +13,7 @@ ftp
 ftp(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -d：详细显示指令执行过程，便于排错或分析程序执行的情况；
@@ -89,4 +89,4 @@ ftp> mput *.txt           # 可以上传多个文件
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

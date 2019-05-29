@@ -13,7 +13,7 @@ lpq
 lpq(选项)
 ```
 
-### 选项  
+  
 
 ```
 -E：强制使用加密方式与服务器连接；
@@ -26,4 +26,3 @@ lpq(选项)
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

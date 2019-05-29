@@ -6,7 +6,7 @@
 
 strace的最简单的用法就是执行一个指定的命令，在指定的命令结束之后它也就退出了。在命令执行的过程中，strace会记录和解析命令进程的所有系统调用以及这个进程所接收到的所有的信号值。
 
-## 选项
+
 
 ```info
 -c 统计每一系统调用的所执行的时间,次数和出错的次数等.
@@ -397,4 +397,3 @@ lrwx------    1 oracle   dba            64 Dec 30 10:55 25 -> /db/databases/orcl
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

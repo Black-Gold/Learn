@@ -13,7 +13,7 @@ emacs
 emacs(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 +<行号>：启动emacs编辑器，并将光标移动到制定行号的行；
@@ -158,4 +158,3 @@ C-x C-q : 修改buffer的只读属性
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

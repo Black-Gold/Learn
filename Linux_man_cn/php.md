@@ -13,7 +13,7 @@ PHP语言的命令行接口
 php(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -a：进入交互模式；
@@ -25,4 +25,3 @@ php(选项)(参数)
 文件：要执行的php脚本。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

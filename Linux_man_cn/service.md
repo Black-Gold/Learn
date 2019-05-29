@@ -13,7 +13,7 @@ service
 service(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -h：显示帮助信息；
@@ -56,4 +56,3 @@ service mysqld restart
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

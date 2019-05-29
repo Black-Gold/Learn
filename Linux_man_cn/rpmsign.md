@@ -13,7 +13,7 @@ rpmsign
 rpmsign(选项)
 ```
 
-### 选项  
+  
 
 ```
 --addsign：为自动软件包添加签名；
@@ -26,4 +26,3 @@ rpmsign(选项)
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

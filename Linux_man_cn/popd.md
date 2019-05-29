@@ -13,7 +13,7 @@ popd
 pushd(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 +N：将第N个目录删除（从左边数起，数字从0开始）；
@@ -38,4 +38,3 @@ root@Mylinux:/tmp/dir4# popd -2
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

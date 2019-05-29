@@ -159,7 +159,7 @@ n 相当于其它调试器中的“Step Over (单步跟踪)”。 这两个命�
 gdb(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -cd：设置工作目录；
@@ -458,4 +458,3 @@ The program is running. exit anyway? (y or n)
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -13,7 +13,7 @@ systool
 systool(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -a：显示被请求资源的属性；
@@ -202,4 +202,3 @@ Supported sysfs modules:
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

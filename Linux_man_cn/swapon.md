@@ -13,7 +13,7 @@ swapon
 swapon(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -a：将/etc/fstab文件中所有设置为swap的设备，启动为交换区；
@@ -39,4 +39,3 @@ Filename                                type            Size    Used    Priority
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

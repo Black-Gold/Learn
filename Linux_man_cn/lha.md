@@ -7,7 +7,7 @@ lha
 
 **lha命令** 是从lharc演变而来的压缩程序，文件经它压缩后，会另外产生具有`.lzh`扩展名的压缩文件。
 
-### 选项  
+  
 
 ```
 -a或a：压缩文件，并加入到压缩文件内。
@@ -43,4 +43,3 @@ lha -xiw=agis abc          #解压文件abc，到当前目录
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

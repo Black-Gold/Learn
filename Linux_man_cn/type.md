@@ -22,7 +22,7 @@ type
 type(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -t：输出“file”、“alias”或者“builtin”，分别表示给定的指令为“外部指令”、“命令别名”或者“内部指令”；
@@ -66,4 +66,3 @@ grep is /bin/grep
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

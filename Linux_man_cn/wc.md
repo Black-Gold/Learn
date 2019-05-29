@@ -13,7 +13,7 @@ wc
 wc(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```bash
 -c # 统计字节数，或--bytes或——chars：只显示Bytes数；。
@@ -63,4 +63,4 @@ ls -l | wc -l
 8
 ```
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

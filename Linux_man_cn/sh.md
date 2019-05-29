@@ -13,7 +13,7 @@ shell命令解释器
 bash [options] [file]
 ```
 
-### 选项  
+  
 
 ```
 -c string：命令从-c后的字符串读取。
@@ -59,4 +59,3 @@ bash [options] [file]
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

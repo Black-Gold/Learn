@@ -13,7 +13,7 @@ fold
 fold(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -b或——bytes：以Byte为单位计算列宽，而非采用行数编号为单位；
@@ -26,4 +26,3 @@ fold(选项)(参数)
 文件：指定要显示内容的文件。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

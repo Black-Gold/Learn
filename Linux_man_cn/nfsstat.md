@@ -13,7 +13,7 @@ nfsstat
 nfsstat(选项)
 ```
 
-### 选项  
+  
 
 ```
 -s：仅列出NFS服务器端状态；
@@ -53,4 +53,3 @@ nfsstat –s
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

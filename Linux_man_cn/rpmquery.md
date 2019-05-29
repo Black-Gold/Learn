@@ -13,7 +13,7 @@ rpmquery
 rpmquery(选项)
 ```
 
-### 选项  
+  
 
 ```
 -qf：查询指定的文件所属的软件包；
@@ -33,4 +33,3 @@ httpd-2.2.3-81.el5.centos
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

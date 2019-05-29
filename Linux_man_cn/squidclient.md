@@ -13,7 +13,7 @@ squid服务器的客户端管理工具
 squidclient(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -a：不包含“accept:header”；
@@ -31,4 +31,3 @@ squidclient(选项)(参数)
 URL：指定操作缓存中的URL。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

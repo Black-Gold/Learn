@@ -34,4 +34,3 @@ find / -name password       #前台执行命令
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

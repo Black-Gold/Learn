@@ -13,7 +13,7 @@ edquota
 edquota(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -u：设置用户的quota，这是预设的参数；
@@ -200,4 +200,3 @@ Filesystem blocks quota limit grace file quota limit grace
 2.  如果不带任何参数运行quota的话，查看的是你自己的配额使用情况。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

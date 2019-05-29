@@ -13,7 +13,7 @@ repquota
 repquota(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -a：列出在/etc/fstab文件里，有加入quota设置的分区的使用状况，包括用户和群组；
@@ -35,4 +35,3 @@ repquota -a
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

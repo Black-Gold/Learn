@@ -13,7 +13,7 @@ arp
 arp(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -a<主机>：显示arp缓冲区的所有条目；
@@ -43,4 +43,3 @@ Entries: 2      Skipped: 0      Found: 2
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

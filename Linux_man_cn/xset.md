@@ -13,7 +13,7 @@ xset
 xset(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -b：蜂鸣器开关设置；
@@ -26,4 +26,3 @@ xset(选项)(参数)
 *   s：屏幕保护程序设置。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

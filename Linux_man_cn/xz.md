@@ -11,7 +11,7 @@ xz(选项)(参数)
 xz [OPTION]... [FILE]...
 ```
 
-### 选项  
+  
 
 ```bash
 -z, --compress      强制压缩

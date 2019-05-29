@@ -13,7 +13,7 @@ du
 du [选项][文件]
 ```
 
-### 选项  
+  
 
 ```
 -a或-all 显示目录中个别文件的大小。
@@ -93,4 +93,4 @@ du -sh /etc
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

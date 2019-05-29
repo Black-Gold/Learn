@@ -13,7 +13,7 @@ mkisofs
 mkisofs(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -a或--all：mkisofs通常不处理备份文件。使用此参数可以把备份文件加到映像文件中；
@@ -98,4 +98,3 @@ mkisofs -R -J -T -v -no-emul-boot -boot-load-size 4 -boot-info-table -V RHEL4ASD
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

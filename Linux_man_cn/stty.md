@@ -13,7 +13,7 @@ stty
 stty(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -a：以容易阅读的方式打印当前的所有配置；
@@ -94,4 +94,3 @@ read -t 10 varname
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

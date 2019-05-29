@@ -13,7 +13,7 @@ ncftp
 ncftp(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -u：指定登录FTP服务器时使用的用户名；
@@ -61,4 +61,3 @@ ncftp的基本命令和普通ftp一样，可以输入help获得命令列表。�
 *   lrmdir: 删除本地目录。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

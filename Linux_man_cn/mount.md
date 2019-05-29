@@ -16,7 +16,7 @@ mount [-fnrsvw] [-o options [,...]] device | dir
 mount [-fnrsvw] [-t vfstype] [-o options] device dir
 ```
 
-### 选项  
+  
 
 ```
 -V：显示程序版本
@@ -76,4 +76,4 @@ ls /mnt/cdrom
 umount /mnt/cdrom (注意卸载时不要在当前/mnt/cdrom目录中，不然会提示设备忙的错误信息)
 ```
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

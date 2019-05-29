@@ -15,7 +15,7 @@ TFTP是用来下载远程文件的最简单网络协议，它其于UDP协议而�
 tftp(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -c：指定与tftp服务器连接成功后，立即要执行的指令；
@@ -155,4 +155,3 @@ tftp -g -r embedexpert 192.168.1.2
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

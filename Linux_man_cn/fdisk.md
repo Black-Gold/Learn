@@ -13,7 +13,7 @@ fdisk
 fdisk(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
  -b <大小>             扇区大小(512、1024、2048或4096)
@@ -318,4 +318,4 @@ proc                    /proc                   proc    defaults        0 0
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

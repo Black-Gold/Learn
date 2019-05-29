@@ -17,7 +17,7 @@ eject允许可移动介质（典型是cd-ROM、软盘、磁带、或者JAZ以及
 eject(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -a<开关>或--auto<开关>：控制设备的自动退出功能；
@@ -38,4 +38,3 @@ eject(选项)(参数)
 设备名：指定弹出的设备名称。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

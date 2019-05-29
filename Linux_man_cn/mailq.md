@@ -13,7 +13,7 @@ mailq
 mailq(选项)
 ```
 
-### 选项  
+  
 
 ```
 -v：显示详细的信息。
@@ -28,4 +28,3 @@ mailq(选项)
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

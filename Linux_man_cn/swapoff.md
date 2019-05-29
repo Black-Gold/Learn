@@ -13,7 +13,7 @@ swapoff
 swapoff(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -a：关闭配置文件“/etc/fstab”中所有的交换空间。
@@ -32,4 +32,3 @@ swapoff /dev/sda2
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

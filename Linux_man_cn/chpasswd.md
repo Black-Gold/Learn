@@ -13,7 +13,7 @@ chpasswd
 chpasswd(选项)
 ```
 
-### 选项  
+  
 
 ```
 -e：输入的密码是加密后的密文；
@@ -32,4 +32,3 @@ chpasswd < user.txt
 以上是运用chpasswd命令来批量修改密码。是linux系统管理中的捷径。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

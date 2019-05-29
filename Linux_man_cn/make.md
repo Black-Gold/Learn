@@ -13,7 +13,7 @@ GNU的工程化编译工具
 make(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -f：指定“makefile”文件；
@@ -49,4 +49,3 @@ Linux下常用选项与Unix系统中稍有不同，下面是不同的部分：
 因此，有效的利用make和 makefile工具可以大大提高项目开发的效率。同时掌握make和makefile之后，您也不会再面对着Linux下的应用软件手足无措了。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

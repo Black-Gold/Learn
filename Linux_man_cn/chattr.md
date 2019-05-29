@@ -24,7 +24,7 @@ u：预防意外删除。
 chattr(选项)
 ```
 
-### 选项  
+  
 
 ```
 -R：递归处理，将指令目录下的所有文件及子目录一并处理；
@@ -52,4 +52,3 @@ chattr +a /data1/user_act.log
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -13,7 +13,7 @@ chsh
 chsh(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -s<shell 名称>或--shell<shell 名称>：更改系统预设的shell环境。；
@@ -90,4 +90,3 @@ Shell changed.
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

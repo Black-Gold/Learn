@@ -15,7 +15,7 @@ route
 route(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -A：设置地址类型；
@@ -102,4 +102,3 @@ route add default gw 192.168.120.240
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

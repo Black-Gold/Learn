@@ -22,7 +22,7 @@ more
 more(语法)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -<数字>：指定每屏显示的行数；
@@ -52,4 +52,3 @@ more -c -10 file
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

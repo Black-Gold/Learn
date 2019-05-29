@@ -15,7 +15,7 @@ rm
 rm (选项)(文件)
 ```
 
-### 选项  
+  
 
 ```
   -f, --force           忽略不存在的文件和参数，不提示直接强制删除
@@ -71,4 +71,4 @@ Remove example ?y（删除文件example)
 应注意，这样做是非常危险的!
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

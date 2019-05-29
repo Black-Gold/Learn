@@ -13,7 +13,7 @@ slabtop
 slabtop(选项)
 ```
 
-### 选项  
+  
 
 ```
 --delay=n, -d n：每n秒更新一次显示的信息，默认是每3秒；
@@ -91,4 +91,3 @@ slabtop
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

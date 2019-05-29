@@ -21,7 +21,7 @@ ulimit 用于限制 shell 启动进程所占用的资源，支持以下各种类
 ulimit(选项)
 ```
 
-### 选项  
+  
 
 ```
 -a：显示目前资源限制的设定；
@@ -62,4 +62,3 @@ file locks                      (-x) unlimited   #所能锁住的文件的最大
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

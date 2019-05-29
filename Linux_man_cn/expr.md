@@ -59,7 +59,7 @@ expr
 
 ```
 
-### 选项  
+  
 
 ```
 --help：显示指令的帮助信息；
@@ -81,4 +81,3 @@ expr dfa : '[a-zA-Z]*'  #输出是3
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

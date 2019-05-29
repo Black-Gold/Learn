@@ -35,4 +35,3 @@ alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-ti
 上面的命令执行后，将输出当前系统下的命令别名。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

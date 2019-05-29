@@ -13,7 +13,7 @@ gpm
 gpm(选项)
 ```
 
-### 选项  
+  
 
 ```
 -a：设置加速值；
@@ -24,4 +24,3 @@ gpm(选项)
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -13,7 +13,7 @@ file
 file(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -b：列出辨识结果时，不显示文件名称；
@@ -69,4 +69,3 @@ lrwxrwxrwx 1 root root 10 08-13 00:11 /var/mail -> spool/mail
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -13,7 +13,7 @@ dhclient
 dhclient(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 0：指定dhcp客户端监听的端口号；
@@ -34,4 +34,3 @@ dhclient        #获取IP
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

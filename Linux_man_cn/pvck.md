@@ -13,7 +13,7 @@ pvck
 pvck(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -d：调试模式；
@@ -39,4 +39,3 @@ size=70656, offset2=0 size2=0
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

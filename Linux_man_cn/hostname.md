@@ -13,7 +13,7 @@ hostname
 hostname(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -v：详细信息模式；
@@ -37,4 +37,3 @@ AY1307311912260196fcZ
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

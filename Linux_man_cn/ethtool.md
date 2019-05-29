@@ -23,7 +23,7 @@ ethtool [-s] ethX [speed 10|100|1000] [duplex half|full] [autoneg on|off] [port 
 [wol p|u|m|b|a|g|s|d...] [sopass xx:yy:zz:aa:bb:cc] [msglvl N]
 ```
 
-### 选项  
+  
 
 ```
 -a 查看网卡中 接收模块RX、发送模块TX和Autonegotiate模块的状态：启动on 或 停用off。
@@ -242,4 +242,3 @@ ethtool -s eth0 speed 100   
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

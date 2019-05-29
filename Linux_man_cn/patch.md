@@ -13,7 +13,7 @@ patch
 patch(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -b或--backup：备份每一个原始文件；
@@ -56,4 +56,3 @@ patch(选项)(参数)
 *   补丁文件：指定补丁文件。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

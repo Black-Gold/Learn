@@ -13,7 +13,7 @@ Debian Linux中软件包的查询工具
 dpkg-query(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -l：列出符合匹配模式的软件包；
@@ -68,4 +68,3 @@ dpkg-query -W -f='${Status} ${Version}\n' apache-perl
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

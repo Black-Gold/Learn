@@ -21,4 +21,4 @@ source [文件名] [参数]
 [root@localhost ~]# source ~/.bash_profile
 ```
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

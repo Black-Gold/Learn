@@ -13,7 +13,7 @@ bmodinfo
 bmodinfo(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -a：显示模块作者；
@@ -47,4 +47,3 @@ depends:    scsi_mod
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

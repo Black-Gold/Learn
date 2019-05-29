@@ -15,7 +15,7 @@ rexec命令通过检查`$HOME/.netrc`文件（包含远程主机上使用的用�
 rexec(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -a：表示远程命令的标准错误与标准输出相同，不支持发送任意信号到远程进程；
@@ -58,4 +58,3 @@ rexec host1 ls -l /home/karen
 如果没有远程主机的`$HOME/.netrc`文件中的有效项，将提示您输入登录标识和密码。输入要求的登录信息后，在远程主机host1上的karen用户的目录列表显示在本地系统上。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

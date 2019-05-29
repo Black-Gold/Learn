@@ -13,7 +13,7 @@ shell环境中测试条件表达式工具
 test(选项)
 ```
 
-### 选项  
+  
 
 ```
 -b<文件>：如果文件为一个块特殊文件，则为真；
@@ -96,4 +96,3 @@ test –x File   #文件属否存在并可执行
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -13,7 +13,7 @@ unzip
 unzip(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -c：将解压缩的结果显示到屏幕上，并对字符做适当的转换；
@@ -73,4 +73,3 @@ unzip -o test.zip -d tmp/
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

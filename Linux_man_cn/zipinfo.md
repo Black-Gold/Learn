@@ -13,7 +13,7 @@ zipinfo
 zipinfo(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -1：只列出文件名称；
@@ -35,4 +35,3 @@ zipinfo(选项)(参数)
 文件：指定zip格式的压缩包。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

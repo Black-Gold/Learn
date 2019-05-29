@@ -13,7 +13,7 @@ nmcli
 nmcli [OPTIONS] OBJECT { COMMAND | help }
 ```
 
-### 选项  
+  
 
 ```bash
 OPTIONS
@@ -53,4 +53,3 @@ nmcli con add help              # 查看帮助
 
 ```
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

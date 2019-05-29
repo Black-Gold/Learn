@@ -13,7 +13,7 @@ fsck
 fsck(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -a：自动修复文件系统，不询问任何问题；
@@ -53,4 +53,3 @@ fsck
 结束后同样使用reboot命令重启系统这样就好了！
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

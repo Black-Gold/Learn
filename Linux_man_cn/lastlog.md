@@ -15,7 +15,7 @@ lastlog文件在每次有用户登录时被查询。可以使用lastlog命令检
 lastlog(选项)
 ```
 
-### 选项  
+  
 
 ```
 -b<天数>：显示指定天数前的登录信息；
@@ -56,4 +56,3 @@ mysql                                       **Never logged in**
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

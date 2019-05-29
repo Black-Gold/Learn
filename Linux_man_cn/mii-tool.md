@@ -13,7 +13,7 @@ mii-tool
 usage: mii-tool [-VvRrwl] [-A media,... | -F media] [interface ...]
 ```
 
-### 选项  
+  
 
 ```
 -V 显示版本信息；
@@ -70,4 +70,3 @@ eth0: 100 Mbit, full duplex, link ok
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

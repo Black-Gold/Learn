@@ -13,7 +13,7 @@ dircolors
 dircolors(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -b或--sh或--bourne-shell：显示在Boume shell中，将LS_COLORS设为目前预设置的shell指令；
@@ -142,4 +142,3 @@ exec 01;32
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

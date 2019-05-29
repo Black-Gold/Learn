@@ -13,7 +13,7 @@ rmmod
 rmmod(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -v：显示指令执行的详细信息；
@@ -39,4 +39,3 @@ raid1                  25153  0
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

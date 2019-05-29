@@ -13,7 +13,7 @@ groups
 groups(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -help：显示命令的帮助信息；
@@ -34,4 +34,3 @@ linux : linux adm dialout cdrom plugdev lpadmin admin sambashare
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

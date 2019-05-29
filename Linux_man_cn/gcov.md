@@ -13,7 +13,7 @@ gcov
 gcov(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -h：显示帮助信息；
@@ -27,4 +27,3 @@ gcov(选项)(参数)
 V语言文件：C语言源代码文件。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

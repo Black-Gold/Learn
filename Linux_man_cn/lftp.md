@@ -13,7 +13,7 @@ lftp
 lftp(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -f：指定lftp指令要执行的脚本文件；
@@ -116,4 +116,3 @@ set pget:default-n 5
 这样，就不用每次进入都要打命令了。其他的set可以自己tab然后help来看。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

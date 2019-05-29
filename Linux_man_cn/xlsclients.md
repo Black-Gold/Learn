@@ -13,7 +13,7 @@ xlsclients
 xlsclients(选项)
 ```
 
-### 选项  
+  
 
 ```
 -a：列出所有显示器的客户端应用程序信息；
@@ -23,4 +23,3 @@ xlsclients(选项)
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

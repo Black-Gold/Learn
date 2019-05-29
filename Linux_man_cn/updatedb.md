@@ -15,7 +15,7 @@ updatedb
 updatedb(选项)
 ```
 
-### 选项  
+  
 
 ```
 -o<文件>：忽略默认的数据库文件，使用指定的slocate数据库文件；
@@ -32,4 +32,3 @@ updatedb -U /usr/local/  更新指定命令的slocate数据库
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

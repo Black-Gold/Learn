@@ -13,7 +13,7 @@ nmap
 nmap(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -O：激活操作探测；
@@ -69,4 +69,3 @@ Nmap finished: 1 IP address (1 host up) scanned in 45.870 seconds
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

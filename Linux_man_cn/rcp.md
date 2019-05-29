@@ -13,7 +13,7 @@ rcp
 rcp(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -p：保留源文件或目录的属性，包括拥有者、所属群组、权限与时间；
@@ -122,4 +122,4 @@ rcp –r webserver1:/home/root/work .Enter
 `.`表示当前目录。将在此目录下创建 work 目录。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

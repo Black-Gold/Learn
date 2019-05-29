@@ -74,4 +74,3 @@ rename "s//.txt//" *      //把所有以.txt结尾的文件名的.txt删掉
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

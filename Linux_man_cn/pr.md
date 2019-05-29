@@ -13,7 +13,7 @@ pr
 pr(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -h<标题>：为页指定标题；
@@ -25,4 +25,3 @@ pr(选项)(参数)
 文件：需要转换格式的文件。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

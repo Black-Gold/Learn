@@ -15,7 +15,7 @@ chgrp
 chgrp [选项][组群][文件|目录]
 ```
 
-### 选项  
+  
 
 ```
 -R 递归式地改变指定目录及其下的所有子目录和文件的所属的组
@@ -49,4 +49,4 @@ chgrp -R mengxin /usr/meng
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

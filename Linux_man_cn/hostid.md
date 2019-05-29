@@ -13,7 +13,7 @@ hostid
 hostid
 ```
 
-### 选项  
+  
 
 ```
 --help：显示帮助信息；
@@ -28,4 +28,3 @@ hostid
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

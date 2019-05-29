@@ -15,7 +15,7 @@ Debian Linux中重新配制一个已经安装的软件包
 dpkg-reconfigure(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -a：重新配置所有的软件包；
@@ -42,4 +42,3 @@ sudo dpkg-reconfigure locales
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

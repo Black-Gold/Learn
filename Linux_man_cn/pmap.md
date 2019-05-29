@@ -13,7 +13,7 @@ pmap
 pmap(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -x：显示扩展格式；
@@ -121,4 +121,3 @@ total kB           72880   22940   22000
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

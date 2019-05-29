@@ -23,7 +23,7 @@ make
 make install
 ```
 
-### 选项  
+  
 
 <table>
 
@@ -396,4 +396,3 @@ iperf -c 192.168.1.1  -d -t 60
 进行上下行带宽测试。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

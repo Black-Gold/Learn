@@ -13,7 +13,7 @@ MySQL服务器管理客户端
 mysqladmin(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -h：MySQL服务器主机名或ip地址；
@@ -49,4 +49,3 @@ version：得到服务器的版本信息。
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

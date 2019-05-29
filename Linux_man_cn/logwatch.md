@@ -13,7 +13,7 @@ logwatch
 logwatch(选项)
 ```
 
-### 选项  
+  
 
 ```
 --detail<报告详细程度>：指定日志报告的详细程度；
@@ -68,4 +68,3 @@ logwatch --service sshd --detail High                       只看sshd的日志�
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

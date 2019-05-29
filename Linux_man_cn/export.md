@@ -15,7 +15,7 @@ export
 export(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -f：代表[变量名称]中为函数名称；
@@ -56,4 +56,3 @@ declare -x USER="root"
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

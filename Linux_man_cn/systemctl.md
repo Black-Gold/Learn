@@ -318,4 +318,3 @@ journalctl --vacuum-size=1G
 journalctl --vacuum-time=1years
 ```
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

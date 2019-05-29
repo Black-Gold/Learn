@@ -1,6 +1,6 @@
 # **poweroff**
 
-## 选项  
+  
 
 ```sh
 --halt       Halt the machine

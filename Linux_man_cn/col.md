@@ -13,7 +13,7 @@ col
 col(选项)
 ```
 
-### 选项  
+  
 
 ```
 -b：过滤掉所有的控制字符，包括RLF和HRLF；
@@ -23,4 +23,3 @@ col(选项)
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

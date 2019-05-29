@@ -13,7 +13,7 @@ ld
 ld(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -o：指定输出文件名；
@@ -25,4 +25,3 @@ ld(选项)(参数)
 目标文件：指定需要连接的目标文件。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

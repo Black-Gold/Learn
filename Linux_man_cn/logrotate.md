@@ -13,7 +13,7 @@ logrotate
 logrotate(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -?或--help：在线帮助；
@@ -29,4 +29,3 @@ logrotate(选项)(参数)
 配置文件：指定lograote指令的配置文件。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

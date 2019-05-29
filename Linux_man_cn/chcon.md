@@ -15,7 +15,7 @@ chcon [选项]... [-u 用户] [-r 角色] [-l 范围] [-t 类型] 文件...
 chcon [选项]... --reference=参考文件 文件...
 ```
 
-### 选项  
+  
 
 ```
 -h, --no-dereference：影响符号连接而非引用的文件。
@@ -72,4 +72,3 @@ chcon -t public_content_t /directories
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

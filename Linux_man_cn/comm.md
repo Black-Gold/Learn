@@ -17,7 +17,7 @@ comm
 comm [选项]... 文件1 文件2
 ```
 
-### 选项  
+  
 
 ```
 如果不附带选项，程序会生成三列输出。
@@ -141,4 +141,3 @@ jjj
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

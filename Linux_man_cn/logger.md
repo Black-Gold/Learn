@@ -13,7 +13,7 @@ logger
 logger [options] [message]
 ```
 
-### 选项  
+  
 
 ```
  -T, --tcp             使用流连接(TCP)
@@ -39,4 +39,4 @@ logger -p syslog.info "backup.sh is starting"
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

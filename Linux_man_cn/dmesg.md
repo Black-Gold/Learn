@@ -13,7 +13,7 @@ dmesg
 dmesg(选项)
 ```
 
-### 选项  
+  
 
 ```
 -c：显示信息后，清除ring buffer中的内容；
@@ -50,4 +50,4 @@ dmesg | grep sda
 [    2.448503] sd 0:0:0:0: [sda] Attached SCSI disk
 ```
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

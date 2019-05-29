@@ -13,7 +13,7 @@ crontab
 crontab(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -e：编辑该用户的计时器设置；
@@ -204,4 +204,3 @@ chkconfig –level 35 crond on
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

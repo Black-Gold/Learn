@@ -13,7 +13,7 @@ lsattr
 lsattr(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -E：可显示设备属性的当前值，但这个当前值是从用户设备数据库中获得的，而不是从设备直接获得的。
@@ -37,4 +37,3 @@ lsattr -EO -l rmt0
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

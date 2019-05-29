@@ -15,7 +15,7 @@ Usage: ar [emulation options] [-]{dmpqrstx}[abcDfilMNoPsSTuvV] [--plugin <name>]
        ar -M [<mri-脚本]
 ```
 
-### 选项  
+  
 
 
 ```
@@ -101,4 +101,4 @@ d.c
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

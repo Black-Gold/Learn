@@ -13,7 +13,7 @@ lpstat
 lpstat(选项)
 ```
 
-### 选项  
+  
 
 ```
 -E：与打印机连接时加密；
@@ -30,4 +30,3 @@ lpstat(选项)
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

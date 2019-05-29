@@ -18,7 +18,7 @@ tailf和tail -f的区别
 tailf logfile # 动态跟踪日志文件logfile，最初的时候打印文件的最后10行内容。
 ```
 
-### 选项  
+  
 
 ```bash
 -n, --lines NUMBER  # 输出最后数行
@@ -38,4 +38,4 @@ tailf -n 5 log2014.log   # 显示文件最后5行内容
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

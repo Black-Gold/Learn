@@ -13,7 +13,7 @@ zipsplit
 zipsplit(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -n：指定分割后每个zip文件的大小；
@@ -26,4 +26,3 @@ zipsplit(选项)(参数)
 文件：指定要分割的zip压缩包。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -13,7 +13,7 @@ Debian Linux中将大软件包分割成小包
 dpkg-split(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -S：设置分割后的每个小文件最大尺寸（以字节为单位）；
@@ -43,4 +43,3 @@ dpkg-split -j "foo*"
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -13,7 +13,7 @@ chkconfig
 chkconfig(选项)
 ```
 
-### 选项  
+  
 
 ```bash
 --add：增加所指定的系统服务，让chkconfig指令得以管理它，并同时在系统启动的叙述文件内增加相关数据；
@@ -76,4 +76,4 @@ chkconfig –level redis 2345 on # 把redis在运行级别为2、3、4、5的情
 3.  `chkconfig --level 35 mysqld on`修改服务的默认启动等级。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

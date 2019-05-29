@@ -13,7 +13,7 @@ ssh-copy-id
 ssh-copy-id [-i [identity_file]] [user@]machine
 ```
 
-### 选项  
+  
 
 ```
 -i：指定公钥文件
@@ -29,4 +29,3 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub user@server
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

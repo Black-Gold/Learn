@@ -13,7 +13,7 @@ Debian Linux中软件包安装之前询问问题
 dpkg-preconfigure(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -f：选择使用的前端；
@@ -34,4 +34,3 @@ dpkg-preconfigure /var/cache/apt/archives/mysql-server-5.5*.deb
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

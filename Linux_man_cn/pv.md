@@ -21,7 +21,7 @@ pv(选项)(参数)
 pv [OPTION] [FILE]...
 ```
 
-### 选项  
+  
 
 ```
 -p, --progress           show progress bar
@@ -96,4 +96,3 @@ sudo pv -cN source < /Users/kacperwang/Downloads/CentOS-7-x86_64-Everything-1511
 source:  5.2GiB 5:11:41 [ 503KiB/s] [=====================>       ] 71% ETA 2:01:56
 ```
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

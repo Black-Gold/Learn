@@ -13,7 +13,7 @@ unexpand
 unexpand(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -a或--all：转换文件中所有的空白字符；
@@ -26,4 +26,3 @@ unexpand(选项)(参数)
 文件：指定要转换空白为TAB的文件列表。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

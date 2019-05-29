@@ -13,7 +13,7 @@ quota
 quota(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -g：列出群组的磁盘空间限制；
@@ -148,4 +148,3 @@ Disk quotas for group qgroup (gid 502):
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

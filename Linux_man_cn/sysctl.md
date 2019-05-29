@@ -13,7 +13,7 @@ sysctl
 sysctl(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -n：打印值时不打印关键字；
@@ -186,4 +186,3 @@ net.ipv4.icmp_echo_ignore_all = 1
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

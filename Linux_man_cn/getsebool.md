@@ -13,7 +13,7 @@ getsebool
 getsebool [-a] [布尔值条款]
 ```
 
-### 选项  
+  
 
 ```
 -a：列出目前系统上面的所有布尔值条款设置为开启或关闭值。
@@ -41,4 +41,3 @@ setsebool -P httpd_enable_homedirs=0    //0是关闭  1是开启
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

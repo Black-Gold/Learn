@@ -13,7 +13,7 @@ pkill
 pkill(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -o：仅向找到的最小（起始）进程号发送信号；
@@ -39,4 +39,3 @@ pkill gaim
 也就是说：kill对应的是PID，pkill对应的是command。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -10,7 +10,7 @@ locate指定用在搜寻符合条件的档案，它会去储存档案与目录�
 
 locate指令和find找寻档案的功能类似，但locate是透过update程序将硬盘中的所有档案和目录资料先建立一个索引数据库，在 执行loacte时直接找该索引，查询速度会较快，索引数据库一般是由操作系统管理，但也可以直接下达update强迫系统立即修改索引数据库
 
-## 选项
+
 
 ```info
 Usage: locate [OPTION]... [PATTERN]...      在mlocate数据库中搜索条目

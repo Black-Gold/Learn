@@ -12,7 +12,7 @@
 
 或：date [-u|--utc|--universal] [MMDDhhmm[[CC]YY][.ss]]
 
-## 选项  
+  
 
 ```info
 必选参数对长短选项同时适用

@@ -36,7 +36,7 @@ elf文件头描述elf文件的总体信息。包括：系统相关，类型相�
 *   加载相关：包括程序头表相关信息。 
 *   链接相关：节头表相关信息。 
 
-### 选项  
+  
 
 ```
 -a 
@@ -598,4 +598,3 @@ Key to Flags:
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

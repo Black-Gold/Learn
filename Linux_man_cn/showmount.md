@@ -13,7 +13,7 @@ showmount
 showmount(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -d：仅显示已被NFS客户端加载的目录；
@@ -25,4 +25,3 @@ showmount(选项)(参数)
 NFS服务器：指定NFS服务器的ip地址或者主机名。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

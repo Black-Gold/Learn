@@ -15,7 +15,7 @@ seq [选项]... 首数 尾数
 seq [选项]... 首数 增量 尾数
 ```
 
-### 选项  
+  
 
 ```
 -f, --format=格式        使用printf 样式的浮点格式
@@ -81,4 +81,3 @@ seq -s"`echo -e "\n"`" 9 11
 得到的是个错误结果，不过一般也没有这个必要，它默认的就是回车作为分隔符。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

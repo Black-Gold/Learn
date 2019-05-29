@@ -13,7 +13,7 @@ resize
 resize [-cu][-s <列数> <行数>]
 ```
 
-### 选项  
+  
 
 ```
 -c 　就算用户环境并非C Shell，也用C Shell指令改变视窗大小。
@@ -50,4 +50,4 @@ export COLUMNS LINES;
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

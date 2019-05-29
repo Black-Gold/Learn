@@ -13,7 +13,7 @@ seinfo
 seinfo（选项）
 ```
 
-### 选项  
+  
 
 ```
 -A：列出SELinux的状态、规则布尔值、身份识别、角色、类型等所有信息。
@@ -32,4 +32,3 @@ seinfo -b | grep httpd
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -13,7 +13,7 @@ atq
 atq(选项)
 ```
 
-### 选项  
+  
 
 ```
 -V：显示版本号；
@@ -33,4 +33,3 @@ atq
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

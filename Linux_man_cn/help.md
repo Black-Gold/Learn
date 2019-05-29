@@ -13,7 +13,7 @@ help
 help(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -s：输出短格式的帮助信息。仅包括命令格式。
@@ -41,4 +41,3 @@ shopt: shopt [-pqsu] [-o long-option] optname [optname...]
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

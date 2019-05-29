@@ -13,7 +13,7 @@ su
 su(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -c<指令>或--command=<指令>：执行完指定的指令后，即恢复原来的身份；
@@ -50,4 +50,3 @@ su -test
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

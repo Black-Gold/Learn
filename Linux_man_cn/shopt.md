@@ -13,7 +13,7 @@ shopt
 shopt(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -s：激活指定的shell行为选项；
@@ -57,4 +57,3 @@ cdspell on                #开启cdspell选项
 用户可以通过实际执行cd命令检查该选项是否被成功开启。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

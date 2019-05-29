@@ -17,7 +17,7 @@ rmdir
 rmdir(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -p或--parents：删除指定目录后，若该目录的上层目录已变成空目录，则将其一并删除；
@@ -41,4 +41,3 @@ rmdir -p bin/os_1
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

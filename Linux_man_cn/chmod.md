@@ -25,7 +25,7 @@ chmod
 chmod(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```bash
 u  # 操作对象简称，用户user，文件或目录的所有者。
@@ -88,4 +88,4 @@ ll -d f1  查看目录f1的属性
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

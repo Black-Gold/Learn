@@ -13,7 +13,7 @@ mke2fs
 mke2fs(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -b<区块大小>：指定区块大小，单位为字节；
@@ -48,4 +48,3 @@ mke2fs -q /dev/hda1
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

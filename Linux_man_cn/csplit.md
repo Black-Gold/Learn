@@ -13,7 +13,7 @@ csplit
 csplit(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -b<输出格式>或--suffix-format=<输出格式>：预设的输出格式其文件名称为xx00，xx01等，用户可以通过改变<输出格式>来改变输出的文件名；
@@ -73,4 +73,3 @@ rm server00.log    #是删除第一个文件，因为分割后的的第一个文
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

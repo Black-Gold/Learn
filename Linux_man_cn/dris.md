@@ -13,7 +13,7 @@ dris
 dris(选项)
 ```
 
-### 选项  
+  
 
 ```
 +n：显示从左边算起第n笔的目录；
@@ -22,4 +22,3 @@ dris(选项)
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

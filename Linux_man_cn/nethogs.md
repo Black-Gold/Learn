@@ -21,7 +21,7 @@ nethogs
 ```
 nethogs（选项）（参数）
 ```
-### 选项  
+  
 
 ```bash
 usage: nethogs [-V] [-h] [-b] [-d seconds] [-v mode] [-c count] [-t] [-p] [-s] [device [device [device ...]]]
@@ -144,4 +144,4 @@ $ sudo nethogs eth0 eth1
 关于NetHogs命令行工具的完整参数列表，可以参考NetHogs的手册，使用方法是在终端里输入`man nethogs`或者`sudo man nethogs`，更多信息请参考NetHogs项目主页。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

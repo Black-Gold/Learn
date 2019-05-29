@@ -13,7 +13,7 @@ named-checkzone
 named-checkzone [选项] [区域名] [区域文件名]
 ```
 
-### 选项  
+  
 
 ```
 -q 安静模式
@@ -40,4 +40,4 @@ zonesh.com/IN: loaded serial 1268360234
 OK
 ```
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

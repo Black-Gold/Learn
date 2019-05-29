@@ -13,7 +13,7 @@ uncompress
 uncompress(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -f：不提示用户，强制覆盖掉目标文件；
@@ -40,4 +40,3 @@ uncompress FileName.Z
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

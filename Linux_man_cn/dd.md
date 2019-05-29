@@ -9,7 +9,7 @@
 其次，dd命令可以创建一个固定大小的文件如下：
 dd if=/dev/zero of=/var/swap/file.swap bs=1024K count=64（ linux支持K单位，unix不支持；）
 
-## 选项
+
 
 ```sh
 bs=BYTES        一次读写BYTES字节数

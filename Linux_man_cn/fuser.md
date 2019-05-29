@@ -22,7 +22,7 @@ fuser
 fuser(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -a：显示命令行中指定的所有文件；
@@ -70,4 +70,3 @@ fuser -d /usr文件
 `/dev/mem`  也用于系统映像。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

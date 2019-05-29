@@ -17,7 +17,7 @@ whereis命令只能用于程序名的搜索，而且只搜索二进制文件（�
 whereis(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -b：只查找二进制文件；
@@ -65,4 +65,3 @@ svn:
 说明：`whereis -m svn`查出说明文档路径，`whereis -s svn`找source源文件。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

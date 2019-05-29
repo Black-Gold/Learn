@@ -13,7 +13,7 @@ iptraf
 iptraf(选项)
 ```
 
-### 选项  
+  
 
 ```
 -i网络接口：立即在指定网络接口上开启IP流量监视；
@@ -29,4 +29,3 @@ iptraf(选项)
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

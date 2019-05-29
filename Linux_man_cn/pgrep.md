@@ -13,7 +13,7 @@ pgrep
 pgrep(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -o：仅显示找到的最小（起始）进程号；
@@ -58,4 +58,3 @@ pgrep -lo httpd
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -4,7 +4,7 @@
 
 **vmstat命令** 的含义为显示虚拟内存状态（“Viryual Memor Statics”），但是它可以报告关于进程、内存、I/O等系统整体运行状态。
 
-### 选项  
+  
 
 ```info
 -a：显示活动内页；
@@ -94,4 +94,3 @@ wa的值高时，说明IO等待比较严重，这可能由于磁盘大量作随�
 *   id: 空闲时间百分比
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -7,7 +7,7 @@ objdump
 
 **objdump命令** 是用查看目标文件或者可执行的目标文件的构成的gcc工具。
 
-### 选项  
+  
 
 ```
 --archive-headers 
@@ -491,4 +491,3 @@ Idx Name          Size      VMA       LMA       File off  Algn
 这里，更多的内容参见`man objdump`中的这个选项。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

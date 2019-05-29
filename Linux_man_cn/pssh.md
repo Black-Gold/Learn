@@ -26,7 +26,7 @@ cd pssh-2.3.1/
 python setup.py install
 ```
 
-### 选项  
+  
 
 ```
 --version：查看版本
@@ -103,4 +103,3 @@ python setup.py install
 上面介绍的是pssh命令很少的一部分，大家可以将其用到适合自己的场景，发挥它的最大功效。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

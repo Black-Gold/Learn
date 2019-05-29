@@ -4,7 +4,7 @@
 
 **bzip2命令** 用于创建和管理（包括解压缩）“.bz2”格式的压缩包。我们遇见Linux压缩打包方法有很多种，以下讲解了Linux压缩打包方法中的Linux bzip2命令的多种范例供大家查看，相信大家看完后会有很多收获
 
-## 选项
+
 
 ```info
 用法: bzip2 [flags and input files in any order]

@@ -13,7 +13,7 @@ iconv
 iconv -f encoding [-t encoding] [inputfile]... 
 ```
 
-### 选项  
+  
 
 ```
 -f encoding :把字符从encoding编码开始转换。 
@@ -43,4 +43,3 @@ iconv file1 -f EUC-JP-MS -t UTF-8 -o file2
 这里，没`-o`那么会输出到标准输出。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

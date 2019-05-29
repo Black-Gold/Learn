@@ -13,7 +13,7 @@ df
 df(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -a或--all：包含全部的文件系统；
@@ -78,4 +78,3 @@ none                         0         0         0   -  /proc/sys/fs/binfmt_misc
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

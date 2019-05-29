@@ -13,7 +13,7 @@ lpr
 lpr(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -E：与打印服务器连接时强制使用加密；
@@ -40,4 +40,3 @@ lpr -P lp man1 man2
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

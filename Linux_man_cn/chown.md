@@ -15,7 +15,7 @@ chown
 chown(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -c或——changes：效果类似“-v”参数，但仅回报更改的部分；
@@ -43,4 +43,3 @@ chown -R liu /usr/meng
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

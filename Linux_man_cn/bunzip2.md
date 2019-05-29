@@ -13,7 +13,7 @@ bunzip2
 bunzip2(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -f或--force：解压缩时，若输出的文件与现有文件同名时，预设不会覆盖现有的文件；
@@ -38,4 +38,3 @@ bzip2 -9vk /opt/etc.zip /opt/var.zip /opt/backup.zip
 压缩完毕后，在`/opt`下就会生成相应的etc.zip.bz2、var.zip.bz2和backup.zip.bz2文件。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

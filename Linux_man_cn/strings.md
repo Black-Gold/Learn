@@ -13,7 +13,7 @@ strings
 strings [ -a ] [ - ] [ -o ] [ -t Format ] [ -n Number ] [ -Number ]  [file ... ]
 ```
 
-### 选项  
+  
 
 ```
 -a --all：扫描整个文件而不是只扫描目标文件初始化和装载段
@@ -48,4 +48,3 @@ strings /bin/ls | grep -i libc
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

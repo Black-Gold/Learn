@@ -13,7 +13,7 @@ setsebool
 setsebool [-P] 布尔值=[0|1]
 ```
 
-### 选项  
+  
 
 ```
 -P:直接将设置值写入配置文件，该设置数据将来会生效的。
@@ -152,4 +152,3 @@ setsebool -P allow_ypbind 1
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

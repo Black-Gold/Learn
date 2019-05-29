@@ -4,7 +4,7 @@
 
 **echo命令** 用于在shell中打印shell变量的值，或者直接输出指定的字符串。linux的echo命令，在shell编程中极为常用, 在终端下打印变量value的时候也是常常用到的，因此有必要了解下echo的用法echo命令的功能是在显示器上显示一段文字，一般起到一个提示的作用。
 
-## 选项
+
 
 echo [SHORT-OPTION] ... [STRING]
 echo LONG-OPTION

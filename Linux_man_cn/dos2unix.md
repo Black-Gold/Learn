@@ -13,7 +13,7 @@ dos2unix
 dos2unix [-hkqV] [-c convmode] [-o file ...] [-n infile outfile ...]
 ```
 
-### 选项  
+  
 
 ```
 -k：保持输出文件的日期不变
@@ -59,4 +59,3 @@ dos2unix -k -n oldfile newfile
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

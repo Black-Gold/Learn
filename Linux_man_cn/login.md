@@ -13,7 +13,7 @@ login
 login(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -p：告诉login指令不销毁环境变量；
@@ -25,4 +25,3 @@ login(选项)(参数)
 用户名：指定登录使用的用户名。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

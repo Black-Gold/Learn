@@ -15,7 +15,7 @@ grpck命令检查数据是否正确存放，每条记录是否都包含足够的
 grpck(选项)
 ```
 
-### 选项  
+  
 
 ```
 -r：只读模式；
@@ -47,4 +47,3 @@ grpck: the files have been updated  //这时已经删除了错误的行，提示
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

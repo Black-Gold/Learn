@@ -13,7 +13,7 @@ lynx
 lynx(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -case：在搜索字符串时，区分大小写；
@@ -113,4 +113,3 @@ Ctrl+k：调用 Cookie Jar 页。
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

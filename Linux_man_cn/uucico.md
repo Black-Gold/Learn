@@ -13,7 +13,7 @@ UUCP文件传输服务程序。
 uucico [-cCDefqvwz][-i<类型>][-I<文件>][-p<连接端口号码>][-][-rl][-s<主机>][-S<主机>][-u<用户>][-x<类型>][--help]
 ```
 
-### 选项  
+  
 
 ```
 -c或--quiet 当不执行任何工作时，不要更改记录文件的内容及更新目前的状态。
@@ -47,4 +47,3 @@ uucico-r1
 提示：该命令一般没有输出。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

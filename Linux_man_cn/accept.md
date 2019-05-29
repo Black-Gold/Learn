@@ -13,7 +13,7 @@ accept
 accept(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -E：当连接到服务器时强制加密；
@@ -26,4 +26,3 @@ accept(选项)(参数)
 目标：指定目标打印机。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

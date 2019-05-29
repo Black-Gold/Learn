@@ -13,7 +13,7 @@ RPM软件包的管理工具
 rpm(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -a：查询所有套件；
@@ -211,4 +211,3 @@ proftpd-1.2.8-1
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

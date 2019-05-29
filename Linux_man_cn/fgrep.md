@@ -23,7 +23,7 @@ fgrep 命令于 grep 和 egrep 命令不同，因为它搜索字符串而不是�
 fgrep(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -b：在找到的每行之前添加行所在的块编号。使用此标志有助于按照上下文查找磁盘块号码。-b 标志不能用于标准输入或者管道输入。
@@ -84,4 +84,3 @@ fgrep -l strcpy *.c
 搜索当前目录下以 .c 结尾的文件，然后显示包含 strcpy 字符串的文件名。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

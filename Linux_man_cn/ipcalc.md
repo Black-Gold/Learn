@@ -13,7 +13,7 @@ ipcalc
 ipcalc(选项)
 ```
 
-### 选项  
+  
 
 ```
 -b：由给定的IP地址和网络掩码计算出广播地址；
@@ -48,4 +48,3 @@ NETWORK=192.168.2.0
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

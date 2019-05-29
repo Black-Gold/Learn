@@ -13,7 +13,7 @@ ntsysv
 ntsysv(选项)
 ```
 
-### 选项  
+  
 
 ```
 --leve：指定运行等级；
@@ -29,4 +29,3 @@ ntsysv(选项)
 使用空格键选择或者取消选项！
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

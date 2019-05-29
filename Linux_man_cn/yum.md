@@ -1,13 +1,8 @@
-yum
-===
+# **yum**
 
-基于RPM的软件包管理器
+## 说明
 
-## 补充说明
-
-**yum命令** 是在Fedora和RedHat以及SUSE中基于rpm的软件包管理器，它可以使系统管理人员交互和自动化地更细与管理RPM软件包，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软体包，无须繁琐地一次次下载、安装。
-
-yum提供了查找、安装、删除某一个、一组甚至全部软件包的命令，而且命令简洁而又好记。
+**yum命令** 是在Fedora、RedHat以及SUSE中基于rpm的软件包管理器，它可以使系统管理人员交互和自动化地更细与管理RPM软件包，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软体包，无须繁琐地一次次下载、安装
 
 ### 语法  
 
@@ -15,92 +10,106 @@ yum提供了查找、安装、删除某一个、一组甚至全部软件包的�
 yum(选项)(参数)
 ```
 
-### 选项  
 
+
+```info
+用法: yum [options] COMMAND
+
+List of Commands:
+
+check          检查 RPM 数据库问题
+check-update   检查是否有可用的软件包更新
+clean          删除缓存数据
+deplist        列出软件包的依赖关系
+distribution-synchronization 已同步软件包到最新可用版本
+downgrade      降级软件包
+erase          从系统中移除一个或多个软件包
+fs             Acts on the filesystem data of the host, mainly for removing docs/lanuages for minimal hosts.
+fssnapshot     Creates filesystem snapshots, or lists/deletes current snapshots.
+groups         显示或使用、组信息
+help           显示用法提示
+history        显示或使用事务历史
+info           显示关于软件包或组的详细信息
+install        向系统中安装一个或多个软件包
+list           列出一个或一组软件包
+load-transaction 从文件名中加载一个已存事务
+makecache      创建元数据缓存
+provides       查找提供指定内容的软件包
+reinstall      覆盖安装软件包
+repo-pkgs      将一个源当作一个软件包组，这样我们就可以一次性安装/移除全部软件包。
+repolist       显示已配置的源
+search         在软件包详细信息中搜索指定字符串
+shell          运行交互式的 yum shell
+swap           Simple way to swap packages, instead of using shell
+update         更新系统中的一个或多个软件包
+update-minimal Works like upgrade, but goes to the 'newest' package match which fixes a problem that affects your system
+updateinfo     Acts on repository update information
+upgrade        更新软件包同时考虑软件包取代关系
+
+Options:
+-t, --tolerant        忽略错误
+-C, --cacheonly       完全从系统缓存运行，不升级缓存
+-c [config file], --config=[config file]    配置文件路径
+-R [minutes], --randomwait=[minutes]    命令最长等待时间
+-d [debug level], --debuglevel=[debug level]    调试输出级别(0-10)
+--showduplicates      在 list/search 命令下，显示源里重复的条目
+-e [error level], --errorlevel=[error level]    错误输出级别(0-10)
+--rpmverbosity=[debug level name]
+                      RPM 调试输出级别
+-q, --quiet           静默执行
+-v, --verbose         详尽的操作过程
+-y, --assumeyes       回答全部问题为是
+--assumeno            回答全部问题为否
+--version             显示 Yum 版本然后退出
+--installroot=[path]  设置安装根目录
+--enablerepo=[repo]   启用一个或多个软件源(支持通配符)
+--disablerepo=[repo]  禁用一个或多个软件源(支持通配符)
+-x [package], --exclude=[package]
+                      采用全名或通配符排除软件包
+--disableexcludes=[repo]
+                      禁止从主配置，从源或者从任何位置排除
+--disableincludes=[repo]
+                      disable includepkgs for a repo or for everything
+--obsoletes           更新时处理软件包取代关系
+--noplugins           禁用 Yum 插件
+--nogpgcheck          禁用 GPG 签名检查
+--disableplugin=[plugin]
+                      禁用指定名称的插件
+--enableplugin=[plugin]
+                      启用指定名称的插件
+--skip-broken         忽略存在依赖关系问题的软件包
+--color=COLOR         配置是否使用颜色
+--releasever=RELEASEVER
+                      在 yum 配置和 repo 文件里设置 $releasever 的值
+--downloadonly        仅下载而不更新
+--downloaddir=DLDIR   指定一个其他文件夹用于保存软件包
+--setopt=SETOPTS      设置任意配置和源选项
+--bugfix              Include bugfix relevant packages, in updates
+--security            Include security relevant packages, in updates
+--advisory=ADVS, --advisories=ADVS
+                      Include packages needed to fix the given advisory, in
+                      updates
+--bzs=BZS             Include packages needed to fix the given BZ, in
+                      updates
+--cves=CVES           Include packages needed to fix the given CVE, in
+                      updates
+--sec-severity=SEVS, --secseverity=SEVS
+                      Include security relevant packages matching the
+                      severity, in updates
 ```
--h：显示帮助信息；
--y：对所有的提问都回答“yes”；
--c：指定配置文件；
--q：安静模式；
--v：详细模式；
--d：设置调试等级（0-10）；
--e：设置错误等级（0-10）；
--R：设置yum处理一个命令的最大等待时间；
--C：完全从缓存中运行，而不去下载或者更新任何头文件。
-```
 
-### 参数  
+## 实例
 
-```
-install：安装rpm软件包；
-update：更新rpm软件包；
-check-update：检查是否有可用的更新rpm软件包；
-remove：删除指定的rpm软件包；
-list：显示软件包的信息；
-search：检查软件包的信息；
-info：显示指定的rpm软件包的描述信息和概要信息；
-clean：清理yum过期的缓存；
-shell：进入yum的shell提示符；
-resolvedep：显示rpm软件包的依赖关系；
-localinstall：安装本地的rpm软件包；
-localupdate：显示本地rpm软件包进行更新；
-deplist：显示rpm软件包的所有依赖关系。
-```
+```sh
+yum grouplist     # 查看可能批量安装的列表
+yum groupinsall group1   # 安装程序组group1
 
-### 实例  
-
-部分常用的命令包括：
-
-*   自动搜索最快镜像插件：`yum install yum-fastestmirror`
-*   安装yum图形窗口插件：`yum install yumex`
-*   查看可能批量安装的列表：`yum grouplist`
-
-**安装** 
-
-```bash
-yum install              #全部安装
-yum install package1     #安装指定的安装包package1
-yum groupinsall group1   #安装程序组group1
-```
-
-**更新和升级** 
-
-```bash
-yum update               #全部更新
-yum update package1      #更新指定程序包package1
-yum check-update         #检查可更新的程序
-yum upgrade package1     #升级指定程序包package1
-yum groupupdate group1   #升级程序组group1
-```
-
-**查找和显示** 
-
-```bash
 # 检查 MySQL 是否已安装
 yum list installed | grep mysql
 yum list installed mysql*
 
-yum info package1      #显示安装包信息package1
-yum list               #显示所有已经安装和可以安装的程序包
-yum list package1      #显示指定程序包安装情况package1
-yum groupinfo group1   #显示程序组group1信息yum search string 根据关键字string查找安装包
-```
-
-**删除程序** 
-
-```bash
-yum remove &#124; erase package1   #删除程序包package1
-yum groupremove group1             #删除程序组group1
-yum deplist package1               #查看程序package1依赖情况
-```
-
-**清除缓存** 
-
-```bash
+# 清除缓存
 yum clean packages       #清除缓存目录下的软件包
 yum clean headers        #清除缓存目录下的 headers
 yum clean oldheaders     #清除缓存目录下旧的 headers
 ```
-
-
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

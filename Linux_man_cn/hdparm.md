@@ -13,7 +13,7 @@ hdparm
 hdparm(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -a<快取分区>：设定读取文件时，预先存入块区的分区数，若不加上<快取分区>选项，则显示目前的设定；
@@ -113,4 +113,3 @@ hdparm -m    #参数值为整数值如8 /dev/sda
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

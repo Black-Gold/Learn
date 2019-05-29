@@ -13,7 +13,7 @@ jed
 jed(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -2：显示上下两个编辑区；
@@ -67,4 +67,3 @@ unset_setkey ("@\emy", "\ey");
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

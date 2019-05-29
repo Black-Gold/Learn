@@ -13,7 +13,7 @@ Debian Linux中覆盖文件的所有权和模式
 dpkg-statoverride(选项)
 ```
 
-### 选项  
+  
 
 ```
 -add：为文件添加一个改写；
@@ -43,4 +43,3 @@ sudo dpkg-statoverride --remove /usr/bin/wall
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

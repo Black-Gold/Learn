@@ -13,7 +13,7 @@ dig
 dig(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 @<服务器地址>：指定进行域名解析的域名服务器；
@@ -63,4 +63,3 @@ jsdig.com.            8       IN      NS      f1g1ns1.dnspod.net.
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

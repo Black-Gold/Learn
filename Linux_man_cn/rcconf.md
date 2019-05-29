@@ -13,7 +13,7 @@ Debian Linux下的运行等级服务配置工具
 rcconf(选项)
 ```
 
-### 选项  
+  
 
 ```
 --help：打印帮助信息；
@@ -22,4 +22,3 @@ rcconf(选项)
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

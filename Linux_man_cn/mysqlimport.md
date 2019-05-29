@@ -13,7 +13,7 @@ mysqlimport
 mysqlimport(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -D：导入数据前清空表；
@@ -29,4 +29,3 @@ mysqlimport(选项)(参数)
 *   文本文件：包含特定格式文本文件。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -13,7 +13,7 @@ ssh-keygen
 ssh-keygen(选项)
 ```
 
-### 选项  
+  
 
 ```
 -b：指定密钥长度；
@@ -54,4 +54,3 @@ usage: ssh-keygen [-q] [-b bits] [-t dsa | ecdsa | ed25519 | rsa | rsa1]
        ssh-keygen -Q -f krl_file file ...
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

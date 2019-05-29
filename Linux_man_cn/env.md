@@ -15,7 +15,7 @@ env
 env(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -i：开始一个新的空的环境；
@@ -54,4 +54,3 @@ _=/bin/env
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

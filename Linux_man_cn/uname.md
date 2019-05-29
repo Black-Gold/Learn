@@ -13,7 +13,7 @@ uname
 uname(选项)
 ```
 
-### 选项  
+  
 
 ```
 -a或--all：显示全部的信息；
@@ -73,4 +73,3 @@ Copyright (C) 2006 free Software Foundation, Inc.
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

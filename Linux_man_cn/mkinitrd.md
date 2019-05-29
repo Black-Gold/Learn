@@ -15,7 +15,7 @@ mkinitrd
 mkinitrd(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -f：若指定的映像问家名称与现有文件重复，则覆盖现有的文件；
@@ -60,4 +60,3 @@ myinitrd.img: ASCII cpio archive (SVR4 with no CRC)
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

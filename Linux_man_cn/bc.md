@@ -13,7 +13,7 @@ bc
 bc(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -i：强制进入交互式模式；输入quit后回车退出此模式；
@@ -77,4 +77,3 @@ echo "sqrt(100)" | bc
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

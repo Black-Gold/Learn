@@ -13,7 +13,7 @@ whoami
 whoami(选项)
 ```
 
-### 选项  
+  
 
 ```
 --help：在线帮助；
@@ -31,4 +31,3 @@ root
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -13,7 +13,7 @@ Debian Linux下的软件包管理工具
 dpkg-deb(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -c：显示软件包中的文件列表；
@@ -58,4 +58,3 @@ dpkg-deb -c demo.deb
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

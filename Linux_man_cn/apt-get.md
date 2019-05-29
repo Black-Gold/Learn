@@ -13,7 +13,7 @@ Debian Linux发行版中的APT软件包管理工具
 apt-get(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -c：指定配置文件。
@@ -89,4 +89,3 @@ apt-get autoclean
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

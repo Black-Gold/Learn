@@ -15,7 +15,7 @@ MD5算法常常被用来验证网络文件传输的完整性，防止文件被�
 md5sum(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -b：二进制模式读取文件；
@@ -87,4 +87,3 @@ md5sum: testfile.md5: no properly formatted MD5 checksum lines found
 这里，testfile.md5只有一行信息，但是我认为地给它多加了一个字符，导致非法。如果md5文件正常那么`-w`有没有都一样。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

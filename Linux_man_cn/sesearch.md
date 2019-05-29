@@ -13,7 +13,7 @@ sesearch
 sesearch [-a] [-s 主体类型] [-t 目标类型] [-b 布尔值]
 ```
 
-### 选项  
+  
 
 ```
 -a:列出该类型或布尔值的所有相关信息
@@ -42,4 +42,3 @@ sesearch -b httpd_enable_homedirs -a
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

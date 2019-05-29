@@ -13,7 +13,7 @@ rpmdb
 rpmdb(选项)
 ```
 
-### 选项  
+  
 
 ```
 --initdb：初始化RPM数据库；
@@ -21,4 +21,3 @@ rpmdb(选项)
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

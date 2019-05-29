@@ -13,7 +13,7 @@ tty
 tty [选项]
 ```
 
-### 选项  
+  
 
 ```
 -s 什么也不显示，只返回退出状态值
@@ -29,4 +29,4 @@ tty [选项]
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

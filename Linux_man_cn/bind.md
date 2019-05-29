@@ -13,7 +13,7 @@ bind
 bind(选项)
 ```
 
-### 选项  
+  
 
 ```
 -d：显示按键配置的内容；
@@ -56,4 +56,3 @@ Press any keys - Ctrl-D will terminate this program
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

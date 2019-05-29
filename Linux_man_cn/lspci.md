@@ -13,7 +13,7 @@ lspci
 lspci(选项)
 ```
 
-### 选项  
+  
 
 ```
 -n：以数字方式显示PCI厂商和设备代码；
@@ -77,4 +77,3 @@ lspci(选项)
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -17,7 +17,7 @@ tee
 tee(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -a：向文件中重定向时使用追加模式；
@@ -61,4 +61,3 @@ WWW.pef
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

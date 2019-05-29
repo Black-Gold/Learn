@@ -13,7 +13,7 @@ nohup
 
 nohup(选项)(参数)
 
-### 选项  
+  
 
 ```
 --help：在线帮助；
@@ -47,4 +47,4 @@ nohup wget site.com/file.zip
 nohup ping -c 10 baidu.com
 ```
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

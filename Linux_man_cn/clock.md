@@ -14,7 +14,7 @@ clock [--adjust][--debug][--directisa][--getepoch][--hctosys][--set --date="<日
 [--setepoch --epoch=< >][--show][--systohc][--test][--utc][--version]
 ```
 
-### 选项  
+  
 
 ```
 --adjust 　第一次使用"--set"或"--systohc"参数设置硬件时钟，会在/etc目录下产生一个名称为adjtime的文件。当再次使用这两个参数调整硬件时钟，此文件便会记录两次调整间之差异，日后执行clock指令加上"--adjust"参数时，程序会自动根 据记录文件的数值差异，计算出平均值，自动调整硬件时钟的时间。
@@ -46,4 +46,4 @@ clock -utc #显示UTC时间
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

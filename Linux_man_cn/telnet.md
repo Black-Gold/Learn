@@ -13,7 +13,7 @@ telnet
 telnet(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -8：允许使用8位字符资料，包括输入与输出；
@@ -134,4 +134,4 @@ telnet 23/udp
 service xinetd restart 
 ```
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

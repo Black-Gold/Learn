@@ -13,7 +13,7 @@ uupick
 uupick [-v][-I<配置文件>][-s<主机>][-x<层级>][--help]
 ```
 
-### 选项  
+  
 
 ```
 -I<配置文件>或--config<配置文件> 指定配置文件。
@@ -33,4 +33,3 @@ uupick-s localhost
 该命令通常没有输出。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -13,7 +13,7 @@ dirs
 dirs(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -c：删除目录栈中的所有记录
@@ -37,4 +37,3 @@ dirs(选项)(参数)
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

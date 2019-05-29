@@ -13,7 +13,7 @@ atrm
 atrm(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -V：显示版本号。
@@ -36,4 +36,3 @@ atrm 2     //删除任务2
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

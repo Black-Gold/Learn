@@ -13,7 +13,7 @@ uniq
 uniq(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -c或——count：在每列旁边显示该行重复出现的次数；
@@ -60,4 +60,3 @@ sort file.txt | uniq -d
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

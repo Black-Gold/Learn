@@ -13,7 +13,7 @@ unlink
 unlink(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 --help：显示帮助；
@@ -25,4 +25,3 @@ unlink(选项)(参数)
 文件：指定要删除的文件。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

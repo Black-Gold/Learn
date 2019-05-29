@@ -13,7 +13,7 @@ pwck
 pwck(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -q：仅报告错误信息；
@@ -50,4 +50,3 @@ pwck：无改变
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -26,7 +26,7 @@ make install # 默认会安装到/usr/local/bin/目录中
 
 注释：执行`which ifstat`输出`/usr/local/bin/ifstat`
 
-### 选项  
+  
 
 ```
 -l 监测环路网络接口（lo）。缺省情况下，ifstat监测活动的所有非环路网络接口。经使用发现，加上-l参数能监测所有的网络接口的信息，而不是只监测 lo的接口信息，也就是说，加上-l参数比不加-l参数会多一个lo接口的状态信息。
@@ -83,4 +83,4 @@ HH:MM:ss   KB/s in  KB/s out   KB/s in  KB/s out   KB/s in  KB/s out   KB/s in  
     0.61      0.61      0.26      0.23      0.00      0.00
 ```
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

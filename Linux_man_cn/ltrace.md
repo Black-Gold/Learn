@@ -13,7 +13,7 @@ ltrace
 ltrace [option ...] [command [arg ...]]
 ```
 
-### 选项  
+  
 
 ```
 -a 对齐具体某个列的返回值。
@@ -85,4 +85,3 @@ SYS_mmap2(0x424000, 4096, 3, 2066, 3) = 0x424000
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -13,7 +13,7 @@ quotacheck
 quotacheck(选项)(参数)
 ```
 
-### 选项  
+  
 
 ```
 -a：扫描在/etc/fstab文件里，有加入quota设置的分区；
@@ -46,4 +46,3 @@ quotacheck: Checked 3 directories and 4 files
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
