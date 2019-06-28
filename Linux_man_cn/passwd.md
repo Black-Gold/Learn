@@ -1,43 +1,26 @@
-passwd
-===
+# **passwd**
 
-用于让用户可以更改自己的密码
-
-## 补充说明
+## 说明
 
 **passwd命令** 用于设置用户的认证信息，包括用户密码、密码过期时间等。系统管理者则能用它管理系统用户的密码。只有管理者可以指定用户名称，一般用户只能变更自己的密码。
 
-### 语法  
-
+```info
+用法: passwd [选项...] <帐号名称>
+  -k, --keep-tokens       保持身份验证令牌不过期
+  -d, --delete            删除已命名帐号的密码(只有根用户才能进行此操作)
+  -l, --lock              锁定指名帐户的密码(仅限 root 用户)
+  -u, --unlock            解锁指名账户的密码(仅限 root 用户)
+  -e, --expire            终止指名帐户的密码(仅限 root 用户)
+  -f, --force             强制执行操作
+  -x, --maximum=DAYS      密码的最长有效时限(只有根用户才能进行此操作)
+  -n, --minimum=DAYS      密码的最短有效时限(只有根用户才能进行此操作)
+  -w, --warning=DAYS      在密码过期前多少天开始提醒用户(只有根用户才能进行此操作)
+  -i, --inactive=DAYS     当密码过期后经过多少天该帐号会被禁用(只有根用户才能进行此操作)
+  -S, --status            报告已命名帐号的密码状态(只有根用户才能进行此操作)
+  --stdin                 从标准输入读取令牌(只有根用户才能进行此操作)
 ```
-passwd(选项)(参数)
-```
 
-  
-
-```
-选项：
--a, --all                     报告所有帐户的密码状态
--d, --delete                  删除指定帐户的密码
--e, --expire                  强制使指定帐户的密码过期
--h, --help                    显示此帮助信息并推出
--k, --keep-tokens             仅在过期后修改密码
--i, --inactive INACTIVE       密码过期后设置密码不活动为 INACTIVE
--l, --lock                    锁定指定的帐户
--n, --mindays MIN_DAYS        设置到下次修改密码所须等待的最短天数
-为 MIN_DAYS
--q, --quiet                   安静模式
--r, --repository REPOSITORY   在 REPOSITORY 库中改变密码
--R, --root CHROOT_DIR         chroot 到的目录
--S, --status                  报告指定帐户密码的状态
--u, --unlock                  解锁被指定帐户
--w, --warndays WARN_DAYS      设置过期警告天数为 WARN_DAYS
--x, --maxdays MAX_DAYS        设置到下次修改密码所须等待的最多的天数为 MAX_DAYS
-### 参数  
-
-用户名：需要设置密码的用户名。
-
-### 知识扩展  
+## 知识扩展
 
 与用户、组账户信息相关的文件
 

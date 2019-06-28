@@ -259,17 +259,8 @@ Remote file does not exist-- broken link!!!
 wget--tries=40 URL
 # 如果网络有问题或下载一个大文件也有可能失败。wget默认重试20次连接下载文件。如果需要，你可以使用`--tries`增加重试次数。
 
-# 下载多个文件
-wget -i filelist.txt
-
-## 镜像网站
-wget --mirror -p --convert-links -P ./LOCAL URL
-
-# 下载整个网站到本地。
-`--miror`开户镜像下载。
-`-p`下载所有为了html页面显示正常的文件。
-`--convert-links`下载后，转换成本地的链接。
-`-P ./LOCAL`保存所有文件和目录到本地指定目录。
+wget -i filelist.txt    # 下载多个文件
+wget --mirror -p --convert-links -P ./LOCAL URL    # 下载整个网站到本地;`--miror`镜像下载。`-p`下载所有为了html页面显示正常的文件。`--convert-links`下载后，转换成本地的链接。`-P ./LOCAL`保存所有文件和目录到本地指定目录。
 
 # 过滤指定格式下载
 wget--reject=gif ur

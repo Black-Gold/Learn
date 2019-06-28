@@ -136,13 +136,13 @@ FORMAT 是以下格式中的一种:
  -I, --use-compress-program=PROG
                             通过 PROG 过滤(必须是能接受 -d
                             选项的程序)
- -j, --bzip2                通过 bzip2 过滤归档
- -J, --xz                   通过 xz 过滤归档
+ -j, --bzip2                通过 bzip2 过滤归档;bz2格式文件
+ -J, --xz                   通过 xz 过滤归档;xz格式文件
      --lzip                 通过 lzip 过滤归档
      --lzma                 通过 lzma 过滤归档
      --lzop
      --no-auto-compress     不使用归档后缀名来决定压缩程序
- -z, --gzip, --gunzip, --ungzip   通过 gzip 过滤归档
+ -z, --gzip, --gunzip, --ungzip   通过 gzip 过滤归档;gz格式文件
  -Z, --compress, --uncompress   通过 compress 过滤归档
 本地文件选择:
      --add-file=FILE        添加指定的 FILE 至归档(如果名字以 -

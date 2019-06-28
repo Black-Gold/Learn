@@ -8,8 +8,6 @@
 
 Usage: ps [options]
 
-  
-
 ```sh
 基本选项
 -A, -e               all processes
@@ -90,15 +88,11 @@ Miscellaneous options:
 ## 实例
 
 ```sh
-# 按内存资源的使用量对进程进行排序
-ps aux | sort -rnk 4
-
-# 按 CPU 资源的使用量对进程进行排序
-ps aux | sort -nk 3
-
-# 最常用的查询指令;
-ps -le or ps -aux 查看所有用户执行的进程的详细信息；
-ps -aux --sort pid 可按照进程执行的时间，PID，UID等对进程进行排序；
-ps -uU tangsir / ps -aux | grep tangsir查看系统中指定用户执行的进程；
-pstree | more 进程树，非常直观的观察父子进程；
+ps aux | sort -rnk 4  # 按内存资源的使用量对进程进行排序
+ps aux | sort -nk 3   # 按CPU 资源的使用量对进程进行排序
+ps -le or ps -aux     # 查看所有用户执行的进程的详细信息
+ps -aux --sort pid    # 可按照进程执行的时间，PID，UID等对进程进行排序
+ps -uU tangsir / ps -aux | grep tangsir   # 查看系统中指定用户执行的进程
+pstree | more   # 进程树，非常直观的观察父子进程
+ps --no-headers -o "rss,cmd" -C php-fpm | awk '{ sum+=$1 } END { printf ("%d%s\n", sum/NR/1024,"M") }'  # PHP-FPM进程的平均内存占用
 ```

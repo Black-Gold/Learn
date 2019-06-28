@@ -1,19 +1,8 @@
-apt-get
-===
+# **apt-get**
 
-Debian Linux发行版中的APT软件包管理工具
-
-## 补充说明
+## 说明
 
 **apt-get命令** 是Debian Linux发行版中的APT软件包管理工具。所有基于Debian的发行都使用这个包管理系统。deb包可以把一个应用的文件包在一起，大体就如同Windows上的安装文件。
-
-### 语法  
-
-```
-apt-get(选项)(参数)
-```
-
-  
 
 ```
 -c：指定配置文件。
