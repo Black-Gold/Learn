@@ -3,7 +3,7 @@ lsb_release
 
 显示发行版本信息
 
-## 补充说明
+## 说明
 
 yum install -y redhat-lsb
 

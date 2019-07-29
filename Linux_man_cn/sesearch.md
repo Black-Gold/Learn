@@ -3,7 +3,7 @@ sesearch
 
 查询SELinux策略的规则详情
 
-## 补充说明
+## 说明
 
 使用seinfo命令可以查询SELinux的策略提供多少相关规则，如果查到的相关类型或者布尔值，想要知道详细规则时，使用 **sesearch命令** 查询。SELinux的策略与规则管理相关命令：seinfo命令、sesearch命令、getsebool命令、setsebool命令、semanage命令。
 

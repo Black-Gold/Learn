@@ -3,7 +3,7 @@ mysqldump
 
 MySQL数据库中备份工具
 
-## 补充说明
+## 说明
 
 **mysqldump命令** 是mysql数据库中备份工具，用于将MySQL服务器中的数据库以标准的sql语言的方式导出，并保存到文件中。
 

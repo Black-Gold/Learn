@@ -3,7 +3,7 @@ dpkg-statoverride
 
 Debian Linux中覆盖文件的所有权和模式
 
-## 补充说明
+## 说明
 
 **dpkg-statoverride命令** 用于Debian Linux中覆盖文件的所有权和模式，让dpkg于包安装时使得文件所有权与模式失效。
 

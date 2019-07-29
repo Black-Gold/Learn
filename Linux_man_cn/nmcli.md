@@ -3,7 +3,7 @@ nmcli
 
 地址配置工具
 
-## 补充说明
+## 说明
 
 **nmcli命令** 是 NetworkManager client 网络管理客户端。
 

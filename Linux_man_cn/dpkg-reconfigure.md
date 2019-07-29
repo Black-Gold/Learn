@@ -3,7 +3,7 @@ dpkg-reconfigure
 
 Debian Linux中重新配制一个已经安装的软件包
 
-## 补充说明
+## 说明
 
 **dpkg-reconfigure命令** 是Debian Linux中重新配置已经安装过的软件包，可以将一个或者多个已安装的软件包传递给此指令，它将询问软件初次安装后的配置问题。
 

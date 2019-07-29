@@ -3,7 +3,7 @@ apt-sortpkgs
 
 Debian Linux下对软件包索引文件进行排序的工具
 
-## 补充说明
+## 说明
 
 **apt-sortpkgs命令** 是Debian Linux下对软件包索引文件进行排序的简单工具。
 

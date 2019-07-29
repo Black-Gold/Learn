@@ -3,7 +3,7 @@ dnsdomainname
 
 定义DNS系统中FQDN名称的域名
 
-## 补充说明
+## 说明
 
 **dnsdomainname命令** 用于定义DNS系统中FQDN名称中的域名。
 

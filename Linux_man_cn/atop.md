@@ -1,23 +1,64 @@
-atop
-===
+# **atop**
 
-监控Linux系统资源与进程的工具
+## 说明
 
-## 补充说明
+[非内部程序，需要安装]它以一定的频率记录系统的运行状态，所采集的数据包含系统资源(CPU、内存、磁盘和网络)使用情况和进程运行情况，并能以日志文件的方式保存在磁盘中，服务器出现问题后，我们可获取相应的atop日志文件进行分析。atop是一款开源软件，我们可以从这里获得其源码和rpm安装包
 
-[非内部程序，需要安装]它以一定的频率记录系统的运行状态，所采集的数据包含系统资源(CPU、内存、磁盘和网络)使用情况和进程运行情况，并能以日志文件的方式保存在磁盘中，服务器出现问题后，我们可获取相应的atop日志文件进行分析。atop是一款开源软件，我们可以从这里获得其源码和rpm安装包。
+## 选项
 
-## 语法  
+```markdown
+Usage: atop [-flags] [interval [samples]]
+		or
+Usage: atop -w  file  [-S] [-a] [interval [samples]]
+       atop -r [file] [-b hh:mm] [-e hh:mm] [-flags]
 
+generic flags:
+-V  show version information
+-a  show or log all processes (i.s.o. active processes only)
+-R  calculate proportional set size (PSS) per process
+-P  generate parseable output for specified label(s)
+-L  alternate line length (default 80) in case of non-screen output
+-f  show fixed number of lines with system statistics
+-F  suppress sorting of system resources
+-G  suppress exited processes in output
+-l  show limited number of lines for certain resources
+-y  show individual threads
+-1  show average-per-second i.s.o. total values
+
+-x  no colors in case of high occupation
+-g  show general process-info (default)
+-m  show memory-related process-info
+-d  show disk-related process-info
+-n  show network-related process-info
+-s  show scheduling-related process-info
+-v  show various process-info (ppid, user/group, date/time)
+-c  show command line per process
+-o  show own defined process-info
+-u  show cumulated process-info per user
+-p  show cumulated process-info per program (i.e. same name)
+-j  show cumulated process-info per container
+
+-C  sort processes in order of cpu consumption (default)
+-M  sort processes in order of memory consumption
+-D  sort processes in order of disk activity
+-N  sort processes in order of network activity
+-E  sort processes in order of GPU activity
+-A  sort processes in order of most active resource (auto mode)
+
+specific flags for raw logfiles:
+-w  write raw data to   file (compressed)
+-r  read  raw data from file (compressed)
+special file: y[y...] for yesterday (repeated)
+-S  finish atop automatically before midnight (i.s.o. #samples)
+-b  begin showing data from specified time
+-e  finish showing data after specified time
+
+interval: number of seconds   (minimum 0)
+samples:  number of intervals (minimum 1)
 ```
-atop(选项)(参数)
-```
 
-## 说明  
-
-**ATOP列**：该列显示了主机名、信息采样日期和时间点
-
-**PRC列**：该列显示进程整体运行情况
+*ATOP列*：该列显示了主机名、信息采样日期和时间点
+*PRC列*：该列显示进程整体运行情况
 
 - sys、usr字段分别指示进程在内核态和用户态的运行时间
 - #proc字段指示进程总数
@@ -25,7 +66,7 @@ atop(选项)(参数)
 - #exit字段指示atop采样周期期间退出的进程数量
 
 
-**CPU列**：该列显示CPU整体(即多核CPU作为一个整体CPU资源)的使用情况，我们知道CPU可被用于执行进程、处理中断，也可处于空闲状态(空闲状态分两种，一种是活动进程等待磁盘IO导致CPU空闲，另一种是完全空闲)
+*CPU列*：该列显示CPU整体(即多核CPU作为一个整体CPU资源)的使用情况，我们知道CPU可被用于执行进程、处理中断，也可处于空闲状态(空闲状态分两种，一种是活动进程等待磁盘IO导致CPU空闲，另一种是完全空闲)
 
 - sys、usr字段指示CPU被用于处理进程时，进程在内核态、用户态所占CPU的时间比例
 - irq字段指示CPU被用于处理中断的时间比例
@@ -36,13 +77,13 @@ CPU列各个字段指示值相加结果为N00%，其中N为cpu核数。
 
 cpu列：该列显示某一核cpu的使用情况，各字段含义可参照CPU列，各字段值相加结果为100%
 
-**CPL列**：该列显示CPU负载情况
+*CPL列*：该列显示CPU负载情况
 
 - avg1、avg5和avg15字段：过去1分钟、5分钟和15分钟内运行队列中的平均进程数量
 - csw字段指示上下文交换次数
 - intr字段指示中断发生次数
 
-**MEM列**：该列指示内存的使用情况
+*MEM列*：该列指示内存的使用情况
 
 - tot字段指示物理内存总量
 - free字段指示空闲内存的大小
@@ -50,29 +91,29 @@ cpu列：该列显示某一核cpu的使用情况，各字段含义可参照CPU�
 - buff字段指示用于文件缓存的内存大小
 - slab字段指示系统内核占用的内存大小
 
-**SWP列**：该列指示交换空间的使用情况
+*SWP列*：该列指示交换空间的使用情况
 
 - tot字段指示交换区总量
 - free字段指示空闲交换空间大小
 
-**PAG列**：该列指示虚拟内存分页情况
+*PAG列*：该列指示虚拟内存分页情况
 
 swin、swout字段：换入和换出内存页数
 
-**DSK列**：该列指示磁盘使用情况，每一个磁盘设备对应一列，如果有sdb设备，那么增多一列DSK信息
+*DSK列*：该列指示磁盘使用情况，每一个磁盘设备对应一列，如果有sdb设备，那么增多一列DSK信息
 
 - sda字段：磁盘设备标识
 - busy字段：磁盘忙时比例
 - read、write字段：读、写请求数量
 
-**NET列**：多列NET展示了网络状况，包括传输层(TCP和UDP)、IP层以及各活动的网口信息
+*NET列*：多列NET展示了网络状况，包括传输层(TCP和UDP)、IP层以及各活动的网口信息
 
 - XXXi  字段指示各层或活动网口收包数目
 - XXXo 字段指示各层或活动网口发包数目
 
-
 ## atop日志
 
+```markdown
 每个时间点采样页面组合起来就形成了一个atop日志文件，我们可以使用"atop -r XXX"命令对日志文件进行查看。那以什么形式保存atop日志文件呢？
 
 对于atop日志文件的保存方式，我们可以这样：
@@ -83,17 +124,13 @@ swin、swout字段：换入和换出内存页数
 
 其实atop开发者已经提供了以上日志保存方式，相应的atop.daily脚本可以在源码目录下找到。在atop.daily脚本中，我们可以通过修改INTERVAL变量改变atop信息采样周期(默认为10分钟)；通过修改以下命令中的数值改变日志保存天数(默认为28天)：
 
-```
 (sleep 3; find $LOGPATH -name 'atop_*' -mtime +28 -exec rm {} \; )& 
-```
 
-最后，我们修改cron文件，每天凌晨执行atop.daily脚本：
+修改cron文件，每天凌晨执行atop.daily脚本：
 
-```
 0 0 * * * root /etc/cron.daily/atop.daily
 ```
 
 ## 相关资料
 
 - [官方手册](http://www.atoptool.nl/download/man_atop-1.pdf)
-

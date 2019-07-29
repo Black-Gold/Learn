@@ -3,7 +3,7 @@ runlevel
 
 打印当前Linux系统的运行等级
 
-## 补充说明
+## 说明
 
 **runlevel命令** 用于打印当前Linux系统的运行等级。
 

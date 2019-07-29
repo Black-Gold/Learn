@@ -3,7 +3,7 @@ jwhois
 
 whois 客户端服务
 
-## 补充说明
+## 说明
 
 **jwhois**  searches Whois servers for the object on the command line.The host to query is taken from a global configuration file, a configuration file specified on the command line, or selected directly on the command line.
 

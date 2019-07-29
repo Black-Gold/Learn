@@ -3,7 +3,7 @@ gpasswd
 
 Linux下工作组文件的管理工具
 
-## 补充说明
+## 说明
 
 **gpasswd命令** 是Linux下工作组文件`/etc/group`和`/etc/gshadow`管理工具。
 

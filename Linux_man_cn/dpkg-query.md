@@ -3,7 +3,7 @@ dpkg-query
 
 Debian Linux中软件包的查询工具
 
-## 补充说明
+## 说明
 
 **dpkg-query命令** 是Debian Linux中软件包的查询工具，它从dpkg软件包数据库中查询并辨识软件包的信息。
 

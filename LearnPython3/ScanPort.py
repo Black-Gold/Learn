@@ -42,8 +42,9 @@ def scanner(port):
         print("[*] Port {}: Open".format(port))
     sock.close()
 
+
 # Setup threading and calling the scan
-for i in range(startPort, endPort+1):
+for i in range(startPort, endPort + 1):
     thread = Thread(target=scanner, args=(i,))
     threads.append(thread)
     thread.start()

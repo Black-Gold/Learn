@@ -3,7 +3,7 @@ ftptop
 
 proftpd服务器的连接状态
 
-## 补充说明
+## 说明
 
 **ftptop命令** 类似于top命令的显示风格显示proftpd服务器的连接状态。
 

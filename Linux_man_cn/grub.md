@@ -3,7 +3,7 @@ grub
 
 多重引导程序grub的命令行shell工具
 
-## 补充说明
+## 说明
 
 **grub命令** 是多重引导程序grub的命令行shell工具。
 

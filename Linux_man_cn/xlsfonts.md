@@ -3,7 +3,7 @@ xlsfonts
 
 列出X Server使用的字体
 
-## 补充说明
+## 说明
 
 **xlsfonts命令** 列出X Server使用的字体，也能使用范本样式仅列出的符合条件的字体。
 

@@ -3,7 +3,7 @@ arptables
 
 管理ARP包过滤规则表
 
-## 补充说明
+## 说明
 
 **arptables命令** 用来设置、维护和检查Linux内核中的arp包过滤规则表。
 

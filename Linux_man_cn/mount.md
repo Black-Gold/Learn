@@ -3,7 +3,7 @@ mount
 
 用于挂载Linux系统外的文件。
 
-## 补充说明
+## 说明
 
 **mount命令** Linux mount命令是经常会使用到的命令，它用于挂载Linux系统外的文件。
 

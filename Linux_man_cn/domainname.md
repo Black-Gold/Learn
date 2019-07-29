@@ -3,7 +3,7 @@ domainname
 
 显示和设置系统的NIS域名
 
-## 补充说明
+## 说明
 
 **domainname命令** 用于显示和设置系统的NIS域名。
 

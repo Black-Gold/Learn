@@ -3,7 +3,7 @@ chroot
 
 把根目录换成指定的目的目录
 
-## 补充说明
+## 说明
 
 **chroot命令** 用来在指定的根目录下运行指令。chroot，即 change root directory （更改 root 目录）。在 linux 系统中，系统默认的目录结构都是以`/`，即是以根 (root) 开始的。而在使用 chroot 之后，系统的目录结构将以指定的位置作为`/`位置。
 

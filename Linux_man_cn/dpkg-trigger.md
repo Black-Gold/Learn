@@ -3,7 +3,7 @@ dpkg-trigger
 
 Debian Linux下的软件包触发器
 
-## 补充说明
+## 说明
 
 **dpkg-trigger命令** 是Debian Linux下的软件包触发器。
 

@@ -3,7 +3,7 @@ convertquota
 
 把老的配额文件转换为新的格式
 
-## 补充说明
+## 说明
 
 **convertquota命令** 用于将老的磁盘额数据文件（“quota.user”和“quota.group”）转换为新格式的文件（“quota.user”和“quota.group”）。
 

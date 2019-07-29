@@ -3,7 +3,7 @@ dpkg-preconfigure
 
 Debian Linux中软件包安装之前询问问题
 
-## 补充说明
+## 说明
 
 **dpkg-preconfigure命令** 用于在Debian Linux中软件包安装之前询问问题。
 

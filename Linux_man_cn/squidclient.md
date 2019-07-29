@@ -3,7 +3,7 @@ squidclient
 
 squid服务器的客户端管理工具
 
-## 补充说明
+## 说明
 
 **squidclient命令** 使用squid服务器的客户端管理工具，它可以查看squid服务器的详细运行信息和管理squid服务器。
 

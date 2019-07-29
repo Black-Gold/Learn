@@ -3,7 +3,7 @@ showmount
 
 显示NFS服务器加载的信息
 
-## 补充说明
+## 说明
 
 **showmount命令** 查询“mountd”守护进程，以显示NFS服务器加载的信息。
 

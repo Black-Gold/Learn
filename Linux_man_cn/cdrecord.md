@@ -3,7 +3,7 @@ cdrecord
 
 Linux系统下光盘刻录功能命令
 
-## 补充说明
+## 说明
 
 **cdrecord命令** 用于Linux系统下光盘刻录，它支持cd和DVD格式。linux下一般都带有cdrecord软件。
 

@@ -3,7 +3,7 @@ ssh-add
 
 把专用密钥添加到ssh-agent的高速缓存中
 
-## 补充说明
+## 说明
 
 **ssh-add命令** 是把专用密钥添加到ssh-agent的高速缓存中。该命令位置在`/usr/bin/ssh-add`。
 

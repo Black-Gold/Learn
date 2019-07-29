@@ -3,7 +3,7 @@ mkinitrd
 
 建立要载入ramdisk的映像文件
 
-## 补充说明
+## 说明
 
 **mkinitrd命令** 建立要载入ramdisk的映像文件，以供Linux开机时载入ramdisk。
 

@@ -3,7 +3,7 @@ dpkg-split
 
 Debian Linux中将大软件包分割成小包
 
-## 补充说明
+## 说明
 
 **dpkg-split命令** 用来将Debian Linux中的大软件包分割成小软件包，它还能够将已分割的文件进行合并。
 

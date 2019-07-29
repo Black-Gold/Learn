@@ -3,7 +3,7 @@ vdfuse
 
 VirtualBox软件挂载VDI分区文件工具
 
-## 补充说明
+## 说明
 
 **vdfuse命令** 是VirtualBox软件挂载VDI分区文件的一个工具，VirtualBox是一款能创建虚拟机的开源软件，vdi是它的默认磁盘格式。
 

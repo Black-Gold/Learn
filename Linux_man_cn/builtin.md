@@ -3,7 +3,7 @@ builtin
 
 执行shell内部命令
 
-## 补充说明
+## 说明
 
 **builtin命令** 用于执行指定的shell内部命令，并返回内部命令的返回值。builtin命令在使用时，将不能够再使用Linux中的外部命令。当系统中定义了与shell内部命令相同的函数时，使用builtin显式地执行shell内部命令，从而忽略定义的shell函数。
 

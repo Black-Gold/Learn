@@ -3,7 +3,7 @@ startx
 
 用来启动X Window
 
-## 补充说明
+## 说明
 
 **startx命令** 用来启动X Window，实际上启动X Window的程序为xinit。
 

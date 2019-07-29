@@ -3,7 +3,7 @@ ftpwho
 
 显示当前每个ftp会话信息
 
-## 补充说明
+## 说明
 
 **ftpwho命令** ftp服务器套件proftpd的工作指令，用于显示当前每个ftp会话信息。
 

@@ -3,7 +3,7 @@ useradd
 
 创建的新的系统用户
 
-## 补充说明
+## 说明
 
 **useradd命令** 用于Linux中创建的新的系统用户。useradd可用来建立用户帐号。帐号建好之后，再用passwd设定帐号的密码．而可用userdel删除帐号。使用useradd指令所建立的帐号，实际上是保存在`/etc/passwd`文本文件中。
 

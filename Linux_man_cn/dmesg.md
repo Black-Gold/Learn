@@ -3,7 +3,7 @@ dmesg
 
 显示Linux系统启动信息
 
-## 补充说明
+## 说明
 
 **dmesg命令** 被用于检查和控制内核的环形缓冲区。kernel会将开机信息存储在ring buffer中。您若是开机时来不及查看信息，可利用dmesg来查看。开机信息保存在`/var/log/dmesg`文件里。
 

@@ -3,7 +3,7 @@ smbclient
 
 交互方式访问samba服务器
 
-## 补充说明
+## 说明
 
 **smbclient命令** 属于samba套件，它提供一种命令行使用交互式方式访问samba服务器的共享资源。
 

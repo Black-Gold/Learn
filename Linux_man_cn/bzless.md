@@ -3,7 +3,7 @@ bzless
 
 增强.bz2压缩包查看器
 
-## 补充说明
+## 说明
 
 **bzless命令** 是增强“.bz2”压缩包查看器，bzless比bzmore命令功能更加强大。
 

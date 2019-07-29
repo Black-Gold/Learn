@@ -3,7 +3,7 @@ smbpasswd
 
 samba用户和密码管理工具
 
-## 补充说明
+## 说明
 
 **smbpasswd命令** 属于samba套件，能够实现添加或删除samba用户和为用户修改密码。
 

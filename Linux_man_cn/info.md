@@ -3,7 +3,7 @@ info
 
 Linux下info格式的帮助指令
 
-## 补充说明
+## 说明
 
 **info命令** 是Linux下info格式的帮助指令。
 

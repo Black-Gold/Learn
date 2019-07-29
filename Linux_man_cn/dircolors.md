@@ -3,7 +3,7 @@ dircolors
 
 置ls命令在显示目录或文件时所用的色彩
 
-## 补充说明
+## 说明
 
 **dircolors命令** 设置ls命令在显示目录或文件时所用的色彩。dircolors可根据[色彩配置文件]来设置LS_COLORS环境变量或是显示设置LS_COLORS环境变量的命令。
 

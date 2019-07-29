@@ -3,7 +3,7 @@ semanage
 
 默认目录的安全上下文查询与修改
 
-## 补充说明
+## 说明
 
 **semanage命令** 是用来查询与修改SELinux默认目录的安全上下文。SELinux的策略与规则管理相关命令：seinfo命令、sesearch命令、getsebool命令、setsebool命令、semanage命令。
 

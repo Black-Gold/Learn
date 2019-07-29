@@ -3,7 +3,7 @@ dpkg-divert
 
 Debian Linux中创建并管理一个转向列表
 
-## 补充说明
+## 说明
 
 **dpkg-divert命令** 是Debian Linux中创建并管理一个转向（diversion）列表，其使得安装文件的默认位置失效的工具。
 

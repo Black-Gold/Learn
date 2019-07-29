@@ -3,7 +3,7 @@ rpm2cpio
 
 将RPM软件包转换为cpio格式的文件
 
-## 补充说明
+## 说明
 
 **rpm2cpio命令** 用于将rpm软件包转换为cpio格式的文件。
 

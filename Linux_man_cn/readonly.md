@@ -3,7 +3,7 @@ readonly
 
 定义只读shell变量或函数
 
-## 补充说明
+## 说明
 
 **readonly命令** 用于定义只读shell变量和shell函数。readonly命令的选项-p可以输出显示系统中所有定义的只读变量。
 

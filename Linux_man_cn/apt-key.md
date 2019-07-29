@@ -3,7 +3,7 @@ apt-key
 
 管理Debian Linux系统中的软件包密钥
 
-## 补充说明
+## 说明
 
 **apt-key命令** 用于管理Debian Linux系统中的软件包密钥。每个发布的deb包，都是通过密钥认证的，apt-key用来管理密钥。
 

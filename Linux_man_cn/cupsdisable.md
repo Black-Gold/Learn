@@ -3,7 +3,7 @@ cupsdisable
 
 停止指定的打印机
 
-## 补充说明
+## 说明
 
 **cupsdisable命令** 用于停止指定的打印机。
 

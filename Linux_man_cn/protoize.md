@@ -3,7 +3,7 @@ protoize
 
 GNU-C代码转换为ANSI-C代码
 
-## 补充说明
+## 说明
 
 **protoize命令** 属于gcc套件，用于为C语言源代码文件添加函数原型，将GNU-C代码转换为ANSI-C代码。
 

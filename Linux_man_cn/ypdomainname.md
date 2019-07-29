@@ -3,7 +3,7 @@ ypdomainname
 
 显示主机的NIS的域名
 
-## 补充说明
+## 说明
 
 **ypdomainname命令** 显示主机的NIS的域名。
 

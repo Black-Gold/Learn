@@ -3,7 +3,7 @@ declare
 
 声明或显示shell变量
 
-## 补充说明
+## 说明
 
 **declare命令** 用于声明和显示已存在的shell变量。当不提供变量名参数时显示所有shell变量。declare命令若不带任何参数选项，则会显示所有shell变量及其值。declare的功能与typeset命令的功能是相同的。
 

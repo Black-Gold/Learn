@@ -3,7 +3,7 @@ mysqlshow
 
 显示MySQL中数据库相关信息
 
-## 补充说明
+## 说明
 
 **mysqlshow命令** 用于显示mysql服务器中数据库、表和列表信息。
 

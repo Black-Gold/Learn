@@ -3,7 +3,7 @@ xinit
 
 是Linux下X-Window系统的初始化程序
 
-## 补充说明
+## 说明
 
 **xinit命令** 是Linux下X-Window系统的初始化程序，主要完成X服务器的初始化设置。
 

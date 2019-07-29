@@ -3,7 +3,7 @@ restorecon
 
 恢复文件的安全上下文
 
-## 补充说明
+## 说明
 
 **restorecon命令** 用来恢复SELinux文件属性即恢复文件的安全上下文。
 

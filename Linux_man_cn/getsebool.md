@@ -3,7 +3,7 @@ getsebool
 
 查询SElinux策略内各项规则的布尔值
 
-## 补充说明
+## 说明
 
 **getsebool命令** 是用来查询SElinux策略内各项规则的布尔值。SELinux的策略与规则管理相关命令：seinfo命令、sesearch命令、getsebool命令、setsebool命令、semanage命令。
 

@@ -3,7 +3,7 @@ uncompress
 
 用来解压.Z文件
 
-## 补充说明
+## 说明
 
 **uncompress命令** 用来解压缩由compress命令压缩后产生的“.Z”压缩包。
 

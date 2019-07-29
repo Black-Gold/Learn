@@ -3,7 +3,7 @@ dpkg-deb
 
 Debian Linux下的软件包管理工具
 
-## 补充说明
+## 说明
 
 **dpkg-deb命令** 是Debian Linux下的软件包管理工具，它可以对软件包执行打包和解包操作以及提供软件包信息。
 

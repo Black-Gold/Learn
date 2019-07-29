@@ -3,7 +3,7 @@ dhcrelay
 
 使用dhcrelay命令可以提供中继DHCP和BOOTP请求
 
-## 补充说明
+## 说明
 
 **dhcrelay命令** 使用dhcrelay命令可以提供中继DHCP和BOOTP请求，从一个没有DHCP服务器的子网直接连接到其它子网内的一个或多个DHCP服务器。该命令在DHCP中继服务器上使用，同时支持DHCPv4/BOOTP和DHCPv6协议。
 

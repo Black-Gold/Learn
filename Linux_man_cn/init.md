@@ -3,7 +3,7 @@ init
 
 init进程是所有Linux进程的父进程
 
-## 补充说明
+## 说明
 
 **init命令** 是Linux下的进程初始化工具，init进程是所有Linux进程的父进程，它的进程号为1。init命令是Linux操作系统中不可缺少的程序之一，init进程是Linux内核引导运行的，是系统中的第一个进程。
 

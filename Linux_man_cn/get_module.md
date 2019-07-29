@@ -3,7 +3,7 @@ get_module
 
 获取Linux内核模块的详细信息
 
-## 补充说明
+## 说明
 
 **get_module命令** 用于获取Linux内核模块的详细信息。
 

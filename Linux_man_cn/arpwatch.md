@@ -3,7 +3,7 @@ arpwatch
 
 监听网络上ARP的记录
 
-## 补充说明
+## 说明
 
 **arpwatch命令** 用来监听网络上arp的记录。
 
