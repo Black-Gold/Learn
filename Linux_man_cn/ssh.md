@@ -1,111 +1,46 @@
-ssh
-===
-
-openssh套件中的客户端连接工具
+# **ssh**
 
 ## 说明
 
-**ssh命令** 是openssh套件中的客户端连接工具，可以给予ssh加密协议实现安全的远程登录服务器。
+**ssh命令** 是openssh套件中的客户端连接工具，可以给予ssh加密协议实现安全的远程登录服务器
 
-### 语法  
+## 选项
 
-```
-ssh(选项)(参数)
-```
+```markdown
+ssh [-1246AaCfGgKkMNnqsTtVvXxYy] [-b bind_address] [-c cipher_spec]
+           [-D [bind_address:]port] [-E log_file] [-e escape_char]
+           [-F configfile] [-I pkcs11] [-i identity_file]
+           [-J [user@]host[:port]] [-L address] [-l login_name] [-m mac_spec]
+           [-O ctl_cmd] [-o option] [-p port] [-Q query_option] [-R address]
+           [-S ctl_path] [-W host:port] [-w local_tun[:remote_tun]]
+           [user@]hostname [command]
 
-  
-
-```
--1：强制使用ssh协议版本1；
--2：强制使用ssh协议版本2；
--4：强制使用IPv4地址；
--6：强制使用IPv6地址；
--A：开启认证代理连接转发功能；
--a：关闭认证代理连接转发功能；
--b：使用本机指定地址作为对应连接的源ip地址；
--C：请求压缩所有数据；
--F：指定ssh指令的配置文件；
--f：后台执行ssh指令；
--g：允许远程主机连接主机的转发端口；
--i：指定身份文件；
--l：指定连接远程服务器登录用户名；
--N：不执行远程指令；
--o：指定配置选项；
--p：指定远程服务器上的端口；
--q：静默模式；
--X：开启X11转发功能；
--x：关闭X11转发功能；
--y：开启信任X11转发功能。
-```
-
-### 参数  
-
-*   远程主机：指定要连接的远程ssh服务器；
-*   指令：要在远程ssh服务器上执行的指令。
-
-### 实例
-
-```
-# ssh 用户名@远程服务器地址
-ssh user1@172.24.210.101
+-1      强制使用ssh协议版本1
+-2      强制使用ssh协议版本2
+-4      强制使用IPv4地址
+-6      强制使用IPv6地址
+-A      开启认证代理连接转发功能
+-a      关闭认证代理连接转发功能
+-b      使用本机指定地址作为对应连接的源ip地址
+-C      请求压缩所有数据
+-F      指定ssh指令的配置文件
+-f      后台执行ssh指令
+-g      允许远程主机连接主机的转发端口
+-i      指定身份文件
+-l      指定连接远程服务器登录用户名
+-N      不执行远程指令
+-o      指定配置选项
+-p      指定远程服务器上的端口
+-q      静默模式
+-X      开启X11转发功能
+-x      关闭X11转发功能
+-y      开启信任X11转发功能
 ```
 
-### 背后故事
+## 实例
 
-> 英文：Tatu Ylonen
-> 编译：Linux中国/kenxx  
-> 来源：https://linux.cn/article-8476-1.html
+```bash
 
-为什么 SSH（安全终端）的端口号是 22 呢，这不是一个巧合，这其中有个我（Tatu Ylonen，SSH 协议的设计者）未曾诉说的故事。
-
-
-#### 将 SSH 协议端口号设为 22 的故事
-
-1995 年春我编写了 SSH 协议的最初版本，那时候 telnet 和 FTP 正被广泛使用。
-
-当时我设计 SSH 协议想着是为了替代 telnet（端口 23）和 ftp（端口21）两个协议的，而端口 22 是空闲的。我想当然地就选择了夹在 telnet 和 ftp 的端口中间的数字。我觉得端口号虽然是个小事但似乎又存在着某种信念。但我到底要怎么拿到那个端口号呢？我未曾拥有过任何一个端口号，但我却认识几个拥有端口号的人！
-
-在那时取得端口号的事情其实说来挺简单的。毕竟当时的因特网（Internet）并不是很大，是因特网爆炸的早期。端口号分配的活儿是 IANA（Internet Assigned Numbers Authority，互联网数字分配机构）干的。在那时这机构可相当于是因特网先驱 [Jon Postel](https://en.wikipedia.org/wiki/Jon_Postel) 和 [Joyce K. Reynolds](https://en.wikipedia.org/wiki/Joyce_K._Reynolds) 一般的存在。Jon 参与编写了多项主要的协议标准，例如 IP（RFC 791）、ICMP（RFC 792）和 TCP（RFC 793）等一些你应该早有耳闻的协议。
-
-我可以说是敬畏 Jon 先生的，他参与编写了几乎所有主要的因特网标准文档（Internet RFC）！
-
-1995 年 7 月，就在我发布 ssh-1.0 前，我发送了一封邮件给 IANA：
-
-> From ylo Mon Jul 10 11:45:48 +0300 1995  
-> From: Tatu Ylonen  
-> To: Internet Assigned Numbers Authority  
-> Subject: 请求取得一个端口号  
-> Organization: 芬兰赫尔辛基理工大学  
->   
-> 亲爱的机构成员：  
->   
-> 我写了个可以在不安全的网络环境中安全地从一台机器登录到另一台机器的程序。它主要是对现有的 telnet 协议以及 rlogin 协议的功能性提升和安全性改进。说的具体些，就是可以防御 IP、DNS > 或路由等欺骗行为。我打算将我的软件免费地发布在因特网上，以得到广泛地使用。  
->   
-> 我希望为该软件注册一个特权端口号，要是这个端口号在 1 到 255 > 之间就更好了，这样它就可以用在名字服务器的 WKS 字段中了。  
->   
-> 我在附件中附上了协议标准的草案。这个软件已经在本地运行了几个月了，我已准备在获得端口号后就发布。如果端口号分配一事安排的及时，我希望这周就将要发布的软件准备好。我目前在 beta 版测试时使用的端口号是 > 22，如果要是能够分配到这个端口，我就不用做什么更改了（目前这个端口在列表中还是空闲的）。  
->   
-> 软件中服务的名称叫 ssh（系 Secure Shell 的缩写）。  
->   
-> 您最真诚的，  
-> Tatu Ylonen  
-
-（LCTT 译注：DNS 协议中的 WKS 记录类型意即“众所周知的业务描述”，是类似于 A、MX 这样的 DNS 记录类型，用于描述某个 IP 所提供的服务，目前鲜见使用。参见： https://docs.oracle.com/cd/E19683-01/806-4077/dnsintro-154/index.html 。）
-
-第二天，我就收到了 Joyce 发来的邮件：
-
-> Date: Mon, 10 Jul 1995 15:35:33 -0700  
-> From: jkrey@ISI.EDU  
-> To: ylo@cs.hut.fi  
-> Subject: 回复：请求取得一个端口号  
-> Cc: iana@ISI.EDU  
-> Tatu,  
-> 我们将端口号 22 分配给 ssh 服务了，你目前是该服务的主要联系人。  
-> Joyce  
-
-这就搞定了！SSH 的端口正式使用 22！！！
-
-1995 年 7 月 12 日上午 2 点 21 分，我给我在赫尔辛基理工大学的测试者们宣布了 SSH 的最后 beta 版本。当日下午 5 点 23 分，我给测试者们宣布了 ssh-1.0.0 版本。1995 年 7 月 12 日，下午 5 点 51 分，我将一份 SSH（安全终端）的宣告发给了 cypherpunks@toad.com 的邮件列表，此外我还将其发给了一些新闻组、邮件列表和一些在因特网上讨论相关话题的人们。
 
 #### 如何更改 SSH 服务的端口号
 

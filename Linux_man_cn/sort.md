@@ -1,151 +1,95 @@
-# sort
+# **sort**
 
 ## 说明
 
-**sort命令** 是在Linux里非常有用，它将文件进行排序，并将排序结果标准输出。sort命令既可以从特定的文件，也可以从stdin中获取输入。
+**sort命令** 是在Linux里非常有用，它将文件进行排序，并将排序结果标准输出。sort命令既可以从特定的文件，也可以从stdin中获取输入
 awk 'EXPRESSION { PROGRAM }' file(s)
 
-  
+```markdown
+用法：sort [选项]... [文件]...
+　或：sort [选项]... --files0-from=F
+Write sorted concatenation of all FILE(s) to standard output.
 
-```sh
--b：忽略每行前面开始出的空格字符；
--c：检查文件是否已经按照顺序排序；
--d：排序时，处理英文字母、数字及空格字符外，忽略其他的字符；
--f：排序时，将小写字母视为大写字母；
--i：排序时，除了040至176之间的ASCII字符外，忽略其他的字符；
--m：将几个排序号的文件进行合并；
--M：将前面3个字母依照月份的缩写进行排序；
--n：依照数值的大小排序；
--o<输出文件>：将排序后的结果存入制定的文件；
--r：以相反的顺序来排序；
--t<分隔字符>：指定排序时所用的栏位分隔字符；
-+<起始栏位>-<结束栏位>：以指定的栏位来排序，范围由起始栏位到结束栏位的前一栏位。
-```
+Mandatory arguments to long options are mandatory for short options too.
+排序选项：
 
-### 实例  
+-b, --ignore-leading-blanks	 忽略每行前面开始出的空格字符
+-d, --dictionary-order	     只考虑空白区域和字母字符
+-f, --ignore-case		     忽略字母大小写
+-g, --general-numeric-sort  compare according to general numerical value
+-i, --ignore-nonprinting    consider only printable characters
+-M, --month-sort            compare (unknown) < 'JAN' < ... < 'DEC'
+-h, --human-numeric-sort    使用易读性数字(例如： 2K 1G)
+-n, --numeric-sort		    根据字符串数值比较
+-R, --random-sort		    根据随机hash 排序
+    --random-source=文件	从指定文件中获得随机字节
+-r, --reverse			    逆序输出排序结果
+    --sort=WORD		        按照WORD 指定的格式排序：一般数字-g，高可读性-h，月份-M，数字-n，随机-R，版本-V
+-V, --version-sort		在文本内进行自然版本排序
 
-sort将文件/文本的每一行作为一个单位，相互比较，比较原则是从首字符向后，依次按ASCII码值进行比较，最后将他们按升序输出。
+其他选项：
 
-```
-root@[mail text]# cat sort.txt
-aaa:10:1.1
-ccc:30:3.3
-ddd:40:4.4
-bbb:20:2.2
-eee:50:5.5
-eee:50:5.5
+    --batch-size=NMERGE	            一次最多合并NMERGE 个输入；如果输入更多则使用临时文件
+-c, --check, --check=diagnose-first	检查输入是否已排序，若已有序则不进行操作
+-C, --check=quiet, --check=silent	类似-c，但不报告第一个无序行
+    --compress-program=程序	        使用指定程序压缩临时文件；使用该程序的-d 参数解压缩文件
+    --debug			                为用于排序的行添加注释，并将有可能有问题的用法输出到标准错误输出
+    --files0-from=文件	            从指定文件读取以NUL 终止的名称，如果该文件被指定为"-"则从标准输入读文件名
+-k, --key=KEYDEF                    sort via a key; KEYDEF gives location and type
+-m, --merge                         merge already sorted files; do not sort
+-o, --output=文件		            将结果写入到文件而非标准输出
+-s, --stable			            禁用last-resort 比较以稳定比较算法
+-S, --buffer-size=大小	            指定主内存缓存大小
+-t, --field-separator=分隔符	    使用指定的分隔符代替非空格到空格的转换
+-T, --temporary-directory=目录	    使用指定目录而非$TMPDIR或/tmp作为临时目录，可用多个选项指定多个目录
+    --parallel=N		            将同时运行的排序数改变为N
+-u, --unique		                配合-c，严格校验排序；不配合-c，则只输出一次排序结果
+-z, --zero-terminated	            以0 字节而非新行作为行尾标志
 
-[root@mail text]# sort sort.txt
-aaa:10:1.1
-bbb:20:2.2
-ccc:30:3.3
-ddd:40:4.4
-eee:50:5.5
-eee:50:5.5
-```
+KEYDEF is F[.C][OPTS][,F[.C][OPTS]] for start and stop position, where F is a
+field number and C a character position in the field; both are origin 1, and
+the stop position defaults to the line's end.  If neither -t nor -b is in
+effect, characters in a field are counted from the beginning of the preceding
+whitespace.  OPTS is one or more single-letter ordering options [bdfgiMhnRrV],
+which override global ordering options for that key.  If no key is given, use
+the entire line as the key.
 
-忽略相同行使用-u选项或者uniq：
+SIZE may be followed by the following multiplicative suffixes:
+内存使用率% 1%，b 1、K 1024 (默认)，M、G、T、P、E、Z、Y 等依此类推。
 
-```
-[root@mail text]# cat sort.txt
-aaa:10:1.1
-ccc:30:3.3
-ddd:40:4.4
-bbb:20:2.2
-eee:50:5.5
-eee:50:5.5
+如果不指定文件，或者文件为"-"，则从标准输入读取数据。
 
-[root@mail text]# sort -u sort.txt
-aaa:10:1.1
-bbb:20:2.2
-ccc:30:3.3
-ddd:40:4.4
-eee:50:5.5
-
-或者
-
-[root@mail text]# uniq sort.txt
-aaa:10:1.1
-ccc:30:3.3
-ddd:40:4.4
-bbb:20:2.2
-eee:50:5.5
+*** 警告 ***
+本地环境变量会影响排序结果。
+如果希望以字节的自然值获得最传统的排序结果，请设置LC_ALL=C。
 
 ```
 
-sort的-n、-r、-k、-t选项的使用：
+## 实例
 
-```
-[root@mail text]# cat sort.txt
-AAA:BB:CC
-aaa:30:1.6
-ccc:50:3.3
-ddd:20:4.2
-bbb:10:2.5
-eee:40:5.4
-eee:60:5.1
+```bash
+# sort将文件/文本的每一行作为一个单位，相互比较，比较原则是从首字符向后，依次按ASCII码值进行比较，最后默认按按升序输出
 
-#将BB列按照数字从小到大顺序排列：
-[root@mail text]# sort -nk 2 -t: sort.txt
-AAA:BB:CC
-bbb:10:2.5
-ddd:20:4.2
-aaa:30:1.6
-eee:40:5.4
-ccc:50:3.3
-eee:60:5.1
+# 忽略相同行使用-u选项或者uniq
+sort -u sort.txt
+uniq sort.txt
 
-#将CC列数字从大到小顺序排列：
-[root@mail text]# sort -nrk 3 -t: sort.txt
-eee:40:5.4
-eee:60:5.1
-ddd:20:4.2
-ccc:50:3.3
-bbb:10:2.5
-aaa:30:1.6
-AAA:BB:CC
+sort -nk 2 -t: sort.txt   # 将:字符作为分隔符，按其后的第二个字符的数字从小到大排序
 
 # -n是按照数字大小排序，-r是以相反顺序，-k是指定需要爱排序的栏位，-t指定栏位分隔符为冒号
-```
 
- **-k选项的具体语法格式：** 
-
+: << comment
 -k选项的语法格式：
-
-```
 FStart.CStart Modifie,FEnd.CEnd Modifier
 -------Start--------,-------End--------
  FStart.CStart 选项  ,  FEnd.CEnd 选项
 
-```
-
-这个语法格式可以被其中的逗号`,`分为两大部分， **Start** 部分和 **End** 部分。Start部分也由三部分组成，其中的Modifier部分就是我们之前说过的类似n和r的选项部分。我们重点说说`Start`部分的`FStart`和`C.Start`。`C.Start`也是可以省略的，省略的话就表示从本域的开头部分开始。`FStart.CStart`，其中`FStart`就是表示使用的域，而`CStart`则表示在`FStart`域中从第几个字符开始算“排序首字符”。同理，在End部分中，你可以设定`FEnd.CEnd`，如果你省略`.CEnd`，则表示结尾到“域尾”，即本域的最后一个字符。或者，如果你将CEnd设定为0(零)，也是表示结尾到“域尾”。
-
-从公司英文名称的第二个字母开始进行排序：
-
-```
-$ sort -t ' ' -k 1.2 facebook.txt
-baidu 100 5000
-sohu 100 4500
-google 110 5000
-guge 50 3000
+这个语法格式可以被其中的逗号`,`分为两大部分， **Start** 部分和 **End** 部分。Start部分也由三部分组成，其中的Modifier部分
+就是我们之前说过的类似n和r的选项部分。我们重点说说`Start`部分的`FStart`和`C.Start`。`C.Start`也是可以省略的，省略的话就
+表示从本域的开头部分开始。`FStart.CStart`，其中`FStart`就是表示使用的域，而`CStart`则表示在`FStart`域中从第几个字符开始
+算“排序首字符”。同理，在End部分中，你可以设定`FEnd.CEnd`，如果你省略`.CEnd`，则表示结尾到“域尾”，即本域的最后一个字
+符。或者，如果你将CEnd设定为0(零)，也是表示结尾到“域尾”
+comment
 
 ```
-
-使用了`-k 1.2`，表示对第一个域的第二个字符开始到本域的最后一个字符为止的字符串进行排序。你会发现baidu因为第二个字母是a而名列榜首。sohu和 google第二个字符都是o，但sohu的h在google的o前面，所以两者分别排在第二和第三。guge只能屈居第四了。
-
-只针对公司英文名称的第二个字母进行排序，如果相同的按照员工工资进行降序排序：
-
-```
-$ sort -t ' ' -k 1.2,1.2 -nrk 3,3 facebook.txt
-baidu 100 5000
-google 110 5000
-sohu 100 4500
-guge 50 3000
-
-```
-
-由于只对第二个字母进行排序，所以我们使用了`-k 1.2,1.2`的表示方式，表示我们“只”对第二个字母进行排序。（如果你问“我使用`-k 1.2`怎么不行？”，当然不行，因为你省略了End部分，这就意味着你将对从第二个字母起到本域最后一个字符为止的字符串进行排序）。对于员工工资进行排 序，我们也使用了`-k 3,3`，这是最准确的表述，表示我们“只”对本域进行排序，因为如果你省略了后面的3，就变成了我们“对第3个域开始到最后一个域位置的内容进行排序” 了。
-
-
 

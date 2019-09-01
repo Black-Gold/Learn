@@ -1,33 +1,36 @@
-openssl
-===
-
-强大的安全套接字层密码库
+# **openssl**
 
 ## 说明
 
-**OpenSSL** 是一个强大的安全套接字层密码库，囊括主要的密码算法、常用的密钥和证书封装管理功能及SSL协议，并提供丰富的应用程序供测试或其它目的使用。在OpenSSL被曝出现严重安全漏洞后，发现多数通过SSL协议加密的网站使用名为OpenSSL的开源软件包。由于这是互联网应用最广泛的安全传输方法，被网银、在线支付、电商网站、门户网站、电子邮件等重要网站广泛使用，所以该漏洞影响范围广大。
+**OpenSSL** 是一个强大的安全套接字层密码库，囊括主要的密码算法、常用的密钥和证书封装管理功能及SSL协议，并提供丰富的应用
+程序供测试或其它目的使用
 
-OpenSSL有两种运行模式：交互模式和批处理模式。
+OpenSSL有两种运行模式：交互模式和批处理模式
 
-直接输入openssl回车进入交互模式，输入带命令选项的openssl进入批处理模式。
+直接输入openssl回车进入交互模式，输入带命令选项的openssl进入批处理模式
 
-OpenSSL整个软件包大概可以分成三个主要的功能部分：密码算法库、SSL协议库以及应用程序。OpenSSL的目录结构自然也是围绕这三个功能部分进行规划的。 
+OpenSSL整个软件包大概可以分成三个主要的功能部分：密码算法库、SSL协议库以及应用程序。OpenSSL的目录结构也是围绕这三个功能部分进行规划的
 
  **对称加密算法** 
 
-OpenSSL一共提供了8种对称加密算法，其中7种是分组加密算法，仅有的一种流加密算法是RC4。这7种分组加密算法分别是AES、DES、Blowfish、CAST、IDEA、RC2、RC5，都支持电子密码本模式（ECB）、加密分组链接模式（CBC）、加密反馈模式（CFB）和输出反馈模式（OFB）四种常用的分组密码加密模式。其中，AES使用的加密反馈模式（CFB）和输出反馈模式（OFB）分组长度是128位，其它算法使用的则是64位。事实上，DES算法里面不仅仅是常用的DES算法，还支持三个密钥和两个密钥3DES算法。 
+OpenSSL一共提供了8种对称加密算法，其中7种是分组加密算法，仅有的一种流加密算法是RC4。这7种分组加密算法分别是AES、DES、
+Blowfish、CAST、IDEA、RC2、RC5，都支持电子密码本模式（ECB）、加密分组链接模式（CBC）、加密反馈模式（CFB）和输出反馈模式
+（OFB）四种常用的分组密码加密模式。其中，AES使用的加密反馈模式（CFB）和输出反馈模式（OFB）分组长度是128位，其它算法使用
+的则是64位。事实上，DES算法里面不仅仅是常用的DES算法，还支持三个密钥和两个密钥3DES算法
 
  **非对称加密算法** 
 
-OpenSSL一共实现了4种非对称加密算法，包括DH算法、RSA算法、DSA算法和椭圆曲线算法（EC）。DH算法一般用户密钥交换。RSA算法既可以用于密钥交换，也可以用于数字签名，当然，如果你能够忍受其缓慢的速度，那么也可以用于数据加密。DSA算法则一般只用于数字签名。 
+OpenSSL一共实现了4种非对称加密算法，包括DH算法、RSA算法、DSA算法和椭圆曲线算法（EC）。DH算法一般用户密钥交换。RSA算法既
+可以用于密钥交换，也可以用于数字签名，当然，如果你能够忍受其缓慢的速度，那么也可以用于数据加密。DSA算法则一般只用于数字签名
 
  **信息摘要算法** 
 
-OpenSSL实现了5种信息摘要算法，分别是MD2、MD5、MDC2、SHA（SHA1）和RIPEMD。SHA算法事实上包括了SHA和SHA1两种信息摘要算法，此外，OpenSSL还实现了DSS标准中规定的两种信息摘要算法DSS和DSS1。 
+OpenSSL实现了5种信息摘要算法，分别是MD2、MD5、MDC2、SHA（SHA1）和RIPEMD。SHA算法事实上包括了SHA和SHA1两种信息摘要算法
+此外，OpenSSL还实现了DSS标准中规定的两种信息摘要算法DSS和DSS1
 
  **密钥和证书管理** 
 
-密钥和证书管理是PKI的一个重要组成部分，OpenSSL为之提供了丰富的功能，支持多种标准。 
+密钥和证书管理是PKI的一个重要组成部分，OpenSSL为之提供了丰富的功能，支持多种标准
 
 首先，OpenSSL实现了ASN.1的证书和密钥相关标准，提供了对证书、公钥、私钥、证书请求以及CRL等数据对象的DER、PEM和BASE64的编解码功能。OpenSSL提供了产生各种公开密钥对和对称密钥的方法、函数和应用程序，同时提供了对公钥和私钥的DER编解码功能。并实现了私钥的PKCS#12和PKCS#8的编解码功能。OpenSSL在标准中提供了对私钥的加密保护功能，使得密钥可以安全地进行存储和分发。 
 
@@ -35,7 +38,7 @@ OpenSSL实现了5种信息摘要算法，分别是MD2、MD5、MDC2、SHA（SHA1�
 
 事实上，OpenSSL提供的CA应用程序就是一个小型的证书管理中心（CA），实现了证书签发的整个流程和证书管理的大部分机制。
 
-### 实例  
+## 实例
 
  **1、消息摘要算法应用例子** 
 
@@ -209,4 +212,17 @@ cert.pem为X.509证书文件，用私匙key,pem为mail.txt签名，证书被包�
 # openssl smime -verify -in mail.sgn -out mail.txt
 ```
 
+
+制作并信任您自己的证书：
+任何人都可以在没有CA帮助的情况下制作自己的证书。 唯一的区别是您自己制作的证书不会被其他任何人信任;然后，您可以使用
+localhost.crt和localhost.key配置本地网站服务器，并在本地受信任的根列表中安装localhost.crt
+
+如果您希望在开发证书中更加逼真，可以使用(minica)[https://github.com/jsha/minica]生成自己的本地根证书，并颁发由其签名的终
+端（又称叶）证书。 然后，您将导入根证书而不是自签名的终端证书;您还可以选择使用带有点的域，例如www.localhost，将其作为别
+名添加到/etc/hosts作为127.0.0.1的别名。这巧妙地改变了浏览器处理cookie存储的方式
+
+openssl req -x509 -out localhost.crt -keyout localhost.key \
+  -newkey rsa:2048 -nodes -sha256 \
+  -subj '/CN=localhost' -extensions EXT -config <( \
+   printf "[dn]\nCN=localhost\n[req]\ndistinguished_name = dn\n[EXT]\nsubjectAltName=DNS:localhost\nkeyUsage=digitalSignature\nextendedKeyUsage=serverAuth")
 

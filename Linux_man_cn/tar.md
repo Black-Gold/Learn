@@ -2,15 +2,16 @@
 
 ## 说明
 
-**tar命令** 可以为linux的文件和目录创建档案。利用tar，可以为某一特定文件创建档案（备份文件），也可以在档案中改变文件，或者向档案中加入新的文件。tar最初被用来在磁带上创建档案，现在，用户可以在任何设备上创建档案。利用tar命令，可以把一大堆的文件和目录全部打包成一个文件，这对于备份文件或将几个文件组合成为一个文件以便于网络传输是非常有用的。
+**tar命令** 可以为linux的文件和目录创建档案。利用tar，可以为某一特定文件创建档案（备份文件），也可以在档案中改变文件，或
+者向档案中加入新的文件。tar最初被用来在磁带上创建档案，现在，用户可以在任何设备上创建档案。利用tar命令，可以把一大堆的文
+件和目录全部打包成一个文件，这对于备份文件或将几个文件组合成为一个文件以便于网络传输是非常有用的
 
-首先要弄清两个概念：打包和压缩。打包是指将一大堆文件或目录变成一个总的文件；压缩则是将一个大的文件通过一些压缩算法变成一个小文件。
+首先要弄清两个概念：打包和压缩。打包是指将文件或目录变成一个总的文件，压缩则是将文件通过一些压缩算法变成一个小文件
 
-为什么要区分这两个概念呢？这源于Linux中很多压缩程序只能针对一个文件进行压缩，这样当你想要压缩一大堆文件时，你得先将这一大堆文件先打成一个包（tar命令），然后再用压缩程序进行压缩（gzip bzip2命令）
+为什么要区分这两个概念呢？这源于Linux中很多压缩程序只能针对一个文件进行压缩，这样当你想要压缩一大堆文件时，你得先将这一
+大堆文件先打成一个包（tar命令），然后再用压缩程序进行压缩（gzip bzip2命令）
 
-
-
-```info
+```markdown
 主操作模式:
  -A, --catenate, --concatenate   追加 tar 文件至归档
  -c, --create               创建一个新归档
@@ -261,15 +262,20 @@ clocale
 --rsh-command=/usr/bin/ssh
 ```
 
-```sh
+## 实例
+
+```bash
+# 在选项`f`之后的文件档名是自己取的，我们习惯上都用.tar来作为辨识。如果加`z`选项，则以.tar.gz或.tgz来代表gzip压缩过的tar
+# 包；如果加`j`选项，则以.tar.bz2来作为tar包名
 # 下面的参数-f是必须的,-f: 使用档案名字，切记:这个参数是最后一个参数，后面只能接档案名
-tar -cf all.tar *.jpg # 这条命令是将所有.jpg的文件打成一个名为all.tar的包。-c是表示产生新的包，-f指定包的文件名
-tar -rf all.tar *.gif # 这条命令是将所有.gif的文件增加到all.tar的包里面去。-r是表示增加文件的意思
-tar -uf all.tar logo.gif # 这条命令是更新原来tar包all.tar中logo.gif文件，-u是表示更新文件的意思
-tar -tf all.tar # 这条命令是列出all.tar包中所有文件，-t是列出文件的意思
+tar -cf all.tar *.jpg       # 这条命令是将所有.jpg的文件打成一个名为all.tar的包。-c是表示产生新的包，-f指定包的文件名
+tar -rf all.tar *.gif       # 这条命令是将所有.gif的文件增加到all.tar的包里面去。-r是表示增加文件的意思
+tar -uf all.tar logo.gif    # 这条命令是更新原来tar包all.tar中logo.gif文件，-u是表示更新文件的意思
+tar -tf all.tar             # 这条命令是列出all.tar包中所有文件，-t是列出文件的意思
 ```
 
-```sh
+```markdown
+# 各种格式的压缩及解压
 ## zip格式
 压缩： zip -r [目标文件名].zip [原文件/目录名]
 解压： unzip [原文件名].zip
@@ -346,36 +352,31 @@ jar -cvfm [目标文件名].jar META-INF/MANIFEST.MF [原文件名/目录名]
 解压：7z x [原文件名].7z
 注：这个7z解压命令支持rar格式，即：
 7z x [原文件名].rar
+```
 
-## 其它例子
+```bash
 # 将文件全部打包成tar包
-tar -cvf log.tar log2012.log    仅打包，不压缩！
-tar -zcvf log.tar.gz log2012.log   打包后，以 gzip 压缩
-tar -jcvf log.tar.bz2 log2012.log  打包后，以 bzip2 压缩
+tar -cvf log.tar log2012.log        # 仅打包，不压缩！
+tar -zcvf log.tar.gz log2012.log    # 打包后，以 gzip 压缩
+tar -jcvf log.tar.bz2 log2012.log   # 打包后，以 bzip2 压缩
+tar -zxvf log.tar.gz                # 将tar包解压缩
+tar -ztvf log.tar.gz                # 查阅上述tar包内有哪些文件，选项z表示由gzip压缩的
+tar -zxvf /opt/soft/test/log30.tar.gz log2013.log   # 在预设的情况下，我们可以将压缩档在任何地方解开的;只将tar内的部分文件解压出来
+tar -zcvpf log.tar.gz archive-$(date +%Y%m%d).log   # 文件备份下来，并且保存其权限；这个`-p`的属性是很重要的，尤其是当您要保留原本文件的属性时。在文件夹当中，比某个日期新的文件才备份
 tar -c dir/ | gzip | gpg -c | ssh user@remote 'dd of=dir.tar.gz.gpg'  # 将目录dir/压缩打包并放到远程机器上
 tar -c /dir/to/copy  |  cd /where/to/ && tar -x -p  # 拷贝目录copy/到目录/where/to/并保持文件属性
 tar -c /dir/to/copy  | ssh -C user@remote 'cd /where/to/ && tar -x -p'  # 拷贝目录copy/到远程目录/where/to/并保持文件属性
-```
+find dir/ -name '*.txt' | tar -c --files-from=- | bzip2 > dir_txt.tar.bz2   # 将目录dir及其子目录所有txt文件打包并用bzip2压缩
+tar --exclude scf/service -zcvf scf.tar.gz scf/*    # 备份文件夹内容时排除部分文件
+tar -xvf log.tar.gz --wildcards "*.txt"     # 解压以txt结尾的文件
+tar -czwf log.tar.gz /dir/*   # 将dir目录下所有文件压缩，w选项表示每个文件添加到存档之前要求确认
+tar -cvWf log.tar   /dir/     # 验证压缩包中的文件，W选项表示验证
+tar -rvf log.tar.gz test.log    # 将test.log文件添加到已存在的压缩包内
 
-```sh
-# 在选项`f`之后的文件档名是自己取的，我们习惯上都用.tar来作为辨识。如果加`z`选项，则以.tar.gz或.tgz来代表gzip压缩过的tar包；如果加`j`选项，则以.tar.bz2来作为tar包名
-
-tar -ztvf log.tar.gz    # 查阅上述tar包内有哪些文件
-# 由于我们使用 gzip 压缩的log.tar.gz，所以要查阅log.tar.gz包内的文件时，就得要加上`z`这个选项了
-
-tar -zxvf /opt/soft/test/log.tar.gz     # 将tar包解压缩
-
-# 在预设的情况下，我们可以将压缩档在任何地方解开的;只将tar内的部分文件解压出来
-tar -zxvf /opt/soft/test/log30.tar.gz log2013.log
-
-# 可以通过`tar -ztvf`来查阅tar包内的文件名称，如果单只要一个文件，就可以透过这个方式来解压部分文件！
-tar -zcvpf log31.tar.gz log2014.log log2015.log log2016.log     # 文件备份下来，并且保存其权限；这个`-p`的属性是很重要的，尤其是当您要保留原本文件的属性时。在文件夹当中，比某个日期新的文件才备份
 tar -N "2012/11/13" -zcvf log17.tar.gz test
 
-tar --exclude scf/service -zcvf scf.tar.gz scf/*    # 备份文件夹内容是排除部分文件
-
 # 其实最简单的使用 tar就只要记忆底下的方式即可
-tar -jcv -f filename.tar.bz2        # 要被压缩的文件或目录名称
-tar -jtv -f filename.tar.bz2        # 要查询的压缩文件
-tar -jxv -f filename.tar.bz2 -C     # 要解压缩的目录
+tar -jcvf filename.tar.bz2            # 要被压缩的文件或目录名称
+tar -jtvf filename.tar.bz2           # 要查询的压缩文件
+tar -jxvf filename.tar.bz2 -C dir    # 解压缩到dir目录
 ```

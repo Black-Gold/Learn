@@ -1,36 +1,27 @@
-zcat
-===
-
-显示压缩包中文件的内容
+# **zcat**
 
 ## 说明
 
-**zcat命令** 用于不真正解压缩文件，就能显示压缩包中文件的内容的场合。
+**zcat命令** 用于不真正解压缩文件，就能显示压缩包中文件的内容的场合
 
-### 语法  
+## 选项
+
+```markdow
+-f, --force       force; read compressed data even from a terminal
+-l, --list        列出压缩文件内容
+-q, --quiet       禁止所有warnings输出
+-r, --recursive   operate recursively on directories
+-S, --suffix=SUF  use suffix SUF on compressed files
+-t, --test        test compressed file integrity
+-v, --verbose     verbose mode
+
+With no FILE, or when FILE is -, read standard input.
+
 
 ```
-zcat(选项)(参数)
+
+## 实例
+
+```bash
+
 ```
-
-  
-
-```
--S：指定gzip格式的压缩包的后缀。当后缀不是标准压缩包后缀时使用此选项；
--c：将文件内容写到标注输出；
--d：执行解压缩操作；
--l：显示压缩包中文件的列表；
--L：显示软件许可信息；
--q：禁用警告信息；
--r：在目录上执行递归操作；
--t：测试压缩文件的完整性；
--V：显示指令的版本信息；
--l：更快的压缩速度；
--9：更高的压缩比。
-```
-
-### 参数  
-
-文件：指定要显示其中文件内容的压缩包。
-
-

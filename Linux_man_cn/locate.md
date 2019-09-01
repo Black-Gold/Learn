@@ -36,7 +36,7 @@ Usage: locate [OPTION]... [PATTERN]...      在mlocate数据库中搜索条目
 
 ## 实例
 
-```sh
+```bash
 locate pwd     # 查找和pwd相关的所有文件数据库
 locate /etc/sh     # 搜索etc目录下所有以sh开头的文件
 locate -r 'file[^/]*\.txt'  # 使用locate 查找所有符合*file*.txt的文件

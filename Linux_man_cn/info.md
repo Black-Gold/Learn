@@ -1,44 +1,70 @@
-info
-===
-
-Linux下info格式的帮助指令
+# **info**
 
 ## 说明
 
-**info命令** 是Linux下info格式的帮助指令。
+**info命令** 是Linux下info格式的帮助指令，内容格式来看info页面比man page编写得要更好、更容易理解，也更友好，但man page使
+用起来确实要更容易得多。一个man page只有一页，而info页面几乎总是将它们的内容组织成多个区段（称为节点），每个区段也可能包
+含子区段（称为子节点）。理解这个命令的窍门就是不仅要学习如何在单独的Info页面中浏览导航，还要学习如何在节点和子节点之间切
+换。可能刚开始会一时很难在info页面的节点之间移动和找到你要的东西，真是具有讽刺意味：原本以为对于新手来说，某个东西比man命
+令会更好些，但实际上学习和使用起来更困难。
 
-就内容来说，info页面比man page编写得要更好、更容易理解，也更友好，但man page使用起来确实要更容易得多。一个man page只有一页，而info页面几乎总是将它们的内容组织成多个区段（称为节点），每个区段也可能包含子区段（称为子节点）。理解这个命令的窍门就是不仅要学习如何在单独的Info页面中浏览导航，还要学习如何在节点和子节点之间切换。可能刚开始会一时很难在info页面的节点之间移动和找到你要的东西，真是具有讽刺意味：原本以为对于新手来说，某个东西比man命令会更好些，但实际上学习和使用起来更困难。
+## 选项
 
-### 语法  
-
-```
-info(选项)(参数)
-```
-
-  
-
-```
+```markdown
 -d：添加包含info格式帮助文档的目录；
 -f：指定要读取的info格式的帮助文档；
 -n：指定首先访问的info帮助文件的节点；
 -o：输出被选择的节点内容到指定文件。
+
+info [OPTION]... [MENU-ITEM...]
+
+Read documentation in Info format.
+
+Options:
+  -k, --apropos=STRING         look up STRING in all indices of all manuals.
+  -d, --directory=DIR          add DIR to INFOPATH.
+      --dribble=FILENAME       remember user keystrokes in FILENAME.
+  -f, --file=FILENAME          specify Info file to visit.
+  -h, --help                   display this help and exit.
+      --index-search=STRING    go to node pointed by index entry STRING.
+  -n, --node=NODENAME          specify nodes in first visited Info file.
+  -o, --output=FILENAME        output selected nodes to FILENAME.
+  -R, --raw-escapes            output "raw" ANSI escapes (default).
+      --no-raw-escapes         output escapes as literal text.
+      --restore=FILENAME       read initial keystrokes from FILENAME.
+  -O, --show-options, --usage  go to command-line options node.
+      --strict-node-location   (for debugging) use Info file pointers as-is.
+      --subnodes               recursively output menu items.
+      --vi-keys                use vi-like and less-like key bindings.
+      --version                display version information and exit.
+  -w, --where, --location      print physical location of Info file.
+
+The first non-option argument, if present, is the menu entry to start from;
+it is searched for in all `dir' files along INFOPATH.
+If it is not present, info merges all `dir' files and shows the result.
+Any remaining arguments are treated as the names of menu
+items relative to the initial node visited.
+
+For a summary of key bindings, type h within Info.
+
+Examples:
+  info                       show top-level dir menu
+  info info                  show the general manual for Info readers
+  info info-stnd             show the manual specific to this Info program
+  info emacs                 start at emacs node from top-level dir
+  info emacs buffers         start at buffers node within emacs manual
+  info --show-options emacs  start at node with emacs' command line options
+  info --subnodes -o out.txt emacs  dump entire manual to out.txt
+  info -f ./foo.info         show file ./foo.info, not searching dir
+
+
 ```
 
-### 参数  
+## 实例
 
-帮助主题：指定需要获得帮助的主题，可以是指令、函数以及配置文件。
+它的几个常用快捷键：
 
-### 实例  
-
-在info后面输入命令的名称就可以查看该命令的info帮助文档了：
-
-```
-info info
-```
-
-面介绍一下它的几个常用快捷键。
-
-```
+```markdown
  **?键：** 它就会显示info的常用快捷键。
  **N键：** 显示（相对于本节点的）下一节点的文档内容。
  **P键：** 显示（相对于本节点的）前一节点的文档内容。

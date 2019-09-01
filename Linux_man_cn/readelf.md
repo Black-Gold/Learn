@@ -1,17 +1,65 @@
-readelf
-===
-
-用于显示elf格式文件的信息
+# readelf
 
 ## 说明
 
-**readelf命令** 用来显示一个或者多个elf格式的目标文件的信息，可以通过它的选项来控制显示哪些信息。这里的elf-file(s)就表示那些被检查的文件。可以支持32位，64位的elf格式文件，也支持包含elf文件的文档（这里一般指的是使用ar命令将一些elf文件打包之后生成的例如lib*.a之类的“静态库”文件）。 
+**readelf命令** 用来显示一个或者多个elf格式的目标文件的信息，可以通过它的选项来控制显示哪些信息。这里的elf-file(s)就表示
+那些被检查的文件。可以支持32位，64位的elf格式文件，也支持包含elf文件的文档（这里一般指的是使用ar命令将一些elf文件打包之
+后生成的例如lib*.a之类的“静态库”文件）
 
-这个程序和objdump提供的功能类似，但是它显示的信息更为具体，并且它不依赖BFD库(BFD库是一个GNU项目，它的目标就是希望通过一种统一的接口来处理不同的目标文件)，所以即使BFD库有什么bug存在的话也不会影响到readelf程序。 
+这个程序和objdump提供的功能类似，但是它显示的信息更为具体，并且它不依赖BFD库(BFD库是一个GNU项目，它的目标就是希望通过一
+种统一的接口来处理不同的目标文件)，所以即使BFD库有什么bug存在的话也不会影响到readelf程序
 
-运行readelf的时候，除了-v和-H之外，其它的选项必须有一个被指定。 
+运行readelf的时候，除了-v和-H之外，其它的选项必须有一个被指定
 
-### ELF文件类型  
+## 选项
+
+```markdown
+用法：readelf <选项> elf-文件
+ 显示关于 ELF 格式文件内容的信息
+ Options are:
+  -a --all               Equivalent to: -h -l -S -s -r -d -V -A -I
+  -h --file-header       Display the ELF file header
+  -l --program-headers   Display the program headers
+     --segments          An alias for --program-headers
+  -S --section-headers   Display the sections' header
+     --sections          An alias for --section-headers
+  -g --section-groups    Display the section groups
+  -t --section-details   Display the section details
+  -e --headers           Equivalent to: -h -l -S
+  -s --syms              Display the symbol table
+     --symbols           An alias for --syms
+  --dyn-syms             Display the dynamic symbol table
+  -n --notes             Display the core notes (if present)
+  -r --relocs            Display the relocations (if present)
+  -u --unwind            Display the unwind info (if present)
+  -d --dynamic           Display the dynamic section (if present)
+  -V --version-info      Display the version sections (if present)
+  -A --arch-specific     Display architecture specific information (if any)
+  -c --archive-index     Display the symbol/file index in an archive
+  -D --use-dynamic       Use the dynamic section info when displaying symbols
+  -x --hex-dump=<number|name>
+                         Dump the contents of section <number|name> as bytes
+  -p --string-dump=<number|name>
+                         Dump the contents of section <number|name> as strings
+  -R --relocated-dump=<number|name>
+                         Dump the contents of section <number|name> as relocated bytes
+  -z --decompress        Decompress section before dumping it
+  -w[lLiaprmfFsoRt] or
+  --debug-dump[=rawline,=decodedline,=info,=abbrev,=pubnames,=aranges,=macro,=frames,
+               =frames-interp,=str,=loc,=Ranges,=pubtypes,
+               =gdb_index,=trace_info,=trace_abbrev,=trace_aranges,
+               =addr,=cu_index]
+                         Display the contents of DWARF2 debug sections
+  --dwarf-depth=N        Do not display DIEs at depth N or greater
+  --dwarf-start=N        Display DIEs starting with N, at the same depth
+                         or deeper
+  -I --histogram         Display histogram of bucket list lengths
+  -W --wide              Allow output width to exceed 80 characters
+  @<file>                Read options from <file>
+
+```
+
+### ELF文件类型
 
  **种类型的ELF文件：** 
 

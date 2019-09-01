@@ -96,3 +96,139 @@ for x in range(1, 5):
             if (x != y) and (x != z) and (z != y):
                 print(x, y, z)
 
+
+# 计算pi小数点任意位数
+from __future__ import division
+import math
+from time import time
+time1 = time()
+number = int(input('输入计算的位数：'))
+number1 = number + 10  # 多计算十位方式尾数取舍影响
+b = 10 ** number1
+
+# 求含4/5的首项
+x1 = b * 4 // 5
+# 求含1/239的首项
+x2 = b // -239
+
+# 求第一大项
+he = x1 + x2
+# 设置下面循环的终点，即共计算n项
+number *= 2
+
+# 循环初值=3，末值2n,步长=2
+for i in range(3, number, 2):
+    # 求每个含1/5的项及符号
+    x1 //= -25
+    # 求每个含1/239的项及符号
+    x2 //= -57121
+    # 求两项之和
+    x = (x1 + x2) // i
+    # 求总和
+    he += x
+
+# 求出π
+pi = he * 4
+# 舍掉后十位
+pi //= 10 ** 10
+
+# 输出圆周率π的值
+pi_string = str(pi)
+result = pi_string[0] + str('.') + pi_string[1:len(pi_string)]
+print(result)
+
+time2 = time()
+
+print(u'耗时：' + str(time2 - time1) + 's')
+
+
+# 使用chudnovsky算法计算
+# 理解链接：https://www.craig-wood.com/nick/articles/pi-chudnovsky/
+
+"""
+Python3 program to calculate Pi using python long integers, BINARY
+splitting and the Chudnovsky algorithm
+
+"""
+
+import math
+from gmpy2 import mpz
+from time import time
+
+def pi_chudnovsky_bs(digits):
+    """
+    Compute int(pi * 10**digits)
+
+    This is done using Chudnovsky's series with BINARY splitting
+    """
+    C = 640320
+    C3_OVER_24 = C**3 // 24
+    def bs(a, b):
+        """
+        Computes the terms for binary splitting the Chudnovsky infinite series
+
+        a(a) = +/- (13591409 + 545140134*a)
+        p(a) = (6*a-5)*(2*a-1)*(6*a-1)
+        b(a) = 1
+        q(a) = a*a*a*C3_OVER_24
+
+        returns P(a,b), Q(a,b) and T(a,b)
+        """
+        if b - a == 1:
+            # Directly compute P(a,a+1), Q(a,a+1) and T(a,a+1)
+            if a == 0:
+                Pab = Qab = mpz(1)
+            else:
+                Pab = mpz((6*a-5)*(2*a-1)*(6*a-1))
+                Qab = mpz(a*a*a*C3_OVER_24)
+            Tab = Pab * (13591409 + 545140134*a) # a(a) * p(a)
+            if a & 1:
+                Tab = -Tab
+        else:
+            # Recursively compute P(a,b), Q(a,b) and T(a,b)
+            # m is the midpoint of a and b
+            m = (a + b) // 2
+            # Recursively calculate P(a,m), Q(a,m) and T(a,m)
+            Pam, Qam, Tam = bs(a, m)
+            # Recursively calculate P(m,b), Q(m,b) and T(m,b)
+            Pmb, Qmb, Tmb = bs(m, b)
+            # Now combine
+            Pab = Pam * Pmb
+            Qab = Qam * Qmb
+            Tab = Qmb * Tam + Pam * Tmb
+        return Pab, Qab, Tab
+    # how many terms to compute
+    DIGITS_PER_TERM = math.log10(C3_OVER_24/6/2/6)
+    N = int(digits/DIGITS_PER_TERM + 1)
+    # Calclate P(0,N) and Q(0,N)
+    P, Q, T = bs(0, N)
+    one_squared = mpz(10)**(2*digits)
+    sqrtC = (10005*one_squared).sqrt()
+    return (Q*426880*sqrtC) // T
+
+# The last 5 digits or pi for various numbers of digits
+check_digits = {
+    100 : 70679,
+    1000 :  1989,
+    10000 : 75678,
+    100000 : 24646,
+    1000000 : 58151,
+    10000000 : 55897,
+}
+
+if __name__ == "__main__":
+    digits = 100
+    pi = pi_chudnovsky_bs(digits)
+    print(pi)
+    #raise SystemExit
+    for log10_digits in range(1,9):
+        digits = 10**log10_digits
+        start =time()
+        pi = pi_chudnovsky_bs(digits)
+        print("chudnovsky_gmpy_mpz_bs: digits",digits,"time",time()-start)
+        if digits in check_digits:
+            last_five_digits = pi % 100000
+            if check_digits[digits] == last_five_digits:
+                print("Last 5 digits %05d OK" % last_five_digits)
+            else:
+                print("Last 5 digits %05d wrong should be %05d" % (last_five_digits, check_digits[digits]))

@@ -2,9 +2,11 @@
 
 ## 说明
 
-**ps命令** 用于报告当前系统的进程状态。可以搭配kill指令随时中断、删除不必要的程序。ps命令是最基本同时也是非常强大的进程查看命令，使用该命令可以确定有哪些进程正在运行和运行的状态、进程是否结束、进程有没有僵死、哪些进程占用了过多的资源等等，总之大部分信息都是可以通过执行该命令得到的。
+**ps命令** 用于报告当前系统的进程状态。可以搭配kill指令随时中断、删除不必要的程序。ps命令是最基本同时也是非常强大的进程
+查看命令，使用该命令可以确定有哪些进程正在运行和运行的状态、进程是否结束、进程有没有僵死、哪些进程占用了过多的资源等等,
+总之大部分信息都是可以通过执行该命令得到的。
 
-## 语法
+## 选项
 
 Usage: ps [options]
 
@@ -83,11 +85,9 @@ Miscellaneous options:
                      display help and exit
 ```
 
-由于ps命令能够支持的系统类型相当的多，所以选项多的离谱！
-
 ## 实例
 
-```sh
+```bash
 ps aux | sort -rnk 4  # 按内存资源的使用量对进程进行排序
 ps aux | sort -nk 3   # 按CPU 资源的使用量对进程进行排序
 ps -le or ps -aux     # 查看所有用户执行的进程的详细信息
@@ -95,4 +95,6 @@ ps -aux --sort pid    # 可按照进程执行的时间，PID，UID等对进程�
 ps -uU tangsir / ps -aux | grep tangsir   # 查看系统中指定用户执行的进程
 pstree | more   # 进程树，非常直观的观察父子进程
 ps --no-headers -o "rss,cmd" -C php-fpm | awk '{ sum+=$1 } END { printf ("%d%s\n", sum/NR/1024,"M") }'  # PHP-FPM进程的平均内存占用
+ps -u root | awk '/^test/ {print "kill -9" $1}' | sh     # 将用户root下所有进程名以test开头的全部强制杀死
+
 ```

@@ -2,15 +2,16 @@
 
 ## 说明
 
-**grep**(global search regular expression(RE))and print out the line，全面搜索正则表达式并把行打印出来）是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹配的行打印出来。用于过滤/搜索的特定字符。可使用正则表达式能多种命令配合使用，使用上十分灵活。
+**grep**(global search regular expression(RE))and print out the line，全面搜索正则表达式并把行打印出来）是一种强大的文本
+搜索工具，它能使用正则表达式搜索文本，并把匹配的行打印出来。用于过滤/搜索的特定字符。可使用正则表达式能多种命令配合使用
 
-grep的工作方式是这样的，它在一个或多个文件中搜索字符串模板。如果模板包括空格，则必须被引用，模板后的所有字符串被看作文件名。搜索的结果被送到屏幕，不影响原文件内容。
+grep的工作方式是这样的，它在一个或多个文件中搜索字符串模板。如果模板包括空格，则必须被引用，模板后所有字符串被看作文件名
+搜索的结果被送到屏幕，不影响原文件内容
 
-grep可用于shell脚本，因为grep通过返回一个状态值来说明搜索的状态，如果模板搜索成功，则返回0，如果搜索不成功，则返回1，如果搜索的文件不存在，则返回2。我们利用这些返回值就可进行一些自动化的文本处理工作。
+grep可用于shell脚本，因为grep通过返回一个状态值来说明搜索的状态，如果模板搜索成功，则返回0，如果搜索不成功，则返回1，如
+果搜索的文件不存在，则返回2。我们利用这些返回值就可进行一些自动化的文本处理工作
 
-
-
-```sh
+```markdown
 用法: grep [选项]... PATTERN [FILE]...
 在每个 FILE 或是标准输入中查找 PATTERN。
 默认的 PATTERN 是一个基本正则表达式(缩写为 BRE)。
@@ -93,7 +94,7 @@ egrep是grep的扩展，支持更多的re元字符， fgrep就是fixed grep或fa
 
 ## grep可用的规则表达式
 
-```sh
+```markdown
 ^         # 锚定行的开始 如：'^grep'匹配所有以grep开头的行
 $         # 锚定行的结束 如：'grep$'匹配所有以grep结尾的行。
 \         # 转义符
@@ -130,7 +131,7 @@ fgrep   快速grep命令，不支持正则表达式，与grep -F等价
 
 ## grep命令常见用法
 
-```sh
+```bash
 grep bash /etc/passwd | cut -d: -f1   # 显示系统上使用Bash shell登录的所有用户
 ls -algG --time-style=+%s | grep ^[^d] | awk -vlimit=$(date +%s -d '10 hours ago') '$4 > limit { print substr($0, index($0, $4) + length($4) + 1) }'    # 搜索目录下十小时前更改的文件，不包括文件夹，只使用grep实现。(更好的方式用find实现)
 grep ^[[:upper:]] test.txt  # 搜索test.txt以大写字母开头的行，POSIX字符类作为模式的用法都类似，使用时注意用方括号将POSIX字符括起来就行了
@@ -140,10 +141,14 @@ grep "\<the\>" test.txt
 grep -w the test.txt
 
 grep -E "zh|en" test.txt  # | (或)字符,grep需要加上-E选项才能支持使用它,例：匹配test.txt文件有zh或en的行
-grep -iHR "关键字" ./*  # 递归搜索含有某个关键字的文件目录
+
+# 递归搜索含有某个关键字的文件目录
+grep -iHR "关键字" ./*
+: << comment
 -i 对要搜索的字符忽略大小写
 -H 同时打印包括搜索字符串的文件名
 -R 递归搜索，当指定的搜索路径是一个目录时，加上-R的搜索会执行递归搜索
+comment
 
 grep ^/..../ test.txt   # 搜索文件test.txt以/字符开始，中间任意四个字符，第六个字符为/的行
 

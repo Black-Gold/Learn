@@ -1,32 +1,34 @@
-crontab
-===
-
-提交和管理用户的需要周期性执行的任务
+# **crontab**
 
 ## 说明
 
-**crontab命令** 被用来提交和管理用户的需要周期性执行的任务，与windows下的计划任务类似，当安装完成操作系统后，默认会安装此服务工具，并且会自动启动crond进程，crond进程每分钟会定期检查是否有要执行的任务，如果有要执行的任务，则自动执行该任务。
+**crontab命令** 被用来提交和管理用户的需要周期性执行的任务，与windows下的计划任务类似，当安装完成操作系统后，默认会安装
+此服务工具，并且会自动启动crond进程，crond进程每分钟会定期检查是否有要执行的任务，如果有要执行的任务，则自动执行该任务
 
-### 语法  
+## 选项
+
+```markdown
+Usage:
+ crontab [options] file
+ crontab [options]
+ crontab -n [hostname]
+
+Options:
+ -u <user>  指定设置定时的用户名
+ -e         编辑该用户下的定时任务
+ -l         列出该用户下定时任务
+ -r         删除该用户的定时任务
+ -i         交互式删除定时任务
+ -n <host>  set host in cluster to run users' crontabs
+ -c         get host in cluster to run users' crontabs
+ -s         selinux context
+ -x <mask>  enable debugging
+
+Default operation is replace, per 1003.2
 
 ```
-crontab(选项)(参数)
-```
 
-  
-
-```
--e：编辑该用户的计时器设置；
--l：列出该用户的计时器设置；
--r：删除该用户的计时器设置；
--u<用户名称>：指定要设定计时器的用户名称。
-```
-
-### 参数  
-
-crontab文件：指定包含待执行任务的crontab文件。
-
-### 知识扩展  
+## 知识扩展
 
 Linux下的任务调度分为两类： **系统任务调度** 和 **用户任务调度** 。
 
@@ -202,5 +204,4 @@ chkconfig –level 35 crond on
 ```
 01 * * * * root run-parts /etc/cron.hourly
 ```
-
 

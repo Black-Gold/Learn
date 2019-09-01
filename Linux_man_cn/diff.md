@@ -1,21 +1,15 @@
-diff
-===
-
-比较给定的两个文件的不同
+# **diff**
 
 ## 说明
 
-**diff命令** 在最简单的情况下，比较给定的两个文件的不同。如果使用“-”代替“文件”参数，则要比较的内容将来自标准输入。diff命令是以逐行的方式，比较文本文件的异同处。如果该命令指定进行目录的比较，则将会比较该目录中具有相同文件名的文件，而不会对其子目录文件进行任何比较操作。
+**diff命令** 在最简单的情况下，比较给定的两个文件的不同。如果使用“-”代替“文件”参数，则要比较的内容将来自标准输入
+diff命令是以逐行的方式，比较文本文件的异同处。如果该命令指定进行目录的比较，则将会比较该目录中具有相同文件名的文件，而不
+会对其子目录文件进行任何比较操作
 
-### 语法  
+## 选项
 
-```
-diff(选项)(参数)
-```
+```markdown
 
-  
-
-```
 -<行数>：指定要显示多少行的文本。此参数必须与-c或-u参数一并使用；
 -a或——text：diff预设只会逐行比较文本文件；
 -b或--ignore-space-change：不检查空格字符的不同；
@@ -50,31 +44,117 @@ diff(选项)(参数)
 --help：显示帮助；
 --left-column：在使用-y参数时，若两个文件某一行内容相同，则仅在左侧的栏位显示该行内容；
 --suppress-common-lines：在使用-y参数时，仅显示不同之处。
+
+用法：diff [选项]... FILES
+Compare FILES line by line.
+
+Mandatory arguments to long options are mandatory for short options too.
+      --normal                  output a normal diff (the default)
+  -q, --brief                   report only when files differ
+  -s, --report-identical-files  report when two files are the same
+  -c, -C NUM, --context[=NUM]   output NUM (default 3) lines of copied context
+  -u, -U NUM, --unified[=NUM]   output NUM (default 3) lines of unified context
+  -e, --ed                      output an ed script
+  -n, --rcs                     output an RCS format diff
+  -y, --side-by-side            output in two columns
+  -W, --width=NUM               output at most NUM (default 130) print columns
+      --left-column             output only the left column of common lines
+      --suppress-common-lines   do not output common lines
+
+  -p, --show-c-function         show which C function each change is in
+  -F, --show-function-line=RE   show the most recent line matching RE
+      --label LABEL             use LABEL instead of file name
+                                  (can be repeated)
+
+  -t, --expand-tabs             expand tabs to spaces in output
+  -T, --initial-tab             make tabs line up by prepending a tab
+      --tabsize=NUM             tab stops every NUM (default 8) print columns
+      --suppress-blank-empty    suppress space or tab before empty output lines
+  -l, --paginate                pass output through 'pr' to paginate it
+
+  -r, --recursive                 recursively compare any subdirectories found
+      --no-dereference            don't follow symbolic links
+  -N, --new-file                  treat absent files as empty
+      --unidirectional-new-file   treat absent first files as empty
+      --ignore-file-name-case     ignore case when comparing file names
+      --no-ignore-file-name-case  consider case when comparing file names
+  -x, --exclude=PAT               exclude files that match PAT
+  -X, --exclude-from=FILE         exclude files that match any pattern in FILE
+  -S, --starting-file=FILE        start with FILE when comparing directories
+      --from-file=FILE1           compare FILE1 to all operands;
+                                    FILE1 can be a directory
+      --to-file=FILE2             compare all operands to FILE2;
+                                    FILE2 can be a directory
+
+  -i, --ignore-case               ignore case differences in file contents
+  -E, --ignore-tab-expansion      ignore changes due to tab expansion
+  -Z, --ignore-trailing-space     ignore white space at line end
+  -b, --ignore-space-change       ignore changes in the amount of white space
+  -w, --ignore-all-space          ignore all white space
+  -B, --ignore-blank-lines        ignore changes where lines are all blank
+  -I, --ignore-matching-lines=RE  ignore changes where all lines match RE
+
+  -a, --text                      treat all files as text
+      --strip-trailing-cr         strip trailing carriage return on input
+
+  -D, --ifdef=NAME                output merged file with '#ifdef NAME' diffs
+      --GTYPE-group-format=GFMT   format GTYPE input groups with GFMT
+      --line-format=LFMT          format all input lines with LFMT
+      --LTYPE-line-format=LFMT    format LTYPE input lines with LFMT
+    These format options provide fine-grained control over the output
+      of diff, generalizing -D/--ifdef.
+    LTYPE is 'old', 'new', or 'unchanged'.  GTYPE is LTYPE or 'changed'.
+    GFMT (only) may contain:
+      %<  lines from FILE1
+      %>  lines from FILE2
+      %=  lines common to FILE1 and FILE2
+      %[-][WIDTH][.[PREC]]{doxX}LETTER  printf-style spec for LETTER
+        LETTERs are as follows for new group, lower case for old group:
+          F  first line number
+          L  last line number
+          N  number of lines = L-F+1
+          E  F-1
+          M  L+1
+      %(A=B?T:E)  if A equals B then T else E
+    LFMT (only) may contain:
+      %L  contents of line
+      %l  contents of line, excluding any trailing newline
+      %[-][WIDTH][.[PREC]]{doxX}n  printf-style spec for input line number
+    Both GFMT and LFMT may contain:
+      %%  %
+      %c'C'  the single character C
+      %c'\OOO'  the character with octal code OOO
+      C    the character C (other characters represent themselves)
+
+  -d, --minimal            try hard to find a smaller set of changes
+      --horizon-lines=NUM  keep NUM lines of the common prefix and suffix
+      --speed-large-files  assume large files and many scattered small changes
+
+      --help               display this help and exit
+  -v, --version            output version information and exit
+
+FILES are 'FILE1 FILE2' or 'DIR1 DIR2' or 'DIR FILE...' or 'FILE... DIR'.
+If --from-file or --to-file is given, there are no restrictions on FILE(s).
+If a FILE is '-', read standard input.
+如果输入相同，则退出状态为 0；1 表示输入不同；2 表示有错误产生。
+
 ```
 
-### 参数  
+## 实例
 
-*   文件1：指定要比较的第一个文件；
-*   文件2：指定要比较的第二个文件。
+```bash
+diff /usr/li/test.txt test.txt     # 将目录`/usr/li`下的文件test.txt与当前目录下的文件test.txt进行比较
 
-### 实例  
-
-将目录`/usr/li`下的文件"test.txt"与当前目录下的文件"test.txt"进行比较，输入如下命令：
-
-```
-diff /usr/li test.txt     #使用diff指令对文件进行比较
-```
-
-上面的命令执行后，会将比较后的不同之处以指定的形式列出，如下所示：
-
-```
+: << comment
+输出详解：
 n1 a n3,n4  
 n1,n2 d n3  
 n1,n2 c n3,n4 
+
+其中，字母"a"、"d"、"c"分别表示添加、删除及修改操作。而"n1"、"n2"表示在文件1中的行号，"n3"、"n4"表示在文件2中的行号
+注意：以上说明指定了两个文件中不同处的行号及其相应的操作。在输出形式中，每一行后面将跟随受到影响的若干行。其中，以<开始
+的行属于文件1，以>开始的行属于文件2
+comment
+
 ```
-
-其中，字母"a"、"d"、"c"分别表示添加、删除及修改操作。而"n1"、"n2"表示在文件1中的行号，"n3"、"n4"表示在文件2中的行号。
-
-注意：以上说明指定了两个文件中不同处的行号及其相应的操作。在输出形式中，每一行后面将跟随受到影响的若干行。其中，以<开始的行属于文件1，以>开始的行属于文件2。
-
 

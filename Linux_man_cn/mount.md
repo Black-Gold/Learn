@@ -1,26 +1,17 @@
-mount
-===
-
-用于挂载Linux系统外的文件。
+# **mount**
 
 ## 说明
 
 **mount命令** Linux mount命令是经常会使用到的命令，它用于挂载Linux系统外的文件。
 
-### 语法  
+## 选项
 
-```
+```markdown
 mount [-hV]
 mount -a [-fFnrsvw] [-t vfstype]
 mount [-fnrsvw] [-o options [,...]] device | dir
 mount [-fnrsvw] [-t vfstype] [-o options] device dir
-```
 
-  
-
-```
--V：显示程序版本
--h：显示辅助讯息
 -v：显示较讯息，通常和 -f 用来除错。
 -a：将 /etc/fstab 中定义的所有档案系统挂上。
 -F：这个命令通常和 -a 一起使用，它会为每一个 mount 的动作产生一个行程负责执行。在系统需要挂上大量 NFS 档案系统时可以加快挂上的动作。
@@ -46,12 +37,13 @@ mount [-fnrsvw] [-t vfstype] [-o options] device dir
 -o loop=：使用 loop 模式用来将一个档案当成硬盘分割挂上系统。
 ```
 
-### 实例  
+## 实例
 
+```bash
 将 `/dev/hda1` 挂在 `/mnt` 之下。
-
-```
 #mount /dev/hda1 /mnt
+
+mount | column -t   # 以表格形式输出
 ```
 
 将 `/dev/hda1` 用唯读模式挂在 `/mnt` 之下。

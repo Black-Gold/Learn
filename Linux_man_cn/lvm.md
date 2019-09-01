@@ -15,7 +15,7 @@
 
 ## **pvcreate**
 
-```info
+```markdown
 pvcreate PV ...
   [ -f|--force ]  强制创建物理卷，不需要用户确认
   [ -M|--metadatatype lvm2|lvm1 ]
@@ -59,7 +59,7 @@ pvcreate /dev/hda{6,7,8,9}  # 在/dev/hda6-9分区创建pv
 
 ## **pvscan命令**
 
-```info
+```markdown
 列出所有的物理卷
 
 Display PV information.
@@ -102,39 +102,28 @@ Display PV information.
 
 ```
 
-### 实例  
+## 实例
 
-使用pvscan命令扫描当前系统中所有硬盘的物理卷，在命令行中输入下面的命令：
-
-```
-[root@localhost ~]# pvscan     #扫描所有硬盘上的物理卷 
+```bash
+pvscan     # 扫描所有硬盘上的物理卷 
 ```
 
-输出信息如下：
+## **pvdisplay命令**
 
-```
-PV /dev/sdb1         lvm2 [101.94 MB]  
-PV /dev/sdb2         lvm2 [101.98 MB]  
-Total: 2 [203.92 MB] / in use: 0 [0   ] / in no VG: 2 [203.92  
-MB] 
-```
+用于显示物理卷的属性。pvdisplay命令显示的物理卷信息包括：物理卷名称、所属的卷组、物理卷大小、PE大小、总PE数、可用PE数、
+已分配的PE数和UUID
 
-说明：本例中，输出了两个物理卷，它们不属于任何卷组，是可被利用的物理卷。
-
-**pvdisplay命令** 用于显示物理卷的属性。pvdisplay命令显示的物理卷信息包括：物理卷名称、所属的卷组、物理卷大小、PE大小、总PE数、可用PE数、已分配的PE数和UUID。
-
-
-
-```info
--s  以短格式输出；
--m  显示PE到LE的映射。
+```markdown
+-s  以短格式输出
+-m  显示PE到LE的映射
 ```
 
 ## LVM(逻辑卷管理)
 
-```sh
+```markdown
 概念介绍：
-LVM （logical volume Manager）逻辑卷管理通过将底层物理硬盘抽象封装起来，以逻辑卷的形式表现给上层系统，逻辑卷的大小可以动态调整的而且不会丢失数据。新加入的硬盘也不会改变现有上层的逻辑卷；
+LVM （logical volume Manager）逻辑卷管理通过将底层物理硬盘抽象封装起来，以逻辑卷的形式表现给上层系统，逻辑卷的大小可以动
+态调整的而且不会丢失数据。新加入的硬盘也不会改变现有上层的逻辑卷
 
 LVM特点：
 1.作为一个动态磁盘管理机制，逻辑卷技术大大提高了磁盘管理的灵活性；
@@ -152,7 +141,6 @@ LVM原理解析：
 3.LV基于PE创建，大小为PE的整数倍，组成LV的PE可能来自不同物理磁盘；
 4.LV格式化完成后挂载就可以使用了
 5.LV的扩充缩减实际上就是增加了或者减少了组成该LV的PE的数量。其过程不会丢失数据信息；
-```
 
 FAQ:(Frequently Asked Question)
 1.LV的大小应该由PE大小和PE数量决定;默认PE为4M大小的情况下一个逻辑卷最大可以支持256G
@@ -160,6 +148,7 @@ FAQ:(Frequently Asked Question)
 3.PE的大小最终影响 逻辑卷的最大大小，逻辑卷的大小一定是PE的整数倍
 5.一个逻辑卷只能属于一个卷组
 6.执行lvm操作时，先前的meta元数据都保存在/etc/lvm/archive目录，用vgcfgrestore可进行恢复操作
+```
 
 ## LVM拉伸逻辑卷
 
