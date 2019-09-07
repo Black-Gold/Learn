@@ -100,17 +100,19 @@ date --date='TZ="America/Los_Angeles" 09:00 next Fri'
 
 ```bash
 date +"%Y-%m-%d"    # 格式化输出并用-符号连接日期
-
-# 输出昨天日期
-date -d "1 day ago" +"%Y-%m-%d"
-date -d "yesterday" +"%Y-%m-%d"
-date -d "-1 day" +"%Y-%m-%d"
-
 date -d "2 second" +"%Y-%m-%d %H:%M.%S"     # 2秒后输出
 date -d "1970-01-01 1234567890 seconds" +"%Y-%m-%d %H:%m:%S"    # 输出传说中的1234567890秒
 date -d "2009-12-12" +"%Y/%m/%d %H:%M.%S"   # 普通转格式
 date -d "Dec 5, 2009 12:00:37 AM" +"%Y-%m-%d %H:%M.%S"  # apache格式转换
 date -d "Dec 5, 2009 12:00:37 AM 2 year ago" +"%Y-%m-%d %H:%M.%S"   # 格式转换后时间游走
+date --date='25 Dec' +%A    # 今年的圣诞节是星期几
+date -d fri     # 这个星期五是几号
+date --date '1970-01-01 UTC 2147483647 seconds' # 将相对于1970-01-01 00：00的秒数转换成时间
+
+# 输出昨天日期
+date -d "1 day ago" +"%Y-%m-%d"
+date -d "yesterday" +"%Y-%m-%d"
+date -d "-1 day" +"%Y-%m-%d"
 
 # 加减操作
 date +%Y%m%d                    # 显示前天年月日

@@ -2,8 +2,8 @@
 
 ## 说明
 
-**sort命令** 是在Linux里非常有用，它将文件进行排序，并将排序结果标准输出。sort命令既可以从特定的文件，也可以从stdin中获取输入
-awk 'EXPRESSION { PROGRAM }' file(s)
+**sort命令** 是在Linux里非常有用，它将文件进行排序，并将排序结果标准输出。sort命令既可以从特定的文件，也可以从stdin中获
+取输入awk 'EXPRESSION { PROGRAM }' file(s)
 
 ```markdown
 用法：sort [选项]... [文件]...
@@ -60,8 +60,7 @@ SIZE may be followed by the following multiplicative suffixes:
 如果不指定文件，或者文件为"-"，则从标准输入读取数据。
 
 *** 警告 ***
-本地环境变量会影响排序结果。
-如果希望以字节的自然值获得最传统的排序结果，请设置LC_ALL=C。
+本地环境变量会影响排序结果。如果希望以字节的自然值获得最传统的排序结果，请设置LC_ALL=C
 
 ```
 
@@ -69,13 +68,19 @@ SIZE may be followed by the following multiplicative suffixes:
 
 ```bash
 # sort将文件/文本的每一行作为一个单位，相互比较，比较原则是从首字符向后，依次按ASCII码值进行比较，最后默认按按升序输出
+sort -t. -k1,1n -k2,2n -k3,3n -k4,4n    # 排序IPV4地址
+
+# 以下命令如果是英文文本的话export LANG=C可以提高速度
+sort -u file1 file2                 # 两个未排序文件的并集
+sort file1 file2 | uniq -d          # 两个未排序文件的交集
+sort file1 file1 file2 | uniq -u    # 两个未排序文件的差集
+sort file1 file2 | uniq -u          # 两个未排序文件的对称差集
 
 # 忽略相同行使用-u选项或者uniq
-sort -u sort.txt
+sort -u sort.txt 
 uniq sort.txt
 
 sort -nk 2 -t: sort.txt   # 将:字符作为分隔符，按其后的第二个字符的数字从小到大排序
-
 # -n是按照数字大小排序，-r是以相反顺序，-k是指定需要爱排序的栏位，-t指定栏位分隔符为冒号
 
 : << comment

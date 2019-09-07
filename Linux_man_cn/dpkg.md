@@ -20,6 +20,7 @@ Deb软件包：指定要操作的.deb软件包。
 ### 实例  
 
 ```
+dpkg-query -W -f='${Installed-Size;10}\t${Package}\n' | sort -k1,1n | 显示所有在deb发布版上安装的包，并以KB包大小为序
 dpkg -i package.deb     #安装包
 dpkg -r package         #删除包
 dpkg -P package         #删除包（包括配置文件）

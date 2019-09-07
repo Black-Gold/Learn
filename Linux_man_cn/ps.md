@@ -88,9 +88,17 @@ Miscellaneous options:
 ## 实例
 
 ```bash
+# 查看所有用户执行的进程的详细信息
+ps -aux
+ps -le
+
+ps -p pid1,pid2 # 显示指定进程id的信息，此例为pid1，pid2进程的信息
 ps aux | sort -rnk 4  # 按内存资源的使用量对进程进行排序
 ps aux | sort -nk 3   # 按CPU 资源的使用量对进程进行排序
-ps -le or ps -aux     # 查看所有用户执行的进程的详细信息
+ps -eo pid,args --forest    # 以树结构显示进程
+ps -eo pcpu,cpu,nice,state,cputime,args --sort pcpu | sed '/^ 0.0 /d' # 以CPU占用率为序显示进程
+ps -e -orss=,args= | sort -rb -k1,1n | pr -TW$COLUMNS    # 以内存使用量排序显示进程
+ps -C nginx -L -o pid,tid,pcpu,state    # 显示指定进程的所有线程信息
 ps -aux --sort pid    # 可按照进程执行的时间，PID，UID等对进程进行排序
 ps -uU tangsir / ps -aux | grep tangsir   # 查看系统中指定用户执行的进程
 pstree | more   # 进程树，非常直观的观察父子进程

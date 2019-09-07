@@ -192,7 +192,6 @@ find . -type f -name "*.txt" -exec cat {} \;> all.txt   # 查找当前目录下�
 find . -type f -name "*.txt" -exec printf "File: %s\n" {} \;    # 找出当前目录下所有.txt文件并以“File:文件名”的形式打印出来
 find . -type f -name "*" | xargs grep "test"  # 当前目录搜索包含test内容的文件
 find . -type f -mmin -10    # 搜索当前目录中，所有过去10分钟中更新过的普通文件。如果不加-type f参数，则搜索普通文件+特殊文件+目录
-
 ```
 
 ```bash
@@ -216,6 +215,10 @@ find . -type f -amin +10    # 搜索访问时间超过10分钟的所有文件
 find . -type f -mmin -5     # 查找在5分钟内修改过的文件
 find . -type f -newer file.log  # 找出比file.log修改时间更长的所有文件
 find . -newer file1 ! -newer file2 -exec ls -l {} \;    # 查找更改时间比文件file1新但比file2旧的文件
+
+# 查找当前目录更改时间一天以内的文件并压缩
+find . -mtime -1 -type f -print0 | xargs -0 tar rvf "archive.tar"
+find . -mtime -1 -type f -exec tar rvf "archive.tar" '{}' \;
 ```
 
 ```bash

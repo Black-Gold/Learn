@@ -2,11 +2,10 @@
 
 ## 说明
 
-**kill命令** 用来删除执行中的程序或工作。kill可将指定的信息送至程序。预设的信息为SIGTERM(15),可将指定程序终止。若仍无法终止该程序，可使用SIGKILL(9)信息尝试强制删除程序。程序或工作的编号可利用ps指令或job指令查看。
+**kill命令** 用来删除执行中的程序或工作。kill可将指定的信息送至程序。预设的信息为SIGTERM(15),可将指定程序终止。若仍无法
+终止该程序，可使用SIGKILL(9)信息尝试强制删除程序。程序或工作的编号可利用ps指令或job指令查看
 
-  
-
-```sh
+```markdown
 -a：当处理当前进程时，不限制命令名和进程号的对应关系；
 -l <信息编号>：若不加<信息编号>选项，则-l参数会列出全部的信息名称
 -L, --table List signal names in a nice table
@@ -19,7 +18,7 @@
 
 列出所有信号名称：
 
-```sh
+```markdown
  kill -l
  1) SIGHUP       2) SIGINT       3) SIGQUIT      4) SIGILL
  2) SIGTRAP      6) SIGABRT      7) SIGBUS       8) SIGFPE
@@ -41,7 +40,7 @@
 
 只有第9种信号(SIGKILL)才可以无条件终止进程，其他信号进程都有权利忽略， **下面是常用的信号：**
 
-```sh
+```markdown
 HUP     1    终端断线
 INT     2    中断（同 Ctrl + C）
 QUIT    3    退出（同 Ctrl + \）
@@ -51,14 +50,7 @@ CONT   18    继续（与STOP相反， fg/bg命令）
 STOP   19    暂停（同 Ctrl + Z）
 ```
 
-先用ps查找进程，然后用kill杀掉：
 
-```sh
-ps -ef | grep vim
-root      3268  2884  0 16:21 pts/1    00:00:00 vim install.log
-root      3370  2822  0 16:21 pts/0    00:00:00 grep vim
+```bash
 
-kill 3268
-kill 3268
--bash: kill: (3268) - 没有那个进程
 ```

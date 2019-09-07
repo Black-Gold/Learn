@@ -1,21 +1,12 @@
-hdparm
-===
-
-显示与设定硬盘的参数
+# hdparm
 
 ## 说明
 
-**hdparm命令** 提供了一个命令行的接口用于读取和设置IDE或SCSI硬盘参数。
+**hdparm命令** 提供了一个命令行的接口用于读取和设置IDE或SCSI硬盘参数
 
-### 语法  
+## 选项
 
-```
-hdparm(选项)(参数)
-```
-
-  
-
-```
+```markdown
 -a<快取分区>：设定读取文件时，预先存入块区的分区数，若不加上<快取分区>选项，则显示目前的设定；
 -A<0或1>：启动或关闭读取文件时的快取功能；
 -c<I/O模式>：设定IDE32位I/O模式；
@@ -46,70 +37,18 @@ hdparm(选项)(参数)
 -Z：关闭某些Seagate硬盘的自动省电功能。
 ```
 
-### 参数  
+## 实例
 
-设备文件：指定id驱动对应的设备文件名。
+```bash
+hdparm -i /dev/sda      # 显示硬盘/dev/sda的相关设置
+hdparm -tT /dev/sda     # 检测磁盘sda的读取速度
+hdparm -g /dev/sda      # 显示硬盘的柱面、磁头、扇区数
+hdparm -T /dev/xvda     # 测试硬盘缓存的读取速度
+hdparm -C /dev/sda      # 检测硬盘的电源管理模式
+hdparm -m /dev/sda      # 设置硬盘多重扇区存取的扇区数，以增进硬盘的存取效率，-m不加参数只查询此信息
 
-### 实例  
-
-显示硬盘的相关设置：
-
+# 硬盘坏道修复方法(步骤)
+smartctl -l selftest /dev/sda
+umount /dev/sda*
+badblocks /dev/sda
 ```
-hdparm /dev/sda
-/dev/sda:
-IO_support = 0 (default 16-bit)
-readonly = 0 (off)
-readahead = 256 (on)
-geometry = 19457［柱面数］/255［磁头数］/63［扇区数］, sectors = 312581808［总扇区数］, start = 0［起始扇区数］
-
-```
-
-显示硬盘的柱面、磁头、扇区数：
-
-```
-hdparm -g /dev/sda
-/dev/sda:
-geometry = 19457［柱面数］/255［磁头数］/63［扇区数］, sectors = 312581808［总扇区数］, start = 0［起始扇区数］
-```
-
-测试硬盘的读取速度：
-
-```
-hdparm -T /dev/sda
-/dev/sda:
- Timing cached reads:   4684 MB in  2.00 seconds = 2342.92 MB/sec
-```
-
-测试硬盘缓存的读取速度：
-
-```
-hdparm -T /dev/xvda
-/dev/xvda:
-Timing cached reads: 11154 MB in 1.98 seconds = 5633.44 MB/sec
-
-```
-
-检测硬盘的电源管理模式：
-
-```
-hdparm -C /dev/sda
-/dev/sda:
-drive state is: standby [省电模式]
-```
-
-查询并设置硬盘多重扇区存取的扇区数，以增进硬盘的存取效率：
-
-```
-hdparm -m /dev/sda
-hdparm -m    #参数值为整数值如8 /dev/sda
-```
-
- **附：硬盘坏道修复方法** 
-
-```
-检查：smartctl -l selftest /dev/sda
-卸载：umount /dev/sda*
-修复：badblocks /dev/sda
-```
-
-

@@ -1,24 +1,35 @@
-printf
-===
-
-格式化并输出结果
+# **printf**
 
 ## 说明
 
-**printf命令** 格式化并输出结果到标准输出。
+**printf命令** 格式化并输出结果到标准输出
 
-### 语法  
+## 选项
+
+```markdown
+
+和C语言printf一样，FORMAT控制输出，转义序列如下：
+
+\"              双引号
+\\              反斜杠
+\a              警告字符，通常是ASCII的(BEL)字符
+\b              后退
+\c              抑制（不显示）输出结果中任何结尾的换行字符（只在%b格式指示符控制下的参数字符串中有效）
+\e              escape
+\f              换页(form feed)
+\n              换行
+\r              回车(carriage return)
+\t              水平制表符
+\v              垂直制表符
+\NNN            byte with octal value NNN (1 to 3 digits)
+\xHH            byte with hexadecimal value HH (1 to 2 digits)
+\uHHHH          Unicode (ISO/IEC 10646) character with hex value HHHH (4 digits)
+\UHHHHHHHH      Unicode character with hex value HHHHHHHH (8 digits)
+
+%%     a single %
+%b     ARGUMENT as a string with '\' escapes interpreted, except that octal escapes are of the form \0 or \0NNN
 
 ```
-printf(选项)(参数)
---help：在线帮助；
---version：显示版本信息。
-```
-
-### 参数  
-
-*   输出格式：指定数据输出时的格式；
-*   输出字符串：指定要输出的数据。
 
  **格式替代符** 
 
@@ -35,38 +46,14 @@ printf(选项)(参数)
 *   %X 不带正负号的十六进制值，使用A至F表示10至15
 *   %% 字面意义的%
 
- **转义序列** 
+## 实例
 
-*   \a 警告字符，通常为ASCII的BEL字符
-*   \b 后退
-*   \c 抑制（不显示）输出结果中任何结尾的换行字符（只在%b格式指示符控制下的参数字符串中有效），而且，任何留在参数里的字符、任何接下来的参数以及任何留在格式字符串中的字符，都被忽略
-*   \f 换页（formfeed）
-*   \n 换行
-*   \r 回车（Carriage return）
-*   \t 水平制表符
-*   \v 垂直制表符
-*   \\ 一个字面上的反斜杠字符
-*   \ddd 表示1到3位数八进制值的字符，仅在格式字符串中有效
-*   \0ddd 表示1到3位的八进制值字符
-
-### 实例  
-
-```
-printf "hello world"
-
-```
-
-```
-#!/bin/bash
-
+```bash
+# %-5s 格式为左对齐且宽度为5的字符串代替（-表示左对齐），不使用则是又对齐
+# %-4.2f 格式为左对齐宽度为4，保留两位小数
 printf "%-5s %-10s %-4s\n" NO Name Mark
 printf "%-5s %-10s %-4.2f\n" 01 Tom 90.3456
 printf "%-5s %-10s %-4.2f\n" 02 Jack 89.2345
 printf "%-5s %-10s %-4.2f\n" 03 Jeff 98.4323
 
 ```
-
-*   %-5s 格式为左对齐且宽度为5的字符串代替（-表示左对齐），不使用则是又对齐。
-*   %-4.2f 格式为左对齐宽度为4，保留两位小数。
-
-

@@ -19,5 +19,11 @@
 ## 实例
 
 ```bash
-
+cat -n /etc/passwd | sed '2,5d' # 显示passwd内容，将2-5行删除后再显示
+cat -n /etc/passwd | sed '2a hello' # 在passwd文件第二行后加上hello语句
+cat -n /etc/passwd | sed '2a hello? \ zhangfneg ?'  # 在passwd文件第二行后面加上两行字
+cat -n /etc/passwd  | sed '3,37c我是好人'   # 将2至5行内容替换成我是好人
+cat -n /etc/passwd | sed -n '5,7p'  # 只显示5至7行
+cat /var/log/secure | sed -n '/12:12:50/,/12:13:50/p'   # 分析secure日志
+cat /proc/partitions    # 显示所在系统注册的分区
 ```

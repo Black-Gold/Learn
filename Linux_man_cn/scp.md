@@ -31,41 +31,8 @@ scp [-12346BCpqrv] [-c cipher] [-F ssh_config] [-i identity_file]
 
 ## 实例
 
-从远程复制到本地的scp命令与上面的命令雷同，只要将从本地复制到远程的命令后面2个参数互换顺序就行了。
-
- **从远处复制文件到本地目录** 
-
-```
-scp root@10.10.10.10:/opt/soft/nginx-0.5.38.tar.gz /opt/soft/
-```
-
-从10.10.10.10机器上的`/opt/soft/`的目录中下载nginx-0.5.38.tar.gz 文件到本地`/opt/soft/`目录中。
-
- **从远处复制到本地** 
-
-```
-scp -r root@10.10.10.10:/opt/soft/mongodb /opt/soft/
-```
-
-从10.10.10.10机器上的`/opt/soft/`中下载mongodb目录到本地的`/opt/soft/`目录来。
-
- **上传本地文件到远程机器指定目录** 
-
 ```bash
-scp /opt/soft/nginx-0.5.38.tar.gz root@10.10.10.10:/opt/soft/scptest
-# 添加断开 2222
-scp -rp -P 2222 /opt/soft/nginx-0.5.38.tar.gz root@10.10.10.10:/opt/soft/scptest
-```
-
-复制本地`/opt/soft/`目录下的文件nginx-0.5.38.tar.gz到远程机器10.10.10.10的`opt/soft/scptest`目录。
-
- **上传本地目录到远程机器指定目录** 
+scp -r root@10.10.10.10:/opt/soft/mongodb /opt/soft/    # 从远端复制到本地
+scp /opt/soft/file root@10.10.10.10:/opt/soft/scptest    # 上传本地文件到远程机器指定目录
 
 ```
-scp -r /opt/soft/mongodb root@10.10.10.10:/opt/soft/scptest
-```
-
-上传本地目录`/opt/soft/mongodb`到远程机器10.10.10.10上`/opt/soft/scptest`的目录中去。
-
-
-

@@ -42,6 +42,7 @@ Mandatory arguments to long options are mandatory for short options too.
 grep "model name" /proc/cpuinfo | uniq | cut -f2 -d :   # 显示CPU信息;-f截取,-d以:字符分界
 cut -f2 --complement test.txt   # --complement选项提取指定字段之外的列（打印除了第二列之外的列）
 cut -f2 -d";" test2.txt     # 使用-d选项指定字段分隔符
+pip3 list -o --format columns | cut -d ' ' -f1 | xargs -n1 pip install -U   # 一次性升级所有pip包
 
 ### 指定字段的字符或者字节范围  
 

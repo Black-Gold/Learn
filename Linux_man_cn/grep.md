@@ -132,6 +132,7 @@ fgrep   快速grep命令，不支持正则表达式，与grep -F等价
 ## grep命令常见用法
 
 ```bash
+grep MemTotal /proc/meminfo # 查看系统可见的总内存
 grep bash /etc/passwd | cut -d: -f1   # 显示系统上使用Bash shell登录的所有用户
 ls -algG --time-style=+%s | grep ^[^d] | awk -vlimit=$(date +%s -d '10 hours ago') '$4 > limit { print substr($0, index($0, $4) + length($4) + 1) }'    # 搜索目录下十小时前更改的文件，不包括文件夹，只使用grep实现。(更好的方式用find实现)
 grep ^[[:upper:]] test.txt  # 搜索test.txt以大写字母开头的行，POSIX字符类作为模式的用法都类似，使用时注意用方括号将POSIX字符括起来就行了

@@ -295,10 +295,9 @@ tar -xf archive.tar          # 展开归档文件 archive.tar中的所有文件
 压缩：gzip [原文件名].tar
 解压：gunzip [原文件名].tar.gz
 
-方式二：一次性打包并压缩、解压并解包
+方式二：一次性打包并压缩、解压并解包，注：z代表用gzip算法来压缩/解压
 打包并压缩： tar -zcvf [目标文件名].tar.gz [原文件名/目录名]
 解压并解包： tar -zxvf [原文件名].tar.gz
-注：z代表用gzip算法来压缩/解压。
 
 ## tar.bz2格式
 
@@ -306,10 +305,9 @@ tar -xf archive.tar          # 展开归档文件 archive.tar中的所有文件
 压缩：bzip2 [原文件名].tar
 解压：bunzip2 [原文件名].tar.bz2
 
-方式二：一次性打包并压缩、解压并解包
+方式二：一次性打包并压缩、解压并解包，注：小写j代表用bzip2算法来压缩/解压
 打包并压缩： tar -jcvf [目标文件名].tar.bz2 [原文件名/目录名]
 解压并解包： tar -jxvf [原文件名].tar.bz2
-注：小写j代表用bzip2算法来压缩/解压
 
 ## tar.xz格式
 
@@ -317,10 +315,9 @@ tar -xf archive.tar          # 展开归档文件 archive.tar中的所有文件
 压缩：xz [原文件名].tar
 解压：unxz [原文件名].tar.xz
 
-方式二：一次性打包并压缩、解压并解包
+方式二：一次性打包并压缩、解压并解包，注：大写J代表用xz算法来压缩/解压
 打包并压缩： tar -Jcvf [目标文件名].tar.xz [原文件名/目录名]
 解压并解包： tar -Jxvf [原文件名].tar.xz
-注：大写J代表用xz算法来压缩/解压。
 
 ## tar.Z格式（已过时）
 
@@ -331,7 +328,7 @@ tar -xf archive.tar          # 展开归档文件 archive.tar中的所有文件
 方式二：一次性打包并压缩、解压并解包
 打包并压缩： tar -Zcvf [目标文件名].tar.Z [原文件名/目录名]
 解压并解包： tar -Zxvf [原文件名].tar.Z
-注：大写Z代表用ncompress算法来压缩/解压。另，ncompress是早期Unix系统的压缩格式，但由于ncompress的压缩率太低，现已过时。
+注：大写Z代表用ncompress算法来压缩/解压。另，ncompress是早期Unix系统的压缩格式，但由于ncompress的压缩率太低，现已过时
 
 ## jar格式
 
