@@ -26,6 +26,11 @@ fdisk -s <分区>        给出分区大小(块数)
 ## 实例
 
 ```bash
+e2fsck -f -y -v -C 0 '/dev/sdb2'
+resize2fs -p '/dev/sdb2' 15171584k
+mkfs.ext4 -F -O ^64bit -L 'data' '/dev/sdb3'
+
+
 # 新建分区及目录详细步骤：
 : << comment
 首先选择要进行操作的磁盘：

@@ -207,7 +207,7 @@ find . -type f 时间戳,UNIX/Linux文件系统每个文件都有三种时间戳
 comment
 
 find . -type f -atime -7    # 搜索最近七天内被访问过的所有文件
-find . -type f -atime 7     # 搜索恰好在七天前被访问过的所有文件
+find . -type f -atime 7     # 搜索恰好在七天前被访问过的文件
 find . -type f -atime +7    # 搜索超过七天被访问过的所有文件
 find . -type f -mtime -5    # 查找更改时间在5天以内的文件
 find . -type f -ctime -1    # 查找在24小时内状态改变的文件

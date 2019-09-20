@@ -6,10 +6,11 @@
 curl为下载工具。作为一款强力工具，curl支持包括HTTP、HTTPS、ftp等众多协议，还支持POST、cookies、认证、从指定偏移处下载部分
 文件、用户代理字符串、限速、文件大小、进度条等特征。做网页处理流程和数据检索自动化，curl可以祝一臂之力
 
+[curl官网](https://curl.haxx.se/)
+
 ## 选项
 
-
- 
+```markdown
 -a/--append	上传文件时，附加到目标文件
 -A/--user-agent	设置用户代理发送给服务器
 -anyauth	可以使用“任何”身份验证方法
@@ -107,14 +108,15 @@ curl为下载工具。作为一款强力工具，curl支持包括HTTP、HTTPS、
 -X/--request	指定什么命令
 -y/--speed-time	放弃限速所要的时间，默认为30
 -Y/--speed-limit	停止传输速度的限制，速度时间
+```
 
 ## 实例
 
+```bash
  **文件下载** 
 
 curl命令可以用来执行下载、发送各种HTTP请求，指定HTTP头部等操作。如果系统没有curl可以使用`yum install curl`安装，也可以下载安装。curl是将下载文件输出到stdout，将进度信息输出到stderr，不显示进度信息使用`--silent`选项。
 
-```
 curl URL --silent
 ```
 

@@ -1,11 +1,9 @@
 # **rpm**
-===
-
-RPM软件包的管理工具
 
 ## 说明
 
-**rpm命令** 是RPM软件包的管理工具。rpm原本是Red Hat Linux发行版专门用来管理Linux各项套件的程序，由于它遵循GPL规则且功能强大方便，因而广受欢迎。逐渐受到其他发行版的采用。RPM套件管理方式的出现，让Linux易于安装，升级，间接提升了Linux的适用度。
+**rpm命令** 是RPM软件包的管理工具。rpm原本是Red Hat Linux发行版专门用来管理Linux各项套件的程序，由于它遵循GPL规则且功能强大方便，
+因而广受欢迎。逐渐受到其他发行版的采用。RPM套件管理方式的出现，让Linux易于安装，升级，间接提升了Linux的适用度
 
 ## 选项
 
@@ -116,13 +114,21 @@ Options implemented via popt alias/exec:
 ## 实例
 
 ```bash
+rpm -ivh package.rpm   # 安装rpm包
+rpm -ivh --force package.rpm   # 强制安装rpm包
+rpm -ivh --nodeps package.rpm   # 忽略依赖安装rpm包
+rpm -ivh --replacepkgs package.rpm  # 覆盖安装软件包
+rpm -e 包名   # 卸载软件包，包名可以包含版本号等信息，但是不可以有后缀.rpm
+rpm -ivh --excludedocs package.rpm # 安装rpm包时不安装帮助文档
+rpm -ivh --prefix=/usr/local package.rpm    # 指定软件包安装的路径
+rpm -ivh --test package.rpm # 只对软件包安装进行测试，不进行实际的安装
+rpm -Uvh  包名    # 升级rpm包
 rpm -qa     # 列出所有安装过的包
 rpm -q mysql    # 获取mysql软件包全名
 rpm -qa --qf '%10{SIZE}\t%{NAME}\n' | sort -k1,1n # 显示所有在rpm发布版上安装的包，并以包字节大小为序
-rpm -ivh your-package.rpm   # 安装rpm包
-rpm -ivh --force your-package.rpm   # 强制安装rpm包
-rpm -ivh --nodeps your-package.rpm   # 忽略依赖安装rpm包
-rpm -e 包名   # 卸载软件包，包名可以包含版本号等信息，但是不可以有后缀.rpm
+rpm -qd vsftpd  # 查询软件包vsftpd帮助文件
+rpm -qdp package.rpm       # 查询未安装的软件包的帮助文件
+rpm -qc package.rpm # 查询软件包配置文件
 
 # 有些软件包是以.src.rpm结尾的，这类软件包是包含了源代码的rpm包，在安装时需要进行编译。这类软件包有两种安装方法：
 # 方法一：

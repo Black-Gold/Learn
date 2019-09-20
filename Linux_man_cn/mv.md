@@ -21,28 +21,22 @@ mv命令可以用来将源文件移至一个目标文件中，或将一组文件
 　或：mv [选项]... 源文件... 目录
 　或：mv [选项]... -t 目录 源文件...
 Rename SOURCE to DEST, or move SOURCE(s) to DIRECTORY.
-必选参数对长短选项同时适用。
-      --backup[=CONTROL]       为每个已存在的目标文件创建备份
-  -b                           类似--backup 但不接受参数,当文件存在时，覆盖前，为其创建一个备份
-  -f, --force                  覆盖前不询问
-  -i, --interactive            覆盖前询问
-  -n, --no-clobber             不覆盖已存在文件
-如果您指定了-i、-f、-n 中的多个，仅最后一个生效。
-      --strip-trailing-slashes  去掉每个源文件参数尾部的斜线
-  -S, --suffix=SUFFIX           替换常用的备份文件后缀
+  --backup[=CONTROL]            为每个已存在的目标文件创建备份
+  -b                                类似--backup 但不接受参数,当文件存在时，覆盖前，为其创建一个备份
+  -f, --force                       覆盖前不询问
+  -i, --interactive                 覆盖前询问
+  -n, --no-clobber                  不覆盖已存在文件,如果您指定了-i、-f、-n 中的多个，仅最后一个生效
+      --strip-trailing-slashes      去掉每个源文件参数尾部的斜线
+  -S, --suffix=SUFFIX               替换常用的备份文件后缀
   -t, --target-directory=DIRECTORY  移动所有源文件参数到目录
-  -T, --no-target-directory    treat DEST as a normal file
-  -u, --update                 当源文件比目标文件新或者目标文件不存在时，才执行移动操作
-  -v, --verbose                explain what is being done
-  -Z, --context                set SELinux security context of destination
-                                 file to default type
-      --help            显示此帮助信息并退出
-      --version         显示版本信息并退出
+  -T, --no-target-directory         treat DEST as a normal file
+  -u, --update                      当源文件比目标文件新或者目标文件不存在时，才执行移动操作
+  -v, --verbose                     explain what is being done
+  -Z, --context                     set SELinux security context of destination file to default type
 
 The backup suffix is '~', unless set with --suffix or SIMPLE_BACKUP_SUFFIX.
 The version control method may be selected via the --backup option or through
 the VERSION_CONTROL environment variable.  Here are the values:
-
   none, off       不进行备份(即使使用了--backup 选项)
   numbered, t     备份文件加上数字进行排序
   existing, nil   若有数字的备份文件已经存在则使用数字，否则使用普通方式备份
@@ -52,7 +46,7 @@ the VERSION_CONTROL environment variable.  Here are the values:
 ## 实例
 
 ```bash
-
+mv --
 ```
 
 

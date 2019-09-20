@@ -6,6 +6,8 @@
 因下载失败，wget会不断的尝试，直到整个文件下载完毕。如果是服务器打断下载过程，它会再次联到服务器上从停止的地方继续下载。
 这对从那些限定了链接时间的服务器上下载大文件非常有用
 
+[wget官网](http://www.gnu.org/software/wget/)
+
 wget支持HTTP，HTTPS和FTP协议，可以使用HTTP代理。所谓的自动下载是指，wget可以在用户退出系统的之后在后台执行。这意味这你可
 以登录系统，启动一个wget下载任务，然后退出系统，wget将在后台执行直到任务完成，相对于其它大部分浏览器在下载大量数据时需要
 用户一直的参与，这省去了极大的麻烦
@@ -22,7 +24,7 @@ wget支持HTTP，HTTPS和FTP协议，可以使用HTTP代理。所谓的自动下
 
 wget [选项]... [URL]...
 
-```sh
+```markdown
 长选项所必须的参数在使用短选项时也是必须的
 
 启动：
@@ -215,7 +217,7 @@ wget--limit-rate=300k http://www.jsdig.com/testfile.zip # wget限速下载
 wget -bc http://www.jsdig.com/testfile.zip # -b进行后台下载，-c实现断点续传
 
 wget -m -p --convert-links -P ./LOCAL URL    # 下载整个网站到本地
-cd path && wget -nd -pHEKk <http://www.pixelbeat.org/cmdline.html>  # cd到目录中下载指定网页及其相关的文件使其可完全浏览
+cd path && wget -nd -pHEKk http://www.pixelbeat.org/cmdline.html  # cd到目录中下载指定网页及其相关的文件使其可完全浏览
 wget --user-agent="Mozilla/5.0" http://www.jsdig.com/testfile.zip  # 伪装代理名称下载
 wget --mirror http://www.example.com/     # 更新网站的本地拷贝可以方便地用于cron
 wget -r -nd -np -l1 -A '*.jpg' http://www.example.com/   # 批量下载文件到当前目录中

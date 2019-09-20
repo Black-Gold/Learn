@@ -1,52 +1,24 @@
-pwck
-===
-
-用来验证系统认证文件内容和格式的完整性
+# pwck
 
 ## 说明
 
-**pwck命令** 用来验证系统认证文件`/etc/passwd`和`/etc/shadow`的内容和格式的完整性。
+**pwck命令** 用来验证系统认证文件`/etc/passwd`和`/etc/shadow`的内容和格式的完整性
 
-### 语法  
+## 选项
 
-```
-pwck(选项)(参数)
-```
+```markdown
+用法：pwck [选项] [passwd [shadow]]
 
-  
-
-```
--q：仅报告错误信息；
--s：以用户id排序文件“/etc/passwd”和“/etc/shadow”;
--r：只读方式运行指令。
+-h, --help                    显示此帮助信息并推出
+-q, --quiet                   只报告错误
+-r, --read-only               显示错误和警告，但不改变文件
+-R, --root CHROOT_DIR         chroot 到的目录
+-s, --sort                    通过 UID 排序项目
 ```
 
-### 参数  
+## 实例
 
-*   密码文件：指定密码文件的路径；
-*   影子文件：指定影子文件的路径。
-
-### 实例  
-
-```
+```bash
 pwck /etc/passwd
-user 'lp': directory '/var/spool/lpd' does not exist
-user 'news': directory '/var/spool/news' does not exist
-user 'uucp': directory '/var/spool/uucp' does not exist
-user 'www-data': directory '/var/www' does not exist
-user 'list': directory '/var/list' does not exist
-user 'irc': directory '/var/run/ircd' does not exist
-user 'gnats': directory '/var/lib/gnats' does not exist
-user 'nobody': directory '/nonexistent' does not exist
-user 'syslog': directory '/home/syslog' does not exist
-user 'couchdb': directory '/var/lib/couchdb' does not exist
-user 'speech-dispatcher': directory '/var/run/speech-dispatcher' does not exist
-user 'usbmux': directory '/home/usbmux' does not exist
-user 'haldaemon': directory '/var/run/hald' does not exist
-user 'pulse': directory '/var/run/pulse' does not exist
-user 'saned': directory '/home/saned' does not exist
-user 'hplip': directory '/var/run/hplip' does not exist
-pwck：无改变
+
 ```
-
-

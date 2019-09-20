@@ -81,15 +81,11 @@
      --no-same-permissions
                             从归档中解压权限时使用用户的掩码位(默认为普通用户服务)
      --numeric-owner        总是以数字代表用户/组的名称
-     --owner=名称         强制将 NAME
-                            作为所添加的文件的所有者
- -p, --preserve-permissions, --same-permissions
-                            解压文件权限信息(默认只为超级用户服务)
+     --owner=名称         强制将 NAME作为所添加的文件的所有者
+ -p, --preserve-permissions, --same-permissions     解压文件权限信息(默认只为超级用户服务)
      --preserve             与 -p 和 -s 一样
-     --same-owner
-                            尝试解压时保持所有者关系一致(超级用户默认此项)
- -s, --preserve-order, --same-order
-                            为解压至匹配归档排序名称
+     --same-owner           尝试解压时保持所有者关系一致(超级用户默认此项)
+ -s, --preserve-order, --same-order     为解压至匹配归档排序名称
 Handling of extended file attributes:
      --acls                 Enable the POSIX ACLs support
      --no-acls              Disable the POSIX ACLs support
@@ -358,13 +354,13 @@ tar -zcvf log.tar.gz log2012.log    # 打包后，以 gzip 压缩
 tar -jcvf log.tar.bz2 log2012.log   # 打包后，以 bzip2 压缩
 tar -zxvf log.tar.gz                # 将tar包解压缩
 tar -ztvf log.tar.gz                # 查阅上述tar包内有哪些文件，选项z表示由gzip压缩的
-tar -zxvf /opt/soft/test/log30.tar.gz log2013.log   # 在预设的情况下，我们可以将压缩档在任何地方解开的;只将tar内的部分文件解压出来
-tar -zcvpf log.tar.gz archive-$(date +%Y%m%d).log   # 文件备份下来，并且保存其权限；这个`-p`的属性是很重要的，尤其是当您要保留原本文件的属性时。在文件夹当中，比某个日期新的文件才备份
+tar -zxvf /opt/soft/test/log30.tar.gz log2013.log   # 只将tar内的部分文件解压出来
+tar -zcvpf log.tar.gz archive-$(date +%Y%m%d).log   # 文件备份下来，并且保存其权限；这个`-p`的属性
 tar -c dir/ | gzip | gpg -c | ssh user@remote 'dd of=dir.tar.gz.gpg'  # 将目录dir/压缩打包并放到远程机器上
 tar -c /dir/to/copy  |  cd /where/to/ && tar -x -p  # 拷贝目录copy/到目录/where/to/并保持文件属性
 tar -c /dir/to/copy  | ssh -C user@remote 'cd /where/to/ && tar -x -p'  # 拷贝目录copy/到远程目录/where/to/并保持文件属性
 find dir/ -name '*.txt' | tar -c --files-from=- | bzip2 > dir_txt.tar.bz2   # 将目录dir及其子目录所有txt文件打包并用bzip2压缩
-tar --exclude scf/service -zcvf scf.tar.gz scf/*    # 备份文件夹内容时排除部分文件
+tar --exclude=scf/service -zcvf scf.tar.gz scf/*    # 备份文件夹内容时排除部分文件
 tar -xvf log.tar.gz --wildcards "*.txt"     # 解压以txt结尾的文件
 tar -czwf log.tar.gz /dir/*   # 将dir目录下所有文件压缩，w选项表示每个文件添加到存档之前要求确认
 tar -cvWf log.tar   /dir/     # 验证压缩包中的文件，W选项表示验证

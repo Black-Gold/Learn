@@ -2,15 +2,10 @@
 
 ## 说明
 
-**yum命令** 是在Fedora、RedHat以及SUSE中基于rpm的软件包管理器，它可以使系统管理人员交互和自动化地更细与管理RPM软件包，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软体包，无须繁琐地一次次下载、安装
+**yum命令** 是在Fedora、RedHat以及SUSE中基于rpm的软件包管理器，它可以使系统管理人员交互和自动化地更细与管理RPM软件包，能够从指定的
+服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软体包，无须繁琐地一次次下载、安装
 
-### 语法  
-
-```
-yum(选项)(参数)
-```
-
-
+## 选项
 
 ```info
 用法: yum [options] COMMAND
@@ -100,9 +95,10 @@ Options:
 
 ## 实例
 
-```sh
+```bash
 yum grouplist     # 查看可能批量安装的列表
 yum groupinsall group1   # 安装程序组group1
+yum check-update    # 检查软件包最新版本
 
 # 检查 MySQL 是否已安装
 yum list installed | grep mysql

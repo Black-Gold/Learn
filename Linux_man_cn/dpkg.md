@@ -31,6 +31,7 @@ dpkg -S keyword            #搜索所属的包内容
 dpkg -l                    #列出当前已安装的包
 dpkg -c package.deb        #列出deb包的内容
 dpkg --configure package   #配置包
+echo -e "$(( $(dpkg -l | wc -l) -5 ))"  # 所有已安装的包总数
 ```
 
 

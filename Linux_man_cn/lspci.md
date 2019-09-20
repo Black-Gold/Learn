@@ -60,6 +60,7 @@ PCI access options:
 
 ```bash
 lspci -tv   # 显示PCI信息
+lspci | grep Ethernet    # 显示网卡信息
 
 ```
 
