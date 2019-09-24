@@ -114,8 +114,11 @@ dd if=/dev/hda1 of=~/partition1.img     # 备份分区
 dd if=/dev/cdrom of=tgsservice.iso bs=2048  # 备份CDROM
 dd bs=1M if=/dev/sda | gzip | ssh user@remote 'dd of=sda.gz'   # 将硬盘sda压缩并备份到远程机器上
 dd bs=1 seek=2TB if=/dev/null of=ext4.test # 建立一个大的测试文件（不占用空间）
+time dd if=/dev/zero bs=1024 count=1000000 of=/1Gb.file # 测试所在磁盘的写入速度
+dd if=/root/1Gb.file bs=64k | dd of=/dev/null   # 测试磁盘的读取速度
 
 # 确定硬盘的最佳块大小
-dd if=/dev/zero bs=1024 count=1000000 of=/root/1Gb.filedd if=/dev/zero bs=2048 count=500000 of=/root/1Gb.filedd if=/dev/zero bs=4096 count=250000 of=/root/1Gb.filedd if=/dev/zero bs=8192 count=125000 of=/root/1Gb.file
+dd if=/dev/zero bs=1024 count=1000000 of=/root/1Gb.filedd if=/dev/zero bs=2048 count=500000 of=/root/1Gb.filedd \
+if=/dev/zero bs=4096 count=250000 of=/root/1Gb.filedd if=/dev/zero bs=8192 count=125000 of=/root/1Gb.file
 
 ```

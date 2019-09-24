@@ -32,4 +32,29 @@ date >/root/2013.log | at 17:20 tomorrow   # 明天17点钟，输出时间到指
 atq # 计划任务设定后，在没有执行之前我们可以用atq命令来查看系统没有执行工作任务
 at -c 8     # 显示已经设置的任务内容
 echo "DISPLAY=$DISPLAY xmessage cooker" | at "NOW + 30 minutes" # 在给定的时间弹出对话框
+
+# 指定时间的方式分为绝对计时方法和相对计时方法
+# 默认情况下书写的计划任务都存放在/var/spool/目录中
+: << comment
+hh:mm:today
+hh:mm:tomorrow
+hh:mm:星期
+hh:mm:MM/DD/YY;MMDDYY;DD.MM.YY
+
+now +n minutes
+now +n hours
+now +n days
+
+实例：指定今天下午17:30执行某命令；此时为下午14:30,2013.5.8
+多个书写方式：（仅供参考学习）
+at 5:30pm
+at 17:30
+at 17:30 today
+at now +3 hours
+at now +180 minutes
+at 17:30 05.08.13
+at 17:30 05/08/13
+使用ctrl+d提交任务
+comment
+
 ```

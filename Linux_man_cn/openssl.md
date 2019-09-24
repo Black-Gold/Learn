@@ -9,7 +9,7 @@ OpenSSL有两种运行模式：交互模式和批处理模式
 
 直接输入openssl回车进入交互模式，输入带命令选项的openssl进入批处理模式
 
-OpenSSL整个软件包大概可以分成三个主要的功能部分：密码算法库、SSL协议库以及应用程序。OpenSSL的目录结构也是围绕这三个功能部分进行规划的
+OpenSSL整个软件包大概可以分成三个主要的功能部分：密码算法库、SSL协议库以及应用程序。OpenSSL的目录结构也是围绕这三个功能部分进行规划
 
  **对称加密算法** 
 
@@ -32,20 +32,70 @@ OpenSSL实现了5种信息摘要算法，分别是MD2、MD5、MDC2、SHA（SHA1�
 
 密钥和证书管理是PKI的一个重要组成部分，OpenSSL为之提供了丰富的功能，支持多种标准
 
-首先，OpenSSL实现了ASN.1的证书和密钥相关标准，提供了对证书、公钥、私钥、证书请求以及CRL等数据对象的DER、PEM和BASE64的编解码功能。OpenSSL提供了产生各种公开密钥对和对称密钥的方法、函数和应用程序，同时提供了对公钥和私钥的DER编解码功能。并实现了私钥的PKCS#12和PKCS#8的编解码功能。OpenSSL在标准中提供了对私钥的加密保护功能，使得密钥可以安全地进行存储和分发。 
+首先，OpenSSL实现了ASN.1的证书和密钥相关标准，提供了对证书、公钥、私钥、证书请求以及CRL等数据对象的DER、PEM和BASE64的编解码功能。
+OpenSSL提供了产生各种公开密钥对和对称密钥的方法、函数和应用程序，同时提供了对公钥和私钥的DER编解码功能。并实现了私钥的PKCS#12和PKCS#8的
+编解码功能。OpenSSL在标准中提供了对私钥的加密保护功能，使得密钥可以安全地进行存储和分发
 
-在此基础上，OpenSSL实现了对证书的X.509标准编解码、PKCS#12格式的编解码以及PKCS#7的编解码功能。并提供了一种文本数据库，支持证书的管理功能，包括证书密钥产生、请求产生、证书签发、吊销和验证等功能。 
+在此基础上，OpenSSL实现了对证书的X.509标准编解码、PKCS#12格式的编解码以及PKCS#7的编解码功能。并提供了一种文本数据库，支持证书的管理功能，
+包括证书密钥产生、请求产生、证书签发、吊销和验证等功能
 
-事实上，OpenSSL提供的CA应用程序就是一个小型的证书管理中心（CA），实现了证书签发的整个流程和证书管理的大部分机制。
+事实上，OpenSSL提供的CA应用程序就是一个小型的证书管理中心（CA），实现了证书签发的整个流程和证书管理的大部分机制
 
 ## 实例
 
- **1、消息摘要算法应用例子** 
+```bash
+: << comment
+key格式：私有的密钥
+csr格式：证书签名请求（证书请求文件），含有公钥信息，certificate signing request的缩写
+crt格式：证书文件，certificate的缩写
+pem格式：用于导出，导入证书时候的证书的格式，有证书开头，结尾的格式
+crl格式：证书吊销列表，Certificate Revocation List的缩写
+comment
 
-用SHA1算法计算文件file.txt的哈西值，输出到stdout：
+# 制作并信任您自己的证书：任何人都可以在没有CA帮助的情况下制作自己的证书。 唯一的区别是您自己制作的证书不会被其他任何人信任
+# CA根证书的生成步骤:生成CA私钥（.key）-->生成CA证书请求（.csr）-->自签名得到根证书（.crt）（CA给自已颁发的证书）
+openssl genrsa -out ca.key 4096 # 生成ca私钥
+openssl req -new -x509 -key ca.key -days 365 -out ca.crt  # 生成ca根证书
 
+# 用户证书的生成步骤：生成私钥(.key)-->生成证书请求(.csr)-->用ca根证书签名得到(.crt)
+## 服务器端用户证书：
+openssl genrsa -des3 -out server.key 4096   # 生成ca私钥
+openssl req -new -key server.key -out server.csr    # 生成csr,此处组织名称可以填写泛域名如：*.19950128.com
+openssl x509 -req -days 365 -sha256 ca -keyfile ca.key -cert ca.crt -in server.csr -out server.crt
+
+## 客户端用户证书(和服务端类似，目的是为了实现双向认证)
+openssl genrsa -des3 -out client.key 4096
+openssl req -new -key client.key -out client.csr
+openssl x509 -req -days 365 -sha256 -keyfile ca.key ca -cert ca.crt -in client.csr -out client.crt
+
+## 生成pem格式证书
+cat client.crt client.key > client.pem
+cat server.crt server.key > server.pem
+
+: << comment
+SSL证书的公共名称 (CN)。 该公共名称 (CN) 是使用该证书的系统的标准名称。 如果您使用的是动态 DNS，那么 CN 应该具有通配符，
+例如： *.api.com. 否则，使用网关集群中设置的主机名或 IP 地址
+生成自己专用密钥和公用证书。回答问题并在出现提示时输入公共名称
+comment
+openssl req -newkey rsa:2048 -nodes -keyout key.pem -x509 -days 365 -out certificate.pem
+# 检查已创建的证书
+openssl x509 -text -noout -in certificate.pem
+
+
+openssl dhparam -out dhparams.pem -dsaparam 2048    # 生成dhparams.pem文件
+
+# 一步生成crt和key
+openssl req -x509 -out localhost.crt -keyout localhost.key \
+  -newkey rsa:2048 -nodes -sha256 -days 3650\
+  -subj '/CN=*.19950128.com' -extensions EXT -config <( \
+printf "[dn]\nCN=*.19950128.com\n[req]\ndistinguished_name = dn\n[EXT]\nsubjectAltName=DNS:*.19950128.com\\
+nkeyUsage=digitalSignature\nextendedKeyUsage=serverAuth")
 ```
-# openssl dgst -sha1 file.txt
+
+```bash
+# 消息摘要算法应用例子
+openssl dgst -sha1 file.txt # 用SHA1算法计算文件file.txt的哈西值，输出到stdout：
+
 ```
 
 用SHA1算法计算文件file.txt的哈西值，输出到文件digest.txt：

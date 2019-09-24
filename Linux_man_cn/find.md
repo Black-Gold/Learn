@@ -115,6 +115,10 @@ path    find命令所查找的目录路径。例如用.来表示当前目录，�
 ## 实例
 
 ```bash
+find / -name *.jpg -exec wc -c {} \;|awk '{print $1}'|awk '{a+=$1}END{print a}' # 统计一下服务器下面所有的jpg的文件的大小
+find ./ -type f -print | wc -l  # 统计一个目录中的全部文件数
+find ./ -type d -print | wc -l  # 统计一个目录中的全部子目录数
+
 # 查找指定文件并执行删除操作
 find . -name "文件名" | xargs rm -rf
 find . -name "文件名" -exec rm -f {}\;
@@ -137,11 +141,13 @@ find . -regex ".*\(\.txt\|\.pdf\)$" -print  # 基于正则表达式匹配文件�
 find . -iregex ".*\(\.txt\|\.pdf\)$" -print  # 基于正则表达式匹配文件路径,但忽略大小写
 find . -name  "[A-Z]*" -print   # 查找当前目录及子目录中文件名以一个大写字母开头的文件
 
+# 统计var目录下文件以M为大小,以列表形式列出来
+find /var -type f | xargs ls -s | sort -rn | awk '{size=$1/1024; printf("%dMb %s\n", size,$2);}' | head
 ```
 
-```bash
-# 通过文件特征查找
+### 通过文件特征查找
 
+```bash
 : << comment
 常用的find命令的控制选项及其用法
 选项               用途描述
@@ -169,8 +175,9 @@ comment
 
 ```
 
+### 根据-type文件类型进行搜索
+
 ```bash
-# 根据-type文件类型进行搜索
 : << comment
 类型参数列表：
 
@@ -186,24 +193,25 @@ comment
 find . -maxdepth 3 -type f  # 基于目录深度搜索,向下最大深度限制为3
 find . -mindepth 2 -type f  # 搜索出深度距离当前目录至少2个子目录的所有文件
 find .-type f -user root -exec chown tom {} \;  # 找出当前目录下所有root的文件，并把所有权更改为用户tom
-find . -type f -mtime +30 -name "*.log" -exec cp {} old \;  # 将30天前的log文件移动到old目录中
 find . -type f -name "*.txt" -delete    # 删除当前目录下所有.txt文件
 find . -type f -name "*.txt" -exec cat {} \;> all.txt   # 查找当前目录下所有.txt文件并把他们拼接起来写入到all.txt文件中
 find . -type f -name "*.txt" -exec printf "File: %s\n" {} \;    # 找出当前目录下所有.txt文件并以“File:文件名”的形式打印出来
 find . -type f -name "*" | xargs grep "test"  # 当前目录搜索包含test内容的文件
 find . -type f -mmin -10    # 搜索当前目录中，所有过去10分钟中更新过的普通文件。如果不加-type f参数，则搜索普通文件+特殊文件+目录
+
 ```
 
+### 根据文件时间戳进行搜索
+
 ```bash
-# 根据文件时间戳进行搜索
 : << comment
 find . -type f 时间戳,UNIX/Linux文件系统每个文件都有三种时间戳：
 精确到分钟的用amin,mmin,cmin，精确到天的用atime,mtime,ctime
 -mtime -n +n  -n表示文件更改时间距现在n天以内，+n表示文件更改时间距现在n天以前
 
-*    **访问时间** （-atime/天，-amin/分钟）：用户最近一次访问时间。
-*    **修改时间** （-mtime/天，-mmin/分钟）：文件最后一次修改时间。
-*    **变化时间** （-ctime/天，-cmin/分钟）：文件数据元（例如权限等）最后一次修改时间。
+* atime:访问时间(-atime/天，-amin/分钟)：用户最近一次访问时间。当备份实用程序或脚本已读取文件以及用户已读取文件时，atime也会更改
+* mtime:修改时间(-mtime/天，-mmin/分钟)：文件最后一次修改时间。文件系统备份会随时更改，而原始设备备份不会更改。要实施增量或差异备份很重要
+* 变化时间(-ctime/天，-cmin/分钟)：文件数据元（例如权限等）最后一次修改时间。
 comment
 
 find . -type f -atime -7    # 搜索最近七天内被访问过的所有文件
@@ -214,6 +222,7 @@ find . -type f -ctime -1    # 查找在24小时内状态改变的文件
 find . -type f -amin +10    # 搜索访问时间超过10分钟的所有文件
 find . -type f -mmin -5     # 查找在5分钟内修改过的文件
 find . -type f -newer file.log  # 找出比file.log修改时间更长的所有文件
+find . -type f -mtime +30 -name "*.log" -exec cp {} old \;  # 将30天前的log文件移动到old目录中
 find . -newer file1 ! -newer file2 -exec ls -l {} \;    # 查找更改时间比文件file1新但比file2旧的文件
 
 # 查找当前目录更改时间一天以内的文件并压缩
@@ -221,11 +230,11 @@ find . -mtime -1 -type f -print0 | xargs -0 tar rvf "archive.tar"
 find . -mtime -1 -type f -exec tar rvf "archive.tar" '{}' \;
 ```
 
-```bash
-# 根据文件大小-size进行匹配
-find . -type f -size 文件大小单元
+### 根据文件大小-size进行匹配
 
+```bash
 : << comment
+find . -type f -size 文件大小单元
 文件大小单元：
 
 *    **b**  —— 块（512字节）
@@ -237,14 +246,15 @@ find . -type f -size 文件大小单元
 comment
 
 find . -empty   # 要列出所有空文件
+find . -type f -size 0      # 搜索大小0字节的文件
 find . -type f -size +10k   # 搜索大于10KB的文件
 find . -type f -size -10k   # 搜索小于10KB的文件
 find . -type f -size 10k    # 搜索等于10KB的文件
 ```
 
-```bash
-# 根据文件权限/所有权进行匹配
+### 根据文件权限/所有权进行匹配
 
+```bash
 -perm mode:文件许可正好符合mode
 -perm +mode:文件许可部分符合mode
 -perm -mode: 文件许可完全符合mode
@@ -270,6 +280,7 @@ find . -perm -g+w,u+w
 
 # 找出设置了SET位的权限的文件,-perm +6000表示不检查基本权限,第一种是find命令执行完才能看到结果，第二种没找到一条就立即显示
 ls -lh $(find / -type f -perm +6000)
+
 find / -type f -perm +6000 -exec ls -lh {} \;
 
 find . -type f -user tom    # 找出当前目录用户tom拥有的所有文件

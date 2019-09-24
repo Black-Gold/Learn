@@ -26,4 +26,5 @@ cat -n /etc/passwd  | sed '3,37c我是好人'   # 将2至5行内容替换成我�
 cat -n /etc/passwd | sed -n '5,7p'  # 只显示5至7行
 cat /var/log/secure | sed -n '/12:12:50/,/12:13:50/p'   # 分析secure日志
 cat /proc/partitions    # 显示所在系统注册的分区
+
 ```

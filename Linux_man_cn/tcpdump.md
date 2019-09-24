@@ -38,6 +38,10 @@
 ## 实例
 
 ```bash
+# tcpdump 抓包 ，用来防止80端口被人攻击时可以分析数据,然后检查IP的重复数 并从小到大排序 注意 "-t\ +0"中间是两个空格
+tcpdump -c 10000 -i eth0 -n dst port 80 > /root/pkts
+less pkts | awk {'printf $3"\n"'} | cut -d. -f 1-4 | sort | uniq -c | awk {'printf $1" "$2"\n"'} | sort -n -t\  +0
+
 tcpdump     # 直接启动tcpdump将监视第一个网络接口上所有流过的数据包
 tcpdump -i eth1 # 监视指定接口eth1的数据包
 tcpdump host 210.27.48.1    # 指定ip,例如截获所有210.27.48.1 的主机收到的和发出的所有的数据包

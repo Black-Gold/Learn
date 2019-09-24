@@ -116,10 +116,11 @@ Usage: dmidecode [OPTIONS]
 
 ```bash
 dmidecode -t 1  # 查看服务器信息
+dmidecode -s system-product-name    # 查看硬件制造商
 dmidecode | grep 'Product Name' # 查看服务器型号
+dmidecode -s system-serial-number # 查看系统序列号
 dmidecode | grep 'Serial Number' # 查看主板的序列号
 dmidecode -t 2  # 查看主板信息
-dmidecode -s system-serial-number # 查看系统序列号
 dmidecode -t memory # 查看内存信息
 dmidecode -t 11 # 查看OEM信息
 dmidecode -t 17 # 查看内存条数

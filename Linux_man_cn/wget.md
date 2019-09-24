@@ -219,6 +219,7 @@ wget -bc http://www.jsdig.com/testfile.zip # -b进行后台下载，-c实现断�
 wget -m -p --convert-links -P ./LOCAL URL    # 下载整个网站到本地
 cd path && wget -nd -pHEKk http://www.pixelbeat.org/cmdline.html  # cd到目录中下载指定网页及其相关的文件使其可完全浏览
 wget --user-agent="Mozilla/5.0" http://www.jsdig.com/testfile.zip  # 伪装代理名称下载
+wget -me robots=off -U "Mozilla/5.0" http://www.example.com/
 wget --mirror http://www.example.com/     # 更新网站的本地拷贝可以方便地用于cron
 wget -r -nd -np -l1 -A '*.jpg' http://www.example.com/   # 批量下载文件到当前目录中
 wget --tries=40 URL  # 增加重试次数

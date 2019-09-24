@@ -100,5 +100,20 @@ S           进程的状态，S：休眠；R：运行；Z：僵尸进程；N：�
 %MEM        进程使用的物理内存和总内存百分比
 TIME+       进程启动占用的总CPU时间，即占用CPU使用时间的累加值
 COMMAND     进程启动命令名称
+
+1. R 运行 runnable (on run queue)#运行(正在运行或在运行队列中等待)
+2. S 中断 sleeping#中断(休眠中, 受阻, 在等待某个条件的形成或接受到信号)
+3. D 不可中断 uninterruptible sleep (usually IO)#不可中断(收到信号不唤醒和不可运行, 进程必须等待直到有中断发生)
+4. Z 僵死 a defunct (”zombie”) process#僵死(进程已终止, 但进程描述符存在, 直到父进程调用wait4()系统调用后释放)
+5. T 停止 traced or stopped#停止(进程收到SIGSTOP, SIGSTP, SIGTIN, SIGTOU信号后停止运行运行)
+
 ```
 
+```bash
+top -d 1 -n 1 -b |awk -F '[ ,.%k]+' '/^Cpu/{printf "UPU_USAGE %.f%%\t",100-$11}/^Mem/\
+{printf "MEM_USAGE %.f%%\n",($4-$8)/$2*100}'
+
+top -d 1 -n 1 -b |awk -F '[ ,.%k]+' '/^Cpu/{printf "CPU_USAGE %.f%%\t",100-$11}/^Mem/\
+{printf "MEM_USAGE %.f%%\t",($4-$8)/$2*100;now=strftime("%D %T");print now}'
+
+```

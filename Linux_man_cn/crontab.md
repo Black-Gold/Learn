@@ -100,5 +100,20 @@ minute   hour   day   month   week   command     顺序：分 时 日 月 周
 0 4 1 jan * /etc/init.d/smb restart # 一月一号的4点重启smb
 01 * * * * root run-parts /etc/cron.hourly # 每小时执行`/etc/cron.hourly`目录内的脚本
 
+
+# at命令相关
+
+实例：指定今天下午17:30执行某命令；此时为下午14:30,2013.5.8
+多个书写方式：（仅供参考学习）
+at 5:30pm
+at 17:30
+at 17:30 today
+at now +3 hours
+at now +180 minutes
+at 17:30 05.08.13
+at 17:30 05/08/13
+使用ctrl+d提交任务
+
+
 ```
 

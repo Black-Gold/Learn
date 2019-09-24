@@ -1,75 +1,43 @@
-lscpu
-===
-
-显示有关CPU架构的信息
+# lscpu
 
 ## 说明
 
-**lscpu命令** 是显示有关CPU架构的信息。
+**lscpu命令** 是显示有关CPU架构的信息
 
-### 语法  
+## 选项
+
+```markdown
+-a, --all               同时打印在线和离线 CPU (-e 选项默认值)
+-b, --online            只打印在线 CPU (-p 选项默认值)
+-c, --offline           只打印离线 CPU
+-e, --extended[=<列表>] 打印扩展的可读格式
+-p, --parse[=<列表>]    打印可解析格式
+-s, --sysroot <目录>    以指定目录作为系统根目录
+-x, --hex               打印十六进制掩码而非 CPU 列表
+-y, --physical          print physical instead of logical IDs
+
+可用的列：
+           CPU  逻辑 CPU 数量
+          CORE  逻辑核心数量
+        SOCKET  逻辑(CPU)座数量
+          NODE  逻辑 NUMA 节点数量
+          BOOK  逻辑 book 数
+        DRAWER  logical drawer number
+         CACHE  shows how caches are shared between CPUs
+  POLARIZATION  CPU dispatching mode on virtual hardware
+       ADDRESS  physical address of a CPU
+    CONFIGURED  shows if the hypervisor has allocated the CPU
+        ONLINE  shows if Linux currently makes use of the CPU
+        MAXMHZ  shows the maximum MHz of the CPU
+        MINMHZ  shows the minimum MHz of the CPU
 
 ```
-lscpu [选项]
-```
 
-  
-
-```
- -a, --all               打印在线和离线CPU（默认为-e）
- -b, --online            仅打印在线CPU（-p的默认值）
- -c, --offline           打印离线CPU
- -e, --extended[=<list>] 打印出一个扩展的可读格式
- -p, --parse[=<list>]    打印出可解析的格式
- -s, --sysroot <dir>     将指定的目录用作系统根目录
- -x, --hex               打印十六进制掩码，而不是CPU列表
-
- -h, --help     显示此帮助并退出
- -V, --version  输出版本信息并退出
-```
-
-### 参数  
+## 实例
 
 ```bash
-可用列：
-           CPU  逻辑CPU编号
-          CORE  逻辑核心号码
-        SOCKET  逻辑套接字号
-          NODE  逻辑NUMA节点号
-          BOOK  逻辑书号
-         CACHE  显示了如何在CPU之间共享高速缓存
-  POLARIZATION  虚拟硬件上的CPU调度模式
-       ADDRESS  CPU的物理地址
-    CONFIGURED  显示管理程序是否分配了CPU
-        ONLINE  显示Linux是否正在使用CPU
-```
+lscpu
 
-### 例子
-
-```bash
-[root@localhost ~]# lscpu
-Architecture:          x86_64
-CPU op-mode(s):        32-bit, 64-bit
-Byte Order:            Little Endian
-CPU(s):                4
-On-line CPU(s) list:   0-3
-Thread(s) per core:    1
-Core(s) per socket:    4
-Socket(s):             1
-NUMA node(s):          1
-Vendor ID:             GenuineIntel
-CPU family:            6
-Model:                 30
-Model name:            Intel(R) Xeon(R) CPU           X3430  @ 2.40GHz
-Stepping:              5
-CPU MHz:               2394.055
-BogoMIPS:              4788.11
-Virtualization:        VT-x
-L1d cache:             32K
-L1i cache:             32K
-L2 cache:              256K
-L3 cache:              8192K
-NUMA node0 CPU(s):     0-3
 ```
 
 

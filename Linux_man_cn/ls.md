@@ -57,6 +57,8 @@ ls -al          # 列出所有文件（包括隐藏）的详细信息
 ls ??R*         # 列出任意两个字符开始,接着跟R,后面任何字符的文件
 ls log.[0-9]*   # 匹配log+任何数字+任意字符的文件
 ls /usr/bin | pr -T9 -W$COLUMNS     # 在当前终端宽度上以9列打印输出
+ls -l | awk '/^d/' | wc -l  # 统计一个目录中的目录个数
+ls -l | awk '/^-/' | wc -l  # 统计一个目录中的文件个数
 for i in `ls *test.log`;do mv $i `echo ${i//test/}`;done    # 批量将*test.log文件重命名去掉test字符
 ls -lrt | awk '{print $9}'|xargs file|grep  ELF| awk '{print $1}'|tr -d ':' # 查找当前目录所有二进制文件
 

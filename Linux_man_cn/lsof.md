@@ -127,4 +127,6 @@ lsof输出各列信息的意义如下:
 ```bash
 lsof -i     # 列出所有的网络连接或端口
 lsof ~      # 查看打开用户目录的进程
+lsof -i :80|grep -v "PID"|awk '{print "kill -9",$2}'|sh # 杀掉80端口相关的进程
+
 ```

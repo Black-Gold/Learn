@@ -36,7 +36,7 @@ free -t    # 以总和的形式显示内存的使用信息
 free -s 10 # 周期性的查询内存使用信息，每10s 执行一次命令
 ```
 
-## 输出解释：
+## free输出解释：
 
 ```markdown
 total  安装的总内存 (MemTotal and SwapTotal in /proc/meminfo)

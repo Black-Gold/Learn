@@ -34,6 +34,16 @@ echo LONG-OPTION
 ```bash
 echo "I live in `locale territory`"     # 从locale数据库中展开信息
 echo "$((0x2dec))"   # 十六进制转十进制
+for i in {0..255}; do echo -e "\e[38;05;${i}m${i}"; done | column -c 80 -s ' '; echo -e "\e[m"  # 输出256中全部色彩
+
+# 获取8位随机字符串
+echo $RANDOM | md5sum | cut -c 1-8  # 方法一
+openssl rand -base64 4  # 方法二
+cat /proc/sys/kernel/random/uuid | cut -c 1-8   # 方法三
+
+# 获取8位随机数字
+echo $RANDOM | cksum | cut -c 1-8   # 方法一
+openssl rand -base64 4 | cksum | cut -c 1-8 # 方法二
 
 # 用echo命令打印带有色彩的文字：
 ## 文字色：# 颜色码：重置=0，黑色=30，红色=31，绿色=32，黄色=33，蓝色=34，洋红=35，青色=36，白色=37

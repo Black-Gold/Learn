@@ -16,5 +16,5 @@ sync命令用来flush文件系统buffer，这样数据才会真正的写到磁�
 如果不去手动的输入sync命令来真正的去写磁盘，linux系统也会周期性的去sync数据。
 
 ```sh
-sync; echo 3 > /proc/sys/vm/drop_caches     # 清空缓存
+sync; echo 3 > /proc/sys/vm/drop_caches     # 清空Linux Buffer Cache
 ```
