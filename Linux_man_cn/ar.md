@@ -7,7 +7,7 @@ ar
 
 **ar命令** 是一个建立或修改备存文件，或是从备存文件中抽取文件的工具，ar可让您集合许多文件，成为单一的备存文件。在备存文件中，所有成员文件皆保有原来的属性与权限
 
-### 语法  
+## 选项
 
 ```
 ab(选项)(参数)
@@ -56,7 +56,7 @@ x[o]         - 从归档文件中分解文件
 
 ar：支持的目标： elf64-x86-64 elf32-i386 elf32-x86-64 a.out-i386-linux pei-i386 pei-x86-64 elf64-l1om elf64-k1om elf64-little elf64-big elf32-little elf32-big plugin srec symbolsrec verilog tekhex binary ihex
 
-### 实例
+## 实例
 
 打包文件
 

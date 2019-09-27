@@ -41,7 +41,7 @@ hwclock [功能] [选项...]
     --date <时间>    指定要设置的硬件时钟时间
     --epoch <年>     指定作为硬件纪元(epoch)值起始的年份
     --noadjfile      不访问 /etc/adjtime；需要使用 --utc 或 --localtime 选项
-    --adjfile <文件> 指定调整文件的路径；
+    --adjfile <文件> 指定调整文件的路径
                        默认为 /etc/adjtime
     --test           不更新，只显示将进行什么操作
 -D, --debug          调试模式

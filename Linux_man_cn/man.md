@@ -26,7 +26,7 @@
   -S, -s, --sections=列表           使用以半角冒号分隔的章节列表
   -e, --extension=扩展              将搜索限制在扩展类型为“扩展”的手册页之内
   -i, --ignore-case                 查找手册页时不区分大小写字母(默认)
-  -I, --match-case                  查找手册页时区分大小写字母。
+  -I, --match-case                  查找手册页时区分大小写字母
       --regex                       show all pages matching regex
       --wildcard                    show all pages matching wildcard
       --names-only                  make --regex and --wildcard match page names only,not descriptions
@@ -51,7 +51,7 @@
 
 ```sh
 # 数字所代表内容
-1：用户在shell环境可操作的命令或执行文件；
+1：用户在shell环境可操作的命令或执行文件
 2：系统内核可调用的函数与工具等
 3：一些常用的函数(function)与函数库(library)，大部分为C的函数库(libc)
 4：设备文件说明，通常在/dev下的文件
@@ -64,7 +64,7 @@
 
 ## 实例
 
-我们输入`man ls`，它会在最左上角显示“LS（1）”，在这里，“LS”表示手册名称，而“（1）”表示该手册位于第一节章，同样，我们输`man ifconfig`它会在最左上角显示“IFCONFIG（8）”。也可以这样输入命令：“man [章节号] 手册名称”。
+我们输入`man ls`，它会在最左上角显示“LS（1）”，在这里，“LS”表示手册名称，而“（1）”表示该手册位于第一节章，同样，我们输`man ifconfig`它会在最左上角显示“IFCONFIG（8）”。也可以这样输入命令：“man [章节号] 手册名称”
 
 ```sh
 man -t man | ps2pdf - > man.pdf     # 生成一个PDF格式的帮助文件

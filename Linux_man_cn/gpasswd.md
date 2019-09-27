@@ -24,16 +24,16 @@
 
 
 ```bash
-gpasswd groupname   # 如系统有个peter账户，该账户本身不是groupname群组的成员，使用newgrp需要输入密码即可。
+gpasswd groupname   # 如系统有个peter账户，该账户本身不是groupname群组的成员，使用newgrp需要输入密码即可
 
 : << comment
-让使用者暂时成为该组成员，之后peter用户创建的文件组名也会是groupname。所以该方式可暂时让peter建立文件时使用其他的组，
-而不是peter本身所在的组。所以使用`gpasswd groupname`设定密码，就是让知道该群组密码的人可以暂时切换具备groupname群组功能的。
+让使用者暂时成为该组成员，之后peter用户创建的文件组名也会是groupname。所以该方式可暂时让peter建立文件时使用其他的组
+而不是peter本身所在的组。所以使用`gpasswd groupname`设定密码，就是让知道该群组密码的人可以暂时切换具备groupname群组功能的
 comment
 gpasswd -A peter users  # 此处peter就是users群组的管理员
 
 : << comment
-注意：添加用户到某一个组 可以使用`usermod -G group_name user_name`这个命令可以添加一个用户到指定的组，但是以前添加的组就会清空掉。
+注意：添加用户到某一个组 可以使用`usermod -G group_name user_name`这个命令可以添加一个用户到指定的组，但是以前添加的组就会清空掉
 所以想要添加一个用户到一个组，同时保留以前添加的组时，请使用gpasswd这个命令来添加操作用户
 comment
 gpasswd -a user_name group_name

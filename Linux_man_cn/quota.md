@@ -5,9 +5,9 @@ quota
 
 ## 说明
 
-**quota命令** 用于显示用户或者工作组的磁盘配额信息。输出信息包括磁盘使用和配额限制。
+**quota命令** 用于显示用户或者工作组的磁盘配额信息。输出信息包括磁盘使用和配额限制
 
-### 语法  
+## 选项
 
 ```
 quota(选项)(参数)
@@ -16,18 +16,18 @@ quota(选项)(参数)
   
 
 ```
--g：列出群组的磁盘空间限制；
--q：简明列表，只列出超过限制的部分；
--u：列出用户的磁盘空间限制；
--v：显示该用户或群组，在所有挂入系统的存储设备的空间限制；
--V：显示版本信息。
+-g：列出群组的磁盘空间限制
+-q：简明列表，只列出超过限制的部分
+-u：列出用户的磁盘空间限制
+-v：显示该用户或群组，在所有挂入系统的存储设备的空间限制
+-V：显示版本信息
 ```
 
 ### 参数  
 
-用户或者工作组：指定要显示的用户或者工作组。
+用户或者工作组：指定要显示的用户或者工作组
 
-### 实例  
+## 实例
 
 我们可以限制某一群组所能使用的最大磁盘配额，而且可以再限制某一使用者的最大磁盘配额 ，好比做一个收费的应用，vip可以得到空间更大一些。另外，以 Link 的方式，来使邮件可以作为限制的配额（更改`/var/spool/mail` 这个路径），不2，需要重新再规划一个硬盘！直接使用 Link 的方式指向 /home （或者其它已经做好的 quota 磁盘）就可以！这通常是用在原本规划不好，但是却又不想要更动原有主机架构的情况中！
 
@@ -52,9 +52,9 @@ LABEL=/disk2    /disk2        ext3      defaults,usrquota,grpquota       1 2
 /dev/hda3         swap         swap     defaults                                     0 0
 ```
 
-注意多了`usrquota,grpquota`，在`defaults,usrquota,grpquota`之间都没有空格，务必正确书写。这样就算加入了 quota 的磁盘格式了！不过，由于真正的 quota 在读取的时候是读取`/etc/mtab`这个文件的，而该文件需要重新开机之后才能够以/etc/fstab 的新数据进行改写！所以这个时候可以选择：重新开机 (reboot)。
+注意多了`usrquota,grpquota`，在`defaults,usrquota,grpquota`之间都没有空格，务必正确书写。这样就算加入了 quota 的磁盘格式了！不过，由于真正的 quota 在读取的时候是读取`/etc/mtab`这个文件的，而该文件需要重新开机之后才能够以/etc/fstab 的新数据进行改写！所以这个时候可以选择：重新开机 (reboot)
 
-重新`remount filesystem`来驱动设定值。
+重新`remount filesystem`来驱动设定值
 
 ```
 [root@localhost ~]# umount /dev/hdb1
@@ -63,13 +63,13 @@ LABEL=/disk2    /disk2        ext3      defaults,usrquota,grpquota       1 2
 /dev/hdb1 /disk2 ext3 rw,usrquota,grpquota 0 0
 ```
 
-事实上，也可以利用 mount 的 remount 功能。
+事实上，也可以利用 mount 的 remount 功能
 
 ```
 [root@localhost ~]# mount -o remount /disk2
 ```
 
-这样就已经成功的将 filesystem 的 quota 功能加入。
+这样就已经成功的将 filesystem 的 quota 功能加入
 
 扫瞄磁盘的使用者使用状况，并产生重要的 aquota.group 与 aquota.user：
 
@@ -131,7 +131,7 @@ Disk quotas for user quser2 (uid 503):
       /dev/hdb1         0    45000    50000                   0       0       0
 ```
 
-注意，由于使用者尚未超过45 MB，所以 grace ( 宽限时间 ) 就不会出现。
+注意，由于使用者尚未超过45 MB，所以 grace ( 宽限时间 ) 就不会出现
 
 编辑群组可使用的空间：
 

@@ -9,7 +9,7 @@
 ```markdown
 su [选项] [-] [USER [参数]...]
 
-将有效用户id和组id更改为USER的id。单个 - 视为 -l。如果未指定USER，将假定为root。
+将有效用户id和组id更改为USER的id。单个 - 视为 -l。如果未指定USER，将假定为root
 
 -m, -p, --preserve-environment  不重置环境变量
 -g, --group <组>             指定主组

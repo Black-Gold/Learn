@@ -2,7 +2,7 @@
 
 ## 说明
 
-**pr命令** 用来将文本文件转换成适合打印的格式，它可以把较大的文件分割成多个页面进行打印，并为每个页面添加标题。
+**pr命令** 用来将文本文件转换成适合打印的格式，它可以把较大的文件分割成多个页面进行打印，并为每个页面添加标题
 
 ## 选项
 
@@ -13,8 +13,8 @@ Mandatory arguments to long options are mandatory for short options too.
 +首页[:末页], --pages=首页[:末页]
 			在指定的首页/末页处开始/停止打印
 -列数, --columns=列数
-			输出指定的列数。如果指定了-a 选项，则从上到下列印。
-			程序会自动在每一页均衡每列占用的行数。
+			输出指定的列数。如果指定了-a 选项，则从上到下列印
+			程序会自动在每一页均衡每列占用的行数
 -a, --across		设置每列从上到下输出，配合"-列数"选项一起使用
 -c, --show-control-chars
 			使用头标(^G)和八进制反斜杠标记
@@ -39,12 +39,12 @@ Mandatory arguments to long options are mandatory for short options too.
 -N, --first-line-number=数字
 			从首页的首行以指定数字开始计数(参看"+首页")
 -o, --indent=缩进量
-			将每行缩进(默认0)个空格，不影响-w 或-W 参数，
+			将每行缩进(默认0)个空格，不影响-w 或-W 参数
 			缩进亮的值将被加入页面宽度
 -r, --no-file-warnings
 			当文件无法打开时忽略警告
 -s[CHAR], --separator[=CHAR]
-			由单个字符分隔各列，未附加-w 时默认为制表符，否则为空。
+			由单个字符分隔各列，未附加-w 时默认为制表符，否则为空
 			另外除非-w 选项被指定，否则"-s[CHAR]"会屏蔽三个列相关
 			的截行选项(-COLUMN|-a -COLUMN|-m)
 -S[STRING], --sep-string[=STRING]
@@ -57,10 +57,10 @@ Mandatory arguments to long options are mandatory for short options too.
 -v, --show-nonprinting
 			使用八进制反斜杠标记
 -w, --width=页面宽度
-			为多栏页面输出将设置为指定的字符数(默认72)，
-			仅当-s[char] 选项不启用时有效(即保持默认值 72)。
+			为多栏页面输出将设置为指定的字符数(默认72)
+			仅当-s[char] 选项不启用时有效(即保持默认值 72)
 -W, --page-width=页宽
-			总是将页宽设置为指定的(默认72)字符数，
+			总是将页宽设置为指定的(默认72)字符数
 			除非-J 选项启用总是截断行，此参数与-S 或-s 冲突
 
 如果页长<=10 则使用-t 选项。如果FILE 没有定义，或者FILE 是"-"，则从标准输入读入

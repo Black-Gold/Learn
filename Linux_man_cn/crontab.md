@@ -61,7 +61,7 @@ MAILTO=""HOME=/
 /etc/cron.allow    该文件中所列用户允许使用crontab命令
 /var/spool/cron/   所有用户crontab文件存放的目录,以用户名命名
 
-crontab文件的含义：用户所建立的crontab文件中，每一行都代表一项任务，每行的每个字段代表一项设置，它的格式共分为六个字段，
+crontab文件的含义：用户所建立的crontab文件中，每一行都代表一项任务，每行的每个字段代表一项设置，它的格式共分为六个字段
 前五段是时间设定段，第六段是要执行的命令段，格式如下：
 minute   hour   day   month   week   command     顺序：分 时 日 月 周
 ```

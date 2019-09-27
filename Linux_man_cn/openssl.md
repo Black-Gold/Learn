@@ -32,11 +32,11 @@ OpenSSL实现了5种信息摘要算法，分别是MD2、MD5、MDC2、SHA（SHA1�
 
 密钥和证书管理是PKI的一个重要组成部分，OpenSSL为之提供了丰富的功能，支持多种标准
 
-首先，OpenSSL实现了ASN.1的证书和密钥相关标准，提供了对证书、公钥、私钥、证书请求以及CRL等数据对象的DER、PEM和BASE64的编解码功能。
+首先，OpenSSL实现了ASN.1的证书和密钥相关标准，提供了对证书、公钥、私钥、证书请求以及CRL等数据对象的DER、PEM和BASE64的编解码功能
 OpenSSL提供了产生各种公开密钥对和对称密钥的方法、函数和应用程序，同时提供了对公钥和私钥的DER编解码功能。并实现了私钥的PKCS#12和PKCS#8的
 编解码功能。OpenSSL在标准中提供了对私钥的加密保护功能，使得密钥可以安全地进行存储和分发
 
-在此基础上，OpenSSL实现了对证书的X.509标准编解码、PKCS#12格式的编解码以及PKCS#7的编解码功能。并提供了一种文本数据库，支持证书的管理功能，
+在此基础上，OpenSSL实现了对证书的X.509标准编解码、PKCS#12格式的编解码以及PKCS#7的编解码功能。并提供了一种文本数据库，支持证书的管理功能
 包括证书密钥产生、请求产生、证书签发、吊销和验证等功能
 
 事实上，OpenSSL提供的CA应用程序就是一个小型的证书管理中心（CA），实现了证书签发的整个流程和证书管理的大部分机制
@@ -73,7 +73,7 @@ cat client.crt client.key > client.pem
 cat server.crt server.key > server.pem
 
 : << comment
-SSL证书的公共名称 (CN)。 该公共名称 (CN) 是使用该证书的系统的标准名称。 如果您使用的是动态 DNS，那么 CN 应该具有通配符，
+SSL证书的公共名称 (CN)。 该公共名称 (CN) 是使用该证书的系统的标准名称。 如果您使用的是动态 DNS，那么 CN 应该具有通配符
 例如： *.api.com. 否则，使用网关集群中设置的主机名或 IP 地址
 生成自己专用密钥和公用证书。回答问题并在出现提示时输入公共名称
 comment
@@ -104,25 +104,25 @@ openssl dgst -sha1 file.txt # 用SHA1算法计算文件file.txt的哈西值，�
 # openssl sha1 -out digest.txt file.txt
 ```
 
-用DSS1(SHA1)算法为文件file.txt签名，输出到文件dsasign.bin。签名的private key必须为DSA算法产生的，保存在文件dsakey.pem中。
+用DSS1(SHA1)算法为文件file.txt签名，输出到文件dsasign.bin。签名的private key必须为DSA算法产生的，保存在文件dsakey.pem中
 
 ```
 # openssl dgst -dss1 -sign dsakey.pem -out dsasign.bin file.txt
 ```
 
-用dss1算法验证file.txt的数字签名dsasign.bin，验证的private key为DSA算法产生的文件dsakey.pem。
+用dss1算法验证file.txt的数字签名dsasign.bin，验证的private key为DSA算法产生的文件dsakey.pem
 
 ```
 # openssl dgst -dss1 -prverify dsakey.pem -signature dsasign.bin file.txt
 ```
 
-用sha1算法为文件file.txt签名,输出到文件rsasign.bin，签名的private key为RSA算法产生的文件rsaprivate.pem。
+用sha1算法为文件file.txt签名,输出到文件rsasign.bin，签名的private key为RSA算法产生的文件rsaprivate.pem
 
 ```
 # openssl sha1 -sign rsaprivate.pem -out rsasign.bin file.txt
 ```
 
-# 用sha1算法验证file.txt的数字签名rsasign.bin，验证的public key为RSA算法生成的rsapublic.pem。
+# 用sha1算法验证file.txt的数字签名rsasign.bin，验证的public key为RSA算法生成的rsapublic.pem
 
 ```
 # openssl sha1 -verify rsapublic.pem -signature rsasign.bin file.txt
@@ -130,31 +130,31 @@ openssl dgst -sha1 file.txt # 用SHA1算法计算文件file.txt的哈西值，�
 
  **2、对称加密应用例子** 
 
-对称加密应用例子，用DES3算法的CBC模式加密文件plaintext.doc，加密结果输出到文件ciphertext.bin。
+对称加密应用例子，用DES3算法的CBC模式加密文件plaintext.doc，加密结果输出到文件ciphertext.bin
 
 ```
 # openssl enc -des3 -salt -in plaintext.doc -out ciphertext.bin
 ```
 
-用DES3算法的OFB模式解密文件ciphertext.bin，提供的口令为trousers，输出到文件plaintext.doc。注意：因为模式不同，该命令不能对以上的文件进行解密。
+用DES3算法的OFB模式解密文件ciphertext.bin，提供的口令为trousers，输出到文件plaintext.doc。注意：因为模式不同，该命令不能对以上的文件进行解密
 
 ```
 # openssl enc -des-ede3-ofb -d -in ciphertext.bin -out plaintext.doc -pass pass:trousers
 ```
 
-用Blowfish的CFB模式加密plaintext.doc，口令从环境变量PASSWORD中取，输出到文件ciphertext.bin。
+用Blowfish的CFB模式加密plaintext.doc，口令从环境变量PASSWORD中取，输出到文件ciphertext.bin
 
 ```
 # openssl bf-cfb -salt -in plaintext.doc -out ciphertext.bin -pass env:PASSWORD
 ```
 
-给文件ciphertext.bin用base64编码，输出到文件base64.txt。
+给文件ciphertext.bin用base64编码，输出到文件base64.txt
 
 ```
 # openssl base64 -in ciphertext.bin -out base64.txt
 ```
 
-用RC5算法的CBC模式加密文件plaintext.doc，输出到文件ciphertext.bin，salt、key和初始化向量(iv)在命令行指定。
+用RC5算法的CBC模式加密文件plaintext.doc，输出到文件ciphertext.bin，salt、key和初始化向量(iv)在命令行指定
 
 ```
 # openssl rc5 -in plaintext.doc -out ciphertext.bin -S C62CB1D49F158ADC -iv E9EDACA1BD7090C6 -K 89D4B1678D604FAA3DBFFD030A314B29
@@ -168,7 +168,7 @@ openssl dgst -sha1 file.txt # 用SHA1算法计算文件file.txt的哈西值，�
 # openssl dhparam -out dhparam.pem -2 1024
 ```
 
-从dhparam.pem中读取Diffie-Hell参数，以C代码的形式，输出到stdout。
+从dhparam.pem中读取Diffie-Hell参数，以C代码的形式，输出到stdout
 
 ```
 # openssl dhparam -in dhparam.pem -noout -C
@@ -176,7 +176,7 @@ openssl dgst -sha1 file.txt # 用SHA1算法计算文件file.txt的哈西值，�
 
  **4、DSA应用例子应用例子** 
 
-生成1024位DSA参数集，并输出到文件dsaparam.pem。
+生成1024位DSA参数集，并输出到文件dsaparam.pem
 
 ```
 # openssl dsaparam -out dsaparam.pem 1024

@@ -76,7 +76,7 @@ Cpu(s): Linux使用nice值来确定进程的优先级，显示在各项任务上
 0.0 wa, IO-wait 等待输入输出(I/O)的CPU时间百分比--(time waiting for I/O completion)
 0.0 hi          处理硬件中断所花费时间的百分比--(time spent servicing hardware interrupts)
 0.0 si          处理软件中断所花费时间的百分比--(time spent servicing software interrupts)
-0.0 st          虚拟化环境中，部分CPU资源提供给虚拟机，操作系统检测是否有任务执行，但由于忙于其他VM，因此无法执行他们，
+0.0 st          虚拟化环境中，部分CPU资源提供给虚拟机，操作系统检测是否有任务执行，但由于忙于其他VM，因此无法执行他们
                 以此方损失的时间占用的百分比叫st--(time stolen from this vm by the hypervisor)
 
 Mem: 4147888k total     物理内存总量

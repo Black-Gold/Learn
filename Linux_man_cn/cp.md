@@ -13,12 +13,13 @@
 　或：cp [选项]... -t 目录 源文件...
 Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
 
-必选参数对长短选项同时适用。
+必选参数对长短选项同时适用
   -a, --archive                 等于-dR --preserve=all
-      --attributes-only 仅复制属性而不复制数据      --backup[=CONTROL        为每个已存在的目标文件创建备份
+      --attributes-only 仅复制属性而不复制数据      --backup[=CONTROL为每个已存在的目标文件创建备份
   -b                            类似--backup 但不接受参数
       --copy-contents           在递归处理是复制特殊文件内容
-  -d                            等于--no-dereference --preserve=links,当复制符号连接时，把目标文件或目录也建立为符号连接，并指向与源文件或目录连接的原始文件或目录；
+  -d                            等于--no-dereference --preserve=links,当复制符号连接时，把目标文件或目录也建立为符号连接
+                                并指向与源文件或目录连接的原始文件或目录
   -f, --force                   强行复制文件或目录，不论目标文件或目录是否已存在强行复制文件或目录，不论目标文件或目录是否已存在
   -i, --interactive             覆盖既有文件之前先询问用户
   -H                           follow command-line symbolic links in SOURCE
@@ -32,7 +33,7 @@ Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
       --sno-preserve=属性列表   不保留指定的文件属性
       --parents                 复制前在目标目录创建来源文件路径中的所有目录
   -R, -r, --recursive           递归复制目录及其子目录内的所有内容
-      --reflink[=WHEN]          控制克隆/CoW 副本。请查看下面的内如。
+      --reflink[=WHEN]          控制克隆/CoW 副本。请查看下面的内如
       --remove-destination      尝试打开目标文件前先删除已存在的目的地
                                         文件 (相对于 --force 选项)
       --sparse=WHEN             控制创建稀疏文件的方式
@@ -50,17 +51,15 @@ Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
                                  file to default type
       --context[=CTX]          like -Z, or if CTX is specified then set the
                                  SELinux or SMACK security context to CTX
-      --help            显示此帮助信息并退出
-      --version         显示版本信息并退出
 
 默认情况下，源文件的稀疏性仅仅通过简单的方法判断，对应的目标文件目标文件也
 被为稀疏。这是因为默认情况下使用了--sparse=auto 参数。如果明确使用
 --sparse=always 参数则不论源文件是否包含足够长的0 序列也将目标文件创文
-建为稀疏件。
-使用--sparse=never 参数禁止创建稀疏文件。
+建为稀疏件
+使用--sparse=never 参数禁止创建稀疏文件
 
 当指定了--reflink[=always] 参数时执行轻量化的复制，即只在数据块被修改的
-情况下才复制。如果复制失败或者同时指定了--reflink=auto，则返回标准复制模式。
+情况下才复制。如果复制失败或者同时指定了--reflink=auto，则返回标准复制模式
 
 The backup suffix is '~', unless set with --suffix or SIMPLE_BACKUP_SUFFIX.
 The version control method may be selected via the --backup option or through
@@ -72,16 +71,16 @@ the VERSION_CONTROL environment variable.  Here are the values:
   simple, never   永远使用普通方式备份
 
 有一个特别情况：如果同时指定--force 和--backup 选项，而源文件和目标文件
-是同一个已存在的一般文件的话，cp 会将源文件备份。
+是同一个已存在的一般文件的话，cp 会将源文件备份
 
-*   源文件：制定源文件列表。默认情况下，cp命令不能复制目录，如果要复制目录，则必须使用`-R`选项；
-*   目标文件：指定目标文件。当“源文件”为多个文件时，要求“目标文件”为指定的目录。
+*   源文件：制定源文件列表。默认情况下，cp命令不能复制目录，如果要复制目录，则必须使用`-R`选项
+*   目标文件：指定目标文件。当“源文件”为多个文件时，要求“目标文件”为指定的目录
 ```
 
 ## 实例
 
 ```bash
-# 所有目标文件指定的目录必须是己经存在的，cp命令不能创建目录。如果没有文件复制的权限，则系统会显示出错信息。
+# 所有目标文件指定的目录必须是己经存在的，cp命令不能创建目录。如果没有文件复制的权限，则系统会显示出错信息
 cp -ruv /usr/men/tmp ~/men/tmp  # 只拷贝新的文件到我的存储设备上，就用cp的“u更新”和“v详细”选项
 cp --force --backup=numbered test1.py test1.py  # --backup=numbered参数表示做带编号的连续备份，第一个备份就是1号，第二个就是2号
 cp file /usr/men/tmp/file1  # 将文件file复制到目录`/usr/men/tmp`下，并改名为file1

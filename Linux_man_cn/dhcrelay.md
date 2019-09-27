@@ -5,9 +5,9 @@ dhcrelay
 
 ## 说明
 
-**dhcrelay命令** 使用dhcrelay命令可以提供中继DHCP和BOOTP请求，从一个没有DHCP服务器的子网直接连接到其它子网内的一个或多个DHCP服务器。该命令在DHCP中继服务器上使用，同时支持DHCPv4/BOOTP和DHCPv6协议。
+**dhcrelay命令** 使用dhcrelay命令可以提供中继DHCP和BOOTP请求，从一个没有DHCP服务器的子网直接连接到其它子网内的一个或多个DHCP服务器。该命令在DHCP中继服务器上使用，同时支持DHCPv4/BOOTP和DHCPv6协议
 
-### 语法  
+## 选项
 
 ```
 dhcrelay [选项] [DHCP服务器]
@@ -27,7 +27,7 @@ dhcrelay [选项] [DHCP服务器]
 
 ### 例子
 
-指定DHCP服务器的位置。
+指定DHCP服务器的位置
 
 ```bash
 [root@localhost ~]# dhcrelay 192.168.0.2

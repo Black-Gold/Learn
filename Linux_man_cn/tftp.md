@@ -5,11 +5,11 @@ tftp
 
 ## 说明
 
-**tftp命令** 用在本机和tftp服务器之间使用TFTP协议传输文件。
+**tftp命令** 用在本机和tftp服务器之间使用TFTP协议传输文件
 
-TFTP是用来下载远程文件的最简单网络协议，它其于UDP协议而实现。嵌入式linux的tftp开发环境包括两个方面：一是linux服务器端的tftp-server支持，二是嵌入式目标系统的tftp-client支持。因为u-boot本身内置支持tftp-client，所以嵌入式目标系统端就不用配置了。下面就详细介绍一下linux服务器端tftp-server的配置。
+TFTP是用来下载远程文件的最简单网络协议，它其于UDP协议而实现。嵌入式linux的tftp开发环境包括两个方面：一是linux服务器端的tftp-server支持，二是嵌入式目标系统的tftp-client支持。因为u-boot本身内置支持tftp-client，所以嵌入式目标系统端就不用配置了。下面就详细介绍一下linux服务器端tftp-server的配置
 
-### 语法  
+## 选项
 
 ```
 tftp(选项)(参数)
@@ -18,17 +18,17 @@ tftp(选项)(参数)
   
 
 ```
--c：指定与tftp服务器连接成功后，立即要执行的指令；
--m：指定文件传输模式。可以是ASCII或者Binary；
--v：显示指令详细执行过程；
--V：显示指令版本信息。
+-c：指定与tftp服务器连接成功后，立即要执行的指令
+-m：指定文件传输模式。可以是ASCII或者Binary
+-v：显示指令详细执行过程
+-V：显示指令版本信息
 ```
 
 ### 参数  
 
-主机：指定tftp要联机的tftp服务器的ip地址或主机名。
+主机：指定tftp要联机的tftp服务器的ip地址或主机名
 
-### 实例  
+## 实例
 
  **1、安装tftp服务器** 
 
@@ -70,7 +70,7 @@ service tftp
 }
 ```
 
-说明：修改项`server_args= -s <path> -c`，其中<path>处可以改为你的tftp-server的根目录，参数-s指定chroot，-c指定了可以创建文件。
+说明：修改项`server_args= -s <path> -c`，其中<path>处可以改为你的tftp-server的根目录，参数-s指定chroot，-c指定了可以创建文件
 
  **3、启动tftp服务器并关闭防火墙** 
 
@@ -90,11 +90,11 @@ service xinetd restart
 netstat -a | grep tftp
 ```
 
-显示结果为`udp 0 0 *:tftp *:*`表明服务已经开启，就表明tftp配置成功了。
+显示结果为`udp 0 0 *:tftp *:*`表明服务已经开启，就表明tftp配置成功了
 
  **5、tftp使用** 
 
-复制一个文件到tftp服务器目录，然后在主机启动tftp软件，进行简单测试。
+复制一个文件到tftp服务器目录，然后在主机启动tftp软件，进行简单测试
 
 ```
 tftp 192.168.1.2
@@ -129,7 +129,7 @@ tftp your-ip-address
 
  **7、如果老是出现“AVC Denial, click icon to view”的错误，并不能传输文件，需要作如下修改** 
 
-修改`/etc/sysconfig/selinux`,将SELINUX设定为disable，使用命令`setenforce 0`让selinux配置文件生效。
+修改`/etc/sysconfig/selinux`,将SELINUX设定为disable，使用命令`setenforce 0`让selinux配置文件生效
 
  **8、Busybox中tftp命令的用法** 
 
@@ -139,7 +139,7 @@ tftp your-ip-address
 tftp [option] ... host [port]
 ```
 
-如果要下载或上传文件的话是一定要用这些option的。
+如果要下载或上传文件的话是一定要用这些option的
 
 ```
 -g 表示下载文件 (get)

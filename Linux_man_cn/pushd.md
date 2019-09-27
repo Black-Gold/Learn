@@ -13,10 +13,10 @@
 ```
 
 
-### 实例  
+## 实例
 
 ```sh
-# 参数--目录：需要压入堆栈的目录。
+# 参数--目录：需要压入堆栈的目录
 root@Mylinux:/tmp/dir4# pushd /tmp/dir3
 /tmp/dir3 /tmp/dir4 /tmp/dir1 ~
 
@@ -25,5 +25,5 @@ root@Mylinux:/tmp/dir3# pushd /tmp/dir2
 
 root@Mylinux:/tmp/dir2# pushd -1
 /tmp/dir1 ~ /tmp/dir2 /tmp/dir3 /tmp/dir4
-# 注意：最左边表示栈顶，最右边表示栈底。
+# 注意：最左边表示栈顶，最右边表示栈底
 ```

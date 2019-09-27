@@ -5,9 +5,9 @@ semanage
 
 ## 说明
 
-**semanage命令** 是用来查询与修改SELinux默认目录的安全上下文。SELinux的策略与规则管理相关命令：seinfo命令、sesearch命令、getsebool命令、setsebool命令、semanage命令。
+**semanage命令** 是用来查询与修改SELinux默认目录的安全上下文。SELinux的策略与规则管理相关命令：seinfo命令、sesearch命令、getsebool命令、setsebool命令、semanage命令
 
-### 语法  
+## 选项
 
 ```
 semanage {login|user|port|interface|fcontext|translation} -l
@@ -17,14 +17,14 @@ semanage fcontext -{a|d|m} [-frst] file_spec
   
 
 ```
--l：查询。
-fcontext：主要用在安全上下文方面。
--a：增加，你可以增加一些目录的默认安全上下文类型设置。
--m：修改。
--d：删除。
+-l：查询
+fcontext：主要用在安全上下文方面
+-a：增加，你可以增加一些目录的默认安全上下文类型设置
+-m：修改
+-d：删除
 ```
 
-### 实例  
+## 实例
 
 查询一下`/var/www/html`的默认安全性本文的设置：
 
@@ -58,7 +58,7 @@ semanage fcontext -l | grep '/srv'
 /srv                        directory   system_u:object_r:var_t:s0   //看这里！
 ```
 
-上面则是默认的`/srv`底下的安全性本文资料，不过，并没有指定到`/srv/samba`。
+上面则是默认的`/srv`底下的安全性本文资料，不过，并没有指定到`/srv/samba`
 
 ```
 semanage fcontext -a -t public_content_t "/srv/samba(/.*)?"

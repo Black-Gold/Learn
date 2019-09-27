@@ -5,9 +5,9 @@ nmcli
 
 ## 说明
 
-**nmcli命令** 是 NetworkManager client 网络管理客户端。
+**nmcli命令** 是 NetworkManager client 网络管理客户端
 
-### 语法  
+## 选项
 
 ```bash
 nmcli [OPTIONS] OBJECT { COMMAND | help }
@@ -37,7 +37,7 @@ OBJECT
   a[gent]         NetworkManager秘密代理或polkit代理
 ```
 
-### 实例  
+## 实例
 
 ```bash
 nmcli connection show           # 查看当前连接状态

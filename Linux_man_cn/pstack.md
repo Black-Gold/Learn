@@ -5,11 +5,11 @@ pstack
 
 ## 说明
 
-**pstack命令** 可显示每个进程的栈跟踪。<kbd>pstack</kbd> 命令必须由相应进程的属主或 <tt>root</tt> 运行。可以使用 <kbd>pstack</kbd> 来确定进程挂起的位置。此命令允许使用的唯一选项是要检查的进程的 <tt>PID</tt>。
+**pstack命令** 可显示每个进程的栈跟踪。<kbd>pstack</kbd> 命令必须由相应进程的属主或 <tt>root</tt> 运行。可以使用 <kbd>pstack</kbd> 来确定进程挂起的位置。此命令允许使用的唯一选项是要检查的进程的 <tt>PID</tt>
 
 命令软件包下载地址：https://packages.debian.org/sid/pstack
 
-### 实例  
+## 实例
 
 pstree以树结构显示进程
 
@@ -23,7 +23,7 @@ sshd(22669)---bash(22670)---ad_preprocess(4551)-+-{ad_preprocess}(4552)
                                                 `-{ad_preprocess}(4557)
 ```
 
-work为工作用户，-p为显示进程识别码，ad_preprocess共启动了6个子线程，加上主线程共7个线程。
+work为工作用户，-p为显示进程识别码，ad_preprocess共启动了6个子线程，加上主线程共7个线程
 
 ```
 ps -Lf 4551

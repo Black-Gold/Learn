@@ -94,6 +94,10 @@ rsync [OPTION]... rsync://[USER@]HOST[:PORT]/SRC [DEST]
 
 ```bash
 rsync -vzrtopg --progress -e ssh --delete work@172.16.78.192:/www/* /databack/experiment/rsync
+
+windows权限注意事项：
+密码文件执行：chmod 600 rsync.passwd,用当前用户执行chown 用户名 rsync.passwd
+
 ```
 
 ### 后台服务方式
@@ -145,7 +149,7 @@ exclude=test
 auth users=work
 ```
 
-创建密码文件，采用这种方式不能使用系统用户对客户端进行认证，所以需要创建一个密码文件，其格式为“username:password”，用户名可以和密码可以随便定义，最好不要和系统帐户一致，同时要把创建的密码文件权限设置为600，这在前面的模块参数做了详细介绍。
+创建密码文件，采用这种方式不能使用系统用户对客户端进行认证，所以需要创建一个密码文件，其格式为“username:password”，用户名可以和密码可以随便定义，最好不要和系统帐户一致，同时要把创建的密码文件权限设置为600，这在前面的模块参数做了详细介绍
 
 ```sh
 echo "work:abc123" > /etc/rsyncd.passwd

@@ -1,9 +1,9 @@
 dhcpd
 ===
 
-运行DHCP服务器。
+运行DHCP服务器
 
-### 语法  
+## 选项
 
 ```
 dhcpd [选项] [网络接口]
@@ -29,7 +29,7 @@ dhcpd [选项] [网络接口]
 
 ### 例子
 
-对DHCP服务器进行排错。
+对DHCP服务器进行排错
 
 ```bash
 [root@localhost ~]# dhcpd

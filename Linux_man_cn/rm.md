@@ -31,7 +31,7 @@
       --version         显示版本信息并退出
 
 默认时，rm 不会删除目录。使用--recursive(-r 或-R)选项可删除每个给定
-的目录，以及其下所有的内容。
+的目录，以及其下所有的内容
 
 To remove a file whose name starts with a '-', for example '-foo',
 use one of these commands:
@@ -40,7 +40,7 @@ use one of these commands:
   rm ./-foo
 
 请注意，如果使用rm 来删除文件，通常仍可以将该文件恢复原状。如果想保证
-该文件的内容无法还原，请考虑使用shred。
+该文件的内容无法还原，请考虑使用shred
 ```
 
 ## 实例

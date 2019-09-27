@@ -13,13 +13,13 @@ grep可用于shell脚本，因为grep通过返回一个状态值来说明搜索�
 
 ```markdown
 用法: grep [选项]... PATTERN [FILE]...
-在每个 FILE 或是标准输入中查找 PATTERN。
-默认的 PATTERN 是一个基本正则表达式(缩写为 BRE)。
+在每个 FILE 或是标准输入中查找 PATTERN
+默认的 PATTERN 是一个基本正则表达式(缩写为 BRE)
 例如: grep -i 'hello world' menu.h main.c
 
 正则表达式选择与解释:
   -E, --extended-regexp     PATTERN 是一个可扩展的正则表达式(缩写为 ERE)
-  -F, --fixed-strings       PATTERN 是一组由断行符分隔的定长字符串。
+  -F, --fixed-strings       PATTERN 是一组由断行符分隔的定长字符串
   -G, --basic-regexp        PATTERN 是一个基本正则表达式(缩写为 BRE)
   -P, --perl-regexp         PATTERN 是一个 Perl 正则表达式
   -e, --regexp=PATTERN      用 PATTERN 来进行匹配操作
@@ -43,7 +43,7 @@ grep可用于shell脚本，因为grep通过返回一个状态值来说明搜索�
   -H, --with-filename       为每一匹配项打印文件名
   -h, --no-filename         输出时不显示文件名前缀
       --label=LABEL         将LABEL 作为标准输入文件名前缀
-  -o, --only-matching       仅打印匹配行的匹配（非空白）部分，每个这样的部分位于单独的输出行中。
+  -o, --only-matching       仅打印匹配行的匹配（非空白）部分，每个这样的部分位于单独的输出行中
   -q, --quiet, --silent     suppress all normal output,不要向标准输出写任何东西
       --binary-files=TYPE   assume that binary files are TYPE;
                             TYPE is 'binary', 'text', or 'without-match'
@@ -53,7 +53,7 @@ grep可用于shell脚本，因为grep通过返回一个状态值来说明搜索�
                             ACTION is 'read', 'recurse', or 'skip'
   -D, --devices=ACTION      how to handle devices, FIFOs and sockets;
                             ACTION is 'read' or 'skip'
-    如果输入文件是设备，FIFO或套接字，则使用操作来处理它。默认情况下，操作是'读'，这意味着设备的读取就像是普通文件一样。如果行动是'跳跃'，设备，FIFO和套接字默默跳过。
+    如果输入文件是设备，FIFO或套接字，则使用操作来处理它。默认情况下，操作是'读'，这意味着设备的读取就像是普通文件一样。如果行动是'跳跃'，设备，FIFO和套接字默默跳过
   -r, --recursive           like --directories=recurse 递归搜索，包括子目录下的文件
   -R, --dereference-recursive
                             likewise, but follow all symlinks
@@ -83,20 +83,20 @@ grep可用于shell脚本，因为grep通过返回一个状态值来说明搜索�
   -u, --unix-byte-offsets   report offsets as if CRs were not there
                             (MSDOS/Windows)
 
-‘egrep’即‘grep -E’。‘fgrep’即‘grep -F’。
-直接使用‘egrep’或是‘fgrep’均已不可行了。
-egrep是grep的扩展，支持更多的re元字符， fgrep就是fixed grep或fast grep，它们把所有的字母都看作单词，也就是说，正则表达式中的元字符表示回其自身的字面意义，不再特殊。
-若FILE 为 -，将读取标准输入。不带FILE，读取当前目录，除非命令行中指定了-r选项。
-如果少于两个FILE 参数，就要默认使用-h 参数。
-如果有任意行被匹配，那退出状态为 0，否则为 1；
-如果有错误产生，且未指定 -q 参数，那退出状态为 2。
+‘egrep’即‘grep -E’。‘fgrep’即‘grep -F’
+直接使用‘egrep’或是‘fgrep’均已不可行了
+egrep是grep的扩展，支持更多的re元字符， fgrep就是fixed grep或fast grep，它们把所有的字母都看作单词，也就是说，正则表达式中的元字符表示回其自身的字面意义，不再特殊
+若FILE 为 -，将读取标准输入。不带FILE，读取当前目录，除非命令行中指定了-r选项
+如果少于两个FILE 参数，就要默认使用-h 参数
+如果有任意行被匹配，那退出状态为 0，否则为 1
+如果有错误产生，且未指定 -q 参数，那退出状态为 2
 ```
 
 ## grep可用的规则表达式
 
 ```markdown
 ^         # 锚定行的开始 如：'^grep'匹配所有以grep开头的行
-$         # 锚定行的结束 如：'grep$'匹配所有以grep结尾的行。
+$         # 锚定行的结束 如：'grep$'匹配所有以grep结尾的行
 \         # 转义符
 .         # 匹配一个非换行符的字符 如：'gr.p'匹配gr后接一个任意字符，然后是p
 *         # 匹配零个或多个先前字符 如：'*grep'匹配所有一个或多个空格后紧跟grep的行
@@ -179,7 +179,7 @@ grep "text" -n file_1 file_2  # 多个文件
 echo gun is not unix | grep -b -o "not"   # 打印样式匹配所位于的字符或字节偏移;一行中字符串的字符便宜是从该行的第一个字符开始计算，起始值为0。选项-b -o一般总是配合使用
 
 grep -l "text" file1 file2 file3...   # 搜索多个文件并查找匹配文本在哪些文件中
-grep "text" . -r -n   # 在多级目录中对文本进行递归搜索 .表示当前目录。
+grep "text" . -r -n   # 在多级目录中对文本进行递归搜索 .表示当前目录
 
 # 在grep搜索结果中包括或者排除指定文件
 grep "main()" . -r --include *.{php,html}   # 只在目录中所有的.php和.html文件中递归搜索字符"main()"
@@ -187,7 +187,7 @@ grep "main()" . -r --exclude "README"   # 在搜索结果中排除所有README�
 grep "main()" . -r --exclude-from filelist  # 在搜索结果中排除filelist文件列表里的文件
 
 grep "aaa" file* -lZ | xargs -0 rm  # 使用0值字节后缀的grep与xargs,删除包含aaa字符文件名以file开头的文件，grep输出用-Z选项来指定以0值字节作为终结符文件名（\0），xargs -0 读取输入并用0值字节终结符分隔文件名，然后删除匹配文件，-Z通常和-l结合使用
-grep -q "test" filename   # 不会输出任何信息，如果命令运行成功返回0，失败则返回非0值。一般用于条件测试。
+grep -q "test" filename   # 不会输出任何信息，如果命令运行成功返回0，失败则返回非0值。一般用于条件测试
 
 # 打印出匹配文本之前或者之后的行
 seq 10 | grep "example" -A 3  # 显示匹配某个结果之后的3行，使用 -A 选项

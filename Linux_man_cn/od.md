@@ -70,7 +70,7 @@ and so on for G, T, P, E, Z, Y.
 od -b file  # 说明：使用单字节八进制解释进行输出，注意左侧的默认地址格式为八字节
 od -c file  # 说明：使用ASCII码进行输出，注意其中包括转义字符
 od -t d1 file   # 说明：使用单字节十进制进行解释
-od -A d -c file # 说明：设置地址格式为十进制。
+od -A d -c file # 说明：设置地址格式为十进制
 od -A x -c file # 说明：设置地址格式为十六进制
 od -j 2 -c file # 说明：跳过开始的两个字节
 od -N 2 -j 2 -c file    # 说明：跳过开始的两个字节，并且仅输出两个字节

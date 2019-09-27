@@ -24,7 +24,7 @@ sudo -e [-AknS] [-r role] [-t type] [-C num] [-g group] [-h host] [-p prompt] [-
     --preserve-env=list       保留特定的环境变量
 -e, --edit                    编辑文件而非执行命令
 -g, --group=group             以指定的用户组或 ID 执行命令
--H, --set-home                将 HOME 变量设为目标用户的主目录。
+-H, --set-home                将 HOME 变量设为目标用户的主目录
 -h, --help                    显示帮助消息并退出
 -h, --host=host               在主机上运行命令(如果插件支持)
 -i, --login                   以目标用户身份运行一个登录 shell；可同时指定一条命令

@@ -5,15 +5,15 @@ pwunconv
 
 ## 说明
 
-**pwunconv命令** 与pwconv功能相反，用来关闭用户的投影密码。它会把密码从shadow文件内，重回存到passwd文件里。
+**pwunconv命令** 与pwconv功能相反，用来关闭用户的投影密码。它会把密码从shadow文件内，重回存到passwd文件里
 
-### 语法  
+## 选项
 
 ```
 pwunconv
 ```
 
-### 实例  
+## 实例
 
 ```
 pwunconv     //关闭影子密码

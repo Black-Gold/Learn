@@ -31,7 +31,7 @@ load-transaction 从文件名中加载一个已存事务
 makecache      创建元数据缓存
 provides       查找提供指定内容的软件包
 reinstall      覆盖安装软件包
-repo-pkgs      将一个源当作一个软件包组，这样我们就可以一次性安装/移除全部软件包。
+repo-pkgs      将一个源当作一个软件包组，这样我们就可以一次性安装/移除全部软件包
 repolist       显示已配置的源
 search         在软件包详细信息中搜索指定字符串
 shell          运行交互式的 yum shell

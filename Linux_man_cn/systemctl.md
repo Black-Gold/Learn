@@ -5,7 +5,7 @@ systemctl
 
 ## 说明
 
-**systemctl命令** 是系统服务管理器指令，它实际上将 service 和 chkconfig 这两个命令组合到一起。
+**systemctl命令** 是系统服务管理器指令，它实际上将 service 和 chkconfig 这两个命令组合到一起
 
 <table>
 
@@ -95,7 +95,7 @@ systemctl
 
 </table>
 
-### 实例  
+## 实例
 
 1.启动nfs服务
 
@@ -143,7 +143,7 @@ iptables -I INPUT -p tcp --dport 22 -j accept
 
 关闭SElinux：
 
-修改`/etc/selinux/config`文件中的`SELINUX=””`为disabled，然后重启。
+修改`/etc/selinux/config`文件中的`SELINUX=””`为disabled，然后重启
 
 彻底关闭防火墙：
 
@@ -181,12 +181,12 @@ systemd-analyze critical-chain atd.service
 3.hostnamectl
 # 显示当前主机的信息
 hostnamectl
-# 设置主机名。
+# 设置主机名
 hostnamectl set-hostname rhel7
 4.localectl
 # 查看本地化设置
 localectl
-# 设置本地化参数。
+# 设置本地化参数
 localectl set-locale LANG=en_GB.utf8 localectl set-keymap en_GB
 5.timedatectl
 # 查看当前时区设置

@@ -5,9 +5,9 @@ nisdomainname
 
 ## 说明
 
-**nisdomainname命令** 用于显示主机NIS的域名。
+**nisdomainname命令** 用于显示主机NIS的域名
 
-### 语法  
+## 选项
 
 ```
 nisdomainname(选项)
@@ -16,7 +16,7 @@ nisdomainname(选项)
   
 
 ```
--v：详细信息模式。
+-v：详细信息模式
 ```
 
 

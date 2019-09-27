@@ -3,7 +3,7 @@
 ## 说明
 
 **wget命令** 用来从指定的URL下载文件。wget非常稳定，它在带宽很窄的情况下和不稳定网络中有很强的适应性，如果是由于网络的原
-因下载失败，wget会不断的尝试，直到整个文件下载完毕。如果是服务器打断下载过程，它会再次联到服务器上从停止的地方继续下载。
+因下载失败，wget会不断的尝试，直到整个文件下载完毕。如果是服务器打断下载过程，它会再次联到服务器上从停止的地方继续下载
 这对从那些限定了链接时间的服务器上下载大文件非常有用
 
 [wget官网](http://www.gnu.org/software/wget/)
@@ -88,7 +88,7 @@ IP)
    --use-askpass=命令          指定用于请求用户名和密码的凭据管
                                  如果没有提供指定命令，程序将使
 WGET_ASKPASS 或
-                                 SSH_ASKPASS 环境变量。
+                                 SSH_ASKPASS 环境变量
    --no-iri                    关闭 IRI 支持
    --local-encoding=ENC        使用 ENC 作为 IRI (国际化资源标
 本地编码
@@ -107,8 +107,8 @@ WGET_ASKPASS 或
 HTTP 选项：
        --http-user=用户            设置 http 用户名为 <用户>
        --http-password=密码        设置 http 密码为 <密码>
-       --no-cache                  不使用服务器缓存的数据。
-       --default-page=NAME         改变默认页 (通常是“index.html”)。
+       --no-cache                  不使用服务器缓存的数据
+       --default-page=NAME         改变默认页 (通常是“index.html”)
   -E,  --adjust-extension          以合适的扩展名保存 HTML/CSS 文档
        --ignore-length             忽略头部的‘Content-Length’区域
        --header=字符串             在头部插入 <字符串>
@@ -116,39 +116,39 @@ HTTP 选项：
        --proxy-user=用户           使用 <用户> 作为代理用户名
        --proxy-password=密码       使用 <密码> 作为代理密码
        --referer=URL               在 HTTP 请求头包含‘Referer: URL’
-       --save-headers              将 HTTP 头保存至文件。
-  -U,  --user-agent=代理           标识自己为 <代理> 而不是 Wget/VERSION。
-       --no-http-keep-alive        禁用 HTTP keep-alive (持久连接)。
-       --no-cookies                不使用 cookies。
-       --load-cookies=文件         会话开始前从 <文件> 中载入 cookies。
-       --save-cookies=文件         会话结束后保存 cookies 至 FILE。
-       --keep-session-cookies      载入并保存会话 (非永久) cookies。
-       --post-data=字符串          使用 POST 方式；把 <字串>作为数据发送。
-       --post-file=文件            使用 POST 方式；发送 <文件> 内容。
-       --method=HTTP方法           在请求中使用指定的 <HTTP 方法>。
+       --save-headers              将 HTTP 头保存至文件
+  -U,  --user-agent=代理           标识自己为 <代理> 而不是 Wget/VERSION
+       --no-http-keep-alive        禁用 HTTP keep-alive (持久连接)
+       --no-cookies                不使用 cookies
+       --load-cookies=文件         会话开始前从 <文件> 中载入 cookies
+       --save-cookies=文件         会话结束后保存 cookies 至 FILE
+       --keep-session-cookies      载入并保存会话 (非永久) cookies
+       --post-data=字符串          使用 POST 方式；把 <字串>作为数据发送
+       --post-file=文件            使用 POST 方式；发送 <文件> 内容
+       --method=HTTP方法           在请求中使用指定的 <HTTP 方法>
        --post-data=字符串          把 <字串> 作为数据发送，必须设置 --method
        --post-file=文件            发送 <文件> 内容，必须设置 --method
        --content-disposition       当选择本地文件名时允许 Content-Disposition
-                                   头部 (实验中)。
+                                   头部 (实验中)
        --content-on-error          在服务器错误时输出接收到的内容
-       --auth-no-challenge         不先等待服务器询问就发送基本 HTTP 验证信息。
+       --auth-no-challenge         不先等待服务器询问就发送基本 HTTP 验证信息
 
 HTTPS (SSL/TLS) 选项：
        --secure-protocol=PR        choose secure protocol, one of auto, SSLv2,
                                      SSLv3, TLSv1, TLSv1_1, TLSv1_2 and PFS
        --https-only                 只跟随安全的 HTTPS 链接
-       --no-check-certificate       不要验证服务器的证书。
-       --certificate=文件           客户端证书文件。
-       --certificate-type=类型      客户端证书类型，PEM 或 DER。
-       --private-key=文件           私钥文件。
-       --private-key-type=类型      私钥文件类型，PEM 或 DER。
-       --ca-certificate=文件        带有一组 CA 证书的文件。
-       --ca-directory=DIR           保存 CA 证书的哈希列表的目录。
-       --ca-certificate=文件        带有一组 CA 证书的文件。
+       --no-check-certificate       不要验证服务器的证书
+       --certificate=文件           客户端证书文件
+       --certificate-type=类型      客户端证书类型，PEM 或 DER
+       --private-key=文件           私钥文件
+       --private-key-type=类型      私钥文件类型，PEM 或 DER
+       --ca-certificate=文件        带有一组 CA 证书的文件
+       --ca-directory=DIR           保存 CA 证书的哈希列表的目录
+       --ca-certificate=文件        带有一组 CA 证书的文件
        --pinnedpubkey=文件/散列值  用于验证节点的公钥（PEM/DER）文件或
                                    任何数量的 sha256 散列值，以 base64 编码、
                                    “sha256//” 开头、用“;”间隔
-       --random-file=文件           用于初始化 SSL 伪随机数生成器（PRNG）的文件，
+       --random-file=文件           用于初始化 SSL 伪随机数生成器（PRNG）的文件
                                       应含有随机数据
 
 HSTS 选项：
@@ -156,7 +156,7 @@ HSTS 选项：
        --hsts-file                 HSTS 数据库路径（将覆盖默认值）
 
 FTP 选项：
- --ftp-user=用户             设置 ftp 用户名为 <用户>。
+ --ftp-user=用户             设置 ftp 用户名为 <用户>
  --ftp-password=密码         设置 ftp 密码为 <密码>
  --no-remove-listing         不要删除‘.listing’文件
  --no-glob                   不在 FTP 文件名中使用通配符展开
@@ -181,15 +181,15 @@ WARC 选项：
 
 递归下载：
   -r,  --recursive                 指定递归下载
-  -l,  --level=数字                最大递归深度 (inf 或 0 代表无限制，即全部下载)。
+  -l,  --level=数字                最大递归深度 (inf 或 0 代表无限制，即全部下载)
        --delete-after              下载完成后删除本地文件
   -k,  --convert-links             让下载得到的 HTML 或 CSS 中的链接指向本地文件
        --convert-file-only         只转换 URL 的文件部分（一般叫做“基础名”/basename）
        --backups=N                 写入文件 X 前，轮换移动最多 N 个备份文件
-  -K,  --backup-converted          在转换文件 X 前先将它备份为 X.orig。
-  -m,  --mirror                    -N -r -l inf --no-remove-listing 的缩写形式。
-  -p,  --page-requisites           下载所有用于显示 HTML 页面的图片之类的元素。
-       --strict-comments           用严格方式 (SGML) 处理 HTML 注释。
+  -K,  --backup-converted          在转换文件 X 前先将它备份为 X.orig
+  -m,  --mirror                    -N -r -l inf --no-remove-listing 的缩写形式
+  -p,  --page-requisites           下载所有用于显示 HTML 页面的图片之类的元素
+       --strict-comments           用严格方式 (SGML) 处理 HTML 注释
 
 递归接受/拒绝：
   -A,  --accept=列表               逗号分隔的可接受的扩展名列表

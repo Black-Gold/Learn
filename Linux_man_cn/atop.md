@@ -73,7 +73,7 @@ samples:  number of intervals (minimum 1)
 - idle字段指示CPU处在完全空闲状态的时间比例
 - wait字段指示CPU处在“进程等待磁盘IO导致CPU空闲”状态的时间比例
 
-CPU列各个字段指示值相加结果为N00%，其中N为cpu核数。
+CPU列各个字段指示值相加结果为N00%，其中N为cpu核数
 
 cpu列：该列显示某一核cpu的使用情况，各字段含义可参照CPU列，各字段值相加结果为100%
 

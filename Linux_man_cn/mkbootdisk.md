@@ -5,9 +5,9 @@ mkbootdisk
 
 ## 说明
 
-**mkbootdisk命令** 用来为当前运行的系统创建能够单独使用的系统引导软盘，以便在系统出现故障时能够启动操作进行适当的修复工作。
+**mkbootdisk命令** 用来为当前运行的系统创建能够单独使用的系统引导软盘，以便在系统出现故障时能够启动操作进行适当的修复工作
 
-### 语法  
+## 选项
 
 ```
 mkbootdisk(选项)(参数)
@@ -16,18 +16,18 @@ mkbootdisk(选项)(参数)
   
 
 ```
---device<设备>：指定设备；
---mkinitrdargs<参数>：设置mkinitrd的参数；
---noprompt：不会提示用户插入磁盘；
---verbose：执行时显示详细的信息；
---version：显示版本信息。
+--device<设备>：指定设备
+--mkinitrdargs<参数>：设置mkinitrd的参数
+--noprompt：不会提示用户插入磁盘
+--verbose：执行时显示详细的信息
+--version：显示版本信息
 ```
 
 ### 参数  
 
-内核：指定内核版本。
+内核：指定内核版本
 
-### 实例  
+## 实例
 
 ```
 mkbootdisk --device /dev/fd0 `uname -r`

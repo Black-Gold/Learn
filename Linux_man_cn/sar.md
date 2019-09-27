@@ -125,7 +125,7 @@ comment
 sar -n DEV 1 1  # 此为查看lo、eth0接口网络信息，查看网络相关信息，可用参数为DEV、EDEV、SOCK、FULL
 : << comment
 输出详解：
-IFACE：就是网络设备的名称；
+IFACE：就是网络设备的名称
 rxpck/s：每秒钟接收到的包数
 txpck/s：每秒钟发送出去的包数目
 rxbyt/s：每秒钟接收到的字节数

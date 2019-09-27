@@ -129,9 +129,10 @@ find /home -iname "*.txt" -print    # 查看home目录下以txt结尾的文件�
 find /home ! -name "*.txt" -print   # 找出/home下不是以.txt结尾的文件
 find /usr/ -path "*local*" -print   # 匹配文件路径或者文件,path后路径可以是多级的子目录
 
-# -prune    使用这一选项可以使find命令不在当前指定的目录中查找，如果同时使用-depth选项，那么-prune将被find命令忽略
+# -prune使用这一选项可以使find命令不在当前指定的目录中查找，如果同时使用-depth选项，那么-prune将被find命令忽略
 find . -path "./sk" -prune -o -name "*.txt" -print  # 查找当前目录或者子目录下所有.txt文件，但是跳过子目录sk
-find /usr/sam \( -path /usr/sam/dir1 -o -path /usr/sam/file1 \) -prune -o -print    # 排除多个目录
+find /usr/sam \( -path /usr/sam/dir1 -o -path /usr/sam/file1 \) -prune -o -print    # 排除多个目录,-path必须在-prune之前
+find /usr/sam ! -path /usr/sam/dir1 #  !也可以用来排除目录
 
 # 当前目录及子目录下查找所有以.txt和.pdf结尾的文件
 find . -name "*.txt" -o -name "*.pdf" -print
@@ -211,7 +212,7 @@ find . -type f 时间戳,UNIX/Linux文件系统每个文件都有三种时间戳
 
 * atime:访问时间(-atime/天，-amin/分钟)：用户最近一次访问时间。当备份实用程序或脚本已读取文件以及用户已读取文件时，atime也会更改
 * mtime:修改时间(-mtime/天，-mmin/分钟)：文件最后一次修改时间。文件系统备份会随时更改，而原始设备备份不会更改。要实施增量或差异备份很重要
-* 变化时间(-ctime/天，-cmin/分钟)：文件数据元（例如权限等）最后一次修改时间。
+* 变化时间(-ctime/天，-cmin/分钟)：文件数据元（例如权限等）最后一次修改时间
 comment
 
 find . -type f -atime -7    # 搜索最近七天内被访问过的所有文件

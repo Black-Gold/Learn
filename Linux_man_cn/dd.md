@@ -27,7 +27,7 @@ of=FILE         从文件写入而不是从标准输出
 oflag=FLAGS     按逗号分隔的参数列表写入
 seek=N          在输出开始时跳过N个obs-sized的块
 skip=N          在输入开始时跳过N个ibs-sized的块
-status=LEVEL    要打印到stderr的信息的级别; 'none'除了错误消息之外禁止其他所有输出，'noxfer'禁止最终传输统计信息，
+status=LEVEL    要打印到stderr的信息的级别; 'none'除了错误消息之外禁止其他所有输出，'noxfer'禁止最终传输统计信息
                 'progress'显示定期传输统计信息
 
 N和BYTES之后可以跟随以下乘法后缀:
@@ -88,10 +88,10 @@ dd if=/dev/zero of=sun.txt bs=1M count=1    # 可以看出dd命令来测试内�
 
 该命令创建了一个1M大小的文件sun.txt，其中参数解释：
 
-* **if**  代表输入文件。如果不指定if，默认就会从stdin中读取输入。
-* **of**  代表输出文件。如果不指定of，默认就会将stdout作为默认输出。
-* **bs**  代表字节为单位的块大小。
-* **count**  代表被复制的块数。
+* **if**  代表输入文件。如果不指定if，默认就会从stdin中读取输入
+* **of**  代表输出文件。如果不指定of，默认就会将stdout作为默认输出
+* **bs**  代表字节为单位的块大小
+* **count**  代表被复制的块数
 * **/dev/zero**  是一个字符设备，会不断返回0值字节（\0）
 
 块大小可以使用的计量单位表

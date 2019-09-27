@@ -1,13 +1,13 @@
 source
 ===
 
-在当前Shell环境中从指定文件读取和执行命令，命令返回退出状态。
+在当前Shell环境中从指定文件读取和执行命令，命令返回退出状态
 
 ## 说明
 
-**source命令** 在当前Shell环境中从指定文件读取和执行命令，命令返回退出状态。
+**source命令** 在当前Shell环境中从指定文件读取和执行命令，命令返回退出状态
 
-### 语法  
+## 选项
 
 ```
 source [文件名] [参数]
@@ -15,7 +15,7 @@ source [文件名] [参数]
 
 ### 例子
 
-读取和执行/root/.bash_profile文件。
+读取和执行/root/.bash_profile文件
 
 ```bash
 [root@localhost ~]# source ~/.bash_profile

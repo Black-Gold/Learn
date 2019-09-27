@@ -5,9 +5,9 @@ setsebool
 
 ## 说明
 
-**setsebool命令** 是用来修改SElinux策略内各项规则的布尔值。setsebool命令和getsebool命令是SELinux修改和查询布尔值的一套工具组。SELinux的策略与规则管理相关命令：seinfo命令、sesearch命令、getsebool命令、setsebool命令、semanage命令。
+**setsebool命令** 是用来修改SElinux策略内各项规则的布尔值。setsebool命令和getsebool命令是SELinux修改和查询布尔值的一套工具组。SELinux的策略与规则管理相关命令：seinfo命令、sesearch命令、getsebool命令、setsebool命令、semanage命令
 
-### 语法  
+## 选项
 
 ```
 setsebool [-P] 布尔值=[0|1]
@@ -16,10 +16,10 @@ setsebool [-P] 布尔值=[0|1]
   
 
 ```
--P:直接将设置值写入配置文件，该设置数据将来会生效的。
+-P:直接将设置值写入配置文件，该设置数据将来会生效的
 ```
 
-### 实例  
+## 实例
 
 允许vsvtp匿名用户写入权限：
 

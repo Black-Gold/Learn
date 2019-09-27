@@ -55,9 +55,9 @@ which override global ordering options for that key.  If no key is given, use
 the entire line as the key.
 
 SIZE may be followed by the following multiplicative suffixes:
-内存使用率% 1%，b 1、K 1024 (默认)，M、G、T、P、E、Z、Y 等依此类推。
+内存使用率% 1%，b 1、K 1024 (默认)，M、G、T、P、E、Z、Y 等依此类推
 
-如果不指定文件，或者文件为"-"，则从标准输入读取数据。
+如果不指定文件，或者文件为"-"，则从标准输入读取数据
 
 *** 警告 ***
 本地环境变量会影响排序结果。如果希望以字节的自然值获得最传统的排序结果，请设置LC_ALL=C

@@ -5,9 +5,9 @@ ypdomainname
 
 ## 说明
 
-**ypdomainname命令** 显示主机的NIS的域名。
+**ypdomainname命令** 显示主机的NIS的域名
 
-### 语法  
+## 选项
 
 ```
 ypdomainname(选项)
@@ -16,7 +16,7 @@ ypdomainname(选项)
   
 
 ```
--v：详细信息模式。
+-v：详细信息模式
 ```
 
 

@@ -287,7 +287,7 @@ tar -xf archive.tar          # 展开归档文件 archive.tar中的所有文件
 
 ## tar.gz格式
 
-方式一：利用前面已经打包好的tar文件，直接用压缩命令。
+方式一：利用前面已经打包好的tar文件，直接用压缩命令
 压缩：gzip [原文件名].tar
 解压：gunzip [原文件名].tar.gz
 
@@ -337,7 +337,7 @@ Main-class: the_name_of_the_main_class_should_be_put_here
 
 然后用如下命令打包：
 jar -cvfm [目标文件名].jar META-INF/MANIFEST.MF [原文件名/目录名]
-这样以后就能用“java -jar [文件名].jar”命令直接运行主类中的public static void main方法了。
+这样以后就能用“java -jar [文件名].jar”命令直接运行主类中的public static void main方法了
 
 ## 7z格式
 

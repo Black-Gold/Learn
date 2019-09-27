@@ -48,11 +48,11 @@ Non-mandatory arguments are indicated by [square brackets]
 
 ## 说明
 
-**xargs命令** 是给其他命令传递参数的一个过滤器，也是组合多个命令的一个工具。它擅长将标准输入数据转换成命令行参数，xargs能够处理管道或者stdin并将其转换成特定命令的命令参数。xargs也可以将单行或多行文本输入转换为其他格式，例如多行变单行，单行变多行。xargs的默认命令是echo，空格是默认定界符。这意味着通过管道传递给xargs的输入将会包含换行和空白，不过通过xargs的处理，换行和空白将被空格取代。xargs是构建单行命令的重要组件之一。
+**xargs命令** 是给其他命令传递参数的一个过滤器，也是组合多个命令的一个工具。它擅长将标准输入数据转换成命令行参数，xargs能够处理管道或者stdin并将其转换成特定命令的命令参数。xargs也可以将单行或多行文本输入转换为其他格式，例如多行变单行，单行变多行。xargs的默认命令是echo，空格是默认定界符。这意味着通过管道传递给xargs的输入将会包含换行和空白，不过通过xargs的处理，换行和空白将被空格取代。xargs是构建单行命令的重要组件之一
 
 ### xargs命令用法  
 
-xargs用作替换工具，读取输入数据重新格式化后输出。
+xargs用作替换工具，读取输入数据重新格式化后输出
 
 定义一个测试文件，内有多行文本数据：
 
@@ -114,7 +114,7 @@ name name
 
 ```
 #!/bin/bash
-#sk.sh命令内容，打印出所有参数。
+#sk.sh命令内容，打印出所有参数
 
 echo $*
 
@@ -158,7 +158,7 @@ ls *.jpg | xargs -n1 -I cp {} /data/images
 find . -type f -name "*.log" -print0 | xargs -0 rm -f
 ```
 
-xargs -0将\0作为定界符。
+xargs -0将\0作为定界符
 
 统计一个源代码目录中所有php文件的行数：
 
@@ -184,13 +184,13 @@ cat url-list.txt | xargs wget -c
 
 ### 子Shell（Subshells）  
 
-运行一个shell脚本时会启动另一个命令解释器.，就好像你的命令是在命令行提示下被解释的一样，类似于批处理文件里的一系列命令。每个shell脚本有效地运行在父shell(parent shell)的一个子进程里。这个父shell是指在一个控制终端或在一个xterm窗口中给你命令指示符的进程。
+运行一个shell脚本时会启动另一个命令解释器.，就好像你的命令是在命令行提示下被解释的一样，类似于批处理文件里的一系列命令。每个shell脚本有效地运行在父shell(parent shell)的一个子进程里。这个父shell是指在一个控制终端或在一个xterm窗口中给你命令指示符的进程
 
 ```
 cmd1 | ( cmd2; cmd3; cmd4 ) | cmd5
 ```
 
-如果cmd2 是cd /，那么就会改变子Shell的工作目录，这种改变只是局限于子shell内部，cmd5则完全不知道工作目录发生的变化。子shell是嵌在圆括号()内部的命令序列，子Shell内部定义的变量为局部变量。
+如果cmd2 是cd /，那么就会改变子Shell的工作目录，这种改变只是局限于子shell内部，cmd5则完全不知道工作目录发生的变化。子shell是嵌在圆括号()内部的命令序列，子Shell内部定义的变量为局部变量
 
 子shell可用于为一组命令设定临时的环境变量：
 
@@ -206,9 +206,9 @@ COMMAND3
   shift 5
   COMMAND4
   COMMAND5
-  exit 3 # 只是从子shell退出。
+  exit 3 # 只是从子shell退出
 )
-# 父shell不受影响，变量值没有更改。
+# 父shell不受影响，变量值没有更改
 COMMAND6
 COMMAND7
 ```

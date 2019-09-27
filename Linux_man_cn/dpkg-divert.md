@@ -5,9 +5,9 @@ Debian Linux中创建并管理一个转向列表
 
 ## 说明
 
-**dpkg-divert命令** 是Debian Linux中创建并管理一个转向（diversion）列表，其使得安装文件的默认位置失效的工具。
+**dpkg-divert命令** 是Debian Linux中创建并管理一个转向（diversion）列表，其使得安装文件的默认位置失效的工具
 
-### 语法  
+## 选项
 
 ```
 dpkg-divert(选项)(参数)
@@ -16,18 +16,18 @@ dpkg-divert(选项)(参数)
   
 
 ```
---add：添加一个转移文件；
---remove：删除一个转移文件；
---list：列出匹配的转移；
---truename：对应转移文件真实文件名；
---quidet：安静模式。
+--add：添加一个转移文件
+--remove：删除一个转移文件
+--list：列出匹配的转移
+--truename：对应转移文件真实文件名
+--quidet：安静模式
 ```
 
 ### 参数  
 
-文件：指定转移文件名。
+文件：指定转移文件名
 
-### 实例  
+## 实例
 
 指定软件包wibble安装时，写入`/usr/bin/example.foo`，而不是`/usr/bin/example`：
 
