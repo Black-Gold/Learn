@@ -18,22 +18,7 @@ shell变量：声明shell变量，格式为“变量名=值”
 
 ## 实例
 
-首先使用declare命令定义shell变量"test"，并且将其值设置为"man.linuxde.net"，输入如下命令：
-
+```bash
+declare test='man.linuxde.net'    # 定义并初始化test变量
 ```
-declare test='man.linuxde.net'    #定义并初始化shell变量
-```
-
-上面的命令执行后，再使用echo命令将该shell变量值输出，输入如下命令：
-
-```
-echo $test                        #输出shell变量的值
-```
-
-上面的指令执行后，其输出的结果如下：
-
-```
-man.linuxde.net
-```
-
 

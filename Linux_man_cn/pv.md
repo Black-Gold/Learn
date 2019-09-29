@@ -1,29 +1,22 @@
-pv
+# pv
 
 ## 说明
 
-**pv命令**  Pipe Viewer 的简称，由Andrew Wood 开发。意思是通过管道显示数据处理进度的信息。这些信息包括已经耗费的时间，完成的百分比(通过进度条显示)，当前的速度，全部传输的数据，以及估计剩余的时间
+**pv命令**  Pipe Viewer 的简称，由Andrew Wood 开发。意思是通过管道显示数据处理进度的信息。这些信息包括已经耗费的时间，
+完成的百分比(通过进度条显示)，当前的速度，全部传输的数据，以及估计剩余的时间
 
 ## 下载安装
 
 ```bash
-# Debian 系的操作系统，如 Ubuntu
-sudo apt-get install pv
-
-# RedHat系的则这样：
-yum install pv
+sudo apt-get install pv# Debian
+yum install pv  # RedHat
 ```
 
 ## 选项
 
-```bash
-pv(选项)(参数)
+```markdown
 pv [OPTION] [FILE]...
-```
 
-  
-
-```
 -p, --progress           show progress bar
 -t, --timer              show elapsed time
 -e, --eta                show estimated time of arrival (completion)
@@ -61,38 +54,26 @@ pv [OPTION] [FILE]...
 
 -d, --watchfd PID[:FD]   watch file FD opened by process PID
 
--h, --help               显示帮助
--V, --version            显示版本信息
 ```
 
 
 ## 实例
 
-我们（在 linux 上使用命令行的用户）的大多数使用场景都会用到的命令是从一个 USB 驱动器拷贝电影文件到你的电脑。如果你使用 cp 来完成上面的任务，你会什么情况都不清楚，直到整个复制过程结束或者出错
-
 ```bash
 # 复制文件会有进度
 linux [master●] % pv ~/Downloads/CentOS-7-x86_64-Minimal-1511.iso > ~/Desktop/CentOS-7-x86_64-Minimal-1511.iso
-# 下面输入信息
-552MiB 0:00:02 [ 212MiB/s] [==================>           ] 91% ETA 0:00:00
 
-# -L 可以让你修改 pv 命令的传输速率
-# 使用 -L 选项来限制传输速率为2MB/s
+# -L 可以让你修改 pv 命令的传输速率,使用 -L 选项来限制传输速率为2MB/s
 pv -L 2m /media/himanshu/1AC2-A8E3/fNf.mkv > ./Desktop/fnf.mkv 
-```
 
-
-```bash
 # 字符一个个匀速在命令行中显示出来
 echo "Tecmint[dot]com is a community of Linux Nerds and Geeks" | pv -qL 10
 
 # 压缩文件展示进度信息
 pv /media/himanshu/1AC2-A8E3/fnf.mkv | gzip > ./Desktop/fnf.log.gz 
 
-
 # 用 dd 命令将 iso 写入磁盘，pv来实现进度条的显示
 sudo pv -cN source < /Users/kacperwang/Downloads/CentOS-7-x86_64-Everything-1511.iso | sudo dd of=/dev/disk2 bs=4m
-## 显示下面进度
-source:  5.2GiB 5:11:41 [ 503KiB/s] [=====================>       ] 71% ETA 2:01:56
+
 ```
 

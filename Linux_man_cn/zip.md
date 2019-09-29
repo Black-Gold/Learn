@@ -1,7 +1,4 @@
-zip
-===
-
-可以用来解压缩文件
+# **zip**
 
 ## 说明
 
@@ -9,13 +6,7 @@ zip
 
 ## 选项
 
-```
-zip(选项)(参数)
-```
-
-  
-
-```
+```markdown
 -A：调整可执行的自动解压缩文件
 -b<工作目录>：指定暂时存放文件的目录
 -c：替每个被压缩的文件加上注释
@@ -50,45 +41,36 @@ zip(选项)(参数)
 -z：替压缩文件加上注释
 -$：保存第一个被压缩文件所在磁盘的卷册名称
 -<压缩效率>：压缩效率是一个介于1~9的数值
+
+zip [-options] [-b path] [-t mmddyyyy] [-n suffixes] [zipfile list] [-xi list]
+  The default action is to add or replace zipfile entries from list, which
+  can include the special name - to compress standard input.
+  If zipfile and list are omitted, zip compresses stdin to stdout.
+  -f   freshen: only changed files  -u   update: only changed or new files
+  -d   delete entries in zipfile    -m   move into zipfile (delete OS files)
+  -r   recurse into directories     -j   junk (don't record) directory names
+  -0   store only                   -l   convert LF to CR LF (-ll CR LF to LF)
+  -1   compress faster              -9   compress better
+  -q   quiet operation              -v   verbose operation/print version info
+  -c   add one-line comments        -z   add zipfile comment
+  -@   read names from stdin        -o   make zipfile as old as latest entry
+  -x   exclude the following names  -i   include only the following names
+  -F   fix zipfile (-FF try harder) -D   do not add directory entries
+  -A   adjust self-extracting exe   -J   junk zipfile prefix (unzipsfx)
+  -T   test zipfile integrity       -X   eXclude eXtra file attributes
+  -y   store symbolic links as the link instead of the referenced file
+  -e   encrypt                      -n   don't compress these suffixes
+  -h2  show more help
+
+
 ```
-
-### 参数  
-
-*   zip压缩包：指定要创建的zip压缩包
-*   文件列表：指定要压缩的文件列表
 
 ## 实例
 
-将`/home/Blinux/html/`这个目录下所有文件和文件夹打包为当前目录下的html.zip：
-
-```
-zip -q -r html.zip /home/Blinux/html
-```
-
-上面的命令操作是将绝对地址的文件及文件夹进行压缩，以下给出压缩相对路径目录，比如目前在Bliux这个目录下，执行以下操作可以达到以上同样的效果：
-
-```
-zip -q -r html.zip html
-```
-
-比如现在我的html目录下，我操作的zip压缩命令是：
-
-```
-zip -q -r html.zip *
-```
-
-### 问题解决
-
-CentOS7中命令找不到
-
-```
--Bash: Unzip: Command Not Found
-```
-
-解决方法
- 
 ```bash
-yum install -y unzip zip
+yum install -y unzip zip    # yum安装
+zip -q -r html.zip /home/Blinux/html    # 将/home/Blinux/html/目录下所有文件和文件夹打包到当前目录下的html.zip
+
 ```
 
 

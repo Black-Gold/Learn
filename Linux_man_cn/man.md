@@ -1,8 +1,6 @@
 # **man**
 
-
-
-```info
+```markdown
 用法： man[选项...] [章节] 手册页...
   -C, --config-file=文件            使用该用户设置文件
   -d, --debug                       输出调试信息
@@ -35,38 +33,37 @@
       --no-subpages                 don't try subpages, e.g. 'man foo bar' => 'manfoo-bar'
 
  控制格式化的输出：
-  -P, --pager=PAGER                 使用 PAGER 程序显示输出文本
+  -P, --pager=PAGER                使用 PAGER 程序显示输出文本
   -r, --prompt=字符串               给 less pager 提供一个提示行
-  -7, --ascii                       显示某些 latin1 字符的 ASCII 翻译形式
-  -E, --encoding=编码               use selected output encoding
-      --no-hyphenation, --nh        turn off hyphenation
-      --no-justification,--nj       turn off justification
-  -p, --preprocessor=字符串         字符串表示要运行哪些预处理器：e - [n]eqn, p - pic, t - tbl,g - grap, r - refer, v - vgrind
-  -t, --troff                       使用 groff 对手册页排版
-  -T, --troff-device[=设备]         使用 groff 的指定设备
-  -H, --html[=浏览器]               使用 www-browser 或指定浏览器显示 HTML输出
-  -X, --gxditview[=分辨率]          使用 groff 并通过 gxditview (X11)来显示：-X = -TX75, -X100 = -TX100, -X100-12 = -TX100-12
-  -Z, --ditroff                     使用 groff 并强制它生成 ditroff
+  -7, --ascii                      显示某些 latin1 字符的 ASCII 翻译形式
+  -E, --encoding=编码              use selected output encoding
+      --no-hyphenation, --nh      turn off hyphenation
+      --no-justification,--nj     turn off justification
+  -p, --preprocessor=字符串        字符串表示要运行哪些预处理器：e - [n]eqn, p - pic, t - tbl,g - grap, r - refer, v - vgrind
+  -t, --troff                     使用 groff 对手册页排版
+  -T, --troff-device[=设备]        使用 groff 的指定设备
+  -H, --html[=浏览器]              使用 www-browser 或指定浏览器显示 HTML输出
+  -X, --gxditview[=分辨率]         使用groff并通过 gxditview (X11)来显示：-X = -TX75, -X100 = -TX100, -X100-12 = -TX100-12
+  -Z, --ditroff                    使用 groff 并强制它生成 ditroff
 ```
 
-```sh
-# 数字所代表内容
-1：用户在shell环境可操作的命令或执行文件
-2：系统内核可调用的函数与工具等
-3：一些常用的函数(function)与函数库(library)，大部分为C的函数库(libc)
-4：设备文件说明，通常在/dev下的文件
-5：配置文件或某些文件格式
-6：游戏(games)
-7：惯例与协议等，如Linux文件系统，网络协议，ASCII code等说明
-8：系统管理员可用的管理命令
-9：跟kernel有关的文件
-```
+
+### 数字所代表内容
+
+1. 用户在shell环境可操作的命令或执行文件
+2. 系统内核可调用的函数与工具等
+3. 一些常用的函数(function)与函数库(library)，大部分为C的函数库(libc)
+4. 设备文件说明，通常在/dev下的文件
+5. 配置文件或某些文件格式
+6. 游戏(games)
+7. 惯例与协议等，如Linux文件系统，网络协议，ASCII code等说明
+8. 系统管理员可用的管理命令
+9. 跟kernel有关的文件
+
 
 ## 实例
 
-我们输入`man ls`，它会在最左上角显示“LS（1）”，在这里，“LS”表示手册名称，而“（1）”表示该手册位于第一节章，同样，我们输`man ifconfig`它会在最左上角显示“IFCONFIG（8）”。也可以这样输入命令：“man [章节号] 手册名称”
-
-```sh
+```bash
 man -t man | ps2pdf - > man.pdf     # 生成一个PDF格式的帮助文件
 man 3 sleep                         # 显示sleep命令的手册并查看库函数sleep
 ```

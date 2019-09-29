@@ -1,7 +1,4 @@
-ssh-add
-===
-
-把专用密钥添加到ssh-agent的高速缓存中
+# **ssh-add**
 
 ## 说明
 
@@ -9,15 +6,11 @@ ssh-add
 
 ## 选项
 
-```
+```markdown
 ssh-add [-cDdLlXx] [-t life] [file ...]
 ssh-add -s pkcs11
 ssh-add -e pkcs11
-```
 
-  
-
-```
 -D：删除ssh-agent中的所有密钥.
 -d：从ssh-agent中的删除密钥
 -e pkcs11：删除PKCS#11共享库pkcs1提供的钥匙
@@ -31,22 +24,10 @@ ssh-add -e pkcs11
 
 ## 实例
 
-1、把专用密钥添加到 ssh-agent 的高速缓存中：
-
-```
-ssh-add ~/.ssh/id_dsa
-```
-
-2、从ssh-agent中删除密钥：
-
-```
-ssh-add -d ~/.ssh/id_xxx.pub
-```
-
-3、查看ssh-agent中的密钥：
-
-```
-ssh-add -l
+```bash
+ssh-add ~/.ssh/id_dsa   # 把专用密钥添加到 ssh-agent 的高速缓存中
+ssh-add -d ~/.ssh/id_xxx.pub    # 从ssh-agent中删除密钥
+ssh-add -l  # 查看ssh-agent中的密钥
 ```
 
 

@@ -1,7 +1,4 @@
-unzip
-===
-
-用于解压缩由zip命令压缩的压缩包
+# **unzip**
 
 ## 说明
 
@@ -9,13 +6,7 @@ unzip
 
 ## 选项
 
-```
-unzip(选项)(参数)
-```
-
-  
-
-```
+```markdown
 -c：将解压缩的结果显示到屏幕上，并对字符做适当的转换
 -f：更新现有的文件
 -l：显示压缩文件内所包含的文件
@@ -40,36 +31,40 @@ unzip(选项)(参数)
 -d<目录>：指定文件解压缩后所要存储的目录
 -x<文件>：指定不要处理.zip压缩文件中的哪些文件
 -Z：unzip-Z等于执行zipinfo指令
+
+Default action is to extract files in list, except those in xlist, to exdir;
+  file[.zip] may be a wildcard.  -Z => ZipInfo mode ("unzip -Z" for usage).
+
+  -p  extract files to pipe, no messages     -l  list files (short format)
+  -f  freshen existing files, create none    -t  test compressed archive data
+  -u  update files, create if necessary      -z  display archive comment only
+  -v  list verbosely/show version info       -T  timestamp archive to latest
+  -x  exclude files that follow (in xlist)   -d  extract files into exdir
+modifiers:
+  -n  never overwrite existing files         -q  quiet mode (-qq => quieter)
+  -o  overwrite files WITHOUT prompting      -a  auto-convert any text files
+  -j  junk paths (do not make directories)   -aa treat ALL files as text
+  -U  use escapes for all non-ASCII Unicode  -UU ignore any Unicode fields
+  -C  match filenames case-insensitively     -L  make (some) names lowercase
+  -X  restore UID/GID info                   -V  retain VMS version numbers
+  -K  keep setuid/setgid/tacky permissions   -M  pipe through "more" pager
+  -O CHARSET  specify a character encoding for DOS, Windows and OS/2 archives
+  -I CHARSET  specify a character encoding for UNIX and other archives
+
+See "unzip -hh" or unzip.txt for more help.  Examples:
+  unzip data1 -x joe   => extract all files except joe from zipfile data1.zip
+  unzip -p foo | more  => send contents of foo.zip via pipe into program more
+  unzip -fo foo ReadMe => quietly replace existing ReadMe if archive file newe
 ```
-
-### 参数  
-
-压缩包：指定要解压的“.zip”压缩包
 
 ## 实例
 
-将压缩文件text.zip在当前目录下解压缩
+```bash
+unzip test.zip  # 将压缩文件text.zip在当前目录下解压缩
+unzip -n test.zip -d /tmp   # 将压缩文件text.zip在指定目录`/tmp`下解压缩，如果已有相同的文件存在，要求unzip命令不覆盖原先的文件
+unzip -v test.zip   # 查看压缩文件目录，但不解压
+unzip -o test.zip -d tmp/   # 将压缩文件test.zip在指定目录`/tmp`下解压缩，如果已有相同的文件存在，覆盖原先的文件
 
-```
-unzip test.zip
-```
-
-将压缩文件text.zip在指定目录`/tmp`下解压缩，如果已有相同的文件存在，要求unzip命令不覆盖原先的文件
-
-```
-unzip -n test.zip -d /tmp
-```
-
-查看压缩文件目录，但不解压
-
-```
-unzip -v test.zip
-```
-
-将压缩文件test.zip在指定目录`/tmp`下解压缩，如果已有相同的文件存在，要求unzip命令覆盖原先的文件
-
-```
-unzip -o test.zip -d tmp/
 ```
 
 

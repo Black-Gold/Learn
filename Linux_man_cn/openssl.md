@@ -84,185 +84,7 @@ openssl x509 -text -noout -in certificate.pem
 
 openssl dhparam -out dhparams.pem -dsaparam 2048    # 生成dhparams.pem文件
 
-# 一步生成crt和key
-openssl req -x509 -out localhost.crt -keyout localhost.key \
-  -newkey rsa:2048 -nodes -sha256 -days 3650\
-  -subj '/CN=*.19950128.com' -extensions EXT -config <( \
-printf "[dn]\nCN=*.19950128.com\n[req]\ndistinguished_name = dn\n[EXT]\nsubjectAltName=DNS:*.19950128.com\\
-nkeyUsage=digitalSignature\nextendedKeyUsage=serverAuth")
-```
-
-```bash
-# 消息摘要算法应用例子
-openssl dgst -sha1 file.txt # 用SHA1算法计算文件file.txt的哈西值，输出到stdout：
-
-```
-
-用SHA1算法计算文件file.txt的哈西值，输出到文件digest.txt：
-
-```
-# openssl sha1 -out digest.txt file.txt
-```
-
-用DSS1(SHA1)算法为文件file.txt签名，输出到文件dsasign.bin。签名的private key必须为DSA算法产生的，保存在文件dsakey.pem中
-
-```
-# openssl dgst -dss1 -sign dsakey.pem -out dsasign.bin file.txt
-```
-
-用dss1算法验证file.txt的数字签名dsasign.bin，验证的private key为DSA算法产生的文件dsakey.pem
-
-```
-# openssl dgst -dss1 -prverify dsakey.pem -signature dsasign.bin file.txt
-```
-
-用sha1算法为文件file.txt签名,输出到文件rsasign.bin，签名的private key为RSA算法产生的文件rsaprivate.pem
-
-```
-# openssl sha1 -sign rsaprivate.pem -out rsasign.bin file.txt
-```
-
-# 用sha1算法验证file.txt的数字签名rsasign.bin，验证的public key为RSA算法生成的rsapublic.pem
-
-```
-# openssl sha1 -verify rsapublic.pem -signature rsasign.bin file.txt
-```
-
- **2、对称加密应用例子** 
-
-对称加密应用例子，用DES3算法的CBC模式加密文件plaintext.doc，加密结果输出到文件ciphertext.bin
-
-```
-# openssl enc -des3 -salt -in plaintext.doc -out ciphertext.bin
-```
-
-用DES3算法的OFB模式解密文件ciphertext.bin，提供的口令为trousers，输出到文件plaintext.doc。注意：因为模式不同，该命令不能对以上的文件进行解密
-
-```
-# openssl enc -des-ede3-ofb -d -in ciphertext.bin -out plaintext.doc -pass pass:trousers
-```
-
-用Blowfish的CFB模式加密plaintext.doc，口令从环境变量PASSWORD中取，输出到文件ciphertext.bin
-
-```
-# openssl bf-cfb -salt -in plaintext.doc -out ciphertext.bin -pass env:PASSWORD
-```
-
-给文件ciphertext.bin用base64编码，输出到文件base64.txt
-
-```
-# openssl base64 -in ciphertext.bin -out base64.txt
-```
-
-用RC5算法的CBC模式加密文件plaintext.doc，输出到文件ciphertext.bin，salt、key和初始化向量(iv)在命令行指定
-
-```
-# openssl rc5 -in plaintext.doc -out ciphertext.bin -S C62CB1D49F158ADC -iv E9EDACA1BD7090C6 -K 89D4B1678D604FAA3DBFFD030A314B29
-```
-
- **3、Diffie-Hellman应用例子** 
-
-使用生成因子2和随机的1024-bit的素数产生D0ffie-Hellman参数，输出保存到文件dhparam.pem
-
-```
-# openssl dhparam -out dhparam.pem -2 1024
-```
-
-从dhparam.pem中读取Diffie-Hell参数，以C代码的形式，输出到stdout
-
-```
-# openssl dhparam -in dhparam.pem -noout -C
-```
-
- **4、DSA应用例子应用例子** 
-
-生成1024位DSA参数集，并输出到文件dsaparam.pem
-
-```
-# openssl dsaparam -out dsaparam.pem 1024
-```
-
-使用参数文件dsaparam.pem生成DSA私钥匙，采用3DES加密后输出到文件dsaprivatekey.pem
-
-```
-# openssl gendsa -out dsaprivatekey.pem -des3 dsaparam.pem
-```
-
-使用私钥匙dsaprivatekey.pem生成公钥匙，输出到dsapublickey.pem
-
-```
-# openssl dsa -in dsaprivatekey.pem -pubout -out dsapublickey.pem
-```
-
-从dsaprivatekey.pem中读取私钥匙，解密并输入新口令进行加密，然后写回文件dsaprivatekey.pem
-
-```
-# openssl dsa -in dsaprivatekey.pem -out dsaprivatekey.pem -des3 -passin
-```
-
- **5、RSA应用例子** 
-
-产生1024位RSA私匙，用3DES加密它，口令为trousers，输出到文件rsaprivatekey.pem
-
-```
-# openssl genrsa -out rsaprivatekey.pem -passout pass:trousers -des3 1024
-```
-
-从文件rsaprivatekey.pem读取私匙，用口令trousers解密，生成的公钥匙输出到文件rsapublickey.pem
-
-```
-# openssl rsa -in rsaprivatekey.pem -passin pass:trousers -pubout -out rsapubckey.pem
-```
-
-用公钥匙rsapublickey.pem加密文件plain.txt，输出到文件cipher.txt
-
-```
-# openssl rsautl -encrypt -pubin -inkey rsapublickey.pem -in plain.txt -out cipher.txt
-```
-
-使用私钥匙rsaprivatekey.pem解密密文cipher.txt，输出到文件plain.txt
-
-```
-# openssl rsautl -decrypt -inkey rsaprivatekey.pem -in cipher.txt -out plain.txt
-```
-
-用私钥匙rsaprivatekey.pem给文件plain.txt签名，输出到文件signature.bin
-
-```
-# openssl rsautl -sign -inkey rsaprivatekey.pem -in plain.txt -out signature.bin
-```
-
-用公钥匙rsapublickey.pem验证签名signature.bin，输出到文件plain.txt
-
-```
-# openssl rsautl -verify -pubin -inkey rsapublickey.pem -in signature.bin -out plain
-```
-
-从X.509证书文件cert.pem中获取公钥匙，用3DES加密mail.txt，输出到文件mail.enc
-
-```
-# openssl smime -encrypt -in mail.txt -des3 -out mail.enc cert.pem
-```
-
-从X.509证书文件cert.pem中获取接收人的公钥匙，用私钥匙key.pem解密S/MIME消息mail.enc，结果输出到文件mail.txt
-
-```
-# openssl smime -decrypt -in mail.enc -recip cert.pem -inkey key.pem -out mail.txt
-```
-
-cert.pem为X.509证书文件，用私匙key,pem为mail.txt签名，证书被包含在S/MIME消息中，输出到文件mail.sgn
-
-```
-# openssl smime -sign -in mail.txt -signer cert.pem -inkey key.pem -out mail.sgn
-```
-
-验证S/MIME消息mail.sgn，输出到文件mail.txt，签名者的证书应该作为S/MIME消息的一部分包含在mail.sgn中
-
-```
-# openssl smime -verify -in mail.sgn -out mail.txt
-```
-
-
+: << comment
 制作并信任您自己的证书：
 任何人都可以在没有CA帮助的情况下制作自己的证书。 唯一的区别是您自己制作的证书不会被其他任何人信任;然后，您可以使用
 localhost.crt和localhost.key配置本地网站服务器，并在本地受信任的根列表中安装localhost.crt
@@ -270,9 +92,114 @@ localhost.crt和localhost.key配置本地网站服务器，并在本地受信任
 如果您希望在开发证书中更加逼真，可以使用(minica)[https://github.com/jsha/minica]生成自己的本地根证书，并颁发由其签名的终
 端（又称叶）证书。 然后，您将导入根证书而不是自签名的终端证书;您还可以选择使用带有点的域，例如www.localhost，将其作为别
 名添加到/etc/hosts作为127.0.0.1的别名。这巧妙地改变了浏览器处理cookie存储的方式
-
+comment
+# 一步生成crt和key
 openssl req -x509 -out localhost.crt -keyout localhost.key \
   -newkey rsa:2048 -nodes -sha256 \
   -subj '/CN=localhost' -extensions EXT -config <( \
-   printf "[dn]\nCN=localhost\n[req]\ndistinguished_name = dn\n[EXT]\nsubjectAltName=DNS:localhost\nkeyUsage=digitalSignature\nextendedKeyUsage=serverAuth")
+   printf "[dn]\nCN=localhost\n[req]\ndistinguished_name = dn\n[EXT]\nsubjectAltName=DNS:localhost\
+   nkeyUsage=digitalSignature\nextendedKeyUsage=serverAuth")
+
+```
+
+### 消息摘要算法应用例子
+
+```bash
+openssl dgst -sha1 file.txt # 用SHA1算法计算文件file.txt的哈西值，输出到stdout：
+openssl sha1 -out digest.txt file.txt   # 用SHA1算法计算文件file.txt的哈西值，输出到文件digest.txt：
+
+# 用DSS1(SHA1)算法为文件file.txt签名，输出到文件dsasign.bin。签名的private key必须为DSA算法产生的，保存在文件dsakey.pem中
+openssl dgst -dss1 -sign dsakey.pem -out dsasign.bin file.txt
+
+# 用dss1算法验证file.txt的数字签名dsasign.bin，验证的private key为DSA算法产生的文件dsakey.pem
+openssl dgst -dss1 -prverify dsakey.pem -signature dsasign.bin file.txt
+
+# 用sha1算法为文件file.txt签名,输出到文件rsasign.bin，签名的private key为RSA算法产生的文件rsaprivate.pem
+openssl sha1 -sign rsaprivate.pem -out rsasign.bin file.txt
+
+# 用sha1算法验证file.txt的数字签名rsasign.bin，验证的public key为RSA算法生成的rsapublic.pem
+openssl sha1 -verify rsapublic.pem -signature rsasign.bin file.txt
+```
+
+### 对称加密应用例子
+
+```bash
+#对称加密应用例子，用DES3算法的CBC模式加密文件plaintext.doc，加密结果输出到文件ciphertext.bin
+openssl enc -des3 -salt -in plaintext.doc -out ciphertext.bin
+
+# 用DES3算法的OFB模式解密文件ciphertext.bin，提供的口令为trousers，输出到文件plaintext.doc。注意：因为模式不同，该命令不能对以上的文件进行解密
+openssl enc -des-ede3-ofb -d -in ciphertext.bin -out plaintext.doc -pass pass:trousers
+
+# 用Blowfish的CFB模式加密plaintext.doc，口令从环境变量PASSWORD中取，输出到文件ciphertext.bin
+openssl bf-cfb -salt -in plaintext.doc -out ciphertext.bin -pass env:PASSWORD
+
+# 给文件ciphertext.bin用base64编码，输出到文件base64.txt
+openssl base64 -in ciphertext.bin -out base64.txt
+
+# 用RC5算法的CBC模式加密文件plaintext.doc，输出到文件ciphertext.bin，salt、key和初始化向量(iv)在命令行指定
+openssl rc5 -in plaintext.doc -out ciphertext.bin -S C62CB1D49F158ADC -iv E9EDACA1BD7090C6 -K 89D4B1678D604FAA3DBFFD030A314B29
+```
+
+### Diffie-Hellman应用例子
+
+```bash
+# 使用生成因子2和随机的1024-bit的素数产生D0ffie-Hellman参数，输出保存到文件dhparam.pem
+openssl dhparam -out dhparam.pem -2 1024
+
+# 从dhparam.pem中读取Diffie-Hell参数，以C代码的形式，输出到stdout
+openssl dhparam -in dhparam.pem -noout -C
+```
+
+### DSA应用例子应用例子
+
+```bash
+# 生成1024位DSA参数集，并输出到文件dsaparam.pem
+openssl dsaparam -out dsaparam.pem 1024
+
+# 使用参数文件dsaparam.pem生成DSA私钥匙，采用3DES加密后输出到文件dsaprivatekey.pem
+openssl gendsa -out dsaprivatekey.pem -des3 dsaparam.pem
+
+# 使用私钥匙dsaprivatekey.pem生成公钥匙，输出到dsapublickey.pem
+openssl dsa -in dsaprivatekey.pem -pubout -out dsapublickey.pem
+
+# 从dsaprivatekey.pem中读取私钥匙，解密并输入新口令进行加密，然后写回文件dsaprivatekey.pem
+openssl dsa -in dsaprivatekey.pem -out dsaprivatekey.pem -des3 -passin
+```
+
+### RSA应用例子
+
+```bash
+# 产生1024位RSA私匙，用3DES加密它，口令为trousers，输出到文件rsaprivatekey.pem
+openssl genrsa -out rsaprivatekey.pem -passout pass:trousers -des3 1024
+
+# 从文件rsaprivatekey.pem读取私匙，用口令trousers解密，生成的公钥匙输出到文件rsapublickey.pem
+openssl rsa -in rsaprivatekey.pem -passin pass:trousers -pubout -out rsapubckey.pem
+
+# 用公钥匙rsapublickey.pem加密文件plain.txt，输出到文件cipher.txt
+openssl rsautl -encrypt -pubin -inkey rsapublickey.pem -in plain.txt -out cipher.txt
+
+# 使用私钥匙rsaprivatekey.pem解密密文cipher.txt，输出到文件plain.txt
+openssl rsautl -decrypt -inkey rsaprivatekey.pem -in cipher.txt -out plain.txt
+
+# 用私钥匙rsaprivatekey.pem给文件plain.txt签名，输出到文件signature.bin
+openssl rsautl -sign -inkey rsaprivatekey.pem -in plain.txt -out signature.bin
+
+# 用公钥匙rsapublickey.pem验证签名signature.bin，输出到文件plain.txt
+openssl rsautl -verify -pubin -inkey rsapublickey.pem -in signature.bin -out plain
+
+# 从X.509证书文件cert.pem中获取公钥匙，用3DES加密mail.txt，输出到文件mail.enc
+openssl smime -encrypt -in mail.txt -des3 -out mail.enc cert.pem
+
+# 从X.509证书文件cert.pem中获取接收人的公钥匙，用私钥匙key.pem解密S/MIME消息mail.enc，结果输出到文件mail.txt
+openssl smime -decrypt -in mail.enc -recip cert.pem -inkey key.pem -out mail.txt
+
+# cert.pem为X.509证书文件，用私匙key,pem为mail.txt签名，证书被包含在S/MIME消息中，输出到文件mail.sgn
+openssl smime -sign -in mail.txt -signer cert.pem -inkey key.pem -out mail.sgn
+
+# 验证S/MIME消息mail.sgn，输出到文件mail.txt，签名者的证书应该作为S/MIME消息的一部分包含在mail.sgn中
+openssl smime -verify -in mail.sgn -out mail.txt
+```
+
+
+
 

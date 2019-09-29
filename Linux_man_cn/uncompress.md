@@ -1,7 +1,4 @@
-uncompress
-===
-
-用来解压.Z文件
+# uncompress
 
 ## 说明
 
@@ -9,34 +6,16 @@ uncompress
 
 ## 选项
 
-```
-uncompress(选项)(参数)
-```
-
-  
-
-```
+```markdown
 -f：不提示用户，强制覆盖掉目标文件
 -c：将结果送到标准输出，无文件被改变
 -r：递归的操作方式
 ```
 
-### 参数  
-
-文件：指定要压缩的“.Z”压缩包
-
 ## 实例
 
-先创建一个.Z压缩文件
-
-```
-compress FileName
-```
-
-解压：
-
-```
-uncompress FileName.Z
+```bash
+uncompress FileName.Z   # 解压
 ```
 
 

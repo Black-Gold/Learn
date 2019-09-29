@@ -1,7 +1,4 @@
-resize
-===
-
-命令设置终端机视窗的大小
+# resize
 
 ## 说明
 
@@ -9,13 +6,7 @@ resize
 
 ## 选项
 
-```
-resize [-cu][-s <列数> <行数>]
-```
-
-  
-
-```
+```markdown
 -c 　就算用户环境并非C Shell，也用C Shell指令改变视窗大小
 -s <列数> <行数> 　设置终端机视窗的垂直高度和水平宽度
 -u 　就算用户环境并非Bourne Shell，也用Bourne Shell指令改变视窗大小
@@ -23,30 +14,11 @@ resize [-cu][-s <列数> <行数>]
 
 ## 实例
 
-使用 C shell
+```bash
+resize -c   # 使用 C shell
+resize -u   # 使用 Bourne shell
+resize -s 80 160    # 设置指定大小
 
-```
-[root@localhost ~]# resize -c
-set noglob;
-setenv COLUMNS '99';
-setenv LINES '34';
-unset noglob;
-```
-
-
-使用 Bourne shell
-
-```
-[root@localhost ~]# resize -u
-COLUMNS=99;
-LINES=34;
-export COLUMNS LINES;
-```
-
-设置指定大小
-
-```
-[root@localhost ~]# resize -s 80 160
 ```
 
 

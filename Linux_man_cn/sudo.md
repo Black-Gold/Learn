@@ -13,10 +13,10 @@ sudo - 以其他用户身份执行一条命令
 sudo -h | -K | -k | -V
 sudo -v [-AknS] [-g group] [-h host] [-p prompt] [-u user]
 sudo -l [-AknS] [-g group] [-h host] [-p prompt] [-U user] [-u user] [command]
-sudo [-AbEHknPS] [-r role] [-t type] [-C num] [-g group] [-h host] [-p prompt] [-T timeout] [-u user] [VAR=value] [-i|-s] [<command>]
+sudo [-AbEHknPS] [-r role] [-t type] [-C num] [-g group] [-h host] [-p prompt] [-T timeout] [-u user] [VAR=value]
+ [-i|-s] [<command>]
 sudo -e [-AknS] [-r role] [-t type] [-C num] [-g group] [-h host] [-p prompt] [-T timeout] [-u user] file ...
 
-选项：
 -A, --askpass                 使用助手程序进行密码提示
 -b, --background              在后台运行命令
 -C, --close-from=num          关闭所有 >= num 的文件描述符

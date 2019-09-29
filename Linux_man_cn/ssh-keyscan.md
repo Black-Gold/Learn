@@ -1,7 +1,4 @@
-ssh-keyscan
-===
-
-收集主机公钥的使用工具
+# **ssh-keyscan**
 
 ## 说明
 
@@ -9,13 +6,10 @@ ssh-keyscan
 
 ## 选项
 
-```
-ssh-keyscan(选项)(参数)
-```
+```markdown
+用法：ssh-keyscan [-46cHv] [-f file] [-p port] [-T timeout] [-t type]
+		   [host | addrlist namelist] ...
 
-  
-
-```
 -4：强制使用IPv4地址
 -6：强制使用IPv6地址
 -f：从指定文件中读取“地址列表/名字列表”
@@ -25,8 +19,5 @@ ssh-keyscan(选项)(参数)
 -v：信息模式，打印调试信息
 ```
 
-### 参数  
-
-主机列表：指定要收集公钥的主机列表
 
 

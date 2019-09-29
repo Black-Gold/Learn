@@ -1,7 +1,4 @@
-rpmdb
-===
-
-初始化和重建RPM数据库
+# rpmdb
 
 ## 说明
 
@@ -9,13 +6,7 @@ rpmdb
 
 ## 选项
 
-```
-rpmdb(选项)
-```
-
-  
-
-```
+```markdown
 --initdb：初始化RPM数据库
 --rebuilddb：从已安装的包头文件，反向重建RPM数据库
 ```

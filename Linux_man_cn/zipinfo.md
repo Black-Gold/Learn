@@ -1,7 +1,4 @@
-zipinfo
-===
-
-用来列出压缩文件信息
+# zipinfo
 
 ## 说明
 
@@ -9,13 +6,7 @@ zipinfo
 
 ## 选项
 
-```
-zipinfo(选项)(参数)
-```
-
-  
-
-```
+```markdown
 -1：只列出文件名称
 -2：此参数的效果和指定“-1”参数类似，但可搭配“-h”，“-t”和“-z”参数使用
 -h：只列出压缩文件的文件名称
@@ -28,10 +19,21 @@ zipinfo(选项)(参数)
 -v：详细显示压缩文件内每一个文件的信息
 -x<范本样式>：不列出符合条件的文件的信息
 -z：如果压缩文件内含有注释，就将注释显示出来
+
+main listing-format options:             -s  short Unix "ls -l" format (def.)
+  -1  filenames ONLY, one per line       -m  medium Unix "ls -l" format
+  -2  just filenames but allow -h/-t/-z  -l  long Unix "ls -l" format
+                                         -v  verbose, multi-page format
+miscellaneous options:
+  -h  print header line       -t  print totals for listed files or for all
+  -z  print zipfile comment  -TM print file times in sortable decimal format
+ -CJ be case-insensitive   20 April 2009  -U  use escapes for all non-ASCII Unicode
+  -x  exclude filenames that follow from listing
+  -O CHARSET  specify a character encoding for DOS, Windows and OS/2 archives
+  -I CHARSET  specify a character encoding for UNIX and other archives
+
+
 ```
 
-### 参数  
-
-文件：指定zip格式的压缩包
 
 

@@ -14,7 +14,7 @@ curl为下载工具。作为一款强力工具，curl支持包括HTTP、HTTPS、
 (H) means HTTP/HTTPS only, (F) means FTP only
 
     --anyauth       Pick "any" authentication method (H)
--a, --append        Append to target file when uploading (F/SFTP)
+-a, --append        上传时附加到目标文件(F/SFTP)
     --basic         Use HTTP Basic Authentication (H)
     --cacert FILE   CA certificate to verify peer against (SSL)
     --capath DIR    CA directory to verify peer against (SSL)
@@ -22,26 +22,26 @@ curl为下载工具。作为一款强力工具，curl支持包括HTTP、HTTPS、
     --cert-type TYPE Certificate file type (DER/PEM/ENG) (SSL)
     --ciphers LIST  SSL ciphers to use (SSL)
     --compressed    Request compressed response (using deflate or gzip)
--K, --config FILE   Specify which config file to read
+-K, --config FILE   指定从FILE文件读取配置
     --connect-timeout SECONDS  Maximum time allowed for connection
--C, --continue-at OFFSET  Resumed transfer offset
+-C, --continue-at OFFSET  断点续传
 -b, --cookie STRING/FILE  String or file to read cookies from (H)
--c, --cookie-jar FILE  Write cookies to this file after operation (H)
+-c, --cookie-jar FILE  操作完成后将cookie写入到这个文件中(H)
     --create-dirs   Create necessary local directory hierarchy
     --crlf          Convert LF to CRLF in upload
     --crlfile FILE  Get a CRL list in PEM format from the given file
--d, --data DATA     HTTP POST data (H)
-    --data-ascii DATA  HTTP POST ASCII data (H)
-    --data-binary DATA  HTTP POST binary data (H)
+-d, --data DATA     HTTP POST方式传输数据(H)
+    --data-ascii DATA  HTTP POST ASCII编码方式传输数据 (H)
+    --data-binary DATA  HTTP POST binary编码方式传输数据 (H)
     --data-urlencode DATA  HTTP POST data url encoded (H)
     --delegation STRING GSS-API delegation permission
-    --digest        Use HTTP Digest Authentication (H)
-    --disable-eprt  Inhibit using EPRT or LPRT (F)
-    --disable-epsv  Inhibit using EPSV (F)
--D, --dump-header FILE  Write the headers to this file
-    --egd-file FILE  EGD socket path for random data (SSL)
+    --digest        使用HTTP数字身份认证(H)
+    --disable-eprt  禁止使用EPRT or LPRT (F)
+    --disable-epsv  禁止使用EPSV (F)
+-D, --dump-header FILE 把header信息写入到FILE文件 
+    --egd-file FILE  为随机数据设置EGD socket路径 (SSL)
     --engine ENGINGE  Crypto engine (SSL). "--engine list" for list
--f, --fail          Fail silently (no output at all) on HTTP errors (H)
+-f, --fail          HTTP连接失败时不显示错误 (H)
 -F, --form CONTENT  Specify HTTP multipart POST data (H)
     --form-string STRING  Specify HTTP multipart POST data (H)
     --ftp-account DATA  Account data string (F)
@@ -49,34 +49,33 @@ curl为下载工具。作为一款强力工具，curl支持包括HTTP、HTTPS、
     --ftp-create-dirs  Create the remote dirs if not present (F)
     --ftp-method [MULTICWD/NOCWD/SINGLECWD] Control CWD usage (F)
     --ftp-pasv      Use PASV/EPSV instead of PORT (F)
--P, --ftp-port ADR  Use PORT with given address instead of PASV (F)
+-P, --ftp-port ADR  使用端口地址而不是使用PASV (F)
     --ftp-skip-pasv-ip Skip the IP address for PASV (F)
     --ftp-pret      Send PRET before PASV (for drftpd) (F)
     --ftp-ssl-ccc   Send CCC after authenticating (F)
     --ftp-ssl-ccc-mode ACTIVE/PASSIVE  Set CCC mode (F)
     --ftp-ssl-control Require SSL/TLS for ftp login, clear for transfer (F)
 -G, --get           Send the -d data with a HTTP GET (H)
--g, --globoff       Disable URL sequences and ranges using {} and []
--H, --header LINE   Custom header to pass to server (H)
+-g, --globoff       禁用网址序列和范围使用 {} and []
+-H, --header LINE   自定义头消息传递给服务器 (H)
 -I, --head          Show document info only
--h, --help          This help text
     --hostpubmd5 MD5  Hex encoded MD5 string of the host public key. (SSH)
 -0, --http1.0       Use HTTP 1.0 (H)
     --ignore-content-length  Ignore the HTTP Content-Length header
 -i, --include       Include protocol headers in the output (H/F)
--k, --insecure      Allow connections to SSL sites without certs (H)
+-k, --insecure      允许连接不使用证书连接到SSL站点 (H)
     --interface INTERFACE  Specify network interface/address to use
 -4, --ipv4          Resolve name to IPv4 address
 -6, --ipv6          Resolve name to IPv6 address
--j, --junk-session-cookies Ignore session cookies read from file (H)
+-j, --junk-session-cookies 忽略从文件中读取的session cookie (H)
     --keepalive-time SECONDS  Interval between keepalive probes
     --key KEY       Private key file name (SSL/SSH)
     --key-type TYPE Private key file type (DER/PEM/ENG) (SSL)
     --krb LEVEL     Enable Kerberos with specified security level (F)
     --libcurl FILE  Dump libcurl equivalent code of this command line
     --limit-rate RATE  Limit transfer speed to this rate
--l, --list-only     List only names of an FTP directory (F)
-    --local-port RANGE  Force use of these local port numbers
+-l, --list-only     仅列出ftp目录的名称(F)
+    --local-port RANGE  强制使用RANGE内的本地端口号
 -L, --location      Follow redirects (H)
     --location-trusted like --location and send auth to other hosts (H)
 -M, --manual        Display the full manual
@@ -85,18 +84,18 @@ curl为下载工具。作为一款强力工具，curl支持包括HTTP、HTTPS、
     --mail-auth AUTH  Originator address of the original email
     --max-filesize BYTES  Maximum file size to download (H/F)
     --max-redirs NUM  Maximum number of redirects allowed (H)
--m, --max-time SECONDS  Maximum time allowed for the transfer
+-m, --max-time SECONDS  设置最大传输时间
     --metalink      Process given URLs as metalink XML file
     --negotiate     Use HTTP Negotiate Authentication (H)
--n, --netrc         Must read .netrc for user name and password
+-n, --netrc         必须从.netrc文件读取用户和密码
     --netrc-optional Use either .netrc or URL; overrides -n
     --netrc-file FILE  Set up the netrc filename to use
--N, --no-buffer     Disable buffering of the output stream
+-N, --no-buffer     禁用buffer缓存输出
     --no-keepalive  Disable keepalive use on the connection
     --no-sessionid  Disable SSL session-ID reusing (SSL)
     --noproxy       List of hosts which do not use proxy
     --ntlm          Use HTTP NTLM authentication (H)
--o, --output FILE   Write output to <file> instead of stdout
+-o, --output FILE   将输出吸入到FILE取代默认输出stdout
     --pass PASS     Pass phrase for the private key (SSL/SSH)
     --post301       Do not switch to GET after following a 301 redirect (H)
     --post302       Do not switch to GET after following a 302 redirect (H)
@@ -112,17 +111,17 @@ curl为下载工具。作为一款强力工具，curl支持包括HTTP、HTTPS、
     --proxy-ntlm    Use NTLM authentication on the proxy (H)
 -U, --proxy-user USER[:PASSWORD]  Proxy user and password
     --proxy1.0 HOST[:PORT]  Use HTTP/1.0 proxy on given port
--p, --proxytunnel   Operate through a HTTP proxy tunnel (using CONNECT)
+-p, --proxytunnel   使用HTTP代理隧道 (using CONNECT)
     --pubkey KEY    Public key file name (SSH)
--Q, --quote CMD     Send command(s) to server before transfer (F/SFTP)
+-Q, --quote CMD     传输之前发送命令到服务器 (F/SFTP)
     --random-file FILE  File for reading random data from (SSL)
--r, --range RANGE   Retrieve only the bytes within a range
+-r, --range RANGE   仅检索RANGE范围内的字节
     --raw           Do HTTP "raw", without any transfer decoding (H)
 -e, --referer       Referer URL (H)
 -J, --remote-header-name Use the header-provided filename (H)
--O, --remote-name   Write output to a file named as the remote file
+-O, --remote-name   将输出写入到文件并以远程文件名称作为输出文件的名称
     --remote-name-all Use the remote file name for all URLs
--R, --remote-time   Set the remote file's time on the local output
+-R, --remote-time   输出到本地文件时保留远程文件的时间
 -X, --request COMMAND  Specify request command to use
     --resolve HOST:PORT:ADDRESS  Force resolve of HOST:PORT to ADDRESS
     --retry NUM   Retry request NUM times if transient problems occur
@@ -147,7 +146,7 @@ curl为下载工具。作为一款强力工具，curl支持包括HTTP、HTTPS、
     --ssl-allow-beast Allow security flaw to improve interop (SSL)
     --stderr FILE   Where to redirect stderr. - means stdout
     --tcp-nodelay   Use the TCP_NODELAY option
--t, --telnet-option OPT=VAL  Set telnet option
+-t, --telnet-option OPT=VAL  设置telnet选项
     --tftp-blksize VALUE  Set TFTP BLKSIZE option (must be >512)
 -z, --time-cond TIME  Transfer based on a time condition
 -1, --tlsv1         Use => TLSv1 (SSL)
@@ -158,20 +157,20 @@ curl为下载工具。作为一款强力工具，curl支持包括HTTP、HTTPS、
     --trace-ascii FILE  Like --trace but without the hex output
     --trace-time    Add time stamps to trace/verbose output
     --tr-encoding   Request compressed transfer encoding (H)
--T, --upload-file FILE  Transfer FILE to destination
+-T, --upload-file FILE  上传文件FILE
     --url URL       URL to work with
--B, --use-ascii     Use ASCII/text transfer
--u, --user USER[:PASSWORD]  Server user and password
+-B, --use-ascii     使用ASCII/text传输
+-u, --user USER[:PASSWORD]  设置服务器的用户和密码
     --tlsuser USER  TLS username
     --tlspassword STRING TLS password
     --tlsauthtype STRING  TLS authentication type (default SRP)
     --unix-socket FILE    Connect through this UNIX domain socket
--A, --user-agent STRING  User-Agent to send to server (H)
+-A, --user-agent STRING  设置User-Agent发送给服务器(H)
 -v, --verbose       Make the operation more talkative
 -V, --version       Show version number and quit
 -w, --write-out FORMAT  What to output after completion
     --xattr        Store metadata in extended file attributes
--q                 If used as the first parameter disables .curlrc
+-q                 使用时必须作为第一个参数用来关闭.curlrc
 
 ```
 

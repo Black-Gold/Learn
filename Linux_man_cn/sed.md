@@ -17,7 +17,7 @@
 --follow-symlinks                   直接修改文件时跟随软链接
 -i[SUFFIX], --in-place[=SUFFIX]     edit files in place (makes backup if SUFFIX supplied)
 -c, --copy        use copy instead of rename when shuffling files in -i mode
--b, --binary      does nothing; for compatibility with WIN32/CYGWIN/MSDOS/EMX (open files in binary mode (CR+LFs are not treated specially))
+-b, --binary      什么也不做，用于与WIN32/CYGWIN/MSDOS/EMX兼容(二进制模式下的打开文件(CR+LF换行符未被特殊对待))
 -l N, --line-length=N   指定“l”命令的换行期望长度
 --posix                 关闭所有 GNU 扩展
 -r, --regexp-extended   在脚本中使用扩展正则表达式
@@ -32,7 +32,7 @@ sed脚本。其他非选项参数被视为输入文件，如果没有输入文�
 
 ### sed命令
 
-```markdown
+```
 a\         在当前行下面插入文本
 i\         在当前行上面插入文本
 c\         把选定的行改为新的文本

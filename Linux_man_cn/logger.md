@@ -1,7 +1,4 @@
-logger
-===
-
-在系统日志中记录相应条目
+# logger
 
 ## 说明
 
@@ -9,32 +6,25 @@ logger
 
 ## 选项
 
-```
-logger [options] [message]
-```
-
-  
-
-```
- -T, --tcp             使用流连接(TCP)
- -d, --udp             使用数据报(UDP)
- -i, --id              逐行记录每一次logger的进程ID
- -f, --file <file>     记录特定的文件
- -h, --help            显示帮助文本并退出
- -n, --server <name>   写入指定的远程syslog服务器，使用UDP代替内装式syslog的例程
- -P, --port <port>     使用指定的UDP端口。默认的端口号是514
- -p, --priority <prio> 指定输入消息的优先级，优先级可以是数字或者指定为 " facility.level" 的格式
-                       比如：" -p local3.info " local3 这个设备的消息级别为 info
-                       默认级别是 "user.notice"
- -s, --stderr          输出标准错误到系统日志
- -t, --tag <tag>       指定标记记录
- -u, --socket <socket> 写入指定的socket，而不是到内置系统日志例程
- -V, --version         输出版本信息并退出
-```
-
-### 例子
+```markdown
+-T, --tcp             只使用 TCP
+-d, --udp             只使用 UDP
+-i, --id              同时记录进程 ID
+-f, --file <文件>     记录此文件的内容
+-h, --help            显示此帮助并退出
+-S, --size <num>      maximum size for a single message (default 1024)
+-n, --server <name>   write to this remote syslog server
+-P, --port <port>     use this port for UDP or TCP connection
+-p, --priority <prio> mark given message with this priority
+-s, --stderr          output message to standard error as well
+-t, --tag <标志>      用此标志标记每一行
+-u, --socket <套接字> 写入此 Unix 套接字
 
 ```
+
+## 实例
+
+```bash
 logger -p syslog.info "backup.sh is starting"
 ```
 

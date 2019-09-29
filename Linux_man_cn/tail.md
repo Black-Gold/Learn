@@ -9,14 +9,30 @@
 K值后缀：b表示512，b 512, kB 1000, K 1024, MB 1000*1000, M 1024*1024,GB 1000*1000*1000, 
 G 1024*1024*1024, and so on for T, P, E, Z, Y
 
+## 选项
+
 ```markdown
---c, --bytes=K ：输出文件尾部的第K（K为整数）个字节内容
--f, --follow[={name|descriptor}] ：显示文件最新追加的内容。“name”表示以文件名的方式监视文件的变化。“-f”与“-fdescriptor”等效
--F：与选项“-follow=name --retry"连用时功能相同
--n, --lines=K ：输出文件的尾部N（N位数字）行内容
---pid=<进程号> ：与“-f”选项连用，当指定的进程号的进程终止后，自动退出tail命令
--q或——quiet或——silent：当有多个文件参数时，不输出各个文件名
--s<秒数>或——sleep-interal=<秒数>：与“-f”选项连用，指定监视文件变化时间隔的秒数
+-c, --bytes=K            输出最后K个字节；或使用-c + K输出从每个文件的第K个字节开始的字节 
+-f, --follow[={name|descriptor}]
+                         output appended data as the file grows;
+                           an absent option argument means 'descriptor'
+-F                       same as --follow=name --retry
+-n, --lines=K            output the last K lines, instead of the last 10;
+                           or use -n +K to output starting with the Kth
+    --max-unchanged-stats=N
+                         with --follow=name, reopen a FILE which has not
+                           changed size after N (default 5) iterations
+                           to see if it has been unlinked or renamed
+                           (this is the usual case of rotated log files);
+                           with inotify, this option is rarely useful
+    --pid=PID            with -f, terminate after process ID, PID dies
+-q, --quiet, --silent    never output headers giving file names
+    --retry              keep trying to open a file if it is inaccessible
+-s, --sleep-interval=N   with -f, sleep for approximately N seconds
+                             (default 1.0) between iterations;
+                             with inotify and --pid=P, check process P at
+                             least once every N seconds
+
 ```
 
 ## 实例

@@ -1,7 +1,4 @@
-yes
-===
-
-重复打印指定字符串
+# yes
 
 ## 说明
 
@@ -9,28 +6,14 @@ yes
 
 ## 选项
 
-```
-yes(参数)
-```
+```markdown
 
-### 参数  
-
-字符串：指定要重复打印的字符串
+```
 
 ## 实例
 
-```
-[root@localhost ~]# yes testline
-
-testline
-testline
-testline
-testline
-testline
-testline
-testline
-testline
-...一直重复打印 testline，按Ctrl+C结束
+```bash
+yes testline    # 重复打印 testline，按Ctrl+C结束
 ```
 
 

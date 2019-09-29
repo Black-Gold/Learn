@@ -1,45 +1,34 @@
-iconv
-===
-
-转换文件的编码方式
+# iconv
 
 ## 说明
 
-**iconv命令** 是用来转换文件的编码方式的，比如它可以将UTF8编码的转换成GB18030的编码，反过来也行。JDK中也提供了类似的工具native2ascii。Linux下的iconv开发库包括iconv_open,iconv_close,iconv等C函数，可以用来在C/C++程序中很方便的转换字符编码，这在抓取网页的程序中很有用处，而iconv命令在调试此类程序时用得着
+**iconv命令** 是用来转换给定文件的编码，比如它可以将UTF8编码的转换成GB18030的编码，反过来也行。JDK中也提供了类似的工具native2ascii。
+Linux下的iconv开发库包括iconv_open,iconv_close,iconv等C函数，可以用来在C/C++程序中很方便的转换字符编码，这在抓取网页的程序中很有用处，
+而iconv命令在调试此类程序时用得着
 
 ## 选项
 
-```
-iconv -f encoding [-t encoding] [inputfile]... 
-```
+```markdown
+输入/输出格式规范：
+ -f, --from-code=名称     原始文本编码
+ -t, --to-code=名称       输出编码
 
-  
+信息：
+ -l, --list                 列举所有已知的字符集
 
-```
--f encoding :把字符从encoding编码开始转换。 
--t encoding :把字符转换到encoding编码。 
--l :列出已知的编码字符集合 
--o file :指定输出文件 
--c :忽略输出的非法字符 
--s :禁止警告信息，但不是错误信息 
---verbose :显示进度信息 
--f和-t所能指定的合法字符在-l选项的命令里面都列出来了。 
+输出控制：
+ -c                         从输出中忽略无效的字符
+ -o, --output=FILE          输出文件
+ -s, --silent               关闭警告
+     --verbose              打印进度信息
+
 ```
 
 ## 实例
 
-列出当前支持的字符编码： 
-
+```bash
+iconv -l    # 列出当前支持的字符编码
+iconv file1 -f EUC-JP-MS -t UTF-8 -o file2  # 将文件file1转码，转后文件输出到fil2中。没`-o`那么会输出到标准输出
 ```
-iconv -l 
-```
-
-将文件file1转码，转后文件输出到fil2中： 
-
-```
-iconv file1 -f EUC-JP-MS -t UTF-8 -o file2 
-```
-
-这里，没`-o`那么会输出到标准输出
 
 

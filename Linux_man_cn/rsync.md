@@ -17,12 +17,23 @@ rsync [OPTION]... rsync://[USER@]HOST[:PORT]/SRC [DEST]
 
 对应于以上六种命令格式，rsync有六种不同的工作模式：
 
-1. 同步本地目录。当SRC和DES路径信息都不包含有单个冒号":"分隔符时就启动这种工作模式。如：`rsync -a /data /backup`
-2. 使用一个远程shell程序(如rsh、ssh)来实现将本地机器的内容拷贝到远程机器。当DST路径地址包含单个冒号":"分隔符时启动该模式。如：`rsync -avz *.c foo:src`
-3. 使用一个远程shell程序(如rsh、ssh)来实现将远程机器的内容拷贝到本地机器。当SRC地址路径包含单个冒号":"分隔符时启动该模式。如：`rsync -avz foo:src/bar /data`
-4. 拉取：从远程rsync服务器中拷贝文件到本地机。当SRC路径信息包含"::"分隔符时启动该模式。如：`rsync -av root@192.168.78.192::www /databack`
-5. 推送：从本地机器拷贝文件到远程rsync服务器中。当DST路径信息包含"::"分隔符时启动该模式。如：`rsync -av /databack root@192.168.78.192::www`
-6. 列远程机的文件列表。这类似于rsync传输，不过只要在命令中省略掉本地机信息即可。如：`rsync -v rsync://192.168.78.192/www`
+* 同步本地目录。当SRC和DES路径信息都不包含有单个冒号":"分隔符时就启动这种工作模式
+  如：`rsync -a /data /backup`
+
+* 使用一个远程shell程序(如rsh、ssh)来实现将本地机器的内容拷贝到远程机器。当DST路径地址包含单个冒号":"分隔符时启动该模式
+  如：`rsync -avz *.c foo:src`
+
+* 使用一个远程shell程序(如rsh、ssh)来实现将远程机器的内容拷贝到本地机器。当SRC地址路径包含单个冒号":"分隔符时启动该模式
+  如：`rsync -avz foo:src/bar /data`
+
+* 拉取：从远程rsync服务器中拷贝文件到本地机。当SRC路径信息包含"::"分隔符时启动该模式
+  如：`rsync -av root@192.168.78.192::www /databack`
+
+* 推送：从本地机器拷贝文件到远程rsync服务器中。当DST路径信息包含"::"分隔符时启动该模式
+  如：`rsync -av /databack root@192.168.78.192::www`
+
+* 列远程机的文件列表。这类似于rsync传输，不过只要在命令中省略掉本地机信息即可
+  如：`rsync -v rsync://192.168.78.192/www`
 ```
 
 ```markdown
@@ -32,7 +43,7 @@ rsync [OPTION]... rsync://[USER@]HOST[:PORT]/SRC [DEST]
 -a, --archive 归档模式，表示以递归方式传输文件，并保持所有文件属性，等于-rlptgoD
 -r, --recursive 对子目录以递归模式处理
 -R, --relative 使用相对路径信息
--b, --backup 创建备份，也就是对于目的已经存在有同样的文件名时，将老的文件重新命名为~filename。可以使用--suffix选项来指定不同的备份文件前缀
+-b, --backup 创建备份就是对于目的已经存在有同样的文件名时，将老的文件重新命名为~filename。可以使用--suffix选项来指定不同的备份文件前缀
 --backup-dir 将备份文件(如~filename)存放在在目录下
 -suffix=SUFFIX 定义备份文件前缀
 -u, --update 仅仅进行更新，也就是跳过所有已经存在于DST，并且文件时间晚于要备份的文件，不覆盖更新的文件
@@ -90,106 +101,25 @@ rsync [OPTION]... rsync://[USER@]HOST[:PORT]/SRC [DEST]
 
 ## 实例
 
+windows下rsync权限注意事项：密码文件执行：chmod 600 rsync.passwd,用当前用户执行chown 用户名 rsync.passwd
+
 ### 使用SSH方式rsync进行同步
 
 ```bash
 rsync -vzrtopg --progress -e ssh --delete work@172.16.78.192:/www/* /databack/experiment/rsync
-
-windows权限注意事项：
-密码文件执行：chmod 600 rsync.passwd,用当前用户执行chown 用户名 rsync.passwd
-
 ```
 
 ### 后台服务方式
 
-启动rsync服务，编辑`/etc/xinetd.d/rsync`文件，将其中的`disable=yes`改为`disable=no`，并重启xinetd服务，如下：
+```markdown
+# 默认安装好rsync程序后，配置文件为“/etc/rsyncd.conf”
 
-```sh
-vim /etc/xinetd.d/rsync
 
-#default: off
-# description: The rsync server is a good addition to an ftp server, as it \
-# allows crc checksumming etc.
-service rsync {
-disable = no
-socket_type = stream
-wait = no
-user = root
-server = /usr/bin/rsync
-server_args = --daemon
-log_on_failure += USERID
-}
 ```
 
-```sh
-/etc/init.d/xinetd restart
-停止 xinetd： [确定]
-启动 xinetd： [确定]
-```
-
-创建配置文件，默认安装好rsync程序后，并不会自动创建rsync的主配置文件，需要手工来创建，其主配置文件为“/etc/rsyncd.conf”，创建该文件并插入如下内容：
-
-```sh
-vi /etc/rsyncd.conf
-
-uid=root
-gid=root
-max connections=4
-log file=/var/log/rsyncd.log
-pid file=/var/run/rsyncd.pid
-lock file=/var/run/rsyncd.lock
-secrets file=/etc/rsyncd.passwd
-hosts deny=172.16.78.0/22
-
-[www]
-comment= backup web
-path=/www
-read only = no
-exclude=test
-auth users=work
-```
-
-创建密码文件，采用这种方式不能使用系统用户对客户端进行认证，所以需要创建一个密码文件，其格式为“username:password”，用户名可以和密码可以随便定义，最好不要和系统帐户一致，同时要把创建的密码文件权限设置为600，这在前面的模块参数做了详细介绍
-
-```sh
+```bash
+# 创建密码文件，用户名可以和密码可以随便定义,服务端需要user:pass形式，客户端只需要pass就行
 echo "work:abc123" > /etc/rsyncd.passwd
 chmod 600 /etc/rsyncd.passwd
-```
 
-备份，完成以上工作，现在就可以对数据进行备份了，如下：
-
-```sh
-rsync -avz --progress --delete work@172.16.78.192::www /databack/experiment/rsync
-
-Password:
-receiving file list ...
-6 files to consider
-./ files...
-a
-0 100% 0.00kB/s 528:20:41 (1, 50.0% of 6)
-b
-67 100% 65.43kB/s 0:00:00 (2, 66.7% of 6)
-c
-0 100% 0.00kB/s 528:20:41 (3, 83.3% of 6)
-dd
-100663296 100% 37.49MB/s 0:00:02 (4, 100.0% of 6)
-sent 172 bytes received 98276 bytes 17899.64 bytes/sec
-total size is 150995011 speedup is 1533.75
-```
-
-当服务器的数据出现问题时，那么这时就需要通过客户端的数据对服务端进行恢复，但前提是服务端允许客户端有写入权限，否则也不能在客户端直接对服务端进行恢复，使用rsync对数据进行恢复的方法如下：
-
-```sh
-rsync -avz --progress /databack/experiment/rsync/ work@172.16.78.192::www
-
-Password:
-building file list ...
-6 files to consider
-./
-a
-b
-67 100% 0.00kB/s 0:00:00 (2, 66.7% of 6)
-c
-sent 258 bytes received 76 bytes 95.43 bytes/sec
-total size is 150995011 speedup is 452080.87
 ```

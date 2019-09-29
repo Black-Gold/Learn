@@ -1,7 +1,4 @@
-ipcalc
-===
-
-简单的IP地址计算器
+# ipcalc
 
 ## 说明
 
@@ -9,42 +6,28 @@ ipcalc
 
 ## 选项
 
-```
-ipcalc(选项)
-```
+```markdown
+-c, --check         Validate IP address for specified address family
+-4, --ipv4          IPv4 address family (default)
+-6, --ipv6          IPv6 address family
+-b, --broadcast     Display calculated broadcast address
+-h, --hostname      Show hostname determined via DNS
+-m, --netmask       Display default netmask for IP (class A, B, or C)
+-n, --network       Display network address
+-p, --prefix        Display network prefix
+-s, --silent        Don't ever display error messages
 
-  
-
-```
--b：由给定的IP地址和网络掩码计算出广播地址
--h：显示给定UP地址所对应的主机名
--m：由给定的IP地址计算器网络掩码
--p：显示给定的掩码或IP地址的前缀
--n：由给定的IP地址和网络掩码计算网络地址
--s：安静模式
---help：显示帮助信息
 ```
 
 ## 实例
 
-```
-[root@localhost ~]# ipcalc -p 192.168.2.1 255.255.255.0
-PREFIX=24
+```bash
+ipcalc -p 192.168.2.1 255.255.255.0 # 输出：PREFIX=24
+ipcalc -n 192.168.2.1 255.255.255.0 # 输出：NETWORK=192.168.2.0
+ipcalc -h 127.0.0.1 # 输出：hostname=localhost.localdomain
+ipcalc -m 192.168.2.1   # 输出：NETMASK=255.255.255.0
+ipcalc -pnbm 192.168.2.1 255.255.255.0  # 输出以上四个选项所有
 
-[root@localhost ~]# ipcalc -n 192.168.2.1 255.255.255.0
-NETWORK=192.168.2.0
-
-[root@localhost ~]# ipcalc -h 127.0.0.1
-hostname=localhost.localdomain
-
-[root@localhost ~]# ipcalc -m 192.168.2.1
-NETMASK=255.255.255.0
-
-[root@localhost ~]# ipcalc -pnbm 192.168.2.1 255.255.255.0
-NETMASK=255.255.255.0
-PREFIX=24
-BROADCAST=192.168.2.255
-NETWORK=192.168.2.0
 ```
 
 

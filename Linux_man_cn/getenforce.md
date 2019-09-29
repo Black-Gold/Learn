@@ -13,7 +13,7 @@ getenforce
 getenforce
 ```
 
-### 例子
+## 实例
 
 查看当前SELinux的应用模式
 

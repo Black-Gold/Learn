@@ -1,7 +1,4 @@
 # **fsck**
-===
-
-检查并且试图修复文件系统中的错误
 
 ## 说明
 
@@ -9,13 +6,7 @@
 
 ## 选项
 
-```
-fsck(选项)(参数)
-```
-
-  
-
-```
+```markdown
 -a：自动修复文件系统，不询问任何问题
 -A：依照/etc/fstab配置文件的内容，检查文件内所列的全部文件系统
 -N：不执行指令，仅列出实际执行会进行的动作
@@ -26,30 +17,26 @@ fsck(选项)(参数)
 -t<文件系统类型>：指定要检查的文件系统类型
 -T：执行fsck指令时，不显示标题信息
 -V：显示指令执行过程
+
+fsck返回的退出代码是以下条件的总和:
+
+0      No errors
+1      Filesystem errors corrected
+2      System should be rebooted
+4      Filesystem errors left uncorrected
+8      Operational error
+16     Usage or syntax error
+32     Checking canceled by user request
+128    Shared-library error
+
 ```
-
-### 参数  
-
-文件系统：指定要查看信息的文件系统
 
 ## 实例
 
-linux的文件系统损坏会导致linux不正常关机，出错的时候如果系统告诉你是哪一块硬盘的分区有问题，比如是`/dev/hda2`，接着用如下的命令去对付它：
+```bash
+fsck -y /dev/hda2   # linux不正常关机可能会导致文件损坏，例如用fsck修复/dev/hda2
 
 ```
-fsck -y /dev/hda2
-```
 
-结束后使用reboot命令重启系统这样就好了！
-
-如果不知道时哪个地方出了问题，可以直接：
-
-```
-fsck
-```
-
-在随后的多个确认对话框中输入`:y`
-
-结束后同样使用reboot命令重启系统这样就好了！
 
 

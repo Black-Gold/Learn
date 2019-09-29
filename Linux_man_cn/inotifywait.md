@@ -1,15 +1,15 @@
-inotifywait
-===
-
-异步文件系统监控机制
+# **inotifywait**
 
 ## 说明
 
-**Inotify** 一种强大的、细粒度的、异步文件系统监控机制，它满足各种各样的文件监控需要，可以监控文件系统的访问属性、读写属性、权限属性、删除创建、移动等操作，也就是可以监控文件发生的一切变化。
+**Inotify** 一种强大的、细粒度的、异步文件系统监控机制，它满足各种各样的文件监控需要，可以监控文件系统的访问属性、读写属性、权限属性、
+删除创建、移动等操作，也就是可以监控文件发生的一切变化。
 
- **inotify-tools** 是一个C库和一组命令行的工作提供Linux下inotify的简单接口。inotify-tools安装后会得到`inotifywait`和`inotifywatch`这两条命令：
+ **inotify-tools** 是一个C库和一组命令行的工作提供Linux下inotify的简单接口。inotify-tools安装后会得到`inotifywait`和
+ `inotifywatch`这两条命令：
 
-*    **inotifywait命令** 可以用来收集有关文件访问信息，Linux发行版一般没有包括这个命令，需要安装inotify-tools，这个命令还需要将inotify支持编译入Linux内核，好在大多数Linux发行版都在内核中启用了inotify
+*    **inotifywait命令** 可以用来收集有关文件访问信息，Linux发行版一般没有包括这个命令，需要安装inotify-tools，这个命令还需要将
+inotify支持编译入Linux内核，好在大多数Linux发行版都在内核中启用了inotify
 *    **inotifywatch命令** 用于收集关于被监视的文件系统的统计数据，包括每个 inotify 事件发生多少次
 
 开始之前需要检测系统内核是否支持inotify：
@@ -45,57 +45,36 @@ make install
 
 ### inotify相关参数  
 
-inotify定义了下列的接口参数，可以用来限制inotify消耗kernel memory的大小。由于这些参数都是内存参数，因此，可以根据应用需求，实时的调节其大小：
+```markdown
+inotify定义了下列的接口参数，可以用来限制inotify消耗kernel memory的大小。由于这些参数都是内存参数，因此，可以根据应用需求，实时调节大小：
 
-*   `/proc/sys/fs/inotify/max_queued_evnets`表示调用inotify_init时分配给inotify instance中可排队的event的数目的最大值，超出这个值的事件被丢弃，但会触发IN_Q_OVERFLOW事件
+*   `/proc/sys/fs/inotify/max_queued_evnets`表示调用inotify_init时分配给inotify instance中可排队的event的数目的最大值，超出这个
+值的事件被丢弃，但会触发IN_Q_OVERFLOW事件
 *   `/proc/sys/fs/inotify/max_user_instances`表示每一个real user id可创建的inotify instatnces的数量上限
-*   `/proc/sys/fs/inotify/max_user_watches`表示每个inotify instatnces可监控的最大目录数量。如果监控的文件数目巨大，需要根据情况，适当增加此值的大小
+*   `/proc/sys/fs/inotify/max_user_watches`表示每个inotify instatnces可监控的最大目录数量。如果监控的文件数目巨大，需要根据情况，
+适当增加此值的大小
 
 根据以上在32位或者64位系统都可以执行：
 
-```
 echo 104857600 > /proc/sys/fs/inotify/max_user_watches
 echo 'echo 104857600 > /proc/sys/fs/inotify/max_user_watches' >> /etc/rc.local
-```
 
 如果遇到以下错误：
+inotifywait: error while loading shared libraries: libinotifytools.so.0: cannot open shared object file: 
+No such file or directory 
 
-```
-inotifywait: error while loading shared libraries: libinotifytools.so.0: cannot open shared object file: No such file or directory 
-```
-
-```
- **解决方法：** 
+**解决方法：** 
 32位系统：ln -s /usr/local/lib/libinotifytools.so.0 /usr/lib/libinotifytools.so.0
 64位系统：ln -s /usr/local/lib/libinotifytools.so.0 /usr/lib64/libinotifytools.so.0
 ```
 
 ### inotifywait命令使用  
 
-```
+```bash
 #!/bin/bash
 #filename watchdir.sh
 path=$1
 /usr/local/bin/inotifywait -mrq --timefmt '%d/%m/%y/%H:%M' --format '%T %w %f' -e modify,delete,create,attrib $path
-
-执行输出：
-./watchdir.sh /data/wsdata/tools/
-04/01/13/16:34 /data/wsdata/tools/ .j.jsp.swp
-04/01/13/16:34 /data/wsdata/tools/ .j.jsp.swx
-04/01/13/16:34 /data/wsdata/tools/ .j.jsp.swx
-04/01/13/16:34 /data/wsdata/tools/ .j.jsp.swp
-04/01/13/16:34 /data/wsdata/tools/ .j.jsp.swp
-04/01/13/16:34 /data/wsdata/tools/ .j.jsp.swp
-04/01/13/16:34 /data/wsdata/tools/ .j.jsp.swp
-04/01/13/16:34 /data/wsdata/tools/ .j.jsp.swp
-04/01/13/16:35 /data/wsdata/tools/ 4913
-04/01/13/16:35 /data/wsdata/tools/ 4913
-04/01/13/16:35 /data/wsdata/tools/ 4913
-04/01/13/16:35 /data/wsdata/tools/ j.jsp
-04/01/13/16:35 /data/wsdata/tools/ j.jsp
-04/01/13/16:35 /data/wsdata/tools/ j.jsp
-04/01/13/16:35 /data/wsdata/tools/ j.jsp~
-04/01/13/16:35 /data/wsdata/tools/ .j.jsp.swp
 
 ```
 
@@ -110,84 +89,13 @@ path=$1
 
 #### 可监听的事件  
 
-<table border="0" height="193" style="width: 100%;" width="74">
-
-<tbody>
-
-<tr>
-
-<th>事件</th>
-
-<th>描述</th>
-
-</tr>
-
-<tr>
-
-<td>access</td>
-
-<td> **访问** ，读取文件。</td>
-
-</tr>
-
-<tr>
-
-<td>modify</td>
-
-<td> **修改** ，文件内容被修改。</td>
-
-</tr>
-
-<tr>
-
-<td>attrib</td>
-
-<td> **属性** ，文件元数据被修改。</td>
-
-</tr>
-
-<tr>
-
-<td>move</td>
-
-<td> **移动** ，对文件进行移动操作。</td>
-
-</tr>
-
-<tr>
-
-<td>create</td>
-
-<td> **创建** ，生成新文件</td>
-
-</tr>
-
-<tr>
-
-<td>open</td>
-
-<td> **打开** ，对文件进行打开操作。</td>
-
-</tr>
-
-<tr>
-
-<td>close</td>
-
-<td> **关闭** ，对文件进行关闭操作。</td>
-
-</tr>
-
-<tr>
-
-<td>delete</td>
-
-<td> **删除** ，文件被删除。</td>
-
-</tr>
-
-</tbody>
-
-</table>
-
-
+| 事件 | 描述 |
+| :------: | :------: |
+| access | **访问** ，读取文件 |
+| modify | **修改** ，文件内容被修改 |
+| attrib | **属性** ，文件元数据被修改 |
+| move | **移动** ，对文件进行移动操作 |
+| create | **创建** ，生成新文件 |
+| open | **打开** ，对文件进行打开操作 |
+| close | **关闭** ，对文件进行关闭操作 |
+| delete | **删除** ，文件被删除 |

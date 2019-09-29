@@ -1,7 +1,4 @@
-tree
-===
-
-树状图列出目录的内容
+# **tree**
 
 ## 说明
 
@@ -9,13 +6,7 @@ tree
 
 ## 选项
 
-```
-tree(选项)(参数)
-```
-
-  
-
-```bash
+```markdown
 ------- 列表选项 -------
 -a            # 显示所有文件和目录
 -d            # 先是目录名称而非文件
@@ -68,42 +59,18 @@ tree(选项)(参数)
 -T string     # Replace the default HTML title and H1 header with string.
 --nolinks     # Turn off hyperlinks in HTML output.
 ---- 杂项选项 ----
---version     # 输入版本信息
---help        # 打印使用帮助信息
 --            # Options processing terminator.
 ```
 
-### 参数  
-
-目录：执行tree指令，它会列出指定目录下的所有文件，包括子目录里的文件
-
-
 ## 实例
 
-列出目录`/private/` 第一级文件名
-
 ```bash
-tree  /private/ -L 1
-/private/
-├── etc
-├── tftpboot
-├── tmp
-└── var
-```
-
-忽略文件夹
-
-```bash
+tree  /private/ -L 1    # 列出目录`/private/` 第一级文件名
 tree -I node_modules # 忽略当前目录文件夹node_modules
 tree -P node_modules # 列出当前目录文件夹node_modules的目录结构
 tree -P node_modules -L 2 # 显示目录node_modules两层的目录树结构
 tree -L 2 > /home/www/tree.txt # 当前目录结果存到 tree.txt 文件中
-```
-
-忽略多个文件夹
- 
-```bash
-tree -I 'node_modules|icon|font' -L 2
+tree -I 'node_modules|icon|font' -L 2 # 忽略多个文件夹
 ```
 
 

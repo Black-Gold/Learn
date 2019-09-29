@@ -1,4 +1,4 @@
-# hostname
+# **hostname**
 
 ## 说明
 
@@ -18,23 +18,20 @@ Usage: hostname [-b] {hostname|-F file}         set host name (from file)
 
        dnsdomainname                            display dns domain name
 
-       hostname -V|--version|-h|--help          print info and exit
-
 Program name:
        {yp,nis,}domainname=hostname -y
        dnsdomainname=hostname -d
 
-Program options:
-    -a, --alias            显示主机别名
-    -A, --all-fqdns        all long host names (FQDNs)
-    -b, --boot             set default hostname if none available
-    -d, --domain           显示DNS域名
-    -f, --fqdn, --long     显示FQDN名称
-    -F, --file             read host name or NIS domain name from given file
-    -i, --ip-address       显示主机的ip地址
-    -I, --all-ip-addresses all addresses for the host
-    -s, --short            显示短主机名称，在第一个点处截断
-    -y, --yp, --nis        显示NIS/YP域名
+-a, --alias            显示主机别名
+-A, --all-fqdns        all long host names (FQDNs)
+-b, --boot             set default hostname if none available
+-d, --domain           显示DNS域名
+-f, --fqdn, --long     显示FQDN名称
+-F, --file             read host name or NIS domain name from given file
+-i, --ip-address       显示主机的ip地址
+-I, --all-ip-addresses all addresses for the host
+-s, --short            显示短主机名称，在第一个点处截断
+-y, --yp, --nis        显示NIS/YP域名
 
 ```
 
