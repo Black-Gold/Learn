@@ -1,7 +1,4 @@
-bind
-===
-
-显示或设置键盘按键与其相关的功能
+# bind
 
 ## 说明
 
@@ -9,13 +6,7 @@ bind
 
 ## 选项
 
-```
-bind(选项)
-```
-
-  
-
-```
+```markdown
 -d：显示按键配置的内容
 -f<按键配置文件>：载入指定的按键配置文件
 -l：列出所有的功能
@@ -26,33 +17,9 @@ bind(选项)
 
 ## 实例
 
-```
+```bash
 bind -x '"\C-l":ls -l'    #直接按 CTRL+L 就列出目录
-```
 
-其中keyseq可以使用`showkey -a`命令来获取：
-
-```
-[root@localhost ~]# showkey -a
-
-Press any keys - Ctrl-D will terminate this program
-
-^[[A     27 0033 0x1b  上
-         91 0133 0x5b
-         65 0101 0x41
-^[[B     27 0033 0x1b  下
-         91 0133 0x5b
-         66 0102 0x42
-^[[D     27 0033 0x1b  左
-         91 0133 0x5b
-         68 0104 0x44
-^[[C     27 0033 0x1b 右
-         91 0133 0x5b
-         67 0103 0x43
-         32 0040 0x20
-^M       13 0015 0x0d 字母M
-^C        3 0003 0x03 Ctrl-C
-^D        4 0004 0x04 Ctrl-D 退出
 ```
 
 

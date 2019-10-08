@@ -60,6 +60,6 @@ ls /usr/bin | pr -T9 -W$COLUMNS     # 在当前终端宽度上以9列打印输�
 ls -l | awk '/^d/' | wc -l  # 统计一个目录中的目录个数
 ls -l | awk '/^-/' | wc -l  # 统计一个目录中的文件个数
 for i in `ls *test.log`;do mv $i `echo ${i//test/}`;done    # 批量将*test.log文件重命名去掉test字符
-ls -lrt | awk '{print $9}'|xargs file|grep  ELF| awk '{print $1}'|tr -d ':' # 查找当前目录所有二进制文件
+ls -lrt | awk '{print $9}'|xargs file|grep  ELF| awk '{print $1}'|tr -d ':' # 查找当前目录所有二进制文件[尽量避免解析ls输出]
 
 ```
