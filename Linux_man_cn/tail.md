@@ -13,25 +13,16 @@ G 1024*1024*1024, and so on for T, P, E, Z, Y
 
 ```markdown
 -c, --bytes=K            输出最后K个字节；或使用-c + K输出从每个文件的第K个字节开始的字节 
--f, --follow[={name|descriptor}]
-                         output appended data as the file grows;
-                           an absent option argument means 'descriptor'
--F                       same as --follow=name --retry
--n, --lines=K            output the last K lines, instead of the last 10;
-                           or use -n +K to output starting with the Kth
-    --max-unchanged-stats=N
-                         with --follow=name, reopen a FILE which has not
-                           changed size after N (default 5) iterations
-                           to see if it has been unlinked or renamed
-                           (this is the usual case of rotated log files);
-                           with inotify, this option is rarely useful
+-f, --follow[={name|descriptor}]    随着文件的增长输出附加的数据；缺少的选项参数意味着“描述符”与--follow = name --retry相同
+-n, --lines=K            output the last K lines, instead of the last 10;or use -n +K to output starting with the Kth
+    --max-unchanged-stats=N     with --follow=name, reopen a FILE which has not changed size after N (default 5) 
+                                iterations to see if it has been unlinked or renamed (this is the usual case of 
+                                rotated log files);with inotify, this option is rarely useful
     --pid=PID            with -f, terminate after process ID, PID dies
 -q, --quiet, --silent    never output headers giving file names
     --retry              keep trying to open a file if it is inaccessible
--s, --sleep-interval=N   with -f, sleep for approximately N seconds
-                             (default 1.0) between iterations;
-                             with inotify and --pid=P, check process P at
-                             least once every N seconds
+-s, --sleep-interval=N   with -f, sleep for approximately N seconds (default 1.0) between iterations;
+                         with inotify and --pid=P, check process P at least once every N seconds
 
 ```
 
