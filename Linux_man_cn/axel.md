@@ -37,6 +37,3 @@ apt-get install axel    # Debian/Ubuntu
 axel -n 10 -o /tmp/ http://www.jsdig.com/lnmp.tar.gz    # 默认支持断点续传，下载lnmp安装包指定10个线程并存到/tmp/
 
 ```
-
-
-

@@ -939,7 +939,7 @@ awk '{print $0.txt > NR%2.txt}'  file
 
 打印出奇数行内容：（三者等价）
 
-awk 'NR%2==1' file  
+awk 'NR%2==1' file
 
 awk 'NR%2' all_file.txt
 
@@ -954,5 +954,3 @@ awk '!(NR%2)' file
 awk '!(i=!i)' file
 
 ```
-
-

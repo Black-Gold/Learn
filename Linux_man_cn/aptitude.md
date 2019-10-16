@@ -30,4 +30,3 @@ aptitude show pkgname      # 显示包的详细信息
 aptitude clean             # 删除下载的包文件
 aptitude autoclean         # 仅删除过期的包文件
 ```
-

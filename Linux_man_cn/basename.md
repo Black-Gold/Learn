@@ -23,4 +23,3 @@ basename include/stdio.h .h     # 输出 "stdio"
 basename -s .h include/stdio.h  # 输出 "stdio"
 basename -a any/str1 any/str2   # 输出 "str1" followed by "str2"
 ```
-

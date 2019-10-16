@@ -10,5 +10,3 @@ arch命令输出结果有:i386、i486、i586、alpha、sparc、arm、m68k、mips
 ```bash
 arch    # 64位输出：x86_64
 ```
-
-

@@ -25,6 +25,3 @@ groupmod -n cisco web   # 将组名web改成cisco
 groupmod -g 9999 web    # 创建web组的同时指定gid为9999
 
 ```
-
-
-

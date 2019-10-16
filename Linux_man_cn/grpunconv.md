@@ -35,5 +35,3 @@ cat: /etc/gshadow: 没有那个文件或目录
 cat /etc/group | grep cdy
 cdy:123456:1000:
 ```
-
-

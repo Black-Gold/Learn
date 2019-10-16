@@ -15,7 +15,7 @@ grpck命令检查数据是否正确存放，每条记录是否都包含足够的
 grpck(选项)
 ```
 
-  
+
 
 ```
 -r：只读模式
@@ -38,12 +38,10 @@ grpck /etc/group /etc/gshadow   //后面两句一样，如果没有输出信息�
 cat /etc/group | grep check_user**
 check_user:x:  //这儿GID字段为空，是错误的
 
- **grpck /etc/group** 
+ **grpck /etc/group**
 invalid group file entry
 delete line 'check_user:x:'? y      //提示是否删除
 grpck: the files have been updated  //这时已经删除了错误的行，提示文件已经更新
 
- **cat /etc/group  | grep check_user   //没有查到，已经删除了。** 
+ **cat /etc/group  | grep check_user   //没有查到，已经删除了。**
 ```
-
-

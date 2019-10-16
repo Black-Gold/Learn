@@ -15,7 +15,7 @@ Usage: ar [emulation options] [-]{dmpqrstx}[abcDfilMNoPsSTuvV] [--plugin <name>]
        ar -M [<mri-脚本]
 ```
 
-  
+
 
 
 ```
@@ -48,7 +48,7 @@ x[o]         - 从归档文件中分解文件
 --target=BFDNAME - 将目标对象格式指定为BFDNAME
 ```
 
-选项参数 
+选项参数
 
 ```
 --plugin <p> - load the specified plugin
@@ -61,11 +61,11 @@ ar：支持的目标： elf64-x86-64 elf32-i386 elf32-x86-64 a.out-i386-linux pe
 打包文件
 
 ```
-[root@localhost ~]# ls   //显示当前目录文件   
+[root@localhost ~]# ls   //显示当前目录文件
 a.c	b.c d.c   install.log	  qte
-anaconda-ks.cfg c.c Desktop 
+anaconda-ks.cfg c.c Desktop
 
-[root@localhost ~]# ar rv one.bak a.c b.c //打包 a.c b.c文件 
+[root@localhost ~]# ar rv one.bak a.c b.c //打包 a.c b.c文件
 ar: 正在创建 one.bak
 a - a.c
 a - b.c
@@ -74,7 +74,7 @@ a - b.c
 打包多个文件
 
 ```
-[root@localhost ~]# ar rv two.bak *.c  //打包以.c结尾的文件  
+[root@localhost ~]# ar rv two.bak *.c  //打包以.c结尾的文件
 ar: 正在创建 two.bak
 a - a.c
 a - b.c
@@ -82,10 +82,10 @@ a - c.c
 a - d.c
 ```
 
-显示打包文件的内容
+显示打包文件的内
 
 ```
-[root@localhost ~]# ar t two.bak    
+[root@localhost ~]# ar t two.bak
 a.c
 b.c
 c.c
@@ -95,10 +95,7 @@ d.c
 删除打包文件的成员文件
 
 ```
-[root@localhost ~]# ar d two.bak a.c b.c c.c  
-[root@localhost ~]# ar t two.bak       
+[root@localhost ~]# ar d two.bak a.c b.c c.c
+[root@localhost ~]# ar t two.bak
 d.c
 ```
-
-
-
