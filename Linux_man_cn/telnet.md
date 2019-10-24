@@ -9,7 +9,7 @@
 
 ```markdown
 用法：telnet [-4] [-6] [-8] [-E] [-L] [-S tos] [-a] [-c] [-d] [-e char] [-l user]
-	[-n tracefile] [-b hostalias ] [-r] 
+ [-n tracefile] [-b hostalias ] [-r]
  [host-name [port]]
 
 -8：允许使用8位字符资料，包括输入与输出
@@ -38,5 +38,3 @@
 telnet 192.168.2.10
 
 ```
-
-

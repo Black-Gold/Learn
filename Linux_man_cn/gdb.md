@@ -34,6 +34,6 @@
 ```bash
 g++ -g hello.cpp -o hello # 对C/C++程序的调试，需要在编译前就加上-g选项
 gdb hello   # 调试可执行文件hello
-
+gdb --args 程序或命令 # 在gdb下启动程序
 
 ```

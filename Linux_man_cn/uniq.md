@@ -25,7 +25,7 @@ Mandatory arguments to long options are mandatory for short options too.
 -s, --skip-chars=N              忽略比较指定的字符
 -u, --unique                    仅显示出一次的行列
 -z, --zero-terminated           end lines with 0 byte, not newline
--w, --check-chars=N	            对每行第N 个字符以后的内容不作对照;即指定要比较的字符
+-w, --check-chars=N             对每行第N 个字符以后的内容不作对照;即指定要比较的字符
 
 若域中为先空字符(通常包括空格以及制表符)，然后非空字符，域中字符前的空字符将被跳过
 

@@ -36,8 +36,8 @@
 ## 实例
 
 ```bash
-lscpu
+# CPUs = Threads per core X cores per socket X sockets
+lscpu | grep -E '^Thread|^Core|^Socket|^CPU\('  # 查看cpu线程数、核心数等
+
 
 ```
-
-

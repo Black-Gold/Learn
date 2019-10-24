@@ -10,12 +10,12 @@
 ```markdown
 用法：touch [选项]... 文件..
 
--a			            只更改访问时间
--c, --no-create	        不创建任何文件
--d, --date=字符串	    使用指定字符串表示时间而非当前时间
--f			            (忽略)
--h, --no-dereference	会影响符号链接本身，而非符号链接所指示的目的地，(当系统支持更改符号链接的所有者时，此选项才有用)
--m			            只更改修改时间
+-a                      只更改访问时间
+-c, --no-create         不创建任何文件
+-d, --date=字符串        使用指定字符串表示时间而非当前时间
+-f                      (忽略)
+-h, --no-dereference    会影响符号链接本身，而非符号链接所指示的目的地，(当系统支持更改符号链接的所有者时，此选项才有用)
+-m                      只更改修改时间
 -r, --reference=FILE    用参考文件的时间取代当前时间
 -t STAMP                使用指定的[[CC]YY]MMDDhhmm[.ss]时间取代当前时间
     --time=WORD         change the specified time:

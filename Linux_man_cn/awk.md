@@ -278,7 +278,6 @@ awk 'BEGIN{a="b";arr[0]="b";arr["b"]="c";print (a in arr);}'    # 输出：1
 * !级别越高越优先
 * 级别越高越优先
 
-
 ## awk高级输入输出
 
 ```bash
@@ -649,16 +648,16 @@ strftime日期和时间格式说明符
 ## 文件间隔
 
 ```bash
-# 双空间文件
-awk'1; {print“”}'
-awk'BEGIN {ORS =“\ n \ n”}; 1'
+# 文件添加两个空格
+awk '1;{print“”}'
+awk 'BEGIN{ORS =“\n\n”};1'
 
 # 双空间的文件已经有空行。输出文件,在文本行之间应该包含不超过一个空白行
 # 注意：在Unix系统上，只有CRLF（\ r \ n）的DOS行是经常被视为非空白，因此仅'NF'将返回TRUE
 awk'NF {print $ 0“\ n”}'
 
-# 三重空间文件
-awk'1; {print“\ n”}'
+# 文件添加三个空格
+awk '1;{print“\n”}'
 ```
 
 ## 编号和计算
@@ -723,7 +722,7 @@ gawk --re-interval'BEGIN {while（a ++ <49）s = s“”}; {sub（/ ^。{6} /，
 
 ## 阵列创作
 
-```sh
+```bash
 
 #接下来的2个条目不是单行脚本，而是技术
 #非常方便，因此在这里值得一试
@@ -738,9 +737,9 @@ for（i = 1; i <= 12; i ++）mdigit [month [i]] = i
 
 ```
 
-## 文本转换和替换：
+## 文本转换和替换
 
-```sh
+```bash
 
 #在UNIX环境中：将DOS换行符（CR / LF）转换为Unix格式
 awk'{sub（/ \ r $ /，“”）}; 1'#假设每行都以Ctrl-M结尾
@@ -773,15 +772,15 @@ awk'{$ 1 = $ 1}; 1'#也会删除字段之间的额外空间
 awk'{sub（/ ^ /，“”）}; 1'
 
 #将所有文本均匀对齐到79列宽度
-awk'{printf'％79s \ n“，$ 0}'文件*
+awk '{printf'％79s \ n“，$ 0}'文件*
 
 #将所有文字放在79个字符的宽度上
-awk'{l = length（）; s = int（（79-1）/ 2）; printf“％”（s + l）“s \ n”，$ 0}'文件*
+awk '{l = length（）; s = int（（79-1）/ 2）; printf“％”（s + l）“s \ n”，$ 0}'文件*
 
 #在每行上用“bar”代替（查找并替换）“foo”
-awk'{sub（/ foo /，“bar”）}; 1'#只替换第一个实例
-gawk'{$ 0 = gensub（/ foo /，“bar”，4）}; 1'#只替换第四个实例
-awk'{gsub（/ foo /，“bar”）}; 1'#将所有实例替换成一行
+awk '{sub（/ foo /，“bar”）}; 1'#只替换第一个实例
+gawk '{$ 0 = gensub（/ foo /，“bar”，4）}; 1'#只替换第四个实例
+awk '{gsub（/ foo /，“bar”）}; 1'#将所有实例替换成一行
 
 #将“foo”替换为“bar”，仅用于包含“baz”
 awk'/ baz / {gsub（/ foo /，“bar”）}; 1'
@@ -822,7 +821,7 @@ awk'ORS = NR％5？“，”：“\ n”'文件
 
 ## 选择性印刷某些线条
 
-```sh
+```bash
 
 #打印前10行文件（模拟“head”的行为）
 awk'NR <11'
@@ -887,13 +886,13 @@ awk'NR == 52'
 awk'NR == 52 {print; exit}'#在大文件上效率更高
 
 #打印两个正则表达式之间的文件部分（含）
-awk'/爱荷华州/，/蒙大拿州/'#区分大小写
+awk'/Iowa/，/Montana/'#区分大小写
 
 ```
 
 ## 选择性删除某些行
 
-```sh
+```bash
 
 # 删除文件中的所有空白行（与“grep”。'相同）
 awk NF
@@ -927,9 +926,9 @@ sed's/- -.*$//g' access.log|sort|uniq -c|sort -rn -k1
 
 ```
 
-## 打印行号和内容：
+## 打印行号和内容
 
-```sh
+```bash
 
 awk '{print NR":"$0}'
 

@@ -25,4 +25,3 @@ Mandatory arguments to long options are mandatory for short options too.
 ```bash
 mkdir -p -m 700 /usr/meng/test # 在目录`/usr/meng`下建立子目录test，并且只有文件主有读、写和执行权限，其他人无权访问
 ```
-
