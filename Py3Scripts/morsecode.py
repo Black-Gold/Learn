@@ -27,7 +27,7 @@ def from_morse(s):
     return ''.join(CODE_REVERSED.get(i) for i in s.split())
 
 
-morse = to_morse('living')
+morse = to_morse('Crazy in California')
 space = to_morse(' ')
 text = from_morse('▬▬●●▬▬')
 print(morse)

@@ -20,7 +20,7 @@
 ## 实例
 
 ```bash
-history -c  # 情况历史记录
+history -c  # 清空历史记录
 ```
 
 
