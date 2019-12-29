@@ -83,7 +83,7 @@ IP)
    --prefer-family=地址族      首先连接至指定家族（IPv6，IPv4
 的地址
    --user=用户                 将 ftp 和 http 的用户名均设置为
-   --password=密码             将 ftp 和 http 的密码均设置为 <
+   --password=密码             将 ftp 和 http 的密码均设置为
    --ask-password              提示输入密码
    --use-askpass=命令          指定用于请求用户名和密码的凭据管
                                  如果没有提供指定命令，程序将使
@@ -181,7 +181,7 @@ WARC 选项：
 
 递归下载：
   -r,  --recursive                 指定递归下载
-  -l,  --level=数字                最大递归深度 (inf 或 0 代表无限制，即全部下载)
+  -l,  --level=数字                 最大递归深度 (inf 或 0 代表无限制，即全部下载)
        --delete-after              下载完成后删除本地文件
   -k,  --convert-links             让下载得到的 HTML 或 CSS 中的链接指向本地文件
        --convert-file-only         只转换 URL 的文件部分（一般叫做“基础名”/basename）

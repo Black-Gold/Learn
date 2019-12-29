@@ -11,10 +11,10 @@
 
 ```markdown
 用法: sed [选项]   {脚本(如果没有其他脚本)} [输入文件]
--n, --quiet, --silent               取消自动打印模式空间
--e 脚本, --expression=脚本           添加“脚本”到程序的运行列表,指定script处理文本
--f 脚本文件, --file=脚本文件         添加“脚本文件”到程序的运行列表,指定脚本文件处理文本
---follow-symlinks                   直接修改文件时跟随软链接
+-n, --quiet, --silent                取消自动打印模式空间
+-e 脚本, --expression=脚本            添加“脚本”到程序的运行列表,指定script处理文本
+-f 脚本文件, --file=脚本文件           添加“脚本文件”到程序的运行列表,指定脚本文件处理文本
+--follow-symlinks                    直接修改文件时跟随软链接
 -i[SUFFIX], --in-place[=SUFFIX]     edit files in place (makes backup if SUFFIX supplied)
 -c, --copy        use copy instead of rename when shuffling files in -i mode
 -b, --binary      什么也不做，用于与WIN32/CYGWIN/MSDOS/EMX兼容(二进制模式下的打开文件(CR+LF换行符未被特殊对待))

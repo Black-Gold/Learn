@@ -25,6 +25,3 @@ umask u=, g=w, o=rwx
 
 umask -s    # 检查新创建文件的默认权限
 ```
-
-
-

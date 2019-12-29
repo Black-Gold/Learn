@@ -268,6 +268,32 @@ tar -cf all.tar *.jpg       # 这条命令是将所有.jpg的文件打成一个�
 tar -rf all.tar *.gif       # 这条命令是将所有.gif的文件增加到all.tar的包里面去。-r是表示增加文件的意思
 tar -uf all.tar logo.gif    # 这条命令是更新原来tar包all.tar中logo.gif文件，-u是表示更新文件的意思
 tar -tf all.tar             # 这条命令是列出all.tar包中所有文件，-t是列出文件的意思
+
+# 将文件全部打包成tar包
+tar -cvf log.tar log2012.log        # 仅打包，不压缩！
+tar -zcvf log.tar.gz log2012.log    # 打包后，以 gzip 压缩
+tar -jcvf log.tar.bz2 log2012.log   # 打包后，以 bzip2 压缩
+tar -cf - foo/ | xz -9 -c - > foo.tar.xz    # 目录foo打包后以xz压缩
+tar -zxvf log.tar.gz                # 将tar包解压缩
+tar -ztvf log.tar.gz                # 查阅上述tar包内有哪些文件，选项z表示由gzip压缩的
+tar -zxvf /opt/soft/test/log30.tar.gz log2013.log   # 只将tar内的部分文件解压出来
+tar -zcvpf log.tar.gz archive-$(date +%Y%m%d).log   # 文件备份下来，并且保存其权限；这个`-p`的属性
+tar -c dir/ | gzip | gpg -c | ssh user@remote 'dd of=dir.tar.gz.gpg'  # 将目录dir/压缩打包并放到远程机器上
+tar -c /dir/to/copy  |  cd /where/to/ && tar -x -p  # 拷贝目录copy/到目录/where/to/并保持文件属性
+tar -c /dir/to/copy  | ssh -C user@remote 'cd /where/to/ && tar -x -p'  # 拷贝目录copy/到远程目录/where/to/并保持文件属性
+find dir/ -name '*.txt' | tar -c --files-from=- | bzip2 > dir_txt.tar.bz2   # 将目录dir及其子目录所有txt文件打包并用bzip2压缩
+tar --exclude=scf/service -zcvf scf.tar.gz scf/*    # 备份文件夹内容时排除部分文件
+tar -xvf log.tar.gz --wildcards "*.txt"     # 解压以txt结尾的文件
+tar -czwf log.tar.gz /dir/*   # 将dir目录下所有文件压缩，w选项表示每个文件添加到存档之前要求确认
+tar -cvWf log.tar   /dir/     # 验证压缩包中的文件，W选项表示验证
+tar -rvf log.tar.gz test.log    # 将test.log文件添加到已存在的压缩包内
+
+tar -N "2012/11/13" -zcvf log17.tar.gz test
+
+# 其实最简单的使用 tar就只要记忆底下的方式即可
+tar -jcvf filename.tar.bz2            # 要被压缩的文件或目录名称
+tar -jtvf filename.tar.bz2           # 要查询的压缩文件
+tar -jxvf filename.tar.bz2 -C dir    # 解压缩到dir目录
 ```
 
 ```markdown
@@ -345,31 +371,4 @@ jar -cvfm [目标文件名].jar META-INF/MANIFEST.MF [原文件名/目录名]
 解压：7z x [原文件名].7z
 注：这个7z解压命令支持rar格式，即：
 7z x [原文件名].rar
-```
-
-```bash
-# 将文件全部打包成tar包
-tar -cvf log.tar log2012.log        # 仅打包，不压缩！
-tar -zcvf log.tar.gz log2012.log    # 打包后，以 gzip 压缩
-tar -jcvf log.tar.bz2 log2012.log   # 打包后，以 bzip2 压缩
-tar -zxvf log.tar.gz                # 将tar包解压缩
-tar -ztvf log.tar.gz                # 查阅上述tar包内有哪些文件，选项z表示由gzip压缩的
-tar -zxvf /opt/soft/test/log30.tar.gz log2013.log   # 只将tar内的部分文件解压出来
-tar -zcvpf log.tar.gz archive-$(date +%Y%m%d).log   # 文件备份下来，并且保存其权限；这个`-p`的属性
-tar -c dir/ | gzip | gpg -c | ssh user@remote 'dd of=dir.tar.gz.gpg'  # 将目录dir/压缩打包并放到远程机器上
-tar -c /dir/to/copy  |  cd /where/to/ && tar -x -p  # 拷贝目录copy/到目录/where/to/并保持文件属性
-tar -c /dir/to/copy  | ssh -C user@remote 'cd /where/to/ && tar -x -p'  # 拷贝目录copy/到远程目录/where/to/并保持文件属性
-find dir/ -name '*.txt' | tar -c --files-from=- | bzip2 > dir_txt.tar.bz2   # 将目录dir及其子目录所有txt文件打包并用bzip2压缩
-tar --exclude=scf/service -zcvf scf.tar.gz scf/*    # 备份文件夹内容时排除部分文件
-tar -xvf log.tar.gz --wildcards "*.txt"     # 解压以txt结尾的文件
-tar -czwf log.tar.gz /dir/*   # 将dir目录下所有文件压缩，w选项表示每个文件添加到存档之前要求确认
-tar -cvWf log.tar   /dir/     # 验证压缩包中的文件，W选项表示验证
-tar -rvf log.tar.gz test.log    # 将test.log文件添加到已存在的压缩包内
-
-tar -N "2012/11/13" -zcvf log17.tar.gz test
-
-# 其实最简单的使用 tar就只要记忆底下的方式即可
-tar -jcvf filename.tar.bz2            # 要被压缩的文件或目录名称
-tar -jtvf filename.tar.bz2           # 要查询的压缩文件
-tar -jxvf filename.tar.bz2 -C dir    # 解压缩到dir目录
 ```

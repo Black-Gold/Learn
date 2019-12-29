@@ -10,11 +10,8 @@
 用法：pr [选项] [文件]
 
 Mandatory arguments to long options are mandatory for short options too.
-+首页[:末页], --pages=首页[:末页]
-			在指定的首页/末页处开始/停止打印
--列数, --columns=列数
-			输出指定的列数。如果指定了-a 选项，则从上到下列印
-			程序会自动在每一页均衡每列占用的行数
++首页[:末页], --pages=首页[:末页]	在指定的首页/末页处开始/停止打印
+-列数, --columns=列数	输出指定的列数。如果指定了-a 选项，则从上到下列印 程序会自动在每一页均衡每列占用的行数
 -a, --across		设置每列从上到下输出，配合"-列数"选项一起使用
 -c, --show-control-chars
 			使用头标(^G)和八进制反斜杠标记

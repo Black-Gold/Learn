@@ -1,7 +1,4 @@
-restorecon
-===
-
-恢复文件的安全上下文
+# restorecon
 
 ## 说明
 
@@ -13,7 +10,7 @@ restorecon
 restorecon [-iFnrRv] [-e excludedir ] [-o filename ] [-f filename | pathname...]
 ```
 
-  
+
 
 ```
 -i：忽略不存在的文件
@@ -63,6 +60,7 @@ type=AVC msg=audit(1378974214.610:465): avc:  denied  { open } for  pid=2359 com
 
 /*使用restorecon来恢复网页主目录中所有文件的SELinux配置信息(如果目标为一个目录，可以添加-R参数递归)*/
 [root@jsdig.com html]# restorecon -R /var/www/html/
+
+# 测试publickeys免密登录权限authorized_keys文件
+restorecon -r -vv .ssh/authorized_keys
 ```
-
-

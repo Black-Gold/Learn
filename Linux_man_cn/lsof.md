@@ -54,7 +54,6 @@ Defaults in parentheses; comma-separated set (s) items; dash-separated ranges.
   names  select named files or files on named file systems
 Anyone can list all files; /dev warnings disabled; kernel ID check disabled.
 
-
 ```
 
 ## 详解

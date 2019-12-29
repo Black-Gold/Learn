@@ -131,8 +131,11 @@ find /usr/ -path "*local*" -print   # 匹配文件路径或者文件,path后路�
 
 # -prune使用这一选项可以使find命令不在当前指定的目录中查找，如果同时使用-depth选项，那么-prune将被find命令忽略
 find . -path "./sk" -prune -o -name "*.txt" -print  # 查找当前目录或者子目录下所有.txt文件，但是跳过子目录sk
-find /usr/sam \( -path /usr/sam/dir1 -o -path /usr/sam/file1 \) -prune -o -print    # 排除多个目录,-path必须在-prune之前
 find /usr/sam ! -path /usr/sam/dir1 #  !也可以用来排除目录
+
+# 排除当前目录下A和B子目录，找出后缀为log的文件，-path必须在-prune之前
+find . -type f -name "*.log" -not -path "*/A*" -not -path "*/B*"
+find . -type d \( -path ./A -o -path ./B \) -prune -o -print -type f -name "*.log"
 
 # 当前目录及子目录下查找所有以.txt和.pdf结尾的文件
 find . -name "*.txt" -o -name "*.pdf" -print
