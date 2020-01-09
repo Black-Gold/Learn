@@ -10,7 +10,7 @@
 
 Usage: ps [options]
 
-```sh
+```bash
 基本选项
 -A, -e               all processes
 -a                   all with tty, except session leaders
@@ -157,4 +157,3 @@ ps命令标识进程的5种状态码
 * S 中断      sleeping
 * T 停止      traced or stopped
 * Z 僵死      a defunct (”zombie”) process
-

@@ -27,7 +27,7 @@
 
 ## 实例
 
-```sh
+```bash
 apropos -a emacs vi     # 查找手册页名字和描述中包含emacs和vi的手册页
 apropos whatis          # 显示和whatis相关的命令
 ```

@@ -46,6 +46,8 @@ useradd [选项] 登录
 ```bash
 useradd -D  # 显示默认的useradd配置
 
+useradd -g ntp -M -s /usr/sbin/nologin -c "ntp user" ntp # 创建ntp用户
+
 # 一个用户只能且必须属于一个g，可以属于多个G
 useradd -g sales jack -G company,employees    # 新建用户jack同时指定所属组，主组为sales，附加组为company,employees
 

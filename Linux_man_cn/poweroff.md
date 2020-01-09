@@ -1,8 +1,8 @@
 # **poweroff**
 
-  
 
-```sh
+
+```bash
 --halt       Halt the machine
 -p --poweroff  Switch off the machine
    --reboot    Reboot the machine

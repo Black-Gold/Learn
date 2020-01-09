@@ -3,7 +3,7 @@
 [lvm逻辑卷管理图](http://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Lvm.svg/620px-Lvm.svg.png)
 
 | 用途 | PV | VG | LV |
-| :--: | :--: | :--: |
+| :------: | :------: | :------: |
 | 搜寻 (scan) | pvscan | vgscan | lvscan |
 | 创建 (create) | pvcreate | vgcreate | lvcreate |
 | 列出 (display) | pvdisplay | vgdisplay | lvdisplay |
@@ -53,7 +53,7 @@ Common options for lvm:
 
 ## 实例
 
-```sh
+```bash
 pvcreate /dev/hda{6,7,8,9}  # 在/dev/hda6-9分区创建pv
 ```
 
@@ -105,7 +105,7 @@ Display PV information.
 ## 实例
 
 ```bash
-pvscan     # 扫描所有硬盘上的物理卷 
+pvscan     # 扫描所有硬盘上的物理卷
 ```
 
 ## **pvdisplay命令**
@@ -152,7 +152,7 @@ FAQ:(Frequently Asked Question)
 
 ## LVM拉伸逻辑卷
 
-```sh
+```bash
 (可在线扩容，无需卸载逻辑卷)
 vgdisplay或vgs  # 确保VG中有足够的空闲空间，通过以下指令查询即可
 lvextend -L +5G /dev/vg01/lv01     # 扩充逻辑卷,增大5G的大小
@@ -166,7 +166,7 @@ df -hT     # 查看更新后文件系统
 
 ## LVM缩小逻辑卷
 
-```sh
+```bash
 (在实际运作当中很少使用且这种操作及其危险,容易导致数据丢失)备注:逻辑卷的缩小必须是离线操作，要卸载逻辑卷；xfsdump可备份xfs系统格式
 umount /dev/vg01/lv01   # 卸载已经挂载的逻辑卷
 e2fsck -f /dev/vg01/lv01    # 强制检测文件系统信息
@@ -180,7 +180,7 @@ mount /dev/vg01/lv01 /mnt   # 挂载
 
 ## LVM拉伸卷组
 
-```sh
+```bash
 pvcreate /dev/sdd    # 创建新的物理卷
 vgextend vg01 /dev/sdd  # 向vg01卷组中添加物理卷/dev/sdd
 vgs, vgdisplay     # 查看卷组信息
@@ -188,7 +188,7 @@ vgs, vgdisplay     # 查看卷组信息
 
 ## LVM缩小卷组
 
-```sh
+```bash
 vgreduce vg01 /dev/sdd    # 将一个PV从指定卷组中移除
 vgdisplay或vgs  # 查看缩小后的卷组大小
 ```
@@ -201,14 +201,14 @@ vgdisplay或vgs  # 查看缩小后的卷组大小
 pvchange(选项)(参数)
 ```
 
-  
+
 
 ```
 -u：生成新的UUID
 -x：是否允许分配PE
 ```
 
-### 参数  
+### 参数
 
 物理卷：指定要修改属性的物理卷所对应的设备文件
 
@@ -223,7 +223,7 @@ pvchange -x n /dev/sdb1     #禁止分配"/dev/sdb1"上的PE
 输出信息如下：
 
 ```
-Physical volume "/dev/sdb1" changed  
+Physical volume "/dev/sdb1" changed
 1 physical volume changed / 0 physical volumes not changed
 ```
 
@@ -235,7 +235,7 @@ Physical volume "/dev/sdb1" changed
 pvremove(选项)(参数)
 ```
 
-  
+
 
 ```
 -d：调试模式
@@ -243,7 +243,7 @@ pvremove(选项)(参数)
 -y：对提问回答“yes”
 ```
 
-### 参数  
+### 参数
 
 物理卷：指定要删除的物理卷对应的设备文件名
 
@@ -268,7 +268,7 @@ Labels on physical volume "/dev/sdb2" successfully wiped
 
 ## LVM(逻辑卷管理)
 
-```sh
+```bash
 概念介绍：
 LVM （logical volume Manager）逻辑卷管理通过将底层物理硬盘抽象封装起来，以逻辑卷的形式表现给上层系统，逻辑卷的大小可以动态调整的而且不会丢失数据。新加入的硬盘也不会改变现有上层的逻辑卷
 
@@ -298,7 +298,7 @@ FAQ:(Frequently Asked Question)
 
 ## LVM拉伸逻辑卷
 
-```sh
+```bash
 (可在线扩容，无需卸载逻辑卷)
 vgdisplay或vgs  # 确保VG中有足够的空闲空间，通过以下指令查询即可
 lvextend -L +5G /dev/vg01/lv01     # 扩充逻辑卷,增大5G的大小
@@ -311,7 +311,7 @@ df -hT     # 查看更新后文件系统
 
 ## LVM缩小逻辑卷
 
-```sh
+```bash
 (在实际运作当中很少使用且这种操作及其危险,容易导致数据丢失)备注:逻辑卷的缩小必须是离线操作，要卸载逻辑卷
 umount /dev/vg01/lv01   # 卸载已经挂载的逻辑卷
 e2fsck -f /dev/vg01/lv01    # 强制检测文件系统信息
@@ -325,7 +325,7 @@ mount /dev/vg01/lv01 /mnt   # 挂载
 
 ## LVM拉伸卷组
 
-```sh
+```bash
 pvcreate /dev/sdd    # 创建新的物理卷
 vgextend vg01 /dev/sdd  # 向vg01卷组中添加物理卷/dev/sdd
 vgs, vgdisplay     # 查看卷组信息
@@ -333,7 +333,7 @@ vgs, vgdisplay     # 查看卷组信息
 
 ## LVM缩小卷组
 
-```sh
+```bash
 vgreduce vg01 /dev/sdd    # 将一个PV从指定卷组中移除
 vgdisplay或vgs  # 查看缩小后的卷组大小
 ```
@@ -346,7 +346,7 @@ vgdisplay或vgs  # 查看缩小后的卷组大小
 vgcreate(选项)(参数)
 ```
 
-  
+
 
 ```
 -l：卷组上允许创建的最大逻辑卷数
@@ -354,7 +354,7 @@ vgcreate(选项)(参数)
 -s：卷组上的物理卷的PE大小
 ```
 
-### 参数  
+### 参数
 
 *   卷组名：要创建的卷组名称
 *   物理卷列表：要加入到卷组中的物理卷列表
@@ -381,14 +381,14 @@ Volume group "vg1000" successfully created
 vgdisplay(选项)(参数)
 ```
 
-  
+
 
 ```
 -A：仅显示活动卷组的属性
 -s：使用短格式输出的信息
 ```
 
-### 参数  
+### 参数
 
 卷组：要显示属性的卷组名称
 
@@ -403,10 +403,10 @@ vgdisplay(选项)(参数)
 输出信息如下：
 
 ```
-  --- Volume group ---  
-  VG Name               vg1000  
-......省略部分输出内容......  
-  free  PE / Size       50 / 200.00 MB  
+  --- Volume group ---
+  VG Name               vg1000
+......省略部分输出内容......
+  free  PE / Size       50 / 200.00 MB
   VG UUID  ICprwg-ZmhA-JKYF-WYuy-jNHa-AyCN-ZS5F7B
 ```
 
@@ -419,7 +419,7 @@ vgdisplay(选项)(参数)
 vgscan(选项)
 ```
 
-  
+
 
 ```
 -d：调试模式
@@ -437,8 +437,8 @@ vgscan(选项)
 输出信息如下：
 
 ```
-Found volume group "vg2000" using metadata type lvm2  
-Found volume group "vg1000" using metadata type lvm2 
+Found volume group "vg2000" using metadata type lvm2
+Found volume group "vg1000" using metadata type lvm2
 ```
 
 说明：本例中，vgscan指令找到了两个LVM2卷组"vg1000"和"vg2000"
@@ -451,7 +451,7 @@ Found volume group "vg1000" using metadata type lvm2
 vgrename [选项] [旧卷组路径|旧卷组名称|旧卷组UUID] [新卷组路径|新卷组名称]
 ```
 
-  
+
 
 ```
 -d 启用调试模式
@@ -481,13 +481,13 @@ vgrename [选项] [旧卷组路径|旧卷组名称|旧卷组UUID] [新卷组路�
 vgchange(选项)(参数)
 ```
 
-  
+
 
 ```
 -a：设置卷组的活动状态
 ```
 
-### 参数  
+### 参数
 
 卷组：指定要设置属性的卷组
 
@@ -513,13 +513,13 @@ vgchange(选项)(参数)
 vgremove(选项)(参数)
 ```
 
-  
+
 
 ```
 -f：强制删除
 ```
 
-### 参数  
+### 参数
 
 卷组：指定要删除的卷组名称
 
@@ -540,13 +540,13 @@ Volume group "vg1000" successfully removed
 vgconvert(选项)(参数)
 ```
 
-  
+
 
 ```
 -M：要转换的卷组格式
 ```
 
-### 参数  
+### 参数
 
 卷组：指定要转换格式的卷组
 
@@ -582,14 +582,14 @@ Volume group vg1000 successfully converted
 vgextend(选项)(参数)
 ```
 
-  
+
 
 ```
 -d：调试模式
 -t：仅测试
 ```
 
-### 参数  
+### 参数
 
 *   卷组：指定要操作的卷组名称
 *   物理卷列表：指定要添加到卷组中的物理卷列表
@@ -616,14 +616,14 @@ Volume group "vg2000" successfully extended
 vgreduce(选项)(参数)
 ```
 
-  
+
 
 ```
 -a：如果命令行中没有指定要删除的物理卷，则删除所有的空物理卷
 --removemissing：删除卷组中丢失的物理卷，使卷组恢复正常状态
 ```
 
-### 参数  
+### 参数
 
 *   卷组：指定要操作的卷组名称
 *   物理卷列表：指定要删除的物理卷列表
@@ -649,14 +649,14 @@ Removed "/dev/sdb2" from volume group "vg2000"
 lvcreate(选项)(参数)
 ```
 
-  
+
 
 ```
 -L：指定逻辑卷的大小，单位为“kKmMgGtT”字节
 -l：指定逻辑卷的大小（LE数）
 ```
 
-### 参数  
+### 参数
 
 逻辑卷：指定要创建的逻辑卷名称
 
@@ -684,7 +684,7 @@ Logical volume "lvol0" created
 lvscan(选项)
 ```
 
-  
+
 
 ```
 -b：显示逻辑卷的主设备和次设备号
@@ -711,7 +711,7 @@ ACTIVE          '/dev/vg1000/lvol0' [200.00 MB] inherit
 lvdisplay(参数)
 ```
 
-### 参数  
+### 参数
 
 逻辑卷：指定要显示属性的逻辑卷对应的设备文件
 
@@ -726,9 +726,9 @@ lvdisplay(参数)
 输出信息如下：
 
 ```
-  --- Logical volume ---  
-  LV Name                /dev/vg1000/lvol0  
-......省略部分输出内容......  
+  --- Logical volume ---
+  LV Name                /dev/vg1000/lvol0
+......省略部分输出内容......
   Block device           253:0
 ```
 
@@ -740,14 +740,14 @@ lvdisplay(参数)
 lvextend(选项)(参数)
 ```
 
-  
+
 
 ```
 -L：指定逻辑卷的大小，单位为“kKmMgGtT”字节
 -l：指定逻辑卷的大小（LE数）
 ```
 
-### 参数  
+### 参数
 
 逻辑卷：指定要扩展空间的逻辑卷
 
@@ -762,7 +762,7 @@ lvextend(选项)(参数)
 输出信息如下：
 
 ```
-Extending logical volume lvol0 to 300.00 MB  
+Extending logical volume lvol0 to 300.00 MB
 Logical volume lvol0 successfully resized
 ```
 **lvresize命令** 用于调整LVM逻辑卷的空间大小，可以增大空间和缩小空间。使用lvresize命令调整逻辑卷空间大小和缩小空间时需要谨慎，因为它有可能导致数据丢失
@@ -773,14 +773,14 @@ Logical volume lvol0 successfully resized
 lvresize(选项)(参数)
 ```
 
-  
+
 
 ```
 -L：指定逻辑卷的大小，单位为“kKmMgGtT”字节
 -l：指定逻辑卷的大小（LE数）
 ```
 
-### 参数  
+### 参数
 
 逻辑卷：指定要删除的逻辑卷
 
@@ -806,14 +806,14 @@ Logical volume lvol0 successfully resized
 lvreduce(选项)(参数)
 ```
 
-  
+
 
 ```
 -L：指定逻辑卷的大小，单位为“kKmMgGtT”字节
 -l：指定逻辑卷的大小（LE数）
 ```
 
-### 参数  
+### 参数
 
 逻辑卷：指定要操作的逻辑卷对应的设备文件
 
@@ -828,9 +828,9 @@ lvreduce(选项)(参数)
 输出信息如下：
 
 ```
-......省略部分输出内容......  
-Do you really want to reduce lvol0? [y/n]: y  #确认操作  
-  Reducing logical volume lvol0 to 252.00 MB  
+......省略部分输出内容......
+Do you really want to reduce lvol0? [y/n]: y  #确认操作
+  Reducing logical volume lvol0 to 252.00 MB
   Logical volume lvol0 successfully resized
 ```
 **lvremove命令** 用于删除指定LVM逻辑卷。如果逻辑卷已经使用mount命令加载，则不能使用lvremove命令删除。必须使用umount命令卸载后，逻辑卷方可被删除
@@ -841,13 +841,13 @@ Do you really want to reduce lvol0? [y/n]: y  #确认操作
 lvremove(选项)(参数)
 ```
 
-  
+
 
 ```
 -f：强制删除
 ```
 
-### 参数  
+### 参数
 
 逻辑卷：指定要删除的逻辑卷
 
@@ -862,7 +862,7 @@ lvremove(选项)(参数)
 输出信息如下：
 
 ```
-Do you really want to remove active logical 
+Do you really want to remove active logical
 volume "lvol0"? [y/n]: y    #确认删除
   Logical volume "lvol0" successfully removed
 ```

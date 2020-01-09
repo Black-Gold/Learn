@@ -912,7 +912,7 @@ awk '!($0 in array) { array[$0]; print }' temp
 
 ## 统计apache日志单ip访问请求数排名（常用，解答方法10多种）
 
-```sh
+```bash
 
 方法一：
 awk '{++S[$1]} END {for (variable in S) print variable ,S[variable]}' access.log |sort -rn -k2

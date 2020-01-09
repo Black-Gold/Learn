@@ -15,7 +15,7 @@
 
 ## 实例
 
-```sh
+```bash
 # 参数--目录：需要压入堆栈的目录
 root@Mylinux:/tmp/dir4# pushd /tmp/dir3
 /tmp/dir3 /tmp/dir4 /tmp/dir1 ~

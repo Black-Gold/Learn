@@ -20,7 +20,7 @@ renice [-n] <优先级>  -u|--user <用户>...
 
 ## 实例
 
-```sh
+```bash
 renice 1 987 -u daemon root -p 32   # 将行程id为987及32的行程与行程拥有者为daemon及root的优先序号码加1
 # 注意：每一个进程都有一个唯一的id
 
