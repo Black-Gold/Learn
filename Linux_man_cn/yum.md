@@ -7,7 +7,7 @@
 
 ## 选项
 
-```info
+```bash
 用法: yum [options] COMMAND
 
 List of Commands:

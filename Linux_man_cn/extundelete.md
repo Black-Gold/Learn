@@ -2,7 +2,7 @@
 
 用法：extundelete [options] [--] device-file
 
-```info
+```bash
   --superblock           Print contents of superblock in addition to the rest.
                          If no action is specified then this option is implied.
   --journal              Show content of journal.
@@ -46,4 +46,3 @@ Actions:
                          The restored files are created in a directory
                          named 'RECOVERED_FILES/' by default.
 ```
-

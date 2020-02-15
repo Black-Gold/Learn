@@ -77,7 +77,7 @@ sort file1 file1 file2 | uniq -u    # 两个未排序文件的差集
 sort file1 file2 | uniq -u          # 两个未排序文件的对称差集
 
 # 忽略相同行使用-u选项或者uniq
-sort -u sort.txt 
+sort -u sort.txt
 uniq sort.txt
 
 sort -nk 2 -t: sort.txt   # 将:字符作为分隔符，按其后的第二个字符的数字从小到大排序
@@ -97,4 +97,3 @@ FStart.CStart Modifie,FEnd.CEnd Modifier
 comment
 
 ```
-

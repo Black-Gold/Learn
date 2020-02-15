@@ -261,7 +261,7 @@ Labels on physical volume "/dev/sdb2" successfully wiped
 
 
 
-```info
+```bash
 -s  以短格式输出
 -m  显示PE到LE的映射
 ```

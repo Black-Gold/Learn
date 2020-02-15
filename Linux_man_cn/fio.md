@@ -2,7 +2,7 @@
 
 linux和Windows都推荐使用FIO工具进行测试块存储性能，测试前确保已经4k对齐，测试裸盘可以获取真实块存储盘性能。但是会破坏文件系统结构
 
-```info
+```bash
 fio [options] [job options] <job file(s)>
   --debug=options	Enable debug logging. May be one/more of:
 			process,file,io,mem,blktrace,verify,random,parse,

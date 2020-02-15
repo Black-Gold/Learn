@@ -1,4 +1,4 @@
-# type
+# **type**
 
 ## 说明
 
@@ -28,5 +28,3 @@ type ls
 type -a cd
 type -a grep
 ```
-
-
