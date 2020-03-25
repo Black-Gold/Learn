@@ -8,6 +8,7 @@
 
 ## 选项
 
+```md
 echo [SHORT-OPTION] ... [STRING]
 echo LONG-OPTION
 -n      不换行输出内容
@@ -28,6 +29,7 @@ echo LONG-OPTION
 * \0NNN 八进制值NNN(1-3位)的字节
 * \xHH 十六进制值HH(1-2位)的字节
 * -E 取消-e效果，默认就是这个
+```
 
 ## 实例
 
@@ -35,6 +37,10 @@ echo LONG-OPTION
 echo "I live in `locale territory`"     # 从locale数据库中展开信息
 echo "$((0x2dec))"   # 十六进制转十进制
 for i in {0..255}; do echo -e "\e[38;05;${i}m${i}"; done | column -c 80 -s ' '; echo -e "\e[m"  # 输出256中全部色彩
+
+# md5加密字符串
+echo -n xxx | md5sum        # 方法一
+echo -n xxx | openssl md5   # 方法二
 
 # 获取8位随机字符串
 echo $RANDOM | md5sum | cut -c 1-8  # 方法一
@@ -63,7 +69,7 @@ echo -e "\v\v\v"    # 用-e选项，echo会打印出转义字符
 echo -e "\042"      # 根据"引号字符的八进制ASCII码打印出字符
 echo $'\042'    # 版本2开始bash允许使用$'\nnn'结构，这里'\nnn'表示一个八进制的值
 echo $'\x22'    # 使用$'\xnnn'结构也可以使用十六进制来转义
- 
+
 # 当使用像$'\x'的结构时，-e的选项是多余的
 echo "NEW LINE and BEEP"
 echo $'\n'  # 新行

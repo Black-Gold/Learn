@@ -13,7 +13,7 @@ def get_mfw_news(url):
     # 定义http head伪装成curl浏览器获取IP数据
     headers = {'User-Agent': "curl/10.0",
                "Content-type": "application/x-www-form-urlencoded",
-               "Accept": "text/plain"}
+               "Accept": "text/json"}
     request = requests.get(url, headers=headers)
     response = eval(request.text)
     print(response)

@@ -1,23 +1,21 @@
 # 整合官方和常用示例
 # https://api.mongodb.com/python/current/py-modindex.html
 
-from pymongo import MongoClient
-from pymongo import InsertOne, DeleteMany, ReplaceOne, UpdateOne
+import datetime
+import multiprocessing
+import ssl
+import urllib.parse
+from pprint import pprint
+
+import gridfs
+import pymongo
+import pytz
+from bson import CodecOptions, json_util
+from bson.code import Code
 from bson.objectid import ObjectId
 from bson.son import SON
-from bson import json_util, CodecOptions
-import datetime
-from pprint import pprint
-import pymongo
-from bson.code import Code
-import urllib.parse
-import ssl
-from pymongo import errors
-from pymongo import WriteConcern
-import pytz
-import gridfs
-import multiprocessing
-
+from pymongo import (DeleteMany, InsertOne, MongoClient, ReplaceOne, UpdateOne,
+                     WriteConcern, errors)
 
 client = MongoClient(host="192.168.2.15", port=27017)
 

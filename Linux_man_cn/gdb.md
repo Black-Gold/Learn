@@ -36,4 +36,25 @@ g++ -g hello.cpp -o hello # 对C/C++程序的调试，需要在编译前就加�
 gdb hello   # 调试可执行文件hello
 gdb --args 程序或命令 # 在gdb下启动程序
 
+# 常用操作如下(core dump生成需要在编译程序时加入-g参数)
+gdb 进程文件 core dump文件
+
+//This will switch the disassembly listing to intel format.
+
+(gdb) set disassembly-flavor intel
+
+//To view the stack trace and see where the program crashed.
+
+(gdb) bt full
+
+//To disassemble the instructions around the address where the crash happened.
+
+(gdb) disas 0x<addr>
+
+查看注册值
+
+(gdb) i r
+
+退出
+(gdb) q
 ```
