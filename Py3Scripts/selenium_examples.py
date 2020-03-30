@@ -171,7 +171,7 @@ WebDriver都将延迟 driver.get() 的响应或 driver.navigate().to() 的调用
 # normal默认加载策略
 # WebDriver等待整个页面的加载，设置为normal时，WebDriver保持等待直到返回load事件
 options = Options()
-options.page_load_strategy = 'normal'
+options.page_load_strategy = "normal"
 browser = webdriver.Chrome(options=options)
 browser.get("xxx.com")
 browser.quit()
@@ -179,7 +179,7 @@ browser.quit()
 # eager加载策略
 # WebDriver保持等待并直到完全加载并解析了html文件，忽略css样式表、图片和subframes的加载
 # 设置为eager时，保持等待直到返回DOMContentLoaded事件
-options.page_load_strategy = 'eager'
+options.page_load_strategy = "eager"
 
 # none加载策略
 # WebDriver仅等待至初始页面下载完成
@@ -200,7 +200,7 @@ search_box = search_src.find_element_by_name("q")
 search_box.send_keys("searchconent")
 
 # 从父元素的上下文查找匹配子webelement的列表
-element = browser.find_element_by_tag_name('div')
+element = browser.find_element_by_tag_name("div")
 sub_elements = element.find_element_by_tag_name("p")
 for ele in sub_elements:
     print(ele.text)
@@ -252,25 +252,27 @@ webdriver.ActionChains(browser).move_to_element(gmailLink).perform()
 xOffset = 100
 yOffset = 100
 # 将鼠标移动到指定坐标位置，可移到窗口之外
-webdriver.ActionChains(browser).move_by_offset(xOffset,yOffset).perform()
+webdriver.ActionChains(browser).move_by_offset(xOffset, yOffset).perform()
 
 # 在一个元素点击并按住，然后移到另一个元素
 sourceEle = driver.find_element_by_id("draggable")
-targetEle  = driver.find_element_by_id("droppable")
+targetEle = driver.find_element_by_id("droppable")
 # 鼠标从sourceEle移动到targetEle元素
-webdriver.ActionChains(browser).drag_and_drop(sourceEle,targetEle).perform()
+webdriver.ActionChains(browser).drag_and_drop(sourceEle, targetEle).perform()
 
 # 在一个元素点击并按住，然后移动一定的偏移量
 targetEleXOffset = targetEle.location.get("x")
 targetEleYOffset = targetEle.location.get("y")
-webdriver.ActionChains(browser).drag_and_drop_by_offset(sourceEle, targetEleXOffset, targetEleYOffset).perform()
+webdriver.ActionChains(browser).drag_and_drop_by_offset(
+    sourceEle, targetEleXOffset, targetEleYOffset
+).perform()
 
 # 释放按下的鼠标左键，如果webelement移动了，将自动释放在给定webelement上按下的鼠标左键
 webdriver.ActionChains(browser).release().perform()
 
 # 添加cookies
 # 常用于将cookie添加到当前访问的上下文中. 添加Cookie仅接受一组已定义的可序列化JSON对象
-browser.get('xx.com')
+browser.get("xx.com")
 browser.add_cookie({"name": "key", "value": "value"})
 
 # 获取cookie
@@ -285,9 +287,9 @@ browser.delete_all_cookies()
 
 # Lax,将Cookie sameSite属性设置为Lax时，该Cookie将与第三方网站发起的GET请求一起发送
 # 目前此功能已嵌入chrome80+,适用于selenium4+
-driver.add_cookie({"name": "foo", "value": "value", 'sameSite': 'Strict'})
-driver.add_cookie({"name": "foo1", "value": "value", 'sameSite': 'Lax'})
-cookie1 = driver.get_cookie('foo')
-cookie2 = driver.get_cookie('foo1')
+driver.add_cookie({"name": "foo", "value": "value", "sameSite": "Strict"})
+driver.add_cookie({"name": "foo1", "value": "value", "sameSite": "Lax"})
+cookie1 = driver.get_cookie("foo")
+cookie2 = driver.get_cookie("foo1")
 print(cookie1)
 print(cookie2)

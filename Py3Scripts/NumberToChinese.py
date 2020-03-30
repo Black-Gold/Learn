@@ -38,7 +38,8 @@ def digital_to_chinese(digital):
     return last_str
 
 
-number = float(input("输入需要转换的数字："))
+# number = float(input("输入需要转换的数字："))
+number = float(4650)
 
 if __name__ == '__main__':
     digital_to_chinese(number)

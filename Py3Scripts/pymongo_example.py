@@ -39,6 +39,10 @@ collection = db.arc_AdminConf
 # 以product_id升序创建索引
 # create_index = collection.create_index([('product_id', pymongo.ASCENDING)], unique=True)
 
+# 打印集合索引
+for index in collection.list_indexes():
+    pprint(index)
+
 # 打印集合索引信息
 # pprint(sorted(list(collection.index_information())))
 

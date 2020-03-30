@@ -23,4 +23,3 @@ To save output to FILE, use 'nohup COMMAND > FILE
 nohup command > myout.file 2>&1 &
 
 ```
-
