@@ -46,6 +46,8 @@ echo -n xxx | openssl md5   # 方法二
 echo $RANDOM | md5sum | cut -c 1-8  # 方法一
 openssl rand -base64 4  # 方法二
 cat /proc/sys/kernel/random/uuid | cut -c 1-8   # 方法三
+< /dev/urandom tr -dc A-Za-z0-9 | head -c8;echo # 方法四
+date +%s | sha256sum | base64 | head -c 8;echo  # 方法五
 
 # 获取8位随机数字
 echo $RANDOM | cksum | cut -c 1-8   # 方法一

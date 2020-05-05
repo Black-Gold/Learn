@@ -179,6 +179,14 @@ comment
 
 ```
 
+```bash
+# 查找当前目录xls文件名包含-字符文件并替换-为_
+find . -type f -name '*-*.xls' | while read FILE ; do
+    newfile="$(echo ${FILE} |sed -e 's/-/_/')" ;
+    mv "${FILE}" "${newfile}" ;
+done
+```
+
 ### 根据-type文件类型进行搜索
 
 ```bash

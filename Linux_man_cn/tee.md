@@ -1,4 +1,4 @@
-# tee
+# **tee**
 
 ## 说明
 
@@ -12,16 +12,14 @@
 ## 选项
 
 ```markdown
--a, --append		内容追加到给定的文件而非覆盖
--i, --ignore-interrupts	忽略中断信号
+-a, --append            内容追加到给定的文件而非覆盖
+-i, --ignore-interrupts 忽略中断信号
 
 ```
 
-## 选项
+## 实例
 
 ```bash
 ls | tee out.txt    # 在终端打印stdout同时重定向到文件中
 
 ```
-
-

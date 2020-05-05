@@ -4,7 +4,7 @@ import json
 
 # 如有报错：Result window is too large, from + size must be less than or equal to: [10000]
 # 执行以下修改：【不再使用此方式，防止内存溢出，使用如下的scroll api处理】
-# curl -XPUT "http://192.168.2.15:9200/props_change_log/_settings" -d '{ "index" : { "max_result_window" : 1000000 } }'
+# curl -XPUT "http://192.168.2.15:9200/index/_settings" -d '{ "index" : { "max_result_window" : 1000000 } }'
 
 # 定义数据写入的文件路径
 root_path = "D:/xxx.json"
@@ -18,8 +18,8 @@ def record_docs(root_path, record):
 
 #  定义配置
 host = "192.168.2.15:9200"
-# index = "props_change_log"
-index = "time_limited_props_log"
+# index = "index"
+index = "index"
 scroll = "1m"
 size = 1000
 body = {
@@ -29,7 +29,7 @@ body = {
 
 es = Elasticsearch(hosts=host)
 
-# es.indices.refresh(index="by_petskill_log")
+# es.indices.refresh(index="index")
 
 # 利用json.dumps处理hits数据,将返回str类型
 

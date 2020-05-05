@@ -1,9 +1,20 @@
 def digital_to_chinese(digital):
     str_digital = str(digital)
-    chinese = {'1': '壹', '2': '贰', '3': '叁', '4': '肆', '5': '伍', '6': '陆', '7': '柒', '8': '捌', '9': '玖', '0': '零'}
-    chinese2 = ['拾', '佰', '仟', '万', '厘', '分', '角']
-    jiao = ''
-    bs = str_digital.split('.')
+    chinese = {
+        "1": "壹",
+        "2": "贰",
+        "3": "叁",
+        "4": "肆",
+        "5": "伍",
+        "6": "陆",
+        "7": "柒",
+        "8": "捌",
+        "9": "玖",
+        "0": "零",
+    }
+    chinese2 = ["拾", "佰", "仟", "万", "厘", "分", "角"]
+    jiao = ""
+    bs = str_digital.split(".")
     yuan = bs[0]
     if len(bs) > 1:
         jiao = bs[1]
@@ -11,13 +22,13 @@ def digital_to_chinese(digital):
     count = 0
     for i in range(len(yuan)):
         if i == 0:
-            r_yuan[i] += '圆'
+            r_yuan[i] += "圆"
             continue
         r_yuan[i] += chinese2[count]
         count += 1
         if count == 4:
             count = 0
-            chinese2[3] = '亿'
+            chinese2[3] = "亿"
 
     s_jiao = [i for i in jiao][:3]  # 去掉小于厘之后的
 
@@ -27,7 +38,7 @@ def digital_to_chinese(digital):
         j_count -= 1
     last = [i for i in reversed(r_yuan)] + s_jiao
 
-    last_str = ''.join(last)
+    last_str = "".join(last)
     print(str_digital)
     print(last_str)
     for i in range(len(last_str)):
@@ -39,7 +50,7 @@ def digital_to_chinese(digital):
 
 
 # number = float(input("输入需要转换的数字："))
-number = float(4650)
+number = float(3000)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     digital_to_chinese(number)

@@ -1,4 +1,4 @@
-## **whatis**
+# **whatis**
 
 ## 说明
 
@@ -21,17 +21,11 @@ Usage: whatis [OPTION...] 关键词...
   -L, --locale=区域        定义本次搜索所使用的区域设置
   -m, --systems=系统       use manual pages from other systems
   -M, --manpath=路径       设置搜索手册页的路径为“路径”
-  -s, --sections=列表, --section=列表
-                             search only these sections (colon-separated)
-  -?, --help                 give this help list
-      --usage                give a short usage message
-  -V, --version              print program version
+  -s, --sections=列表, --section=列表 search only these sections (colon-separated)
 
 Mandatory or optional arguments to long options are also mandatory or optional
 for any corresponding short options.
 ```
-
-
 
 ## 实例
 
@@ -60,5 +54,3 @@ man页面所属的分类标识(常用的是分类1和分类3)
 comment
 
 ```
-
-

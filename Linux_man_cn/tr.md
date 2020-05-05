@@ -74,4 +74,3 @@ cat file | tr -s "\r" "\n" > new_file
 cat file | tr -d "\r" > new_file
 
 ```
-

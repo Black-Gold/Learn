@@ -3,7 +3,7 @@ from selenium.webdriver.chrome.webdriver import Service
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions, expected_conditions, wait
+from selenium.webdriver.support import expected_conditions, wait
 from selenium.common.exceptions import (
     ElementNotSelectableException,
     ElementNotVisibleException,
@@ -64,22 +64,23 @@ browser.current_window_handle
 # 上下文管理器启动驱动程序
 with webdriver.Firefox() as browser:
     browser.get("https://www.xxx.com")
-    # 设置等待时间
-    wait_time = WebDriverWait(browser, 10)
+    # 设置显式等待时间，通常和该类的WebDriverWait.until()方法和WebDriverWait.until_not()方法结合使用
+    # 每隔2秒检查一次，若条件成立，则进行下一步，否则继续等待，直到超过设置的10秒，然后抛出TimeoutException
+    wait_time = WebDriverWait(browser, 10, 2)
     # 存储原始窗口id
     origin_window = browser.current_window_handle
     # 检查其他未打开的窗口
     assert len(browser.window_handles) == 1
     browser.find_element_by_link_text("new window").click()
     # 等待新窗口或标签页
-    wait.until(EC.number_of_windows_to_be(2))
+    wait.until(expected_conditions.number_of_windows_to_be(2))
     # 循环找到新的窗口句柄
     for window_handle in browser.window_handles:
         if window_handle != origin_window:
             browser.switch_to.window(window_handle)
             break
     # 等待加载完成                                                                                        发
-    wait.until(EC.title_is("xxx"))
+    wait.until(expected_conditions.title_is("xxx"))
 
 # 创建新的标签页和窗口,此特性只适用于selenium4
 browser.switch_to.new_window("tab")
@@ -114,7 +115,8 @@ browser.maximize_window()  # 最大化窗口
 
 # 隐式等待是告诉WebDriver如果在查找一个或多个不是立即可用的元素时轮询DOM一段时间。默认设置为0，表示禁用
 # 一旦设置好，隐式等待就被设置为会话的生命周期
-browser.implicitly_wait(10)  # 等待10秒
+# 在页面完全加载完毕期间等待10秒，若10秒还未加载完则进行下一步
+browser.implicitly_wait(10)
 
 # 流畅等待定义等待条件的最大时间量及检查条件的频率
 # 例如设置等待来忽略NoSuchElementException异常
@@ -125,11 +127,11 @@ wait = WebDriverWait(
     poll_frequency=1,
     ignored_exceptions=[ElementNotVisibleException, ElementNotSelectableException],
 )
-element = wait.until(EC.element_to_be_clickable((By.XPATH, "//div")))
+element = wait.until(expected_conditions.element_to_be_clickable((By.XPATH, "//div")))
 
 
 # js的alerts警告框
-browser.find_element_by_link_text("xxx").click()
+# browser.find_element_by_link_text("xxx").click()
 # 等待alert窗口显示后存储到变量中
 alert = wait.until(expected_conditions.alert_is_present())
 # 将警告中的文本存储到变量
