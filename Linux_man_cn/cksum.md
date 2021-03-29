@@ -15,5 +15,3 @@
 ```bash
 cksum testfile1            #对指定文件进行CRC校验
 ```
-
-

@@ -5,8 +5,6 @@
 **passwd命令** 用于设置用户的认证信息，包括用户密码、密码过期时间等。系统管理者则能用它管理系统用户的密码。只有管理者可
 以指定用户名称，一般用户只能变更自己的密码
 
-## 选项
-
 ```markdown
 用法: passwd [选项...] <帐号名称>
   -k, --keep-tokens       保持身份验证令牌不过期
@@ -70,5 +68,5 @@ comment
 
 passwd -l linuxde   # 锁定用户linuxde不能更改密码
 passwd -d linuxde   # 清除linuxde用户密码,注意：当我们清除一个用户的密码时，登录时就无需密码，这一点要加以注意
-
+echo "666666" | passwd --stdin ww &> /dev/null  # 设置用户ww密码为666666
 ```

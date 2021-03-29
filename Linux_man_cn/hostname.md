@@ -6,8 +6,6 @@
 统并不会永久保存新的主机名，重新启动机器之后还是原来的主机名。如果需要永久修改主机名，需要同时修改`/etc/hosts`和
 `/etc/sysconfig/network`的相关内容
 
-## 选项
-
 ```markdown
 Usage: hostname [-b] {hostname|-F file}         set host name (from file)
        hostname [-a|-A|-d|-f|-i|-I|-s|-y]       display formatted name
@@ -32,7 +30,6 @@ Program name:
 -I, --all-ip-addresses all addresses for the host
 -s, --short            显示短主机名称，在第一个点处截断
 -y, --yp, --nis        显示NIS/YP域名
-
 ```
 
 ## 实例
@@ -40,5 +37,3 @@ Program name:
 ```bash
 hostname -i     # 查寻本地主机的IP地址同等于host `hostname`
 ```
-
-

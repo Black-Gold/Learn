@@ -1,4 +1,4 @@
-# nslookup
+# **nslookup**
 
 ## 说明
 
@@ -10,8 +10,6 @@ nslookup4有两种工作模式，即“交互模式”和“非交互模式”�
 输入nslookup命令直接进入交互模式，此时nslookup会连接到默认的域名服务器（即`/etc/resolv.conf`的第一个dns地址）。或者输入
 `nslookup -nameserver/ip`。进入非交互模式，就直接输入`nslookup 域名`就可以
 
-## 选项
-
 ```markdown
 -sil：不显示任何警告信息
 ```
@@ -20,7 +18,4 @@ nslookup4有两种工作模式，即“交互模式”和“非交互模式”�
 
 ```bash
 nslookup www.jsdig.com
-
 ```
-
-

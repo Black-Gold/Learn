@@ -35,7 +35,7 @@ sed脚本。其他非选项参数被视为输入文件，如果没有输入文�
 ```markdown
 a\         在当前行下面插入文本
 i\         在当前行上面插入文本
-c\         把选定的行改为新的文本
+c\         用新的文本替换选定的行
 d          删除，删除选择的行
 D          删除模板块的第一行
 s          替换指定字符
@@ -113,6 +113,8 @@ sed -i '5i\test line' file  # 在file文件第5行插入test line
 sed '/test/{ n; s/aa/bb/; }' file   # 若匹配到test，则移动到匹配行的下一行，替换这行的aa为bb并打印，接着继续执行
 sed '1,10y/abcde/ABCDE/' file   # y变形命令，将1至10行所有abcde转为大写，但正则表达式元字符不能使用该命令
 sed '10q' file  # q退出命令，打印完第10行后退出sed命令
+sed 's/$/EOL/' file # 在file文件末尾插入字符，此例为末尾插入EOL字符
+sed -e 's/erors/errors/g' -e 's/last/final/g' file  # 查找多个并替换，此例为查找erors替换为errors,查找last替换为final
 
 # 关闭selinux
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config  # 方法一
@@ -380,7 +382,7 @@ sed '1,/^$/d'              # 删除第一行空行之前的所有内容,可用�
 sed '/^Subject: */!d; s///;q'  # 从邮件头提取“Subject”（标题栏字段），并移除开头的“Subject:”字样
 sed '/^Reply-To:/q; /^From:/h; /./d;g;q' # 从邮件头获得回复地址
 sed 's/ *(.*)//; s/>.*//; s/.*[:<] *//' # 获取邮件地址。在上一个脚本所产生的那一行邮件头的基础上进一步的将非电邮地址的部分剃除。（见上一脚本）
-sed 's/^/> /' # 在每一行开头加上一个尖括号和空格（引用信息）
+sed 's/^/> /' # 在每一行开头加上一个右尖括号和空格（引用信息）
 sed 's/^> //' # 将每一行开头处的尖括号和空格删除（解除引用）
 sed -e :a -e 's/<[^>]*>//g;/</N;//ba' # 移除大部分的HTML标签（包括跨行标签）
 

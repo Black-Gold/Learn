@@ -12,8 +12,6 @@
 其次，dd命令可以创建一个固定大小的文件如下：
 dd if=/dev/zero of=/var/swap/file.swap bs=1024K count=64（ linux支持K单位，unix不支持；）
 
-## 选项
-
 ```markdown
 bs=BYTES        一次读写BYTES字节数
 cbs=BYTES       一次转换BYTES字节数,即指定转换缓冲区大小
@@ -113,9 +111,13 @@ dd if=hdadisk.img of=/dev/hdb   # 从硬盘镜像恢复
 dd if=/dev/hda1 of=~/partition1.img     # 备份分区
 dd if=/dev/cdrom of=tgsservice.iso bs=2048  # 备份CDROM
 dd bs=1M if=/dev/sda | gzip | ssh user@remote 'dd of=sda.gz'   # 将硬盘sda压缩并备份到远程机器上
-dd bs=1 seek=2TB if=/dev/null of=ext4.test # 建立一个大的测试文件（不占用空间）
 time dd if=/dev/zero bs=1024 count=1000000 of=/1Gb.file # 测试所在磁盘的写入速度
 dd if=/root/1Gb.file bs=64k | dd of=/dev/null   # 测试磁盘的读取速度
+dd bs=1 seek=2TB if=/dev/null of=ext4.test # 建立一个大的测试文件（不占用空间）
+
+# 创建一个10M大小的文件，两个命令皆可
+dd if=/dev/zero of=daygeek2.txt  bs=10M  count=1
+dd if=/dev/zero of=daygeek3.txt  bs=1M  count=10
 
 # 确定硬盘的最佳块大小
 dd if=/dev/zero bs=1024 count=1000000 of=/root/1Gb.filedd if=/dev/zero bs=2048 count=500000 of=/root/1Gb.filedd \

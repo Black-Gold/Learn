@@ -9,8 +9,6 @@
 在UNIX系统家族里，文件或目录权限的掌控以拥有者及所属群组来管理。您可以使用chgrp指令去变更文件与目录的所属群组，设置方式采用群组名称或
 群组识别码皆可
 
-## 选项
-
 ```markdown
 用法：chgrp [选项]... 用户组 文件...
 　或：chgrp [选项]... --reference=参考文件 文件...
@@ -47,5 +45,4 @@
 ```bash
 chgrp -R mengxin /usr/meng  # 将`/usr/meng`及其子目录下的所有文件的用户组改为mengxin
 chgrp newuser ah    # 更改文件ah的组群所有者为newuser
-
 ```

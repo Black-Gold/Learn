@@ -8,8 +8,6 @@
 到`$HOME/nohup.out`文件中。如果没有文件能创建或打开以用于追加，那么 command 参数指定的命令不可调用。如果标准错误是一个终端，那么把
 指定的命令写给标准错误的所有输出作为标准输出重定向到相同的文件描述符
 
-## 选项
-
 ```markdown
 If standard input is a terminal, redirect it from /dev/null
 If standard output is a terminal, append output to 'nohup.out' if possible,'$HOME/nohup.out' otherwise
@@ -21,5 +19,4 @@ To save output to FILE, use 'nohup COMMAND > FILE
 
 ```bash
 nohup command > myout.file 2>&1 &
-
 ```

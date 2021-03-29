@@ -4,8 +4,6 @@
 
 **free命令** 可以显示当前系统未使用的和已使用的内存数目，还可以显示被内核使用的内存缓冲区
 
-## 选项
-
 ```markdown
 -b, --bytes     Bytes为单位显示内存使用
 -k, --kilo      KB为单位显示内存使用(默认)
@@ -26,7 +24,6 @@
 -s, --seconds seconds   间隔几秒显示结果，实际上可以指定任意浮点数
 --si   Use power of 1000 not 1024
 -t, --total 在一行以总和的形式显示内存的使用信息
-
 ```
 
 ## 实例
@@ -36,7 +33,7 @@ free -t    # 以总和的形式显示内存的使用信息
 free -s 10 # 周期性的查询内存使用信息，每10s 执行一次命令
 ```
 
-## free输出解释：
+## free输出解释
 
 ```markdown
 total  安装的总内存 (MemTotal and SwapTotal in /proc/meminfo)
@@ -74,4 +71,3 @@ Buffer cache是针对磁盘块的缓存，也就是在没有文件系统的情�
 如果直接采用dd等工具对磁盘进行读写，那么数据会缓存到buffer cache
 
 ```
-

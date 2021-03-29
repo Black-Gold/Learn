@@ -35,9 +35,9 @@ Defaults in parentheses; comma-separated set (s) items; dash-separated ranges.
   -s list file size        -t terse listing           -T disable TCP/TPI info
   -U select Unix socket    -v list version info       -V verbose search
   +|-w  Warnings (+)       -X skip TCP&UDP* files     -Z Z  context [Z]
-  -- end option scan     
-  +f|-f  +filesystem or -file names     +|-f[gG] flaGs 
-  -F [f] select fields; -F? for help  
+  -- end option scan
+  +f|-f  +filesystem or -file names     +|-f[gG] flaGs
+  -F [f] select fields; -F? for help
   +|-L [l] list (+) suppress (-) link counts < l (0 = all; default = 0)
                                         +m [m] use|create mount supplement
   +|-M   portMap registration (-)       -o o   o 0t offset digits (8)
@@ -53,7 +53,6 @@ Defaults in parentheses; comma-separated set (s) items; dash-separated ranges.
   -x [fl] cross over +d|+D File systems or symbolic Links
   names  select named files or files on named file systems
 Anyone can list all files; /dev warnings disabled; kernel ID check disabled.
-
 ```
 
 ## 详解
@@ -127,5 +126,4 @@ lsof输出各列信息的意义如下:
 lsof -i     # 列出所有的网络连接或端口
 lsof ~      # 查看打开用户目录的进程
 lsof -i :80|grep -v "PID"|awk '{print "kill -9",$2}'|sh # 杀掉80端口相关的进程
-
 ```

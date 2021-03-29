@@ -4,8 +4,6 @@
 
 **unzip命令** 用于解压缩由zip命令压缩的“.zip”压缩包
 
-## 选项
-
 ```markdown
 -c：将解压缩的结果显示到屏幕上，并对字符做适当的转换
 -f：更新现有的文件
@@ -64,7 +62,4 @@ unzip test.zip  # 将压缩文件text.zip在当前目录下解压缩
 unzip -n test.zip -d /tmp   # 将压缩文件text.zip在指定目录`/tmp`下解压缩，如果已有相同的文件存在，要求unzip命令不覆盖原先的文件
 unzip -v test.zip   # 查看压缩文件目录，但不解压
 unzip -o test.zip -d tmp/   # 将压缩文件test.zip在指定目录`/tmp`下解压缩，如果已有相同的文件存在，覆盖原先的文件
-
 ```
-
-

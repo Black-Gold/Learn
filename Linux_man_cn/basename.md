@@ -5,8 +5,6 @@
 **basename命令** 用于打印目录或者文件的基本名称。basename和dirname命令通常用于shell脚本中的命令替换来指定和指定的输入文件名称有所差异
 的输出文件名称
 
-## 选项
-
 ```markdown
 -a, --multiple       support multiple arguments and treat each as a NAME
 -s, --suffix=SUFFIX  remove a trailing SUFFIX

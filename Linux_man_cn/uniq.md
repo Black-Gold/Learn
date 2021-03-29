@@ -4,8 +4,6 @@
 
 **uniq命令** 用于报告或忽略文件中的重复行，一般与sort命令结合使用
 
-## 选项
-
 ```markdown
 用法：uniq [选项]... [文件]
 Filter adjacent matching lines from INPUT (or standard input),

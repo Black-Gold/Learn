@@ -7,8 +7,6 @@
 统管理任务只是为了找出一个知道存放在哪里的文件，find可以遍历当前目录甚至整个文件系统查找文件或目录。即使系统中含有网络
 文件系统(NFS)，find命令在该文件系统中同样有效，只要你具有相应的权限
 
-## 选项
-
 ```markdown
 用法: find [-H] [-L] [-P] [-Olevel] [-D help|tree|search|stat|rates|opt|exec] [path...] [expression]
 

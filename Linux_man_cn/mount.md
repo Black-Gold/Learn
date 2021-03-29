@@ -4,8 +4,6 @@
 
 **mount命令** Linux mount命令是经常会使用到的命令，它用于挂载Linux系统外的文件
 
-## 选项
-
 ```markdown
  mount [-lhV]
  mount -a [选项]
@@ -67,5 +65,4 @@ mount | column -t   # 以表格形式输出
 mount -t smbfs -o fmask=666,guest //windows_box/share /mnt/share    # 挂载一个windows共享
 mount -o ro /dev/hda1 /mnt 将/dev/hda1用只读模式挂在/mnt之下
 mount -o loop /tmp/image.iso /mnt/cdrom    # 将/tmp/image.iso光碟的image使用loop模式挂在/mnt/cdrom下。可不烧录检视光碟
-
 ```

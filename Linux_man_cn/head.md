@@ -21,4 +21,5 @@ GB 1000*1000*1000, G 1024*1024*1024, 对于T, P, E, Z, Y 同样适用
 ```bash
 head -1 file    # 显示file文件第一行
 head -n1 /etc/issue # 查看操作系统版本,不一定每个系统都能看到
+head -c 10MB /dev/zero > daygeek4.txt   # 创建10M大小的文件
 ```

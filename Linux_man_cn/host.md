@@ -4,8 +4,6 @@
 
 **host命令** 是常用的分析域名查询工具，可以用来测试域名系统工作是否正常
 
-## 选项
-
 ```markdown
 -a：显示详细的DNS信息
 -c<类型>：指定查询类型，默认值为IN
@@ -22,6 +20,5 @@
 ## 实例
 
 ```bash
-host www.jsdig.com 
-
+host www.jsdig.com
 ```

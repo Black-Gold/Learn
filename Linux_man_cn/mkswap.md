@@ -5,8 +5,6 @@
 **mkswap命令** 用于在一个文件或者设备上建立交换分区。在建立完之后要使用sawpon命令开始使用这个交换区。最后一个选择性参数指定了交换区的
 大小，但是这个参数是为了向后兼容设置的，没有使用的必要，一般都将整个文件或者设备作为交换区
 
-## 选项
-
 ```markdown
 -c：建立交换区前，先检查是否有损坏的区块
 -f：在SPARC电脑上建立交换区时，要加上此参数
@@ -18,23 +16,16 @@
 
 ```bash
 swapon -s   # 查看当前的swap空间(file(s)/partition(s)),等价于cat /proc/swaps
-```
 
-```bash
-# 添加交换空间
-mkswap /dev/sdb2
+mkswap /dev/sdb2 # 添加交换空间
+swapon /dev/sdb2    # 启用交换分区
 
-# 启用交换分区
-swapon /dev/sdb2
-
-# 写入`/etc/fstab`，以便在引导时启用
+# 写入`/etc/fstab`以下内容，以便在引导时启用
 /dev/sdb2 swap swap defaults 0 0
 
 # 添加一个交换文件，步骤如下：创建大小为512M的交换文件：
 dd if=/dev/zero of=/swapfile1 bs=1024 count=524288
-```
 
-```bash
 # 添加交换文件
 # 使用mkswap命令来设置交换文件
 mkswap /swapfile1
@@ -42,17 +33,12 @@ mkswap /swapfile1
 启用交换分区
 swapon /swapfile1
 
-# 写入`/etc/fstab`，以便在引导时启用：
+# 写入`/etc/fstab`以下内容，以便在引导时启用：
 /swapfile1 swap swap defaults 0 0
 
 # 新添了交换分区并启用它之后，查看`cat /proc/swaps`或free命令的输出来确保交换分区已被启用了
-```
 
-```bash
 # 删除交换空间,禁用交换分区：从`/etc/fstab`中删除项目，使用fdisk或yast工具删除分区
 swapoff /dev/sdb2
 
 ```
-
-
-

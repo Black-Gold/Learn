@@ -38,5 +38,3 @@ chattr +i /etc/fstab    # 用chattr命令防止系统中某个关键文件被修
 chattr +a /data1/user_act.log   # 让某个文件只能往里面追加内容，不能删除，一些日志文件适用于这种操作
 
 ```
-
-

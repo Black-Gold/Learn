@@ -18,8 +18,6 @@ ulimit 用于限制 shell 启动进程所占用的资源，支持以下各种类
 作为临时限制，ulimit 可以作用于通过使用其命令登录的 shell 会话，在会话终止时便结束限制，并不影响于其他 shell 会话。而对
 于长期的固定限制，ulimit 命令语句又可以被添加到由登录 shell 读取的文件中，作用于特定的 shell 用户
 
-## 选项
-
 ```markdown
 -a：显示目前资源限制的设定
 -c <core文件上限>：设定core文件的最大值，单位为区块
@@ -59,7 +57,4 @@ max user processes              (-u) 98304       #当前用户同时打开的进
 virtual memory          (kbytes, -v) unlimited   #没有限制进程的最大地址空间
 file locks                      (-x) unlimited   #所能锁住的文件的最大个数没有限制
 comment
-
 ```
-
-

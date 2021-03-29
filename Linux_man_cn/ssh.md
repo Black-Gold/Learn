@@ -4,8 +4,6 @@
 
 **ssh命令** 是openssh套件中的客户端连接工具，可以给予ssh加密协议实现安全的远程登录服务器
 
-## 选项
-
 ```markdown
 ssh [-1246AaCfGgKkMNnqsTtVvXxYy] [-b bind_address] [-c cipher_spec]
            [-D [bind_address:]port] [-E log_file] [-e escape_char]
@@ -42,9 +40,6 @@ ssh [-1246AaCfGgKkMNnqsTtVvXxYy] [-b bind_address] [-c cipher_spec]
 ```bash
 ssh $USER@$HOST command     # 在$Host主机上以$User用户运行命令默认命令为Shell
 ssh -f -Y $USER@$HOSTNAME xeyes     # 在名为$HOSTNAME的主机上以$USER用户运行GUI命令
-scp -p -r $USER@$HOST: file dir/    # 拷贝到$HOST主机$USER'用户的目录下
 ssh -g -L 8080:localhost:80 root@$HOST  # 由本地主机的8080端口转发到$HOST主机的80端口
 ssh -R 1434:imap:143 root@$HOST     # 由主机的1434端口转发到imap的143端口
 ```
-
-

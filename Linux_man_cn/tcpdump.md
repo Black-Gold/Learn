@@ -5,8 +5,6 @@
 **tcpdump命令** 是一款抓包，嗅探器工具，它可以打印所有经过网络接口的数据包的头信息，也可以使用`-w`选项将数据包保存到文件
 中，方便以后分析
 
-## 选项
-
 ```markdown
 -a：尝试将网络和广播地址转换成名称
 -c<数据包数目>：收到指定的数据包数目后，就停止进行倾倒操作
@@ -57,5 +55,4 @@ tcpdump net ucb-ether   # 监视指定网络的数据包,打印网络地址为uc
 tcpdump 'gateway snup and (port ftp or ftp-data)'   # 打印所有通过网关snup的ftp数据包,gateway后必须是网关名称
 tcpdump ip and not net localnet # 打印所有源地址或目标地址是本地主机的IP数据包
 tcpdump -i any port 80 -A   # 抓取80端口的HTTP报文并以文本形式展示
-
 ```

@@ -4,8 +4,6 @@
 
 **mktemp命令** 被用来创建临时文件供shell脚本使用
 
-## 选项
-
 ```markdown
 -d, --directory     创建一个目录而非文件
 -u, --dry-run       不创建任何东西，仅打印出名字。(仅供测试)
@@ -16,5 +14,3 @@
                           slashes, but mktemp creates only the final component
 
 ```
-
-

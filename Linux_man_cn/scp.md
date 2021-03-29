@@ -7,8 +7,6 @@
 占资源，不会提高多少系统负荷，在这一点上，rsync就远远不及它了。虽然 rsync比scp会快一点，但当小文件众多的情况下，rsync会
 导致硬盘I/O非常高，而scp基本不影响系统正常使用
 
-## 选项
-
 ```markdown
 scp [-12346BCpqrv] [-c cipher] [-F ssh_config] [-i identity_file]
            [-l limit] [-o ssh_option] [-P port] [-S program]

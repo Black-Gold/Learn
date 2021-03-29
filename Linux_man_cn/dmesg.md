@@ -5,8 +5,6 @@
 **dmesg命令** 被用于检查和控制内核的环形缓冲区。kernel会将开机信息存储在ring buffer中。您若是开机时来不及查看信息，可利用dmesg来查看。
 开机信息保存在`/var/log/dmesg`文件里
 
-## 选项
-
 ```markdown
 -C, --clear                 清除内核环形缓冲区(ring butter)
 -c, --read-clear            读取并清除所有消息
@@ -58,5 +56,4 @@
 
 ```bash
 dmesg | grep sda    # 查看硬盘基础信息
-
 ```

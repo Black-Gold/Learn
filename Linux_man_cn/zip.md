@@ -4,8 +4,6 @@
 
 **zip命令** 可以用来解压缩文件，或者对文件进行打包操作。zip是个使用广泛的压缩程序，文件经它压缩后会另外产生具有“.zip”扩展名的压缩文件
 
-## 选项
-
 ```markdown
 -A：调整可执行的自动解压缩文件
 -b<工作目录>：指定暂时存放文件的目录
@@ -72,5 +70,3 @@ yum install -y unzip zip    # yum安装
 zip -q -r html.zip /home/Blinux/html    # 将/home/Blinux/html/目录下所有文件和文件夹打包到当前目录下的html.zip
 
 ```
-
-

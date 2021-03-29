@@ -6,11 +6,7 @@
 查看命令，使用该命令可以确定有哪些进程正在运行和运行的状态、进程是否结束、进程有没有僵死、哪些进程占用了过多的资源等等,
 总之大部分信息都是可以通过执行该命令得到的
 
-## 选项
-
-Usage: ps [options]
-
-```bash
+```markdown
 基本选项
 -A, -e               all processes
 -a                   all with tty, except session leaders
@@ -139,7 +135,6 @@ jstack pid |grep tid -A 30  # 打印线程的堆栈信息
 # java进程占用内存过高排查
 jmap -histo:live [pid]  # 分析具体的对象数目和占用内存大小，从而定位代码
 jmap -dump:live,format=b,file=xxx.hprof [pid]   # 利用MAT工具分析是否存在内存泄漏等
-
 ```
 
 ## linux进程5种状态

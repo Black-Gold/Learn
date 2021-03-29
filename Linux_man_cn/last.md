@@ -7,8 +7,6 @@
 
 **lastb命令** Lastb与last相同，但默认情况下它显示文件/var/log/btmp的日志，其中包含所有错误的登录尝试
 
-## 选项
-
 ```markdown
 -f file     让last指定记录文件替代默认的/var/log/wtmp
 -num        指定last命令显示的行数
@@ -30,5 +28,3 @@
 ```bash
 last reboot     # 显示上次用户登录列表
 ```
-
-

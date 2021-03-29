@@ -6,8 +6,6 @@
 必须确认这名user没在电脑上执行任何程序。你需手动更改使用者的crontab档。也需手动更改使用者的at工作档。采用NIS server须在
 server上更动相关的NIS设定
 
-## 选项
-
 ```markdown
 用法：usermod [选项] 登录
 

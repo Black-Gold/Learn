@@ -5,8 +5,6 @@
 **watch命令** 以周期性的方式执行给定的指令，指令输出以全屏方式显示。watch是一个非常实用的命令，基本所有的Linux发行版都带
 有这个小工具，如同名字一样，watch可以帮你监测一个命令的运行结果
 
-## 选项
-
 ```markdown
 watch [options] command
 
@@ -42,9 +40,6 @@ FreeBSD和Linux下watch命令的不同，在Linux下，watch是周期性的执�
 如：`watch -n 1 -d netstat -ant`，而在FreeBSD下的watch命令是查看其它用户的正在运行的操作
 watch允许你偷看其它terminal正在做什么，该命令只能让超级用户使用
 
-## 实例
-
 ```bash
 watch -n 1 'cat /proc/interrupts'   # 检测文件/proc/interrupts的变化
-
 ```

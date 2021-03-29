@@ -4,8 +4,6 @@
 
 **groupmod命令** 更改群组识别码或名称。需要更改群组的识别码或名称时，可用groupmod指令来完成这项工作
 
-## 选项
-
 ```markdown
 用法：groupmod [选项] 组
 
@@ -23,5 +21,4 @@
 ```bash
 groupmod -n cisco web   # 将组名web改成cisco
 groupmod -g 9999 web    # 创建web组的同时指定gid为9999
-
 ```
